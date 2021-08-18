@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="9c8a4b2c-1da3-4025-8d62-21c83b06ef70" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BillTransferQA" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9c8a4b2c-1da3-4025-8d62-21c83b06ef70fileName">BillTransferQA</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="BillTransferQA" id="15f3f95c-9dd6-4d07-a9cd-cf8b5a124b32">
+    <con:settings/>
+    <con:config service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="BillTransferQA" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "header" : {\r
+      "applicationID" : "609",\r
+      "callerID" : "7038945337",\r
+      "clientAccountNumber" : "8945337",\r
+      "amount" : "15",\r
+      "remittanceID" : "test05282025337",\r
+      "customerID" : "195",\r
+      "lang" : "",\r
+      "callSessionID" : "5337"\r
+   },\r
+   "customerInformation" : {\r
+      "firstName" : "Imtiaz",\r
+      "lastName" : "ahmed",\r
+      "companyName" : "Moi Company",\r
+      "addressLine1" : "2311 york road",\r
+      "city" : "Arlington",\r
+      "state" : "VA",\r
+      "zip" : "22201",\r
+      "country" : "840"\r
+   },\r
+   "customData" : [\r
+      {\r
+         "id" : "1",\r
+         "value" : "5335100"\r
+      },\r
+      {\r
+         "id" : "2",\r
+         "value" : "5335200"\r
+      }\r
+   ]\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/transferBill</con:originalUri>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello2222</con:password>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Copy of BillTransferQA" id="94806e65-44e3-4bd0-b77e-295490e808f5">
+    <con:settings/>
+    <con:config service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Copy of BillTransferQA" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "header" : {\r
+      "applicationID" : "609",\r
+      "callerID" : "2408939800",\r
+      "clientAccountNumber" : "1009800",\r
+      "amount" : "21.50",\r
+      "remittanceID" : "test10252019202",\r
+      "customerID" : "195",\r
+      "lang" : "en_US",\r
+      "callSessionID" : "0019800"\r
+   },\r
+   "customerInformation" : {\r
+      "firstName" : "Imtiaza",\r
+      "lastName" : "Ahmeda",\r
+      "companyName" : "Moi Companya",\r
+      "addressLine1" : "2311 yorka roada",\r
+      "city" : "Gambrills",\r
+      "state" : "MD",\r
+      "zip" : "21054",\r
+      "country" : "840"\r
+   },\r
+   "customData" : [\r
+      {\r
+         "id" : "1",\r
+         "value" : "abc111a"\r
+      },\r
+      {\r
+         "id" : "2",\r
+         "value" : "abc222a"\r
+      }\r
+   ]\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/transferBill</con:originalUri>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello2222</con:password>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="BillTransfer-Demo-3811" id="2dfe5d38-cfc4-42f0-b970-d2fefa623cfb">
+    <con:settings/>
+    <con:config service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="BillTransfer-Demo-3811" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "header":{
+        "applicationID":"3811",
+        "callerID":"4107687050",
+        "clientAccountNumber":"20200513318290877050",
+        "amount":"135.00",
+        "remittanceID":"92447387050",
+        "customerID":"538",
+        "lang":"en_US",    
+        "callSessionID":"5012"
+    },
+    "customerInformation": {
+        "firstName":"IAH",
+        "lastName":"IAH",
+        "companyName":"IAH",
+        "addressLine1":"2311 york road",
+        "city":"Crofton",
+        "state":"MD",
+        "zip":"21114",
+        "country":"840"
+    },
+    "customData": [
+        {
+            "id":"1",
+            "value":"abc111"
+        },
+        {
+            "id":"2",
+            "value":"abc222"
+        }        
+    ]
+    
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/transferBill</con:originalUri>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello2222</con:password>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="BillTransferQA2" id="7483a576-f7ce-4235-91e8-7386a9a84dc9">
+    <con:settings/>
+    <con:config service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="BillTransferQA2" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "header" : {\r
+      "applicationID" : "6660",\r
+      "callerID" : "7038945012",\r
+      "clientAccountNumber" : "8945012",\r
+      "amount" : "0",\r
+      "remittanceID" : "test05282020101",\r
+      "customerID" : "195",\r
+      "lang" : "",\r
+      "callSessionID" : "3569"\r
+   },\r
+   "customerInformation" : {\r
+      "firstName" : "Imtiaz",\r
+      "lastName" : "ahmed",\r
+      "companyName" : "Moi Company",\r
+      "addressLine1" : "2311 york road",\r
+      "city" : "Arlington",\r
+      "state" : "VA",\r
+      "zip" : "22201",\r
+      "country" : "840"\r
+   },\r
+   "customData" : [\r
+      {\r
+         "id" : "1",\r
+         "value" : "abc111"\r
+      },\r
+      {\r
+         "id" : "2",\r
+         "value" : "abc222"\r
+      }\r
+   ]\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/transferBill</con:originalUri>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello2222</con:password>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="BillTransfer-Demo-3802" id="3996cafe-3070-4b86-82b2-a37b9d1d7258">
+    <con:settings/>
+    <con:config service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="BillTransfer-Demo-3802" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "header" : {\r
+      "applicationID" : "3802",\r
+      "callerID" : "4107687051",\r
+      "clientAccountNumber" : "20200513318290877051",\r
+      "amount" : "135.00",\r
+      "remittanceID" : "92447387051",\r
+      "customerID" : "538",\r
+      "lang" : "en_US",\r
+      "callSessionID" : "5013"\r
+   },\r
+   "customerInformation" : {\r
+      "firstName" : "IAH",\r
+      "lastName" : "IAH",\r
+      "companyName" : "IAH",\r
+      "addressLine1" : "2311 york road",\r
+      "city" : "Crofton",\r
+      "state" : "MD",\r
+      "zip" : "21114",\r
+      "country" : "840"\r
+   },\r
+   "customData" : [\r
+      {\r
+         "id" : "1",\r
+         "value" : "abc111"\r
+      },\r
+      {\r
+         "id" : "2",\r
+         "value" : "abc222"\r
+      }\r
+   ]\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/transferBill</con:originalUri>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello2222</con:password>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

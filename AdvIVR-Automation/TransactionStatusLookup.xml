@@ -154,7 +154,7 @@ return sdf.format(new Date())</script>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
-            <regEx>120.*</regEx>
+            <regEx>121.*</regEx>
           </con:configuration>
         </con:assertion>
         <con:assertion type="JsonPath Match" id="a52d2482-ec58-41b8-b626-b507cc55f992" name="Match content of [responseCode]">

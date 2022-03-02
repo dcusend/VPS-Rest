@@ -31,7 +31,7 @@
    "account_type" : "",\r
    "response_format" : "fixed_width",\r
    "application_id" : "609",\r
-   "remittance_id" : "testivrach359",\r
+   "remittance_id" : "testivrach360",\r
    "username" : "username",\r
    "password" : "password",\r
    "check_type" : "C",\r
@@ -351,10 +351,10 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessACH-Demo-3849" id="779b5df9-d377-462b-bd53-a6b5db1bd1e0">
+  <con:testStep type="restrequest" name="ProcessACH-PersonalChecking-Demo-3849" id="779b5df9-d377-462b-bd53-a6b5db1bd1e0">
     <con:settings/>
     <con:config service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="ProcessACH-Demo-3849" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="ProcessACH-PersonalChecking-Demo-3849" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
@@ -396,6 +396,15 @@
    "client_account_number" : "258745896"\r
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processACHTransaction</con:originalUri>
+        <con:assertion type="JsonPath Match" id="60883337-761e-4b3d-8dd8-e1d4c2c97c17" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:username>iahmed</con:username>
           <con:password>hello6666</con:password>
@@ -456,6 +465,207 @@
    "paidBillID" : "68458280420000001"\r
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processACHTransaction</con:originalUri>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello6666</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ProcessACH-PErsonalChecking-QA" id="d50ac718-13ac-4801-9c52-df9f8280400e">
+    <con:settings/>
+    <con:config service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="ProcessACH-PErsonalChecking-QA" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "amount" : "25.50",\r
+   "check_address" : "2311 york road",\r
+   "check_city" : "Arlington",\r
+   "check_zip" : "22201",\r
+   "check_account" : "10001111",\r
+   "check_company" : "",\r
+   "routing_number" : "256072691",\r
+   "transaction_type" : "200",\r
+   "message_version" : "2.0IVR_A",\r
+   "category" : "moto",\r
+   "requestSource" : "",\r
+   "check_first_name" : "imtiaz",\r
+   "check_last_name" : "ahmed",\r
+   "check_state" : "MD",\r
+   "email" : "",\r
+   "account_type" : "1",\r
+   "response_format" : "fixed_width",\r
+   "application_id" : "609",\r
+   "remittance_id" : "testivrach362",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "check_type" : "P",\r
+   "standard_entry_class" : "TEL",\r
+   "user_defined1" : "10859159",\r
+   "user_defined2" : "udf2",\r
+   "user_defined3" : "udf3",\r
+   "user_defined4" : "udf4",\r
+   "user_defined5" : "udf5",\r
+   "user_defined6" : "udf6",\r
+   "user_defined7" : "udf7",\r
+   "user_defined8" : "udf8",\r
+   "user_defined9" : "udf9",\r
+   "user_defined10" : "udf10",\r
+   "client_account_number" : "258745896"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processACHTransaction</con:originalUri>
+        <con:assertion type="JsonPath Match" id="cbdc02d8-bff1-4407-9e42-218984508087" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello6666</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ProcessACH-Corporate-QA" id="84d1be52-5dc2-46b3-bde4-acd6bf1a93db">
+    <con:settings/>
+    <con:config service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="ProcessACH-Corporate-QA" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "amount" : "25.50",\r
+   "check_address" : "2311 york road",\r
+   "check_city" : "Arlington",\r
+   "check_zip" : "22201",\r
+   "check_account" : "10001111",\r
+   "check_company" : "My Company",\r
+   "routing_number" : "256072691",\r
+   "transaction_type" : "200",\r
+   "message_version" : "2.0IVR_A",\r
+   "category" : "moto",\r
+   "requestSource" : "",\r
+   "check_first_name" : "imtiaz",\r
+   "check_last_name" : "ahmed",\r
+   "check_state" : "MD",\r
+   "email" : "",\r
+   "account_type" : "",\r
+   "response_format" : "fixed_width",\r
+   "application_id" : "609",\r
+   "remittance_id" : "testivrach3630004",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "check_type" : "C",\r
+   "standard_entry_class" : "TEL",\r
+   "user_defined1" : "10859159",\r
+   "user_defined2" : "udf2",\r
+   "user_defined3" : "udf3",\r
+   "user_defined4" : "udf4",\r
+   "user_defined5" : "udf5",\r
+   "user_defined6" : "udf6",\r
+   "user_defined7" : "udf7",\r
+   "user_defined8" : "udf8",\r
+   "user_defined9" : "udf9",\r
+   "user_defined10" : "udf10",\r
+   "client_account_number" : "258745896"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processACHTransaction</con:originalUri>
+        <con:assertion type="JsonPath Match" id="cbdc02d8-bff1-4407-9e42-218984508087" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello6666</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ProcessACH-Corporate-Demo-3849" id="524d731d-d73e-44d6-811d-dd2bfd2c6d9e">
+    <con:settings/>
+    <con:config service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="ProcessACH-Corporate-Demo-3849" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "amount" : "21.00",\r
+   "check_address" : "2311 york road",\r
+   "check_city" : "Manchester",\r
+   "check_zip" : "03104",\r
+   "check_account" : "55550015",\r
+   "check_company" : "My Company",\r
+   "routing_number" : "256072691",\r
+   "transaction_type" : "200",\r
+   "message_version" : "2.0IVR_A",\r
+   "category" : "moto",\r
+   "requestSource" : "",\r
+   "check_first_name" : "imtiaz",\r
+   "check_last_name" : "ahmed",\r
+   "check_state" : "NH",\r
+   "email" : "",\r
+   "account_type" : "",\r
+   "response_format" : "fixed_width",\r
+   "application_id" : "3849",\r
+   "remittance_id" : "testivrach7720104",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "check_type" : "C",\r
+   "standard_entry_class" : "TEL",\r
+   "user_defined1" : "udf1",\r
+   "user_defined2" : "udf2",\r
+   "user_defined3" : "udf3",\r
+   "user_defined4" : "udf4",\r
+   "user_defined5" : "udf5",\r
+   "user_defined6" : "udf6",\r
+   "user_defined7" : "udf7",\r
+   "user_defined8" : "udf8",\r
+   "user_defined9" : "udf9",\r
+   "user_defined10" : "udf10",\r
+   "client_account_number" : "258745896"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processACHTransaction</con:originalUri>
+        <con:assertion type="JsonPath Match" id="60883337-761e-4b3d-8dd8-e1d4c2c97c17" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:username>iahmed</con:username>
           <con:password>hello6666</con:password>

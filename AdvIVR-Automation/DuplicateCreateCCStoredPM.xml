@@ -37,9 +37,9 @@
 "paymentMethod": {   
 	"paymentMethodType": "1",   
 	"pan": "4111111111111111",   
-	"card_expiration": "102021",   
+	"card_expiration": "102025",   
 	"card_exmo": "10",   
-	"card_exyr": "2021"  },
+	"card_exyr": "2025"  },
 "customerInformation": {   
 	"firstName": "Fred",   
 	"lastName": "Smith",   
@@ -104,9 +104,9 @@
 "paymentMethod": {   
 	"paymentMethodType": "1",   
 	"pan": "4111111111111111",   
-	"card_expiration": "102021",   
+	"card_expiration": "102025",   
 	"card_exmo": "10",   
-	"card_exyr": "2021"  },
+	"card_exyr": "2025"  },
 "customerInformation": {   
 	"firstName": "Fred",   
 	"lastName": "Smith",   

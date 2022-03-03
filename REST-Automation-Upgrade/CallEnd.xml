@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="51613144-04d8-4240-9fb6-2db93fcab3a1" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CallEnd" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="51613144-04d8-4240-9fb6-2db93fcab3a1fileName">CallEnd</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="CallEndUpgrade" id="7971c6e9-0d43-4e0c-8d8d-0eda583f8725">
+    <con:settings/>
+    <con:config service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="CallEndUpgrade" id="e3bb9182-7995-45be-aa86-11ca3a800f93" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "startTime" : "10/11/2017 14:50:16",\r
+   "endTime" : "10/11/2017 14:55:50",\r
+   "callDuration" : "9",\r
+   "applicationID" : "18",\r
+   "customerID" : "2",\r
+   "languageID" : "en_US",\r
+   "callEndPoint" : "8",\r
+   "productID" : "13",\r
+   "numberOfPortsInUse" : "",\r
+   "callGUID" : "37519986905",\r
+   "ContactType" : "",\r
+   "ContactNbr" : "2408939844",\r
+   "RefType" : "",\r
+   "RefID" : "",\r
+   "ContactName" : "Fred Potter",\r
+   "ContactPhone" : "3472849847",\r
+   "FileType" : "",\r
+   "Category" : "",\r
+   "Activity" : "",\r
+   "Notes1" : "",\r
+   "Notes2" : "",\r
+   "Notes3" : "",\r
+   "UPMCRepUserID" : "",\r
+   "DialedNumber" : "5717306071",\r
+   "transactionID" : "11887994",\r
+   "checkCompany" : ""\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/CallEnd</con:originalUri>
+        <con:assertion type="JsonPath Match" id="c080d643-99a2-45f1-b48e-e4c792859217" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="edc9be41-a5af-42eb-8ddb-347cb8120f4f" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"No error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>InContactIVR</con:username>
+          <con:password>Velocity17!337</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

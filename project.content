@@ -81,3 +81,15 @@ TestSuite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml
 Test-Suite-2\Test-Case-1.xml
+REST-Automation-Upgrade\BillLookup.xml
+REST-Automation-Upgrade\ParseMoney.xml
+REST-Automation-Upgrade\BillDueDateValidation.xml
+REST-Automation-Upgrade\CallTransfer.xml
+REST-Automation-Upgrade\CallEnd.xml
+REST-Automation-Upgrade\CCExpDateValidation.xml
+REST-Automation-Upgrade\ConvenienceFeeACHLookup.xml
+REST-Automation-Upgrade\ConvenienceFeeCCLookup.xml
+REST-Automation-Upgrade\ProcessACHTransaction.xml
+REST-Automation-Upgrade\ProcessCCTransaction.xml
+REST-Automation-Upgrade\AdvIVR-StoredPM-CC-Upgrade.xml
+REST-Automation-Upgrade\AdvIVR-StoredPM-ACH-Upgrade.xml

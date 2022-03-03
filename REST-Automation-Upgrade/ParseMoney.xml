@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="c784e4d0-aead-4d23-9c39-af8b244ce589" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ParseMoney" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c784e4d0-aead-4d23-9c39-af8b244ce589fileName">ParseMoney</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="ParseMoneyUpgrade" id="fc77edcc-398a-475e-9844-f5e1c703cd41">
+    <con:settings/>
+    <con:config service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="ParseMoneyUpgrade" id="e9e829cc-d48d-4635-8394-e68ebdbf7c37" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+        <con:request>{
+  "language": "en_US",
+  "amount": "3170.00",
+  "prompt": "",
+  "results_page": "",
+  "audio_path": ""
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/parseMoney</con:originalUri>
+        <con:assertion type="JsonPath Match" id="0215a4e7-46b3-43a1-bdca-25662bcd6615" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6c3a4b83-3839-4f93-a09b-775c4aed28a0" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"No error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>InContactIVR</con:username>
+          <con:password>Velocity17!337</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

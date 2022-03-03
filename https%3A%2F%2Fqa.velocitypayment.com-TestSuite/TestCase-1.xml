@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="9fec9550-5a58-42ca-9410-4e73afb0d866" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="9fec9550-5a58-42ca-9410-4e73afb0d866fileName">TestCase-1</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:properties/><con:reportParameters/></con:testCase>
+<con:testCase id="9fec9550-5a58-42ca-9410-4e73afb0d866" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9fec9550-5a58-42ca-9410-4e73afb0d866fileName">TestCase-1</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

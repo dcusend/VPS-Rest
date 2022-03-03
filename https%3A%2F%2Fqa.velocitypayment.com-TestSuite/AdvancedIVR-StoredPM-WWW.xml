@@ -15,7 +15,7 @@
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
-      "clientAccountNumber" : "1235511122",\r
+      "clientAccountNumber" : "${DataGenRandomRemID#RandomRemID}",\r
       "applicationID" : "18",\r
       "customerID" : "2"\r
    },\r
@@ -45,6 +45,114 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="PropertyTransfer 1" id="fa8e7980-15a0-4efa-b849-3c77828dd2f5">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false" entitize="false" transferChildNodes="false" ignoreEmpty="false">
+        <con:name>clientAccountNumber</con:name>
+        <con:sourceType>RawRequest</con:sourceType>
+        <con:sourceStep>CreateCCStoredPM Request</con:sourceStep>
+        <con:sourcePath>$['header']['clientAccountNumber']</con:sourcePath>
+        <con:targetType>Request</con:targetType>
+        <con:targetStep>RetrieveStoredPM-CC-Request</con:targetStep>
+        <con:targetPath>$['clientAccountNumber']</con:targetPath>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="RetrieveStoredPM-CC-Request" id="542be1be-e5f0-4399-809a-ad55d7e75b3a">
+    <con:settings/>
+    <con:config service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="RetrieveStoredPM-CC-Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "clientAccountNumber" : "95609605978",\r
+   "customerID" : "2"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ProcessCCWithStoredPMTransaction" id="d9fb9c85-1725-4d2c-942c-ee25d796e47e">
+    <con:settings/>
+    <con:config service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="ProcessCCWithStoredPMTransaction" id="3d1a6306-7d90-486f-a571-362e8983a93e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "amount" : "10.50",\r
+   "email" : "iahmed@govolution.com",\r
+   "transaction_type" : "104",\r
+   "message_version" : "2.0IVR_C",\r
+   "category" : "MOTO",\r
+   "requestSource" : "",\r
+   "response_format" : "fixed_width",\r
+   "application_id" : "609",\r
+   "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "user_defined1" : "",\r
+   "user_defined2" : "",\r
+   "user_defined3" : "",\r
+   "user_defined4" : "",\r
+   "user_defined5" : "",\r
+   "user_defined6" : "",\r
+   "user_defined7" : "",\r
+   "user_defined8" : "",\r
+   "user_defined9" : "",\r
+   "user_defined10" : "",\r
+   "client_account_number" : "123000102",\r
+   "paymentMethodID" : "${RetrieveStoredPM-CC-Request#Response#$['paymentMethods'][0]['paymentMethodID']}",\r
+   "card_address" : "2311 york road",\r
+   "card_name" : "Dggtrd Sgdd",\r
+   "card_city" : "Crofton",\r
+   "card_zip" : "21030",\r
+   "card_number" : "4111111111111111",\r
+   "card_state" : "MD",\r
+   "card_expiration" : "122025",\r
+   "card_exmo" : "12",\r
+   "card_exyr" : "2025"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processCCStoredPaymentTransaction</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -58,7 +166,7 @@
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
-      "clientAccountNumber" : "12355111011",\r
+      "clientAccountNumber" : "${DataGenRandomRemID#RandomRemID}",\r
       "applicationID" : "18",\r
       "customerID" : "2"\r
    },\r
@@ -86,21 +194,40 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="RetrieveStoredPM Request" id="542be1be-e5f0-4399-809a-ad55d7e75b3a">
+  <con:testStep type="transfer" name="PropertyTransfer 2" id="07d74e82-7555-4909-9eba-06dca8a930d6">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>clientAccountNumber</con:name>
+        <con:sourceType>RawRequest</con:sourceType>
+        <con:sourceStep>CreateACHStoredPM</con:sourceStep>
+        <con:sourcePath>$['header']['clientAccountNumber']</con:sourcePath>
+        <con:targetType>Request</con:targetType>
+        <con:targetStep>RetrieveStoredPM-ACH-Request</con:targetStep>
+        <con:targetPath>$['clientAccountNumber']</con:targetPath>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="RetrieveStoredPM-ACH-Request" id="4e154b53-9c39-4d1e-93ef-31a55a8f886c">
     <con:settings/>
     <con:config service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="RetrieveStoredPM Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="RetrieveStoredPM-ACH-Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
-        <con:request>{ 
-"clientAccountNumber": "12355111011", 
-"customerID": "2" 
-}</con:request>
+        <con:request>{"clientAccountNumber":"66308137940","customerID":"2"}</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
         <con:credentials>
           <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
@@ -109,59 +236,11 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters/>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="ProcessCCWithStoredPMTransaction" id="d9fb9c85-1725-4d2c-942c-ee25d796e47e">
-    <con:settings/>
-    <con:config service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="ProcessCCWithStoredPMTransaction" id="3d1a6306-7d90-486f-a571-362e8983a93e" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
-        </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
-        <con:request>{\r
-   "amount" : "10.50",\r
-   "email" : "iahmed@govolution.com",\r
-   "transaction_type" : "104",\r
-   "message_version" : "2.0IVR_C",\r
-   "category" : "MOTO",\r
-   "requestSource" : "",\r
-   "response_format" : "fixed_width",\r
-   "application_id" : "609",\r
-   "remittance_id" : "dasd4546fsdfs4",\r
-   "username" : "username",\r
-   "password" : "password",\r
-   "user_defined1" : "",\r
-   "user_defined2" : "",\r
-   "user_defined3" : "",\r
-   "user_defined4" : "",\r
-   "user_defined5" : "",\r
-   "user_defined6" : "",\r
-   "user_defined7" : "",\r
-   "user_defined8" : "",\r
-   "user_defined9" : "",\r
-   "user_defined10" : "",\r
-   "client_account_number" : "123000102",\r
-   "paymentMethodID" : "83152",\r
-   "card_address" : "2311 york road",\r
-   "card_name" : "Dggtrd Sgdd",\r
-   "card_city" : "Crofton",\r
-   "card_zip" : "21030",\r
-   "card_number" : "4111111111111111",\r
-   "card_state" : "MD",\r
-   "card_expiration" : "122021",\r
-   "card_exmo" : "12",\r
-   "card_exyr" : "2021"\r
-}</con:request>
-        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processCCStoredPaymentTransaction</con:originalUri>
-        <con:credentials>
-          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -217,6 +296,11 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -247,6 +331,11 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -267,6 +356,11 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -320,6 +414,11 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -363,6 +462,11 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -404,7 +508,30 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
         <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
       </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datagen" name="DataGenRandomRemID" id="0a7e0b3e-7228-4243-8d91-5fb4827ac251">
+    <con:settings/>
+    <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:property type="Number">
+        <con:configuration>
+          <start>10000000000</start>
+          <end>99999999999</end>
+          <step/>
+          <pattern/>
+          <random>true</random>
+          <persist>false</persist>
+        </con:configuration>
+        <con:name>RandomRemID</con:name>
+        <con:mode>READ</con:mode>
+        <con:shared>true</con:shared>
+      </con:property>
     </con:config>
   </con:testStep>
   <con:properties/>
@@ -414,4 +541,9 @@
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:testCase>

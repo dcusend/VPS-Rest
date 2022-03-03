@@ -5,4 +5,9 @@
   </con:settings>
   <con:definitionCache type="TEXT" rootPart=""/>
   <con:endpoints/>
+  <con:environmentSpec>
+    <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:interface>

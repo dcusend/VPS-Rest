@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="8c82448c-b134-4b17-8621-20c2f9118aad" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ConvenienceFeeACHLookup" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="8c82448c-b134-4b17-8621-20c2f9118aadfileName">ConvenienceFeeACHLookup</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="CFACHLookupUpgrade" id="ac2cc20e-cb8f-424e-a140-52197b856f5f">
+    <con:settings/>
+    <con:config service="REST Service 7" resourcePath="/vtps/rest/convenienceFeeACHLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="CFACHLookupUpgrade" id="b0180550-f14f-48a1-b692-1df8ae817c3f" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+        <con:request>{
+  "check_type": "P",
+  "amount": "9.00",
+  "applicationID": "18",
+  "language": "en_US",
+  "prompt": "",
+  "results_page": "",
+  "audio_path": ""
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/convenienceFeeACHLookup</con:originalUri>
+        <con:assertion type="JsonPath Match" id="7f62af5c-4d04-4dc5-aecd-9e59572f0c34" name="Match content of [ConvenienceFee]">
+          <con:configuration>
+            <path>$['ConvenienceFee']</path>
+            <content>"1.00"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c6a26e41-e4b7-4e8e-9f89-8bbbb1f28569" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="db79dc81-d4bc-4bff-ad49-53a8a464917e" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"No error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>InContactIVR</con:username>
+          <con:password>Velocity17!337</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

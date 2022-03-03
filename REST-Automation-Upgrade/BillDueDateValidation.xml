@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="505ee180-30b9-4bdf-88d9-0a0e296982f3" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BillDueDateValidation" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="505ee180-30b9-4bdf-88d9-0a0e296982f3fileName">BillDueDateValidation</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="BillDueDateValidationUpgrade" id="96171d2f-600f-4f2f-aaeb-36e04b064a00">
+    <con:settings/>
+    <con:config service="REST Service 1" resourcePath="/vtps/rest/billDueDateValidation" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="BillDueDateValidationUpgrade" id="4fcb8abf-6064-40ff-8db0-136e99cea07f" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+        <con:request>{
+  "language": "en_US",
+  "month": "12",
+  "year": "2017",
+  "prompt": "",
+  "results_page": "",
+  "audio_path": "",
+  "day_of_month": "15" 
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/billDueDateValidation</con:originalUri>
+        <con:assertion type="JsonPath Match" id="41419e3c-3b87-4de4-b863-72a2f1f9180c" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5dd68ab3-48fd-4ff8-a006-5797a71ae2d3" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"No error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>InContactIVR</con:username>
+          <con:password>Velocity17!337</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

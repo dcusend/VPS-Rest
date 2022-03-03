@@ -794,6 +794,24 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
+  <con:testStep type="datagen" name="DataGenRandomRemID" id="ff66df2d-3415-4cdc-a42e-54fe61820b10">
+    <con:settings/>
+    <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:property type="Number">
+        <con:configuration>
+          <start>10000000000</start>
+          <end>99999999999</end>
+          <step/>
+          <pattern/>
+          <random>true</random>
+          <persist>false</persist>
+        </con:configuration>
+        <con:name>RandomRemID</con:name>
+        <con:mode>READ</con:mode>
+        <con:shared>true</con:shared>
+      </con:property>
+    </con:config>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
 </con:testCase>

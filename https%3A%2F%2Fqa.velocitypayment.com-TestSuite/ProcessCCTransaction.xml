@@ -29,9 +29,9 @@
    "response_format" : "fixed_width",\r
    "card_expiration" : "",\r
    "application_id" : "609",\r
-   "remittance_id" : "testIVR06022020254",\r
+   "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
    "card_exmo" : "01",\r
-   "card_exyr" : "2023",\r
+   "card_exyr" : "2025",\r
    "username" : "username",\r
    "password" : "password",\r
    "user_defined1" : "10859160",\r
@@ -592,7 +592,7 @@
    "response_format" : "fixed_width",\r
    "card_expiration" : "",\r
    "application_id" : "3849",\r
-   "remittance_id" : "DemoIVR0707202015001",\r
+   "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
    "card_exmo" : "01",\r
    "card_exyr" : "2025",\r
    "username" : "username",\r

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="bd273679-c5ed-420c-8a2d-a680ba9e17c2" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ConvenienceFeeCCLookup" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0f5535e1-bb09-4e48-a18c-31574aa89e43fileName">ConvenienceFeeCCLookup</con:setting>
+    <con:setting id="bd273679-c5ed-420c-8a2d-a680ba9e17c2fileName">ConvenienceFeeCCLookup</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="CFCCLookupUpgrade" id="aa1cf854-2793-48a5-bacd-1483d4aebd7d">
+    <con:settings/>
+    <con:config service="REST Service 8" resourcePath="/vtps/rest/convenienceFeeCCLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="CFCCLookupUpgrade" id="c58ce832-88ed-4d87-b1b6-8978a35b191f" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+        <con:request>{
+  "cardnumber": "4111111111111111",
+  "amount": "30.00",
+  "applicationID": "18",
+  "language": "en_US",
+  "prompt": "",
+  "results_page": "",
+  "audio_path": ""
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/convenienceFeeCCLookup</con:originalUri>
+        <con:assertion type="JsonPath Match" id="9b986de5-9b96-41d5-b0e4-8b068d1b0f92" name="Match content of [ConvenienceFee]">
+          <con:configuration>
+            <path>$['ConvenienceFee']</path>
+            <content>"2.00"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b945971e-3b8d-40b4-9a81-95cc4251626e" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="26a9c1f8-5462-43a0-a292-f921c93ce437" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"No error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>InContactIVR</con:username>
+          <con:password>Velocity17!337</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

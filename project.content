@@ -93,3 +93,15 @@ REST-Automation-Upgrade\ProcessACHTransaction.xml
 REST-Automation-Upgrade\ProcessCCTransaction.xml
 REST-Automation-Upgrade\AdvIVR-StoredPM-CC-Upgrade.xml
 REST-Automation-Upgrade\AdvIVR-StoredPM-ACH-Upgrade.xml
+REST-Automation-WWW\BillLookup.xml
+REST-Automation-WWW\ParseMoney.xml
+REST-Automation-WWW\BillDueDateValidation.xml
+REST-Automation-WWW\CallTransfer.xml
+REST-Automation-WWW\CallEnd.xml
+REST-Automation-WWW\CCExpDateValidation.xml
+REST-Automation-WWW\ConvenienceFeeACHLookup.xml
+REST-Automation-WWW\ConvenienceFeeCCLookup.xml
+REST-Automation-WWW\ProcessACHTransaction.xml
+REST-Automation-WWW\ProcessCCTransaction.xml
+REST-Automation-WWW\AdvIVR-StoredPM-CC-Upgrade.xml
+REST-Automation-WWW\AdvIVR-StoredPM-ACH-Upgrade.xml

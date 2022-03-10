@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="635bb30b-8d74-4db7-86f2-976ea55cd0a2" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BillLookup" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2d54b907-e26c-4889-9d98-252e5dc9adaffileName">BillLookup</con:setting>
+    <con:setting id="635bb30b-8d74-4db7-86f2-976ea55cd0a2fileName">BillLookup</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="BillLookupUpgrade" id="61883ccd-f2e9-4ff2-977a-35babdf28b3c">
+    <con:settings/>
+    <con:config service="REST Service 3" resourcePath="/vtps/rest/billLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="BillLookupUpgrade" id="1244f771-b705-49a1-96f5-7355a2640582" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+        <con:request>{
+   "applicationID": "2325",
+   "customerID": "2",
+   "lookup_field_1": "451282682",
+   "lookup_field_2": "12152016",
+   "lookup_field_3": ""
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/billLookup</con:originalUri>
+        <con:assertion type="JsonPath Match" id="f097ac36-f5bf-4df7-ae18-a421c81d523c" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>InContactIVR</con:username>
+          <con:password>Velocity17!337</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:preemptive>false</con:preemptive>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

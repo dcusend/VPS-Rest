@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="8c38b2cb-e852-4980-813b-6e46d98d44c4" name="REST-Automation-WWW" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="50770047-5943-487f-a44b-5dc093afc2d4fileName">REST-Automation-Upgrade</con:setting>
+    <con:setting id="8c38b2cb-e852-4980-813b-6e46d98d44c4fileName">REST-Automation-WWW</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:environmentSpec>
+    <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testSuite>

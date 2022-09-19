@@ -62,19 +62,19 @@
         <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
-      "clientAccountNumber" : "1235511200",\r
+      "clientAccountNumber" : "1235511203",\r
       "applicationID" : "609",\r
       "customerID" : "195"\r
    },\r
    "paymentMethod" : {\r
       "paymentMethodType" : "4",\r
-      "accountNumber" : "123413400",\r
+      "accountNumber" : "123413403",\r
       "routingNumber" : "256072691"\r
    },\r
    "customerInformation" : {\r
-      "firstName" : "KiranCorp",\r
-      "lastName" : "MoreCorp",\r
-      "companyName" : "ABC Company Corp",\r
+      "firstName" : "KiranCorps",\r
+      "lastName" : "MoreCorps",\r
+      "companyName" : "ABC Company Corps",\r
       "addressLine1" : "123 Main Street",\r
       "city" : "Arlington",\r
       "state" : "VA",\r
@@ -106,9 +106,9 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
-        <con:request>{ 
-"clientAccountNumber": "1235511200", 
-"customerID": "195" 
+        <con:request>{\r
+   "clientAccountNumber" : "1235511203",\r
+   "customerID" : "195"\r
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
         <con:credentials>
@@ -201,7 +201,7 @@
    "email" : "",\r
    "response_format" : "fixed_width",\r
    "application_id" : "609",\r
-   "remittance_id" : "fgfghgh6777a12",\r
+   "remittance_id" : "fgfghgh6777a14",\r
    "username" : "username",\r
    "password" : "password",\r
    "standard_entry_class" : "CCD",\r
@@ -215,8 +215,8 @@
    "user_defined8" : "",\r
    "user_defined9" : "",\r
    "user_defined10" : "",\r
-   "client_account_number" : "1235511200",\r
-   "paymentMethodID" : "86859",\r
+   "client_account_number" : "1235511203",\r
+   "paymentMethodID" : "88694",\r
    "account_type" : "",\r
    "check_type" : "",\r
    "check_first_name" : "",\r

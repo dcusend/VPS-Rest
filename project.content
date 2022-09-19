@@ -26,6 +26,7 @@ REST-Service-23\%2Fvtps%2Frest%2FtransferBill.xml
 REST-Service-24\%2Fvtps%2Frest%2FretrieveBill.xml
 REST-Service-25\%2Fvtps%2Frest%2FtransactionStatusLookup.xml
 REST-Service-26\%2Fvtps%2Frest%2FretrieveStoredPayment.xml
+CANverification\cancheck.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillLookup.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ParseMoney.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillDueDateValidation.xml
@@ -77,6 +78,8 @@ AdvIVR-Automation\MultiBillsQA-1OverDue1Current2Future.xml
 AdvIVR-Automation\MultiBillsQA-1Current.xml
 AdvIVR-Automation\MultiBillsQA-1Current2Future.xml
 AdvIVR-Automation\Copy-of-AdvancedIVRMultipleBillsDevNetTaxLogic.xml
+AdvIVR-Automation\IVRACLookup-ValidRequest.xml
+AdvIVR-Automation\IVRACLookup-InvalidRequest.xml
 TestSuite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml
@@ -105,3 +108,6 @@ REST-Automation-WWW\ProcessACHTransaction.xml
 REST-Automation-WWW\ProcessCCTransaction.xml
 REST-Automation-WWW\AdvIVR-StoredPM-CC-Upgrade.xml
 REST-Automation-WWW\AdvIVR-StoredPM-ACH-Upgrade.xml
+WebSocketTesting\Test-Case-1.xml
+IVRAccountLookup\IVRACLookup-ValidRequest.xml
+IVRAccountLookup\IVRACLookup-InvalidRequest.xml

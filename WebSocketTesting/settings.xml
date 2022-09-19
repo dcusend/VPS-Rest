@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="66c51796-b063-4ae2-af3a-6f7fed695abb" name="WebSocketTesting" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="66c51796-b063-4ae2-af3a-6f7fed695abbfileName">WebSocketTesting</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="72978400-2e15-4582-b553-53ebaccccad8" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="IVRACLookup-ValidRequest" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="72978400-2e15-4582-b553-53ebaccccad8fileName">IVRACLookup-ValidRequest</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="CorrectCAN" id="f777776d-df06-4880-a31b-54539e2e9db6">
+    <con:settings/>
+    <con:config service="CANverification" resourcePath="/vtps/rest/cancheck" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="CorrectCAN" id="0045de87-cb37-4bfe-b28d-51cb5c525c01" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "applicationID": "61",
+    "clientAccountNumber": "123456"
+    
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/cancheck</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="336674ab-d7e1-4458-99a7-144ef06a52f6" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="2377f26f-3b64-49ca-93c7-22b46048b14c" name="Match content of [valid]">
+          <con:configuration>
+            <path>$['valid']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="18b76ffb-1f65-4800-9711-b5e4ac968e8c" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="47cce2eb-c697-4362-ab43-437d492d503b" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"No Error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

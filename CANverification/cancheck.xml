@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="cancheck" path="/vtps/rest/cancheck" id="fff12f6c-1ef1-4f0c-9592-8306d15b4828" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="fff12f6c-1ef1-4f0c-9592-8306d15b4828fileName">cancheck</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="353ad52c-1b78-40cf-a27c-e153ff176406" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="0045de87-cb37-4bfe-b28d-51cb5c525c01" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="3907fb6c-d9bd-4eff-a44a-311cdf39559b" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="2ee87b90-f745-486e-861f-94af1ba67b3b" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

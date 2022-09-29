@@ -12,7 +12,7 @@
         </con:settings>
         <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
         <con:request>{
-    "applicationID": "61",
+    "applicationID": "608",
     "clientAccountNumber": "1234567"
     
 }</con:request>
@@ -68,7 +68,7 @@
         </con:settings>
         <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
         <con:request>{
-    "applicationID": "61",
+    "applicationID": "608",
     "clientAccountNumber": ""
     
 }</con:request>

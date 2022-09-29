@@ -10,3 +10,6 @@ ProcessACHTransaction.xml
 ProcessCCTransaction.xml
 AdvIVR-StoredPM-CC-Upgrade.xml
 AdvIVR-StoredPM-ACH-Upgrade.xml
+IVRACLookup-ValidRequest.xml
+ACCFeeLookup.xml
+Mod10Check.xml

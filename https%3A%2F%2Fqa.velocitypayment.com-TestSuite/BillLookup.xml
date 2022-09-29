@@ -89,8 +89,8 @@
         <con:request>{
    "applicationID": "2325",
    "customerID": "2",
-   "lookup_field_1": "4512826810",
-   "lookup_field_2": "12152016",
+   "lookup_field_1": "451282685",
+   "lookup_field_2": "12162010",
    "lookup_field_3": ""
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/billLookup</con:originalUri>
@@ -138,6 +138,40 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="BillLookupWWW 2" id="fc596af9-88e3-48d5-afd9-cf355ade6d85">
+    <con:settings/>
+    <con:config service="REST Service 3" resourcePath="/vtps/rest/billLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="BillLookupWWW 2" id="1244f771-b705-49a1-96f5-7355a2640582" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+        <con:request>{
+   "applicationID": "3314",
+   "customerID": "933",
+   "lookup_field_1": "013000148",
+   "lookup_field_2": "09131959",
+   "lookup_field_3": ""
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/billLookup</con:originalUri>
+        <con:credentials>
+          <con:username>InContactIVR</con:username>
+          <con:password>Velocity17!337</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:preemptive>false</con:preemptive>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters/>
         <con:environmentSpec>
           <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">

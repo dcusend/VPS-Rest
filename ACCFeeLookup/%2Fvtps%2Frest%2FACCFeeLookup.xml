@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="" path="/vtps/rest/ACCFeeLookup" id="8b3aa093-89c1-43d1-aa02-afcd3fca48c2" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="8b3aa093-89c1-43d1-aa02-afcd3fca48c2fileName">%2Fvtps%2Frest%2FACCFeeLookup</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="2d344474-40e5-40c3-8b60-021b42d1cb90" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="b8dd003a-707a-4836-adb3-cf191ec1f2d8" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="824fe1ee-680a-4cfc-96be-6cb16ec84f8c" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="45967c0b-12e2-4d76-b370-a2d12b593171" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

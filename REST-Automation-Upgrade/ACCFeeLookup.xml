@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="a4727a76-9759-4922-b369-ab61429f4f99" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ACCFeeLookup" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a4727a76-9759-4922-b369-ab61429f4f99fileName">ACCFeeLookup</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request" id="51cb1435-dd79-4c38-ade7-fb5968d4b263">
+    <con:settings/>
+    <con:config service="ACCFeeLookup" resourcePath="/vtps/rest/ACCFeeLookup" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="b8dd003a-707a-4836-adb3-cf191ec1f2d8" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+        <con:request>{
+
+    "cardnumber": "5117620000000004",
+
+    "paymentMethodID": "",
+
+    "amount": "10.00",
+
+    "applicationID": "4682",
+
+    "language": "en_us",
+
+    "prompt": "",
+
+    "results_page": "",
+
+    "audio_path": ""
+
+}</con:request>
+        <con:originalUri>https://upgrade.velocitypayment.com/vtps/rest/ACCFeeLookup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="b1a7af7d-a8a7-4c5a-9ab2-2b5739913249" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="30402a23-4dd8-4df3-a7b7-af9db628483f" name="Match content of [ConvenienceFee]">
+          <con:configuration>
+            <path>$['ConvenienceFee']</path>
+            <content>"1.00"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="2b23131f-5165-4bbb-a0ed-4b9a2ae85810" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f60af012-c7e6-43c4-85d2-098e644a6df8" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"No error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b0937fde-e4ff-43bd-92cd-606a4e5e2bf5" name="Match content of [prompt_type]">
+          <con:configuration>
+            <path>$['play'][0]['prompt_type']</path>
+            <content>"audio"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="133336ea-235a-48ca-a6b5-53b2ab5f590a" name="Match content of [prompt_value]">
+          <con:configuration>
+            <path>$['play'][0]['prompt_value']</path>
+            <content>"1.wav"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="53bc6005-2a10-4d08-baa6-c767bcb5ac90" name="Match content of [prompt_type]">
+          <con:configuration>
+            <path>$['play'][1]['prompt_type']</path>
+            <content>"audio"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ff2170fb-d2b5-4899-92b0-b408a3dd8273" name="Match content of [prompt_value]">
+          <con:configuration>
+            <path>$['play'][1]['prompt_value']</path>
+            <content>"dollar.wav"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="2c99d3d2-a20d-4dd3-b087-0468e280ba6c" name="Match content of [prompt_type]">
+          <con:configuration>
+            <path>$['play'][2]['prompt_type']</path>
+            <content>"audio"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d5032a2f-a114-4a09-b4a4-97c2bc01c86f" name="Match content of [prompt_value]">
+          <con:configuration>
+            <path>$['play'][2]['prompt_value']</path>
+            <content>"and.wav"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e1c73ff3-009d-4180-a405-516ca61a6055" name="Match content of [prompt_type]">
+          <con:configuration>
+            <path>$['play'][3]['prompt_type']</path>
+            <content>"audio"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="7d45970f-ddf6-4a31-b6a0-f3acd7fa159f" name="Match content of [prompt_value]">
+          <con:configuration>
+            <path>$['play'][3]['prompt_value']</path>
+            <content>"0.wav"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="888b9af3-5c10-4975-a84f-6a6ff5ab436d" name="Check for existence of [prompt_type]">
+          <con:configuration>
+            <path>$['play'][4]['prompt_type']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0077b162-0809-498b-b4e6-e8088f9e60f0" name="Match content of [prompt_value]">
+          <con:configuration>
+            <path>$['play'][4]['prompt_value']</path>
+            <content>"cents.wav"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>Govo@12345678</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

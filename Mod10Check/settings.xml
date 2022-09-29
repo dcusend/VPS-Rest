@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="2270c029-5022-460e-8956-6dd6e012f4b7" name="Mod10Check" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings>
+    <con:setting id="2270c029-5022-460e-8956-6dd6e012f4b7fileName">Mod10Check</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="Mod10Check.json">
+    <con:part>
+      <con:url>Mod10Check.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"Mod10Check","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/vtps/rest/mod10check":{"description":"","get":{"description":"","responses":{"default":{"description":"Default response"}}},"post":{"description":"","requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}},"components":{"securitySchemes":{"User Iahmed":{"type":"http","scheme":"basic"}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+    <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+  </con:endpoints>
+</con:interface>

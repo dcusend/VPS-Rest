@@ -27,6 +27,8 @@ REST-Service-24\%2Fvtps%2Frest%2FretrieveBill.xml
 REST-Service-25\%2Fvtps%2Frest%2FtransactionStatusLookup.xml
 REST-Service-26\%2Fvtps%2Frest%2FretrieveStoredPayment.xml
 CANverification\cancheck.xml
+ACCFeeLookup\%2Fvtps%2Frest%2FACCFeeLookup.xml
+Mod10Check\%2Fvtps%2Frest%2Fmod10check.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillLookup.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ParseMoney.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillDueDateValidation.xml
@@ -96,6 +98,9 @@ REST-Automation-Upgrade\ProcessACHTransaction.xml
 REST-Automation-Upgrade\ProcessCCTransaction.xml
 REST-Automation-Upgrade\AdvIVR-StoredPM-CC-Upgrade.xml
 REST-Automation-Upgrade\AdvIVR-StoredPM-ACH-Upgrade.xml
+REST-Automation-Upgrade\IVRACLookup-ValidRequest.xml
+REST-Automation-Upgrade\ACCFeeLookup.xml
+REST-Automation-Upgrade\Mod10Check.xml
 REST-Automation-WWW\BillLookup.xml
 REST-Automation-WWW\ParseMoney.xml
 REST-Automation-WWW\BillDueDateValidation.xml
@@ -108,6 +113,9 @@ REST-Automation-WWW\ProcessACHTransaction.xml
 REST-Automation-WWW\ProcessCCTransaction.xml
 REST-Automation-WWW\AdvIVR-StoredPM-CC-Upgrade.xml
 REST-Automation-WWW\AdvIVR-StoredPM-ACH-Upgrade.xml
+REST-Automation-WWW\IVRACLookup-ValidRequest.xml
+REST-Automation-WWW\ACCFeeLookup.xml
+REST-Automation-WWW\Mod10Check.xml
 WebSocketTesting\Test-Case-1.xml
 IVRAccountLookup\IVRACLookup-ValidRequest.xml
 IVRAccountLookup\IVRACLookup-InvalidRequest.xml

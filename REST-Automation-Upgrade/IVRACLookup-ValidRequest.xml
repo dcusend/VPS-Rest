@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="39d14fa5-4c8e-42e3-a252-04d1833a490e" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="IVRACLookup-ValidRequest" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="beec8bb5-c7c4-46c4-b90d-8ba172d41e05" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="IVRACLookup-ValidRequest" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="39d14fa5-4c8e-42e3-a252-04d1833a490efileName">IVRACLookup-ValidRequest</con:setting>
+    <con:setting id="beec8bb5-c7c4-46c4-b90d-8ba172d41e05fileName">IVRACLookup-ValidRequest</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="CorrectCAN" id="688bcb3b-d007-4512-b50d-cf4147179117">
+  <con:testStep type="restrequest" name="CorrectCAN" id="662e6c01-915a-4299-9c21-05ba9e5403f6">
     <con:settings/>
     <con:config service="CANverification" resourcePath="/vtps/rest/cancheck" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="CorrectCAN" id="0045de87-cb37-4bfe-b28d-51cb5c525c01" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{
-    "applicationID": "608",
-    "clientAccountNumber": "123456"
+    "applicationID": "4682",
+    "clientAccountNumber": "070823809900010"
     
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/cancheck</con:originalUri>
@@ -51,8 +51,11 @@
           </con:configuration>
         </con:assertion>
         <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
+          <con:username>iahmed</con:username>
+          <con:password>Govo@12345678</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters/>

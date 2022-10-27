@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="" path="/vtps/rest/mod10check" id="e8f17a14-d504-4fb8-bcc4-ae0e8c7bf6f4" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="" path="/vtps/rest/mod10check" id="e8f17a14-d504-4fb8-bcc4-ae0e8c7bf6f4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="e8f17a14-d504-4fb8-bcc4-ae0e8c7bf6f4fileName">%2Fvtps%2Frest%2Fmod10check</con:setting>
   </con:settings>
@@ -9,9 +9,10 @@
     <con:parameters/>
     <con:request name="Request 1" id="0e5246f5-491e-4827-a17c-aeb392fb4676" mediaType="application/json" postQueryString="false">
       <con:settings/>
-      <con:endpoint xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
       <con:request/>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
@@ -28,6 +29,7 @@
       <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
       <con:request/>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>

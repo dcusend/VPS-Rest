@@ -83,7 +83,7 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
-        <con:request>{"clientAccountNumber":"27973916294","customerID":"2"}</con:request>
+        <con:request>{"clientAccountNumber":"97997582650","customerID":"2"}</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
         <con:assertion type="JsonPath Match" id="983e09d2-e6a8-4cda-a6da-5339357c8242" name="Match content of [result]">
           <con:configuration>

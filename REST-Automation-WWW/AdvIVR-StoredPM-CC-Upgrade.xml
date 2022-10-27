@@ -104,7 +104,7 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
-        <con:request>{"clientAccountNumber":"47070207803","customerID":"2"}</con:request>
+        <con:request>{"clientAccountNumber":"89395114222","customerID":"2"}</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
         <con:assertion type="JsonPath Match" id="3bc234c9-3d1c-4409-84c0-3ba4c495430c" name="Match content of [result]">
           <con:configuration>
@@ -155,8 +155,50 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
-        <con:request>{"amount":"10.50","email":"iahmed@govolution.com","transaction_type":"104","message_version":"2.0IVR_C","category":"MOTO","requestSource":"","response_format":"fixed_width","application_id":"609","remittance_id":"${DataGenRandomRemID#RandomRemID}","username":"username","password":"password","user_defined1":"","user_defined2":"","user_defined3":"","user_defined4":"","user_defined5":"","user_defined6":"","user_defined7":"","user_defined8":"","user_defined9":"","user_defined10":"","client_account_number":"47070207803","paymentMethodID":"${RetrieveStoredPM-CC-Request#Response#$['paymentMethods'][0]['paymentMethodID']}","card_address":"2311 york road","card_name":"Dggtrd Sgdd","card_city":"Crofton","card_zip":"21030","card_number":"4111111111111111","card_state":"MD","card_expiration":"122025","card_exmo":"12","card_exyr":"2025"}</con:request>
+        <con:request>{\r
+   "amount" : "10.50",\r
+   "email" : "iahmed@govolution.com",\r
+   "transaction_type" : "104",\r
+   "message_version" : "2.0IVR_C",\r
+   "category" : "MOTO",\r
+   "requestSource" : "",\r
+   "response_format" : "fixed_width",\r
+   "application_id" : "18",\r
+   "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "user_defined1" : "",\r
+   "user_defined2" : "",\r
+   "user_defined3" : "",\r
+   "user_defined4" : "",\r
+   "user_defined5" : "",\r
+   "user_defined6" : "",\r
+   "user_defined7" : "",\r
+   "user_defined8" : "",\r
+   "user_defined9" : "",\r
+   "user_defined10" : "",\r
+   "client_account_number" : "89395114222",\r
+   "paymentMethodID" : "${RetrieveStoredPM-CC-Request#Response#$['paymentMethods'][0]['paymentMethodID']}",\r
+   "card_address" : "2311 york road",\r
+   "card_name" : "Dggtrd Sgdd",\r
+   "card_city" : "Crofton",\r
+   "card_zip" : "21030",\r
+   "card_number" : "4111111111111111",\r
+   "card_state" : "MD",\r
+   "card_expiration" : "122025",\r
+   "card_exmo" : "12",\r
+   "card_exyr" : "2025"\r
+}</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processCCStoredPaymentTransaction</con:originalUri>
+        <con:assertion type="JsonPath Match" id="3ef909b4-40f7-435c-9a66-744c16a93459" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

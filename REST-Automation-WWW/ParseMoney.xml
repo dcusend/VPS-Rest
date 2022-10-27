@@ -14,7 +14,7 @@
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
         <con:request>{
   "language": "en_US",
-  "amount": "3170.00",
+  "amount": "3175.65",
   "prompt": "",
   "results_page": "",
   "audio_path": ""
@@ -33,6 +33,178 @@
           <con:configuration>
             <path>$['errorMessage'][0]</path>
             <content>"No error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="221921c9-9afe-4918-af86-8bfc40c9eba9" name="Match content of [play]">
+          <con:configuration>
+            <path>$['play']</path>
+            <content>[
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : ""
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "3.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "thousand.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "1.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "hundred.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "70.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "5.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "dollars.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "and.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "60.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "5.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "cents.wav"
+   }
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>InContactIVR</con:username>
+          <con:password>Velocity17!337</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ParseMoneyWWW Spanish" id="8968e3e2-976e-4929-bc49-252080ca710e">
+    <con:settings/>
+    <con:config service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="ParseMoneyWWW Spanish" id="e9e829cc-d48d-4635-8394-e68ebdbf7c37" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+        <con:request>{
+  "language": "esp_US",
+  "amount": "3175.65",
+  "prompt": "",
+  "results_page": "",
+  "audio_path": ""
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/parseMoney</con:originalUri>
+        <con:assertion type="JsonPath Match" id="0215a4e7-46b3-43a1-bdca-25662bcd6615" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6c3a4b83-3839-4f93-a09b-775c4aed28a0" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"No error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="221921c9-9afe-4918-af86-8bfc40c9eba9" name="Match content of [play]">
+          <con:configuration>
+            <path>$['play']</path>
+            <content>[
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : ""
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "3.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "1000.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "100o.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "70.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "and.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "5.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "dollars.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "and.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "60.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "and.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "5.wav"
+   },
+   {
+      "prompt_type" : "audio",
+      "prompt_value" : "cents.wav"
+   }
+]</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>

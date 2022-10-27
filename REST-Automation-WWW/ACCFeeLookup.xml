@@ -203,7 +203,7 @@
         <con:assertion type="JsonPath Match" id="30402a23-4dd8-4df3-a7b7-af9db628483f" name="Match content of [ConvenienceFee]">
           <con:configuration>
             <path>$['ConvenienceFee']</path>
-            <content>"1.00"</content>
+            <content>"1.27"</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
@@ -293,7 +293,7 @@
         <con:assertion type="JsonPath Match" id="7d45970f-ddf6-4a31-b6a0-f3acd7fa159f" name="Match content of [prompt_value]">
           <con:configuration>
             <path>$['play'][3]['prompt_value']</path>
-            <content>"0.wav"</content>
+            <content>"20.wav"</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
@@ -311,7 +311,7 @@
         <con:assertion type="JsonPath Match" id="0077b162-0809-498b-b4e6-e8088f9e60f0" name="Match content of [prompt_value]">
           <con:configuration>
             <path>$['play'][4]['prompt_value']</path>
-            <content>"cents.wav"</content>
+            <content>"7.wav"</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>

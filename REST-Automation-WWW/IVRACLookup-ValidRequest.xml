@@ -52,7 +52,7 @@
         </con:assertion>
         <con:credentials>
           <con:username>iahmed</con:username>
-          <con:password>Govo@12345678</con:password>
+          <con:password>Hello@5555555</con:password>
           <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
           <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
           <con:authType>Global HTTP Settings</con:authType>

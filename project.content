@@ -56,6 +56,7 @@ https%3A%2F%2Fqa.velocitypayment.com-TestSuite\AdvancedIVRMultipleBills-Demo3759
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CallPostback.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\Copy-of-AdvancedIVRMultipleBills-Demo3759.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\Test-Case-1.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\AdvancedIVR-StoredPM-Demo3159.xml
 AdvIVR-Automation\CreateAndRetrieveCCStoredPM.xml
 AdvIVR-Automation\DuplicateCreateCCStoredPM.xml
 AdvIVR-Automation\MultipleCreateAndRetrieveCCStoredPM.xml
@@ -82,6 +83,7 @@ AdvIVR-Automation\MultiBillsQA-1Current2Future.xml
 AdvIVR-Automation\Copy-of-AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 AdvIVR-Automation\IVRACLookup-ValidRequest.xml
 AdvIVR-Automation\IVRACLookup-InvalidRequest.xml
+AdvIVR-Automation\ParseMoney.xml
 TestSuite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml

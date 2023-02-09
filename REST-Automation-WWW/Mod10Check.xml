@@ -8,7 +8,7 @@
     <con:config service="Mod10Check" resourcePath="/vtps/rest/mod10check" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="REST Request" id="0e5246f5-491e-4827-a17c-aeb392fb4676" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
         <con:request>{

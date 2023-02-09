@@ -84,7 +84,6 @@ AdvIVR-Automation\Copy-of-AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 AdvIVR-Automation\IVRACLookup-ValidRequest.xml
 AdvIVR-Automation\IVRACLookup-InvalidRequest.xml
 AdvIVR-Automation\ParseMoney.xml
-TestSuite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml
 Test-Suite-2\Test-Case-1.xml

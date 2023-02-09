@@ -8,7 +8,7 @@
     <con:config service="CANverification" resourcePath="/vtps/rest/cancheck" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="CorrectCAN" id="0045de87-cb37-4bfe-b28d-51cb5c525c01" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
         <con:request>{

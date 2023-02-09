@@ -174,10 +174,6 @@
    },
    {
       "prompt_type" : "audio",
-      "prompt_value" : "and.wav"
-   },
-   {
-      "prompt_type" : "audio",
       "prompt_value" : "5.wav"
    },
    {
@@ -191,10 +187,6 @@
    {
       "prompt_type" : "audio",
       "prompt_value" : "60.wav"
-   },
-   {
-      "prompt_type" : "audio",
-      "prompt_value" : "and.wav"
    },
    {
       "prompt_type" : "audio",

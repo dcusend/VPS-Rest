@@ -16,7 +16,7 @@
           <pattern/>
           <random>true</random>
           <persist>true</persist>
-          <current>5212474096.00000000000000000000000000000000000000000000000000</current>
+          <current>3626529905.0000000000000000000000000000000000000000000000000</current>
         </con:configuration>
         <con:name>Random Number</con:name>
         <con:mode>READ</con:mode>

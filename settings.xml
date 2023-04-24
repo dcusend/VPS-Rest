@@ -2,6 +2,43 @@
 <con:soapui-project id="9f1134cd-89f4-4a88-9103-f9e922640124" activeEnvironment="Default environment" name="REST08182021" lastOpened="2018-03-09T16:27:13.947-05:00" resourceRoot="" soapui-version="6.0.0" encryptionMode="Not encrypted" updated="3.43.0" projectVersion="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="9f1134cd-89f4-4a88-9103-f9e922640124fileName">REST-Project-2-soapui-project</con:setting>
+    <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerUIAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Settings File Password" value=""/>
+  <con:entry key="Report Format(s)" value="XML"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="true"/>
+  <con:entry key="Export All" value="true"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Slack Channel(s)" value=""/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Test Suite Tags" value=""/>
+  <con:entry key="Select Report Type" value="JUnit-Style report for automation"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Test Suite" value="&lt;all>"/>
+  <con:entry key="Run in-process" value="false"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="true"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Test Case Tags" value=""/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Test Case" value="&lt;all>"/>
+  <con:entry key="Slack Access Token" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="TestRunner Path" value="C:\Program Files\SmartBear\ReadyAPI-3.43.0\bin"/>
+  <con:entry key="Environment" value="No Environment"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value="${WORKSPACE}"/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting>
   </con:settings>
   <con:vcsConfiguration>
     <con:vcsName>Git</con:vcsName>
@@ -15,9 +52,44 @@
   <con:jmsConnectionContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
-  <con:environment id="359f9592-92b8-4782-9e0a-30ec59b1ae5a" name="Upgrade" index="0">
+  <con:environment id="359f9592-92b8-4782-9e0a-30ec59b1ae5a" name="UPGRADErest" index="4">
     <con:service type="REST" name="https://qa.velocitypayment.com">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://upgrade.velocitypayment.com</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="aa4d56c4-4e85-4b90-9700-66af5a100817" name="QArest" index="0">
+    <con:service type="REST" name="https://qa.velocitypayment.com">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://qa.velocitypayment.com</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="541337b0-c6f7-463f-bdba-824b4f050119" name="QA2rest" index="1">
+    <con:service type="REST" name="https://qa.velocitypayment.com">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://qa2.velocitypayment.com</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="bb4dcb85-8c5e-4939-886c-adcfb6488361" name="DEMOrest" index="2">
+    <con:service type="REST" name="https://qa.velocitypayment.com">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://demo.velocitypayment.com</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="5798e577-c4f8-42fa-8769-7363888198d0" name="DEMO2rest" index="3">
+    <con:service type="REST" name="https://qa.velocitypayment.com">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://demo2.velocitypayment.com</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="c9e92ed4-8add-4a14-968f-39f6854fb249" name="PRODUCTIONrest" index="5">
+    <con:service type="REST" name="https://qa.velocitypayment.com">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://www.velocitypayment.com</con:endpoint>
     </con:service>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
@@ -32,6 +104,21 @@
   </con:authRepository>
   <con:environmentSpec>
     <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
       <con:authProfile>No Authorization</con:authProfile>
     </con:entry>
   </con:environmentSpec>

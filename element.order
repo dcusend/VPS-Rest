@@ -29,11 +29,12 @@ CANverification
 ACCFeeLookup
 Mod10Check
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite
-AdvIVR-Automation
 Test-Suite-1
 Test-Suite-2
 REST-Automation-Upgrade
 REST-Automation-WWW
 WebSocketTesting
 IVRAccountLookup
+Demo-and-Demo2-Test-Suite
 TestSuite-1
+AdvIVR-Automation-QA2

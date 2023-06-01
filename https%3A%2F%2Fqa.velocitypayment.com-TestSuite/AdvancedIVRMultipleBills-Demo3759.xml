@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="da65c971-b94b-4503-be5f-1f718676f76f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AdvancedIVRMultipleBills-Demo3759" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="da65c971-b94b-4503-be5f-1f718676f76f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AdvancedIVRMultipleBills-Demo3759" searchProperties="true" timeout="0">
+  <con:settings id="313253ee-8091-43ac-a1f0-7716cd4773b1">
     <con:setting id="da65c971-b94b-4503-be5f-1f718676f76ffileName">AdvancedIVRMultipleBills-Demo3759</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="SearchBills" id="b25a74db-6862-4220-8727-4b324c0a7973">
     <con:settings/>
-    <con:config service="REST Service 21" resourcePath="/vtps/rest/searchBills" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 21" resourcePath="/vtps/rest/searchBills" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="SearchBills" id="dcc5ac3a-7f8c-48f9-aa61-f2dd16c3b8c6" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -50,7 +50,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="PayBills" id="510b3643-db71-4bfa-94f9-8ebdf157e089">
     <con:settings/>
-    <con:config service="REST Service 22" resourcePath="/vtps/rest/payBills" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 22" resourcePath="/vtps/rest/payBills" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="PayBills" id="4736f1be-efcb-4656-9e0c-55f122be4966" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -95,7 +95,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ProcessACHMultiBills" id="2803479a-021f-4f25-a20f-c3c75cdfda1e">
     <con:settings/>
-    <con:config service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessACHMultiBills" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -175,7 +175,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ProcessCCMultiBills" id="4af00b0f-8ba8-4d8d-9cd8-211cc459eb25">
     <con:settings/>
-    <con:config service="REST Service 10" resourcePath="/vtps/rest/processCCTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 10" resourcePath="/vtps/rest/processCCTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessCCMultiBills" id="3d2ae421-4615-4a73-bb18-ecd8a3a8c847" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>

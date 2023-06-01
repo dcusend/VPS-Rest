@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/retrieveStoredPayment" path="/vtps/rest/retrieveStoredPayment" id="cd9fe986-e391-4599-bbea-897a577ea885" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/retrieveStoredPayment" path="/vtps/rest/retrieveStoredPayment" id="cd9fe986-e391-4599-bbea-897a577ea885">
+  <con:settings id="ff885b03-368a-4fcb-ae94-771aaaee23c7">
     <con:setting id="cd9fe986-e391-4599-bbea-897a577ea885fileName">%2Fvtps%2Frest%2FretrieveStoredPayment</con:setting>
   </con:settings>
   <con:parameters/>

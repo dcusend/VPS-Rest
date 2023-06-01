@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/transactionStatusLookup" path="/vtps/rest/transactionStatusLookup" id="47c8df2b-bf0f-4366-ab17-457652c8ffc6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/transactionStatusLookup" path="/vtps/rest/transactionStatusLookup" id="47c8df2b-bf0f-4366-ab17-457652c8ffc6">
+  <con:settings id="007175c6-7624-4abe-b944-ad23b9fd6a00">
     <con:setting id="47c8df2b-bf0f-4366-ab17-457652c8ffc6fileName">%2Fvtps%2Frest%2FtransactionStatusLookup</con:setting>
   </con:settings>
   <con:parameters/>

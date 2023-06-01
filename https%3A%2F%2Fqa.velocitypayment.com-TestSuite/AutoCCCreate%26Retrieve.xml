@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="1b47aadb-18f8-466a-8814-5cd53890cb3c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AutoCCCreate&amp;Retrieve" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="1b47aadb-18f8-466a-8814-5cd53890cb3c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="AutoCCCreate&amp;Retrieve" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
+  <con:settings id="0e978b3e-4d4f-4429-bf63-f69d36d65379">
     <con:setting id="88b93f69-3ae3-4728-9d5c-609838ca6603fileName">AutoCCCreate%26Retrieve</con:setting>
     <con:setting id="1b47aadb-18f8-466a-8814-5cd53890cb3cfileName">AutoCCCreate%26Retrieve</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="datasource" name="DataSource" id="15740305-94af-490a-9b8c-88ab931e528f">
     <con:settings/>
-    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataSourceStep">
       <con:dataSource type="Excel">
         <con:configuration>
           <file>C:/Users/iahmed/Documents/AutoCCCreate&amp;Retrieve-Pavneet.xlsx</file>
@@ -61,7 +61,7 @@
   </con:testStep>
   <con:testStep type="datagen" name="DataGen" id="2c2fc2ab-83e1-4cb4-95ea-1f5d43eb3f45">
     <con:settings/>
-    <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataGeneratorStep">
       <con:property type="Number">
         <con:configuration>
           <start>0000000</start>
@@ -79,7 +79,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CreateCC" id="a95360a6-1880-4b10-8cc7-5259f53f78d8">
     <con:settings/>
-    <con:config service="REST Service 14" methodName="POST" resourcePath="/vtps/rest/createCCStoredPayment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 14" methodName="POST" resourcePath="/vtps/rest/createCCStoredPayment" xsi:type="con:RestRequestStep">
       <con:restRequest name="CreateCC" id="c9010b0d-db99-46ff-ae59-867b5135be3d" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment>&lt;con:entry key="Authorization" value="Basic SW5Db250YWN0SVZSOlZlbG9jaXR5MTchMzM3" xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry key="content-type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></con:setting>
@@ -170,7 +170,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="RetrieveCC" id="8e17a989-4fb9-4421-b981-752e6a9ec76c">
     <con:settings/>
-    <con:config service="REST Service 15" methodName="POST" resourcePath="/vtps/rest/retrieveStoredPayment" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 15" methodName="POST" resourcePath="/vtps/rest/retrieveStoredPayment" xsi:type="con:RestRequestStep">
       <con:restRequest name="RetrieveCC" id="78f4635f-ec4e-4fa8-9b7b-39b29232986d" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic SW5Db250YWN0SVZSOlZlbG9jaXR5MTchMzM3" xmlns:con="http://eviware.com/soapui/config"/></con:setting>

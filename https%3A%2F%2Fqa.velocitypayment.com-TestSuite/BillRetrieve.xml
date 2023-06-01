@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="39a958fd-d784-4a51-a762-d87f6d6df0d1" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BillRetrieve" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="39a958fd-d784-4a51-a762-d87f6d6df0d1" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BillRetrieve" searchProperties="true" timeout="0">
+  <con:settings id="6e3c4712-82cf-46c8-8367-414781911d79">
     <con:setting id="39a958fd-d784-4a51-a762-d87f6d6df0d1fileName">BillRetrieve</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="BillRetrieve" id="c74969dc-e328-411c-8769-5640441627ca">
     <con:settings/>
-    <con:config service="REST Service 13" resourcePath="/vtps/rest/retrieveBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 13" resourcePath="/vtps/rest/retrieveBill" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillRetrieve" id="e2bab764-ce1b-42cb-940f-f4011de7f989" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
@@ -52,7 +52,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="Copy of BillRetrieve" id="83cd0bba-43ed-435d-a8e5-ff25d3bed91e">
     <con:settings/>
-    <con:config service="REST Service 13" resourcePath="/vtps/rest/retrieveBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 13" resourcePath="/vtps/rest/retrieveBill" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="Copy of BillRetrieve" id="e2bab764-ce1b-42cb-940f-f4011de7f989" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -98,7 +98,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="BillRetrieve-Demo-3811" id="56790987-00bc-400c-bcab-72cf51c2929b">
     <con:settings/>
-    <con:config service="REST Service 13" resourcePath="/vtps/rest/retrieveBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 13" resourcePath="/vtps/rest/retrieveBill" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillRetrieve-Demo-3811" id="e2bab764-ce1b-42cb-940f-f4011de7f989" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>

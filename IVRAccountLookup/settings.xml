@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite id="4688b183-328a-4cab-b3a4-5733670e6614" name="IVRAccountLookup" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="4688b183-328a-4cab-b3a4-5733670e6614" name="IVRAccountLookup">
+  <con:settings id="b0666da8-513b-436c-b6be-62fb945f1c5d">
     <con:setting id="4688b183-328a-4cab-b3a4-5733670e6614fileName">IVRAccountLookup</con:setting>
   </con:settings>
   <con:runType>SEQUENTIAL</con:runType>

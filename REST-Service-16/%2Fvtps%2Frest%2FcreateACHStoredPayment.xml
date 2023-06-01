@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/createACHStoredPayment" path="/vtps/rest/createACHStoredPayment" id="599d56f2-a5c5-46aa-ab17-50058e90fdf4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/createACHStoredPayment" path="/vtps/rest/createACHStoredPayment" id="599d56f2-a5c5-46aa-ab17-50058e90fdf4">
+  <con:settings id="4d37a757-defd-4f73-b972-859f38fc7c71">
     <con:setting id="599d56f2-a5c5-46aa-ab17-50058e90fdf4fileName">%2Fvtps%2Frest%2FcreateACHStoredPayment</con:setting>
   </con:settings>
   <con:parameters/>

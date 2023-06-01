@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/billLookup" path="/vtps/rest/billLookup" id="29ea56b1-834d-42b2-8483-739127ee83bd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/billLookup" path="/vtps/rest/billLookup" id="29ea56b1-834d-42b2-8483-739127ee83bd">
+  <con:settings id="9fb533d6-14b4-4d42-a678-55c5c4eccd3f">
     <con:setting id="29ea56b1-834d-42b2-8483-739127ee83bdfileName">%2Fvtps%2Frest%2FbillLookup</con:setting>
   </con:settings>
   <con:parameters/>
@@ -32,6 +32,12 @@
       <con:status>0</con:status>
       <con:params/>
       <con:element>data</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:element xmlns:bil="https://qa.velocitypayment.com/vtps/rest/billLookup">bil:Fault</con:element>
     </con:representation>
     <con:request name="POST Request" id="1244f771-b705-49a1-96f5-7355a2640582" mediaType="application/json" postQueryString="false">
       <con:settings/>

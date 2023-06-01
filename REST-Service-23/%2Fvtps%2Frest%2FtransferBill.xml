@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/transferBill" path="/vtps/rest/transferBill" id="ac6e00a7-3056-4198-8ae0-26cad3c0b220" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/transferBill" path="/vtps/rest/transferBill" id="ac6e00a7-3056-4198-8ae0-26cad3c0b220">
+  <con:settings id="6c6acc10-e524-4c70-bba0-cbc7c41c2e59">
     <con:setting id="ac6e00a7-3056-4198-8ae0-26cad3c0b220fileName">%2Fvtps%2Frest%2FtransferBill</con:setting>
   </con:settings>
   <con:parameters/>

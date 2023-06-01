@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/CallTransfer" path="/vtps/rest/CallTransfer" id="586c890e-58b7-4679-a5a0-859cac0c3ed6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/CallTransfer" path="/vtps/rest/CallTransfer" id="586c890e-58b7-4679-a5a0-859cac0c3ed6">
+  <con:settings id="1fa406f6-f6ee-4cdf-9d49-f73dc4ba659f">
     <con:setting id="586c890e-58b7-4679-a5a0-859cac0c3ed6fileName">%2Fvtps%2Frest%2FCallTransfer</con:setting>
   </con:settings>
   <con:parameters/>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="0f5535e1-bb09-4e48-a18c-31574aa89e43" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ConvenienceFeeCCLookup" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="0f5535e1-bb09-4e48-a18c-31574aa89e43" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ConvenienceFeeCCLookup" searchProperties="true" timeout="0">
+  <con:settings id="6f92dd22-7034-4bbb-b5c9-748024a9bce5">
     <con:setting id="0f5535e1-bb09-4e48-a18c-31574aa89e43fileName">ConvenienceFeeCCLookup</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="CFCCLookupUpgrade" id="d0d6b6c4-eadc-4473-8032-19813365675a">
     <con:settings/>
-    <con:config service="REST Service 8" resourcePath="/vtps/rest/convenienceFeeCCLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 8" resourcePath="/vtps/rest/convenienceFeeCCLookup" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CFCCLookupUpgrade" id="c58ce832-88ed-4d87-b1b6-8978a35b191f" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{

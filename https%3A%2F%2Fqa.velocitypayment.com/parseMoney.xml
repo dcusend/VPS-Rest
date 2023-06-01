@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="parseMoney" path="/vtps/rest/parseMoney" id="0e3fa1f6-f8c1-4279-ab81-81045331a747" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="parseMoney" path="/vtps/rest/parseMoney" id="0e3fa1f6-f8c1-4279-ab81-81045331a747">
+  <con:settings id="a7a6765c-fda7-42cd-9ab0-8bda7cd107eb">
     <con:setting id="0e3fa1f6-f8c1-4279-ab81-81045331a747fileName">parseMoney</con:setting>
   </con:settings>
   <con:parameters/>

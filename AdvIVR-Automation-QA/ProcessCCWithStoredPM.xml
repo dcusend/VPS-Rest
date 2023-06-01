@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="82c674cb-7d55-4bd2-9590-8b64d2ec4420" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="ProcessCCWithStoredPM" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
+  <con:settings id="a99aa93a-cb98-450a-b93e-e25842744f50">
+    <con:setting id="bca34919-4b39-4539-8f71-53382cdadeb6fileName">ProcessCCWithStoredPM</con:setting>
+    <con:setting id="80dd1c43-d9f6-4dd8-96ff-22211bf265d7fileName">ProcessCCWithStoredPM</con:setting>
+    <con:setting id="82c674cb-7d55-4bd2-9590-8b64d2ec4420fileName">ProcessCCWithStoredPM</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datagen" name="DataGenRandomRemID" id="f718b98a-01df-486f-94ff-4f65e213b24a">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataGeneratorStep">
+      <con:property type="Number">
+        <con:configuration>
+          <start>10000000000</start>
+          <end>99999999999</end>
+          <step/>
+          <pattern/>
+          <random>true</random>
+          <persist>false</persist>
+        </con:configuration>
+        <con:name>RandomRemID</con:name>
+        <con:mode>READ</con:mode>
+        <con:shared>true</con:shared>
+      </con:property>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="DataSourceProcessCCStoredPM" id="306e960f-4fb3-4ef9-ba7d-935849992a98">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataSourceStep">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/SoapData/AdvIVRStoredPM.xlsx</file>
+          <worksheet>ProcessCCWithStoredPM</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>true</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Notes</con:property>
+      <con:property>PAmount</con:property>
+      <con:property>PEmail</con:property>
+      <con:property>PTranxType</con:property>
+      <con:property>PMV</con:property>
+      <con:property>PCategory</con:property>
+      <con:property>PRequestSource</con:property>
+      <con:property>PResFormat</con:property>
+      <con:property>PAppID</con:property>
+      <con:property>PRemID</con:property>
+      <con:property>PUsername</con:property>
+      <con:property>PPassword</con:property>
+      <con:property>PUDF1</con:property>
+      <con:property>PUDF2</con:property>
+      <con:property>PUDF3</con:property>
+      <con:property>PUDF4</con:property>
+      <con:property>PUDF5</con:property>
+      <con:property>PUDF6</con:property>
+      <con:property>PUDF7</con:property>
+      <con:property>PUDF8</con:property>
+      <con:property>PUDF9</con:property>
+      <con:property>PUDF10</con:property>
+      <con:property>PCAN</con:property>
+      <con:property>PPMID</con:property>
+      <con:property>PAL1</con:property>
+      <con:property>PName</con:property>
+      <con:property>PCity</con:property>
+      <con:property>PZIP</con:property>
+      <con:property>PCardNumber</con:property>
+      <con:property>PState</con:property>
+      <con:property>PExp</con:property>
+      <con:property>PExMo</con:property>
+      <con:property>PExYr</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ProcessCCWithStoredPMTransaction" id="6bf01248-f544-4ea6-a736-4a0856d3663f">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep">
+      <con:restRequest name="ProcessCCWithStoredPMTransaction" id="3d1a6306-7d90-486f-a571-362e8983a93e" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "amount" : "${DataSourceProcessCCStoredPM#PAmount}",\r
+   "email" : "${DataSourceProcessCCStoredPM#PEmail}",\r
+   "transaction_type" : "${DataSourceProcessCCStoredPM#PTranxType}",\r
+   "message_version" : "${DataSourceProcessCCStoredPM#PMV}",\r
+   "category" : "${DataSourceProcessCCStoredPM#PCategory}",\r
+   "requestSource" : "${DataSourceProcessCCStoredPM#PRequestSource}",\r
+   "response_format" : "${DataSourceProcessCCStoredPM#PResFormat}",\r
+   "application_id" : "${DataSourceProcessCCStoredPM#PAppID}",\r
+   "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
+   "username" : "${DataSourceProcessCCStoredPM#PUsername}",\r
+   "password" : "${DataSourceProcessCCStoredPM#PPassword}",\r
+   "user_defined1" : "${DataSourceProcessCCStoredPM#PUDF1}",\r
+   "user_defined2" : "${DataSourceProcessCCStoredPM#PUDF2}",\r
+   "user_defined3" : "${DataSourceProcessCCStoredPM#PUDF3}",\r
+   "user_defined4" : "${DataSourceProcessCCStoredPM#PUDF4}",\r
+   "user_defined5" : "${DataSourceProcessCCStoredPM#PUDF5}",\r
+   "user_defined6" : "${DataSourceProcessCCStoredPM#PUDF6}",\r
+   "user_defined7" : "${DataSourceProcessCCStoredPM#PUDF7}",\r
+   "user_defined8" : "${DataSourceProcessCCStoredPM#PUDF8}",\r
+   "user_defined9" : "${DataSourceProcessCCStoredPM#PUDF9}",\r
+   "user_defined10" : "${DataSourceProcessCCStoredPM#PUDF10}",\r
+   "client_account_number" : "${DataSourceProcessCCStoredPM#PCAN}",\r
+   "paymentMethodID" : "${DataSourceProcessCCStoredPM#PPMID}",\r
+   "card_address" : "${DataSourceProcessCCStoredPM#PAL1}",\r
+   "card_name" : "${DataSourceProcessCCStoredPM#PName}",\r
+   "card_city" : "${DataSourceProcessCCStoredPM#PCity}",\r
+   "card_zip" : "${DataSourceProcessCCStoredPM#PZIP}",\r
+   "card_number" : "${DataSourceProcessCCStoredPM#PCardNumber}",\r
+   "card_state" : "${DataSourceProcessCCStoredPM#PState}",\r
+   "card_expiration" : "${DataSourceProcessCCStoredPM#PExp}",\r
+   "card_exmo" : "${DataSourceProcessCCStoredPM#PExMo}",\r
+   "card_exyr" : "${DataSourceProcessCCStoredPM#PExYr}"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processCCStoredPaymentTransaction</con:originalUri>
+        <con:assertion type="JsonPath Existence Match" id="88ef25d5-6f59-45b5-ab34-5e2c13124256" name="Check for existence of [remittanceID]">
+          <con:configuration>
+            <path>$['remittanceID']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="ac762446-8f01-4d72-92b8-d344cfe866a7" name="Check for existence of [transactionID]">
+          <con:configuration>
+            <path>$['transactionID']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="1fcd07df-47ba-4c1b-b5cf-51947caa8419" name="Match content of [responseCode]">
+          <con:configuration>
+            <path>$['responseCode']</path>
+            <content>0</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6c240559-c63d-45fb-ba6d-2f9a1520433b" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>Transaction approved, no errors</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="44a2a610-6568-4a60-a30e-6073410f5ab7" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>0</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="b78a3a46-a314-4f62-b5e9-40cbe5e0caad" name="Check for existence of [approvalCode]">
+          <con:configuration>
+            <path>$['approvalCode']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="5662223d-89b6-40e1-84db-0a7bc54d9ade">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSourceProcessCCStoredPM</dataSourceStep>
+      <targetStep>ProcessCCWithStoredPMTransaction</targetStep>
+      <discardResults>false</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>8403b4b1-1306-4697-9450-423bd46c5d6b</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:environmentSpec>
+    <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
+</con:testCase>

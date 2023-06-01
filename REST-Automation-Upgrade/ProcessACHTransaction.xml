@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="44e73c59-7bd3-41e5-96d0-bb08026a4fcc" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ProcessACHTransaction" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="44e73c59-7bd3-41e5-96d0-bb08026a4fcc" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ProcessACHTransaction" searchProperties="true" timeout="0">
+  <con:settings id="498858d5-bfe4-4fc8-80b9-baca95a8bc68">
     <con:setting id="44e73c59-7bd3-41e5-96d0-bb08026a4fccfileName">ProcessACHTransaction</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="ProcessACH-PersonalChecking-Upgrade2325" id="43cd15f2-926e-4a98-a8cf-eca14e59ddc8">
     <con:settings/>
-    <con:config service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessACH-PersonalChecking-Upgrade2325" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{\r
@@ -92,10 +92,10 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ProcessACH-Corporate-Upgrade2325" id="17b94fec-a948-47e6-b0c1-cb6cdd36d385">
     <con:settings/>
-    <con:config service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessACH-Corporate-Upgrade2325" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{\r
@@ -179,10 +179,10 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ProcessACH-Negative-Corporate-Upgrade2325" id="62c6ac1a-9c6b-49f8-9c2b-48e7252553da">
     <con:settings/>
-    <con:config service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessACH-Negative-Corporate-Upgrade2325" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{\r
@@ -284,7 +284,7 @@
   </con:testStep>
   <con:testStep type="datagen" name="DataGenRandomRemID" id="ddac7dca-ede3-47d4-a895-8569e7a79bd2">
     <con:settings/>
-    <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataGeneratorStep">
       <con:property type="Number">
         <con:configuration>
           <start>10000000000</start>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="d2db18e2-6f1e-44b2-b3dc-64974e501f87" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AdvIVR-StoredPM-CC-Upgrade" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="d2db18e2-6f1e-44b2-b3dc-64974e501f87" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AdvIVR-StoredPM-CC-Upgrade" searchProperties="true" timeout="0">
+  <con:settings id="f2979a14-2b30-4aee-a51e-7587219bc5d5">
     <con:setting id="a60c3b55-ea90-4965-9764-15c0bc8dca56fileName">AdvIVR-StoredPM-CC-Upgrade</con:setting>
     <con:setting id="d2db18e2-6f1e-44b2-b3dc-64974e501f87fileName">AdvIVR-StoredPM-CC-Upgrade</con:setting>
   </con:settings>
   <con:testStep type="datagen" name="DataGenRandomRemID" id="d8d6316f-54e9-45d7-8b7d-a3eceb47b28f">
     <con:settings/>
-    <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataGeneratorStep">
       <con:property type="Number">
         <con:configuration>
           <start>10000000000</start>
@@ -24,10 +24,10 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CreateCCStoredPM Request" id="b02ee28d-becc-4383-ae3b-4c310d8b678b">
     <con:settings/>
-    <con:config service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CreateCCStoredPM Request" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
         <con:request>{\r
@@ -38,8 +38,8 @@
    },\r
    "paymentMethod" : {\r
       "paymentMethodType" : "1",\r
-      "pan" : "6011000000000017",\r
-      "card_expiration" : "102021",\r
+      "pan" : "5413330089604111",\r
+      "card_expiration" : "102025",\r
       "card_exmo" : "10",\r
       "card_exyr" : "2025"\r
    },\r
@@ -94,32 +94,18 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="PropertyTransfer 1" id="5336ce9d-592a-49b7-83d6-4e89db7ecbdf">
-    <con:settings/>
-    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false" entitize="false" transferChildNodes="false" ignoreEmpty="false">
-        <con:name>clientAccountNumber</con:name>
-        <con:sourceType>RawRequest</con:sourceType>
-        <con:sourceStep>CreateCCStoredPM Request</con:sourceStep>
-        <con:sourcePath>$['header']['clientAccountNumber']</con:sourcePath>
-        <con:targetType>Request</con:targetType>
-        <con:targetStep>RetrieveStoredPM-CC-Request</con:targetStep>
-        <con:targetPath>$['clientAccountNumber']</con:targetPath>
-        <con:type>JSONPATH</con:type>
-        <con:targetTransferType>JSONPATH</con:targetTransferType>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
-    </con:config>
-  </con:testStep>
   <con:testStep type="restrequest" name="RetrieveStoredPM-CC-Request" id="25a806d1-361c-4256-b611-eccfd4fa4515">
     <con:settings/>
-    <con:config service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="RetrieveStoredPM-CC-Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
-        <con:request>{"clientAccountNumber":"86969426259","customerID":"2"}</con:request>
+        <con:request>{\r
+   "clientAccountNumber" : "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",\r
+   "customerID" : "2"\r
+}</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
         <con:assertion type="JsonPath Match" id="3bc234c9-3d1c-4409-84c0-3ba4c495430c" name="Match content of [result]">
           <con:configuration>
@@ -160,32 +146,48 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="PropertyTransfer 2" id="74ff807b-7daf-49ee-a014-5035b2c9636c">
-    <con:settings/>
-    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false" entitize="false" transferChildNodes="false" ignoreEmpty="false">
-        <con:name>clientAccountNumber</con:name>
-        <con:sourceType>RawRequest</con:sourceType>
-        <con:sourceStep>CreateCCStoredPM Request</con:sourceStep>
-        <con:sourcePath>$['header']['clientAccountNumber']</con:sourcePath>
-        <con:targetType>Request</con:targetType>
-        <con:targetStep>ProcessCCWithStoredPMTransaction</con:targetStep>
-        <con:targetPath>$['client_account_number']</con:targetPath>
-        <con:type>JSONPATH</con:type>
-        <con:targetTransferType>JSONPATH</con:targetTransferType>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
-    </con:config>
-  </con:testStep>
   <con:testStep type="restrequest" name="ProcessCCWithStoredPMTransaction" id="41210f26-57d0-4316-9ece-786fe9af8a37">
     <con:settings/>
-    <con:config service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessCCWithStoredPMTransaction" id="3d1a6306-7d90-486f-a571-362e8983a93e" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
-        <con:request>{"amount":"10.50","email":"iahmed@govolution.com","transaction_type":"104","message_version":"2.0IVR_C","category":"MOTO","requestSource":"","response_format":"fixed_width","application_id":"18","remittance_id":"${DataGenRandomRemID#RandomRemID}","username":"username","password":"password","user_defined1":"","user_defined2":"","user_defined3":"","user_defined4":"","user_defined5":"","user_defined6":"","user_defined7":"","user_defined8":"","user_defined9":"","user_defined10":"","client_account_number":"86969426259","paymentMethodID":"${RetrieveStoredPM-CC-Request#Response#$['paymentMethods'][0]['paymentMethodID']}","card_address":"2311 york road","card_name":"Dggtrd Sgdd","card_city":"Crofton","card_zip":"21030","card_number":"4111111111111111","card_state":"MD","card_expiration":"122025","card_exmo":"12","card_exyr":"2025"}</con:request>
+        <con:request>{\r
+   "amount" : "10.50",\r
+   "email" : "iahmed@govolution.com",\r
+   "transaction_type" : "104",\r
+   "message_version" : "2.0IVR_C",\r
+   "category" : "MOTO",\r
+   "requestSource" : "",\r
+   "response_format" : "fixed_width",\r
+   "application_id" : "18",\r
+   "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "user_defined1" : "",\r
+   "user_defined2" : "",\r
+   "user_defined3" : "",\r
+   "user_defined4" : "",\r
+   "user_defined5" : "",\r
+   "user_defined6" : "",\r
+   "user_defined7" : "",\r
+   "user_defined8" : "",\r
+   "user_defined9" : "",\r
+   "user_defined10" : "",\r
+   "client_account_number" : "${RetrieveStoredPM-CC-Request#Response#$['clientAccountNumber']}",\r
+   "paymentMethodID" : "${RetrieveStoredPM-CC-Request#Response#$['paymentMethods'][0]['paymentMethodID']}",\r
+   "card_address" : "2311 york road",\r
+   "card_name" : "Dggtrd Sgdd",\r
+   "card_city" : "Crofton",\r
+   "card_zip" : "21030",\r
+   "card_number" : "",\r
+   "card_state" : "MD",\r
+   "card_expiration" : "",\r
+   "card_exmo" : "",\r
+   "card_exyr" : ""\r
+}</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processCCStoredPaymentTransaction</con:originalUri>
         <con:assertion type="JsonPath Match" id="3ef909b4-40f7-435c-9a66-744c16a93459" name="Match content of [responseCodeMessage]">
           <con:configuration>

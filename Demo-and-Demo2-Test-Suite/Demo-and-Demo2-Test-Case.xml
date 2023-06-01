@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="082272c4-8aa2-47b9-8910-ced017695d0a" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Demo and Demo2 Test Case" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="082272c4-8aa2-47b9-8910-ced017695d0a" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Demo and Demo2 Test Case" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="">
+  <con:settings id="89c71b79-78d0-4042-ad8f-647b73bc3250">
     <con:setting id="082272c4-8aa2-47b9-8910-ced017695d0afileName">Demo-and-Demo2-Test-Case</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="BillLookupDemo" id="54e7d0f9-0e94-48e8-b3ee-e201fe8db15a">
     <con:settings/>
-    <con:config service="REST Service 3" resourcePath="/vtps/rest/billLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 3" resourcePath="/vtps/rest/billLookup" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillLookupDemo" id="1244f771-b705-49a1-96f5-7355a2640582" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
         <con:request>{
@@ -359,10 +359,10 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ParseMoney-English-Demo" id="1eb2d7e6-5fee-4e07-a8f2-8e501cabe291">
     <con:settings/>
-    <con:config service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ParseMoney-English-Demo" id="e9e829cc-d48d-4635-8394-e68ebdbf7c37" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg== " xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
         <con:request>{
@@ -796,10 +796,10 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ParseMoney-Spanish-Demo" id="86efd351-0a02-466f-a4cb-41938e307ccb">
     <con:settings/>
-    <con:config service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ParseMoney-Spanish-Demo" id="e9e829cc-d48d-4635-8394-e68ebdbf7c37" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg== " xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
         <con:request>{
@@ -1151,10 +1151,10 @@
   </con:testStep>
   <con:testStep type="restrequest" name="BillDueDateValidationDemo" id="c1d972e3-f18c-4a78-bc84-195a829c71d6">
     <con:settings/>
-    <con:config service="REST Service 1" resourcePath="/vtps/rest/billDueDateValidation" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 1" resourcePath="/vtps/rest/billDueDateValidation" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillDueDateValidationDemo" id="4fcb8abf-6064-40ff-8db0-136e99cea07f" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg== " xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
         <con:request>{
@@ -1388,10 +1388,10 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CallEndDemo" id="26d32682-f89f-4165-83f7-7eda8743285c">
     <con:settings/>
-    <con:config service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallEndDemo" id="e3bb9182-7995-45be-aa86-11ca3a800f93" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
         <con:request>{\r
@@ -1489,7 +1489,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CallTransferDemo-DoesNotWork" id="c7f4bc56-dacc-4d7f-9b11-51b02730021f">
     <con:settings/>
-    <con:config service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallTransferDemo-DoesNotWork" id="fcd3b32b-39c1-4226-a75e-e23f403a12cd" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
@@ -1540,10 +1540,10 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CCExpDateValidationDemo" id="12777185-e8e2-4728-9e10-ee6e0c7ca404">
     <con:settings/>
-    <con:config service="REST Service 6" resourcePath="/vtps/rest/ccExpDateValidation" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 6" resourcePath="/vtps/rest/ccExpDateValidation" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CCExpDateValidationDemo" id="f3ac439d-7262-471a-a377-1e699347a5b3" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
         <con:request>{
@@ -1776,10 +1776,10 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CFACHLookup-Demo" id="bd9bd4c7-63ce-4ee4-a102-038015ffe854">
     <con:settings/>
-    <con:config service="REST Service 7" resourcePath="/vtps/rest/convenienceFeeACHLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 7" resourcePath="/vtps/rest/convenienceFeeACHLookup" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CFACHLookup-Demo" id="b0180550-f14f-48a1-b692-1df8ae817c3f" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
         <con:request>{
@@ -1992,10 +1992,10 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CFCCLookup-Demo" id="92be2a2b-5ef0-448f-a514-f329923e3b06">
     <con:settings/>
-    <con:config service="REST Service 8" resourcePath="/vtps/rest/convenienceFeeCCLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 8" resourcePath="/vtps/rest/convenienceFeeCCLookup" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CFCCLookup-Demo" id="c58ce832-88ed-4d87-b1b6-8978a35b191f" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
         <con:request>{
@@ -2175,6 +2175,338 @@
         <con:credentials>
           <con:username>iahmed</con:username>
           <con:password>hello2222</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ProcessACH-PersonalChecking-Demo-3849" id="a3ad2537-910f-4261-8c2a-1167001bd7ca">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="ProcessACH-PersonalChecking-Demo-3849" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "amount" : "21.00",\r
+   "check_address" : "2311 york road",\r
+   "check_city" : "Manchester",\r
+   "check_zip" : "03104",\r
+   "check_account" : "55550015",\r
+   "check_company" : "",\r
+   "routing_number" : "256072691",\r
+   "transaction_type" : "200",\r
+   "message_version" : "2.0IVR_A",\r
+   "category" : "moto",\r
+   "requestSource" : "",\r
+   "check_first_name" : "imtiaz",\r
+   "check_last_name" : "ahmed",\r
+   "check_state" : "NH",\r
+   "email" : "",\r
+   "account_type" : "1",\r
+   "response_format" : "fixed_width",\r
+   "application_id" : "3849",\r
+   "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "check_type" : "P",\r
+   "standard_entry_class" : "TEL",\r
+   "user_defined1" : "udf1",\r
+   "user_defined2" : "udf2",\r
+   "user_defined3" : "udf3",\r
+   "user_defined4" : "udf4",\r
+   "user_defined5" : "udf5",\r
+   "user_defined6" : "udf6",\r
+   "user_defined7" : "udf7",\r
+   "user_defined8" : "udf8",\r
+   "user_defined9" : "udf9",\r
+   "user_defined10" : "udf10",\r
+   "client_account_number" : "258745896"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processACHTransaction</con:originalUri>
+        <con:assertion type="JsonPath Match" id="60883337-761e-4b3d-8dd8-e1d4c2c97c17" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a5ad0d75-f5c2-4d25-814d-315953fc9b69" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello6666</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datagen" name="DataGenRandomRemID" id="5725e445-82d5-45fb-8392-078f4a062607">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataGeneratorStep">
+      <con:property type="Number">
+        <con:configuration>
+          <start>10000000000</start>
+          <end>99999999999</end>
+          <step/>
+          <pattern/>
+          <random>true</random>
+          <persist>false</persist>
+        </con:configuration>
+        <con:name>RandomRemID</con:name>
+        <con:mode>READ</con:mode>
+        <con:shared>true</con:shared>
+      </con:property>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ProcessACH-Corporate-Demo-3849" id="3ff40ed7-be33-4f40-85db-fc2f3ca2d925">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="ProcessACH-Corporate-Demo-3849" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "amount" : "21.00",\r
+   "check_address" : "2311 york road",\r
+   "check_city" : "Manchester",\r
+   "check_zip" : "03104",\r
+   "check_account" : "55550015",\r
+   "check_company" : "My Company",\r
+   "routing_number" : "256072691",\r
+   "transaction_type" : "200",\r
+   "message_version" : "2.0IVR_A",\r
+   "category" : "moto",\r
+   "requestSource" : "",\r
+   "check_first_name" : "imtiaz",\r
+   "check_last_name" : "ahmed",\r
+   "check_state" : "NH",\r
+   "email" : "",\r
+   "account_type" : "",\r
+   "response_format" : "fixed_width",\r
+   "application_id" : "3849",\r
+   "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "check_type" : "C",\r
+   "standard_entry_class" : "CCD",\r
+   "user_defined1" : "udf1",\r
+   "user_defined2" : "udf2",\r
+   "user_defined3" : "udf3",\r
+   "user_defined4" : "udf4",\r
+   "user_defined5" : "udf5",\r
+   "user_defined6" : "udf6",\r
+   "user_defined7" : "udf7",\r
+   "user_defined8" : "udf8",\r
+   "user_defined9" : "udf9",\r
+   "user_defined10" : "udf10",\r
+   "client_account_number" : "258745896"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processACHTransaction</con:originalUri>
+        <con:assertion type="JsonPath Match" id="60883337-761e-4b3d-8dd8-e1d4c2c97c17" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d7c6e103-690f-4b82-bb7c-feb2f2dc679a" name="Match content of [responseCode]">
+          <con:configuration>
+            <path>$['responseCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e7d1cc07-c89b-4df1-a3c7-fe4a0a653657" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="799356d5-ff13-4d74-894a-1e858a3c3b52" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello6666</con:password>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ProcessCC-Demo-3849" id="07b5b3fe-6287-4b70-a8d4-671a88e97280">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 10" resourcePath="/vtps/rest/processCCTransaction" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="ProcessCC-Demo-3849" id="3d2ae421-4615-4a73-bb18-ecd8a3a8c847" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@disable-property-expansions">false</con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "card_address" : "2311 york road",\r
+   "amount" : "31.50",\r
+   "card_name" : "imtiaz ahmed",\r
+   "card_city" : "",\r
+   "card_zip" : "03106",\r
+   "email" : "",\r
+   "card_number" : "5424000000000015",\r
+   "card_state" : "",\r
+   "transaction_type" : "104",\r
+   "message_version" : "2.0IVR_C",\r
+   "category" : "MOTO",\r
+   "requestSource" : "",\r
+   "response_format" : "fixed_width",\r
+   "card_expiration" : "",\r
+   "application_id" : "3849",\r
+   "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
+   "card_exmo" : "01",\r
+   "card_exyr" : "2025",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "user_defined1" : "udf1 data",\r
+   "user_defined2" : "udf2 data",\r
+   "user_defined3" : "udf3 data",\r
+   "user_defined4" : "udf4 data",\r
+   "user_defined5" : "udf5 data",\r
+   "user_defined6" : "udf6 data",\r
+   "user_defined7" : "udf7 data",\r
+   "user_defined8" : "udf8 data",\r
+   "user_defined9" : "udf9 data",\r
+   "user_defined10" : "udf10 data",\r
+   "client_account_number" : "1564946"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processCCTransaction</con:originalUri>
+        <con:assertion type="JsonPath Match" id="339bbb4c-dbfb-4c98-914f-068df5c98f29" name="Match content of [responseCode]">
+          <con:configuration>
+            <path>$['responseCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="78a6b5ff-4626-4a80-8232-e6fc724d61c0" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3afa1f93-fec5-4406-a63a-d788bace33c1" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello2222</con:password>
+          <con:domain>govolution</con:domain>
           <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
           <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
           <con:authType>Global HTTP Settings</con:authType>

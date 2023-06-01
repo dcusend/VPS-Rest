@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="ca3d319d-a12f-4cd9-88e6-c671913b6523" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Mod10Check" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="ca3d319d-a12f-4cd9-88e6-c671913b6523" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Mod10Check" searchProperties="true" timeout="0">
+  <con:settings id="3238c404-7278-48f1-a347-48ffea77a1e1">
     <con:setting id="ca3d319d-a12f-4cd9-88e6-c671913b6523fileName">Mod10Check</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="REST Request" id="c132e7de-06d6-4379-9c5b-4f73de09c659">
     <con:settings/>
-    <con:config service="Mod10Check" resourcePath="/vtps/rest/mod10check" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="Mod10Check" resourcePath="/vtps/rest/mod10check" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="REST Request" id="0e5246f5-491e-4827-a17c-aeb392fb4676" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{

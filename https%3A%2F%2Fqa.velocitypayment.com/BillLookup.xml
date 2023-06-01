@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="BillLookup" path="/vtps/rest/billLookup" id="f9d82900-07ef-48d5-977a-624ad7be0c46" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="BillLookup" path="/vtps/rest/billLookup" id="f9d82900-07ef-48d5-977a-624ad7be0c46">
+  <con:settings id="74376c0a-c82e-4a51-83c5-1d2bc97e4efc">
     <con:setting id="f9d82900-07ef-48d5-977a-624ad7be0c46fileName">BillLookup</con:setting>
   </con:settings>
   <con:parameters/>

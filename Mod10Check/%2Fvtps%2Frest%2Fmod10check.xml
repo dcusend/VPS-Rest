@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="" path="/vtps/rest/mod10check" id="e8f17a14-d504-4fb8-bcc4-ae0e8c7bf6f4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="" path="/vtps/rest/mod10check" id="e8f17a14-d504-4fb8-bcc4-ae0e8c7bf6f4">
+  <con:settings id="05483967-6503-4d4e-bb21-1f921d1f5bd5">
     <con:setting id="e8f17a14-d504-4fb8-bcc4-ae0e8c7bf6f4fileName">%2Fvtps%2Frest%2Fmod10check</con:setting>
   </con:settings>
   <con:parameters/>

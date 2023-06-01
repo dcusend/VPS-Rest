@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="cd6ca2d1-25c9-4c33-9fce-a57f2f0d4a07" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ProcessCCTransaction" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="cd6ca2d1-25c9-4c33-9fce-a57f2f0d4a07" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ProcessCCTransaction" searchProperties="true" timeout="0">
+  <con:settings id="7418f4db-3cf4-46e7-a875-0ed080176dc4">
     <con:setting id="bd5972cd-7e1e-4994-9333-0a505dabd507fileName">ProcessCCTransaction</con:setting>
     <con:setting id="cd6ca2d1-25c9-4c33-9fce-a57f2f0d4a07fileName">ProcessCCTransaction</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="ProcessCCUpgrade" id="562f0d0b-5230-4bb8-b45e-4960ee1f2925">
     <con:settings/>
-    <con:config service="REST Service 10" resourcePath="/vtps/rest/processCCTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 10" resourcePath="/vtps/rest/processCCTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessCCUpgrade" id="3d2ae421-4615-4a73-bb18-ecd8a3a8c847" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -91,7 +91,7 @@
   </con:testStep>
   <con:testStep type="datagen" name="DataGenRandomRemID" id="299b4dff-aa0d-4a78-a960-3cc65862162e">
     <con:settings/>
-    <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataGeneratorStep">
       <con:property type="Number">
         <con:configuration>
           <start>10000000000</start>

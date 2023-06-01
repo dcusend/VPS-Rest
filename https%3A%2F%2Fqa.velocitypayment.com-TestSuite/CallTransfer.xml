@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="ffa10c1f-40fa-4837-a0aa-ecfd41730c5d" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CallTransfer" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="ffa10c1f-40fa-4837-a0aa-ecfd41730c5d" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CallTransfer" searchProperties="true" timeout="0">
+  <con:settings id="7c39c7ba-6250-423a-a47d-2abe7d96d94d">
     <con:setting id="ffa10c1f-40fa-4837-a0aa-ecfd41730c5dfileName">CallTransfer</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="CallTransfer" id="306cae3f-895c-4349-a0cb-32c21b45ab33">
     <con:settings/>
-    <con:config service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallTransfer" id="fcd3b32b-39c1-4226-a75e-e23f403a12cd" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
@@ -57,7 +57,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CallTransferUpgrade" id="23df17d0-acd3-4a1b-bb90-c8349def9dbf">
     <con:settings/>
-    <con:config service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallTransferUpgrade" id="fcd3b32b-39c1-4226-a75e-e23f403a12cd" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -108,7 +108,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CallTransferWWW" id="3ba67632-fc52-47f1-a926-fb90f7ba818a">
     <con:settings/>
-    <con:config service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallTransferWWW" id="fcd3b32b-39c1-4226-a75e-e23f403a12cd" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -158,7 +158,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CallTransfer609" id="997bb938-8dde-4c67-be24-b9e2614803e2">
     <con:settings/>
-    <con:config service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallTransfer609" id="fcd3b32b-39c1-4226-a75e-e23f403a12cd" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>

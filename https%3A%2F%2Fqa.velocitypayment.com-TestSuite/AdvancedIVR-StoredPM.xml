@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="b8d7ca17-796b-4171-96eb-d830cfe0b0c0" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AdvancedIVR StoredPM" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="b8d7ca17-796b-4171-96eb-d830cfe0b0c0" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AdvancedIVR StoredPM" searchProperties="true" timeout="0">
+  <con:settings id="c5a46f34-1e05-40d4-a342-a97501ff9835">
     <con:setting id="b8d7ca17-796b-4171-96eb-d830cfe0b0c0fileName">AdvancedIVR-StoredPM</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="CreateCCStoredPM Request" id="9d9cc723-27d3-45dc-a79a-3cfde7f3a25c">
     <con:settings/>
-    <con:config service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CreateCCStoredPM Request" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
@@ -78,7 +78,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CreateACHStoredPM" id="225bf052-f715-4bf4-b39d-526107de5e1b">
     <con:settings/>
-    <con:config service="REST Service 16" resourcePath="/vtps/rest/createACHStoredPayment" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 16" resourcePath="/vtps/rest/createACHStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CreateACHStoredPM" id="b4dd6391-8a4c-4f9a-a485-3c85b8888bee" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -139,7 +139,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="RetrieveStoredPM Request" id="c0d50d53-a8a0-4e90-82b6-29739a72c938">
     <con:settings/>
-    <con:config service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="RetrieveStoredPM Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
@@ -182,7 +182,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ProcessCCWithStoredPMTransaction" id="04db6043-2459-495c-bce2-e0b1f3677e7a">
     <con:settings/>
-    <con:config service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessCCWithStoredPMTransaction" id="3d1a6306-7d90-486f-a571-362e8983a93e" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -255,7 +255,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ProcessACHStoredPMTransaction" id="02d4cb68-d458-461d-ae9b-7c9940f26b53">
     <con:settings/>
-    <con:config service="REST Service 18" resourcePath="/vtps/rest/processACHStoredPaymentTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 18" resourcePath="/vtps/rest/processACHStoredPaymentTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessACHStoredPMTransaction" id="3c1948d7-1b4a-4da9-bc29-757a00259231" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -331,7 +331,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CFCCLookupNEW" id="de5699e5-7cf1-4988-90ec-f10347808139">
     <con:settings/>
-    <con:config service="REST Service 19" resourcePath="/vtps/rest/convenienceFeeCCLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 19" resourcePath="/vtps/rest/convenienceFeeCCLookup" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CFCCLookupNEW" id="f0aa9450-e550-4455-9415-5c392f6010b9" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -381,7 +381,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CallPostBack" id="0eeb3e1e-6d03-4b8b-a3bf-280639d95b06">
     <con:settings/>
-    <con:config service="REST Service 20" resourcePath="/vtps/rest/callPostback" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 20" resourcePath="/vtps/rest/callPostback" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallPostBack" id="3cad5152-6c6f-444a-bb9e-a5bac92bd6f8" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -421,7 +421,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ProcessCCWithoutStoredPMTransaction" id="88a9aef6-f85c-4270-b17c-be98cd765190">
     <con:settings/>
-    <con:config service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessCCWithoutStoredPMTransaction" id="3d1a6306-7d90-486f-a571-362e8983a93e" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -494,7 +494,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="Copy of CreateCCStoredPM Request" id="c1b57528-3e80-4001-b60c-f5ad104eebc1">
     <con:settings/>
-    <con:config service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="Copy of CreateCCStoredPM Request" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -557,7 +557,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="Copy of RetrieveStoredPM Request" id="51d05025-37c0-4dc0-845c-8cfe2f4b65b3">
     <con:settings/>
-    <con:config service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="Copy of RetrieveStoredPM Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>

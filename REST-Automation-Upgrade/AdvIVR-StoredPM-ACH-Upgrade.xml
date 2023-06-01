@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="4005c3ee-2b60-4964-ae80-1617f63b7475" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AdvIVR-StoredPM-ACH-Upgrade" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="4005c3ee-2b60-4964-ae80-1617f63b7475" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AdvIVR-StoredPM-ACH-Upgrade" searchProperties="true" timeout="0">
+  <con:settings id="5e27c2cc-0edf-4cb8-b995-e2ebda877d86">
     <con:setting id="4005c3ee-2b60-4964-ae80-1617f63b7475fileName">AdvIVR-StoredPM-ACH-Upgrade</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="CreateACHStoredPM" id="bf98cb3f-6be6-45cc-8922-739bbe5ee31f">
     <con:settings/>
-    <con:config service="REST Service 16" resourcePath="/vtps/rest/createACHStoredPayment" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 16" resourcePath="/vtps/rest/createACHStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CreateACHStoredPM" id="b4dd6391-8a4c-4f9a-a485-3c85b8888bee" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{\r
@@ -75,7 +75,7 @@
   </con:testStep>
   <con:testStep type="transfer" name="PropertyTransfer 2" id="4d9b8868-d093-4efa-9eaa-53c6b767473d">
     <con:settings/>
-    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:PropertyTransfersStep">
       <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
         <con:name>clientAccountNumber</con:name>
         <con:sourceType>RawRequest</con:sourceType>
@@ -92,13 +92,13 @@
   </con:testStep>
   <con:testStep type="restrequest" name="RetrieveStoredPM-ACH-Request" id="d6ac6ed9-af70-4ee8-8197-04fe9e18431f">
     <con:settings/>
-    <con:config service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="RetrieveStoredPM-ACH-Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
-        <con:request>{"clientAccountNumber":"97997582650","customerID":"2"}</con:request>
+        <con:request>{"clientAccountNumber":"85352725160","customerID":"2"}</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
         <con:assertion type="JsonPath Match" id="983e09d2-e6a8-4cda-a6da-5339357c8242" name="Match content of [result]">
           <con:configuration>
@@ -141,7 +141,7 @@
   </con:testStep>
   <con:testStep type="datagen" name="DataGenRandomRemID" id="8cf4aff6-ec85-4185-a8ff-ea662899f005">
     <con:settings/>
-    <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataGeneratorStep">
       <con:property type="Number">
         <con:configuration>
           <start>10000000000</start>

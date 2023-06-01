@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/createCCStoredPayment" path="/vtps/rest/createCCStoredPayment" id="02d9b8a8-b060-4d53-bfd1-534e3ac0d4eb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/createCCStoredPayment" path="/vtps/rest/createCCStoredPayment" id="02d9b8a8-b060-4d53-bfd1-534e3ac0d4eb">
+  <con:settings id="acb6d48a-7ec1-4cba-8af1-d9869961632b">
     <con:setting id="02d9b8a8-b060-4d53-bfd1-534e3ac0d4ebfileName">%2Fvtps%2Frest%2FcreateCCStoredPayment</con:setting>
   </con:settings>
   <con:parameters/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite id="8c38b2cb-e852-4980-813b-6e46d98d44c4" name="REST-Automation-WWW" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="8c38b2cb-e852-4980-813b-6e46d98d44c4" name="REST-Automation-WWW">
+  <con:settings id="a2875cc2-a989-4bbb-9be9-6c11c2b12079">
     <con:setting id="50770047-5943-487f-a44b-5dc093afc2d4fileName">REST-Automation-Upgrade</con:setting>
     <con:setting id="8c38b2cb-e852-4980-813b-6e46d98d44c4fileName">REST-Automation-WWW</con:setting>
   </con:settings>

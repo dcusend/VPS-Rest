@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="cabd890a-9f8b-4e56-a833-724604afb0c5" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ConvenienceFeeACHLookup" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="cabd890a-9f8b-4e56-a833-724604afb0c5" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ConvenienceFeeACHLookup" searchProperties="true" timeout="0">
+  <con:settings id="b5a992af-9b2a-4b65-824f-361bb9b3a489">
     <con:setting id="cabd890a-9f8b-4e56-a833-724604afb0c5fileName">ConvenienceFeeACHLookup</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="CFACHLookup" id="5c7771e9-299c-4a8e-b97d-5be330700f33">
     <con:settings/>
-    <con:config service="REST Service 7" resourcePath="/vtps/rest/convenienceFeeACHLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 7" resourcePath="/vtps/rest/convenienceFeeACHLookup" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CFACHLookup" id="b0180550-f14f-48a1-b692-1df8ae817c3f" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
@@ -58,7 +58,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CFACHLookupUpgrade" id="93f54968-0be0-4d8d-a248-40b734ccfedd">
     <con:settings/>
-    <con:config service="REST Service 7" resourcePath="/vtps/rest/convenienceFeeACHLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 7" resourcePath="/vtps/rest/convenienceFeeACHLookup" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CFACHLookupUpgrade" id="b0180550-f14f-48a1-b692-1df8ae817c3f" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -109,7 +109,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CFACHLookupWWW" id="f932d9ba-eed5-41c8-981a-4f1642665cc7">
     <con:settings/>
-    <con:config service="REST Service 7" resourcePath="/vtps/rest/convenienceFeeACHLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 7" resourcePath="/vtps/rest/convenienceFeeACHLookup" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CFACHLookupWWW" id="b0180550-f14f-48a1-b692-1df8ae817c3f" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

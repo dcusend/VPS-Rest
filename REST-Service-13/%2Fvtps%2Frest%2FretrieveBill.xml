@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/retrieveBill" path="/vtps/rest/retrieveBill" id="bccc2037-52ba-40fb-90b6-7468b28fc799" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/retrieveBill" path="/vtps/rest/retrieveBill" id="bccc2037-52ba-40fb-90b6-7468b28fc799">
+  <con:settings id="d28dbfb8-7441-4190-833c-b11cc02b0523">
     <con:setting id="bccc2037-52ba-40fb-90b6-7468b28fc799fileName">%2Fvtps%2Frest%2FretrieveBill</con:setting>
   </con:settings>
   <con:parameters/>

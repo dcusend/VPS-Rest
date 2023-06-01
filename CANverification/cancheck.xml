@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="cancheck" path="/vtps/rest/cancheck" id="fff12f6c-1ef1-4f0c-9592-8306d15b4828" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="cancheck" path="/vtps/rest/cancheck" id="fff12f6c-1ef1-4f0c-9592-8306d15b4828">
+  <con:settings id="7b9094b5-c452-458d-8d83-5f64369a4138">
     <con:setting id="fff12f6c-1ef1-4f0c-9592-8306d15b4828fileName">cancheck</con:setting>
   </con:settings>
   <con:parameters/>

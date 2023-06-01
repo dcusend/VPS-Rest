@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="c784e4d0-aead-4d23-9c39-af8b244ce589" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ParseMoney" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="c784e4d0-aead-4d23-9c39-af8b244ce589" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ParseMoney" searchProperties="true" timeout="0">
+  <con:settings id="da96a681-3efa-44a3-b9a4-97fe8874e892">
     <con:setting id="c784e4d0-aead-4d23-9c39-af8b244ce589fileName">ParseMoney</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="ParseMoneyUpgrade" id="fc77edcc-398a-475e-9844-f5e1c703cd41">
     <con:settings/>
-    <con:config service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ParseMoneyUpgrade" id="e9e829cc-d48d-4635-8394-e68ebdbf7c37" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{
@@ -130,10 +130,10 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ParseMoneyUpgrade Spanish" id="b3326dc2-0032-489a-8491-5826c616dd7c">
     <con:settings/>
-    <con:config service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ParseMoneyUpgrade Spanish" id="e9e829cc-d48d-4635-8394-e68ebdbf7c37" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/convenienceFeeACHLookup" path="/vtps/rest/convenienceFeeACHLookup" id="f071497e-0b69-4af3-962b-433aeab6f977" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/convenienceFeeACHLookup" path="/vtps/rest/convenienceFeeACHLookup" id="f071497e-0b69-4af3-962b-433aeab6f977">
+  <con:settings id="6aac0bb8-d939-401b-bbd9-c28bb1215d4b">
     <con:setting id="f071497e-0b69-4af3-962b-433aeab6f977fileName">%2Fvtps%2Frest%2FconvenienceFeeACHLookup</con:setting>
   </con:settings>
   <con:parameters/>

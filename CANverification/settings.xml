@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:RestService" id="68d2e90d-f9dd-4108-bc19-c21e148e28ed" name="CANverification" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <con:settings>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="68d2e90d-f9dd-4108-bc19-c21e148e28ed" name="CANverification" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="e899f42d-501d-4eca-9b66-c478bf9a791c">
     <con:setting id="68d2e90d-f9dd-4108-bc19-c21e148e28edfileName">CANverification</con:setting>
   </con:settings>
   <con:definitionCache type="TEXT" rootPart="CANverification.json">

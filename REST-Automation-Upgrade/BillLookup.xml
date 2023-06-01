@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="2d54b907-e26c-4889-9d98-252e5dc9adaf" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BillLookup" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="2d54b907-e26c-4889-9d98-252e5dc9adaf" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BillLookup" searchProperties="true" timeout="0">
+  <con:settings id="b751d32c-c64f-482f-ad69-5b151de50bfc">
     <con:setting id="2d54b907-e26c-4889-9d98-252e5dc9adaffileName">BillLookup</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="BillLookupUpgrade" id="2184ff52-43e0-46d9-ae4e-a8d70b55402b">
     <con:settings/>
-    <con:config service="REST Service 3" resourcePath="/vtps/rest/billLookup" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 3" resourcePath="/vtps/rest/billLookup" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillLookupUpgrade" id="1244f771-b705-49a1-96f5-7355a2640582" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{
@@ -34,7 +34,7 @@
           <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
           <con:preemptive>false</con:preemptive>
           <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
-          <con:authType>No Authorization</con:authType>
+          <con:authType>Global HTTP Settings</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:jmsPropertyConfig/>

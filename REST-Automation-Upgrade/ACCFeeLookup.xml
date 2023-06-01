@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="a4727a76-9759-4922-b369-ab61429f4f99" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ACCFeeLookup" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="a4727a76-9759-4922-b369-ab61429f4f99" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ACCFeeLookup" searchProperties="true" timeout="0">
+  <con:settings id="737326ce-aa44-4042-9d9b-162df6acbd7f">
     <con:setting id="a4727a76-9759-4922-b369-ab61429f4f99fileName">ACCFeeLookup</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="REST Request" id="51cb1435-dd79-4c38-ade7-fb5968d4b263">
     <con:settings/>
-    <con:config service="ACCFeeLookup" resourcePath="/vtps/rest/ACCFeeLookup" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="ACCFeeLookup" resourcePath="/vtps/rest/ACCFeeLookup" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="REST Request" id="b8dd003a-707a-4836-adb3-cf191ec1f2d8" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{

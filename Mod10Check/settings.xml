@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:RestService" id="2270c029-5022-460e-8956-6dd6e012f4b7" name="Mod10Check" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <con:settings>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="2270c029-5022-460e-8956-6dd6e012f4b7" name="Mod10Check" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="34d8b53f-c455-4a7e-b259-01db4110607d">
     <con:setting id="2270c029-5022-460e-8956-6dd6e012f4b7fileName">Mod10Check</con:setting>
   </con:settings>
   <con:definitionCache type="TEXT" rootPart="Mod10Check.json">

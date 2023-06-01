@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="38c99203-3345-4c60-86dc-a7d1f56f8d8c" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CallEnd" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="38c99203-3345-4c60-86dc-a7d1f56f8d8c" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CallEnd" searchProperties="true" timeout="0">
+  <con:settings id="cf30fd3b-3181-4e19-bceb-b7332aec67f1">
     <con:setting id="38c99203-3345-4c60-86dc-a7d1f56f8d8cfileName">CallEnd</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="CallEnd" id="27916ac9-7f61-4fe7-85a8-2ce804e4dce7">
     <con:settings/>
-    <con:config service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallEnd" id="e3bb9182-7995-45be-aa86-11ca3a800f93" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -77,7 +77,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CallEndUpgrade" id="56520580-575c-4f8b-86ed-4baf01df4d12">
     <con:settings/>
-    <con:config service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallEndUpgrade" id="e3bb9182-7995-45be-aa86-11ca3a800f93" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -147,7 +147,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CallEndWWW" id="0cde0b1b-382c-4b18-9660-c611b8b993f0">
     <con:settings/>
-    <con:config service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallEndWWW" id="e3bb9182-7995-45be-aa86-11ca3a800f93" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -216,7 +216,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="CallEndDemo" id="bd1f717a-07f7-42df-bd19-7715761c06af">
     <con:settings/>
-    <con:config service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallEndDemo" id="e3bb9182-7995-45be-aa86-11ca3a800f93" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

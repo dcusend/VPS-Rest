@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite id="52f578ad-ad90-46fd-a6db-a8dc02887f99" name="Demo and Demo2 Test Suite" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="52f578ad-ad90-46fd-a6db-a8dc02887f99" name="Demo and Demo2 Test Suite">
+  <con:settings id="32f21a93-9edb-4610-8175-4c70395274e4">
     <con:setting id="52f578ad-ad90-46fd-a6db-a8dc02887f99fileName">Demo-and-Demo2-Test-Suite</con:setting>
   </con:settings>
   <con:runType>SEQUENTIAL</con:runType>

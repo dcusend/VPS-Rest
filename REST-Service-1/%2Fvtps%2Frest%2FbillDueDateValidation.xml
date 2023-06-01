@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/billDueDateValidation" path="/vtps/rest/billDueDateValidation" id="1ab65160-df23-4878-a9c5-9b2cbc93a92a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/billDueDateValidation" path="/vtps/rest/billDueDateValidation" id="1ab65160-df23-4878-a9c5-9b2cbc93a92a">
+  <con:settings id="533543cf-f197-463d-a1ad-5a853a5ab40c">
     <con:setting id="1ab65160-df23-4878-a9c5-9b2cbc93a92afileName">%2Fvtps%2Frest%2FbillDueDateValidation</con:setting>
   </con:settings>
   <con:parameters/>

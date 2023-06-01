@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="2f4a9366-4266-4c54-8e2c-612ac4c667f7" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ParseMoney" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="2f4a9366-4266-4c54-8e2c-612ac4c667f7" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ParseMoney" searchProperties="true" timeout="0">
+  <con:settings id="359401e9-5ce1-4d4e-b95e-b70eb0c57d9f">
     <con:setting id="c784e4d0-aead-4d23-9c39-af8b244ce589fileName">ParseMoney</con:setting>
     <con:setting id="2f4a9366-4266-4c54-8e2c-612ac4c667f7fileName">ParseMoney</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="ParseMoneyUpgrade" id="b2287e65-c30b-4bb3-be52-102e1a56030e">
     <con:settings/>
-    <con:config service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ParseMoneyUpgrade" id="e9e829cc-d48d-4635-8394-e68ebdbf7c37" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -131,7 +131,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ParseMoneyWWW Spanish" id="8968e3e2-976e-4929-bc49-252080ca710e">
     <con:settings/>
-    <con:config service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 4" resourcePath="/vtps/rest/parseMoney" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ParseMoneyWWW Spanish" id="e9e829cc-d48d-4635-8394-e68ebdbf7c37" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

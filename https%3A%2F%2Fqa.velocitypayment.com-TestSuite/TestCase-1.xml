@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="9fec9550-5a58-42ca-9410-4e73afb0d866" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="9fec9550-5a58-42ca-9410-4e73afb0d866" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase 1" searchProperties="true" timeout="0">
+  <con:settings id="6c5ab0b2-9f47-4331-a08d-1d3e22eb82d6">
     <con:setting id="9fec9550-5a58-42ca-9410-4e73afb0d866fileName">TestCase-1</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>

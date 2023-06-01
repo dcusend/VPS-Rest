@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/ccExpDateValidation" path="/vtps/rest/ccExpDateValidation" id="39c8a17a-7fe7-4ef5-b94f-c912f64ac997" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/ccExpDateValidation" path="/vtps/rest/ccExpDateValidation" id="39c8a17a-7fe7-4ef5-b94f-c912f64ac997">
+  <con:settings id="1219e7ac-8b9b-4304-8393-974cf41078a5">
     <con:setting id="39c8a17a-7fe7-4ef5-b94f-c912f64ac997fileName">%2Fvtps%2Frest%2FccExpDateValidation</con:setting>
   </con:settings>
   <con:parameters/>

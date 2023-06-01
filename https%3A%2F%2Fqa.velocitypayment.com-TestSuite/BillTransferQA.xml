@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="9c8a4b2c-1da3-4025-8d62-21c83b06ef70" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BillTransferQA" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="9c8a4b2c-1da3-4025-8d62-21c83b06ef70" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BillTransferQA" searchProperties="true" timeout="0">
+  <con:settings id="1dfbd5e2-1f3c-4c1c-9312-65c4ec22da49">
     <con:setting id="9c8a4b2c-1da3-4025-8d62-21c83b06ef70fileName">BillTransferQA</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="BillTransferQA" id="15f3f95c-9dd6-4d07-a9cd-cf8b5a124b32">
     <con:settings/>
-    <con:config service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillTransferQA" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -80,7 +80,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="Copy of BillTransferQA" id="94806e65-44e3-4bd0-b77e-295490e808f5">
     <con:settings/>
-    <con:config service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="Copy of BillTransferQA" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -154,7 +154,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="BillTransfer-Demo-3811" id="2dfe5d38-cfc4-42f0-b970-d2fefa623cfb">
     <con:settings/>
-    <con:config service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillTransfer-Demo-3811" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -229,7 +229,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="BillTransferQA2" id="7483a576-f7ce-4235-91e8-7386a9a84dc9">
     <con:settings/>
-    <con:config service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillTransferQA2" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -303,7 +303,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="BillTransfer-Demo-3802" id="3996cafe-3070-4b86-82b2-a37b9d1d7258">
     <con:settings/>
-    <con:config service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillTransfer-Demo-3802" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>

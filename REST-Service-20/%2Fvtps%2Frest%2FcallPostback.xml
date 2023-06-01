@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/callPostback" path="/vtps/rest/callPostback" id="65975195-13e8-4761-bc37-6bf986ce5644" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/callPostback" path="/vtps/rest/callPostback" id="65975195-13e8-4761-bc37-6bf986ce5644">
+  <con:settings id="0d015b82-2ea8-4366-b233-567ea9e7b752">
     <con:setting id="65975195-13e8-4761-bc37-6bf986ce5644fileName">%2Fvtps%2Frest%2FcallPostback</con:setting>
   </con:settings>
   <con:parameters/>

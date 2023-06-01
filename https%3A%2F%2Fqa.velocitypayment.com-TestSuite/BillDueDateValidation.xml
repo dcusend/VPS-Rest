@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="b43accb1-cb3d-432d-b18a-1af065e54ec7" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BillDueDateValidation" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="b43accb1-cb3d-432d-b18a-1af065e54ec7" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="BillDueDateValidation" searchProperties="true" timeout="0">
+  <con:settings id="8ee0ec32-8e8b-4f07-baa8-e56e2b5cc909">
     <con:setting id="b43accb1-cb3d-432d-b18a-1af065e54ec7fileName">BillDueDateValidation</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="BillDueDateValidation" id="4d6efca0-ccad-4785-8720-f78a2cae1960">
     <con:settings/>
-    <con:config service="REST Service 1" resourcePath="/vtps/rest/billDueDateValidation" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 1" resourcePath="/vtps/rest/billDueDateValidation" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillDueDateValidation" id="4fcb8abf-6064-40ff-8db0-136e99cea07f" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -57,7 +57,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="BillDueDateValidationUpgrade" id="672a7c3e-7bda-47ee-942f-a5ef7e577db0">
     <con:settings/>
-    <con:config service="REST Service 1" resourcePath="/vtps/rest/billDueDateValidation" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 1" resourcePath="/vtps/rest/billDueDateValidation" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillDueDateValidationUpgrade" id="4fcb8abf-6064-40ff-8db0-136e99cea07f" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -108,7 +108,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="BillDueDateValidationWWW" id="66a106af-b45e-459e-8d77-99ba445422b1">
     <con:settings/>
-    <con:config service="REST Service 1" resourcePath="/vtps/rest/billDueDateValidation" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 1" resourcePath="/vtps/rest/billDueDateValidation" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillDueDateValidationWWW" id="4fcb8abf-6064-40ff-8db0-136e99cea07f" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -158,7 +158,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="BillDueDateValidationDemo" id="35efdc90-e17a-49a2-b962-aa6cf96c6457">
     <con:settings/>
-    <con:config service="REST Service 1" resourcePath="/vtps/rest/billDueDateValidation" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 1" resourcePath="/vtps/rest/billDueDateValidation" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillDueDateValidationDemo" id="4fcb8abf-6064-40ff-8db0-136e99cea07f" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

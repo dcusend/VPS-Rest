@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="200638fc-2187-4439-b0cd-15e04006d3d7" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="IVRACLookup-InvalidRequest" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="200638fc-2187-4439-b0cd-15e04006d3d7" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="IVRACLookup-InvalidRequest" searchProperties="true" timeout="0">
+  <con:settings id="e8cf36e3-99c5-4bf9-88b1-1b2ab0632282">
     <con:setting id="200638fc-2187-4439-b0cd-15e04006d3d7fileName">IVRACLookup-InvalidRequest</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="IncorrectCAN" id="ffc4e2f2-6173-43bc-aacf-a4f3d2ec3351">
     <con:settings/>
-    <con:config service="CANverification" resourcePath="/vtps/rest/cancheck" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="CANverification" resourcePath="/vtps/rest/cancheck" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="IncorrectCAN" id="0045de87-cb37-4bfe-b28d-51cb5c525c01" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -78,7 +78,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="MissingCAN" id="3388f543-9aae-4514-9ea2-d34266ce30f3">
     <con:settings/>
-    <con:config service="CANverification" resourcePath="/vtps/rest/cancheck" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="CANverification" resourcePath="/vtps/rest/cancheck" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="MissingCAN" id="0045de87-cb37-4bfe-b28d-51cb5c525c01" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>
@@ -151,7 +151,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="MissingAppID" id="fc9df210-be8d-4af3-854b-37d1a6d73a63">
     <con:settings/>
-    <con:config service="CANverification" resourcePath="/vtps/rest/cancheck" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="CANverification" resourcePath="/vtps/rest/cancheck" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="MissingAppID" id="0045de87-cb37-4bfe-b28d-51cb5c525c01" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns="http://eviware.com/soapui/config"/></con:setting>

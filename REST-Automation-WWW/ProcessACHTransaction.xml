@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="1d600e58-6ac1-48e8-8e7d-b9f62cc73290" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ProcessACHTransaction" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="1d600e58-6ac1-48e8-8e7d-b9f62cc73290" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ProcessACHTransaction" searchProperties="true" timeout="0">
+  <con:settings id="d9d435cb-9a3b-4348-a202-a2cfac463ed2">
     <con:setting id="44e73c59-7bd3-41e5-96d0-bb08026a4fccfileName">ProcessACHTransaction</con:setting>
     <con:setting id="1d600e58-6ac1-48e8-8e7d-b9f62cc73290fileName">ProcessACHTransaction</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="ProcessACH-PersonalChecking-Upgrade2325" id="27edcf53-4a03-4766-8cd1-04ef887f4e4f">
     <con:settings/>
-    <con:config service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessACH-PersonalChecking-Upgrade2325" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -93,7 +93,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ProcessACH-Corporate-Upgrade2325" id="c75a1826-98a4-4aee-9ac8-71a562266a4b">
     <con:settings/>
-    <con:config service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessACH-Corporate-Upgrade2325" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -180,7 +180,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="ProcessACH-Negative-Corporate-Upgrade2325" id="941e4715-383f-48ab-b217-eef39acf38e9">
     <con:settings/>
-    <con:config service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 9" resourcePath="/vtps/rest/processACHTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessACH-Negative-Corporate-Upgrade2325" id="07334b5e-6827-4283-85c1-b66ac8c9bce0" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -285,7 +285,7 @@
   </con:testStep>
   <con:testStep type="datagen" name="DataGenRandomRemID" id="2001bc59-8264-4e55-af95-58b496ac5133">
     <con:settings/>
-    <con:config xsi:type="con:DataGeneratorStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataGeneratorStep">
       <con:property type="Number">
         <con:configuration>
           <start>10000000000</start>

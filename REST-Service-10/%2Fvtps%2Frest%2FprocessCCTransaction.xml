@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/processCCTransaction" path="/vtps/rest/processCCTransaction" id="78e75605-d79e-4dd7-a5ab-a208f257d549" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/processCCTransaction" path="/vtps/rest/processCCTransaction" id="78e75605-d79e-4dd7-a5ab-a208f257d549">
+  <con:settings id="2fd59d2a-5792-49f7-aaf2-51ced2d15606">
     <con:setting id="78e75605-d79e-4dd7-a5ab-a208f257d549fileName">%2Fvtps%2Frest%2FprocessCCTransaction</con:setting>
   </con:settings>
   <con:parameters/>

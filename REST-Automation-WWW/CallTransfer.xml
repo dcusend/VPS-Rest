@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="63e3a5e3-d264-43dc-b553-5640e4319ee6" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CallTransfer" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="63e3a5e3-d264-43dc-b553-5640e4319ee6" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CallTransfer" searchProperties="true" timeout="0">
+  <con:settings id="2aa0f68f-bbe9-4cc0-8abf-1cc231e61d16">
     <con:setting id="d2edd73b-bfd3-4288-ba89-32a0a1b6bbc4fileName">CallTransfer</con:setting>
     <con:setting id="63e3a5e3-d264-43dc-b553-5640e4319ee6fileName">CallTransfer</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="CallTransferUpgrade" id="d426edf6-3779-424a-a277-07636e445b1c">
     <con:settings/>
-    <con:config service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 2" resourcePath="/vtps/rest/CallTransfer" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallTransferUpgrade" id="fcd3b32b-39c1-4226-a75e-e23f403a12cd" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

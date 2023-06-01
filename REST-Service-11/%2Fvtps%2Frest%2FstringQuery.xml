@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/stringQuery" path="/vtps/rest/stringQuery" id="b6036234-97d6-478d-89e2-7bbffef1a6d2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/stringQuery" path="/vtps/rest/stringQuery" id="b6036234-97d6-478d-89e2-7bbffef1a6d2">
+  <con:settings id="bc5cfadf-9bfd-4916-bd64-81e71faa03a6">
     <con:setting id="b6036234-97d6-478d-89e2-7bbffef1a6d2fileName">%2Fvtps%2Frest%2FstringQuery</con:setting>
   </con:settings>
   <con:parameters/>

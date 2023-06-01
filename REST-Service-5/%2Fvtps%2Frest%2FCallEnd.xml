@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/CallEnd" path="/vtps/rest/CallEnd" id="8b2fc891-633c-4f03-a544-89fe713e9439" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/CallEnd" path="/vtps/rest/CallEnd" id="8b2fc891-633c-4f03-a544-89fe713e9439">
+  <con:settings id="f4f39492-9659-43a0-a7e2-9a2f0081d4b4">
     <con:setting id="8b2fc891-633c-4f03-a544-89fe713e9439fileName">%2Fvtps%2Frest%2FCallEnd</con:setting>
   </con:settings>
   <con:parameters/>

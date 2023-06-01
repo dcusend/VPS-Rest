@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/vtps/rest/payBills" path="/vtps/rest/payBills" id="e5c23c2a-7387-45f9-a725-f13729379ddb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/vtps/rest/payBills" path="/vtps/rest/payBills" id="e5c23c2a-7387-45f9-a725-f13729379ddb">
+  <con:settings id="b7ef49f3-db31-40bf-802a-260be881b1e6">
     <con:setting id="e5c23c2a-7387-45f9-a725-f13729379ddbfileName">%2Fvtps%2Frest%2FpayBills</con:setting>
   </con:settings>
   <con:parameters/>

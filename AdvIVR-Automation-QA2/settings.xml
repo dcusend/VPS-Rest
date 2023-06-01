@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite id="8a4ac5db-de97-49f6-8e73-d7ba030081e9" name="AdvIVR-Automation-QA2" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="8a4ac5db-de97-49f6-8e73-d7ba030081e9" name="AdvIVR-Automation-QA2">
+  <con:settings id="e3f025b5-0715-45f8-b7d3-caedf3432f3c">
     <con:setting id="d87f5f3f-5272-494c-8473-bbb35e06bac2fileName">AdvIVR-Automation</con:setting>
     <con:setting id="8a4ac5db-de97-49f6-8e73-d7ba030081e9fileName">AdvIVR-Automation-QA2</con:setting>
   </con:settings>

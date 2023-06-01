@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="" path="/vtps/rest/ACCFeeLookup" id="8b3aa093-89c1-43d1-aa02-afcd3fca48c2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="" path="/vtps/rest/ACCFeeLookup" id="8b3aa093-89c1-43d1-aa02-afcd3fca48c2">
+  <con:settings id="6b3a75d2-7c48-41e8-aec2-741bd9e20cc3">
     <con:setting id="8b3aa093-89c1-43d1-aa02-afcd3fca48c2fileName">%2Fvtps%2Frest%2FACCFeeLookup</con:setting>
   </con:settings>
   <con:parameters/>

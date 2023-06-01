@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="6626ac0f-04f1-4f79-8852-b79164463b17" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CCExpDateValidation" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="6626ac0f-04f1-4f79-8852-b79164463b17" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CCExpDateValidation" searchProperties="true" timeout="0">
+  <con:settings id="6587a872-66ea-4ae2-bb4e-2b9205175cd7">
     <con:setting id="ac573f9c-2e6d-4ec5-b49e-78f8199bd131fileName">CCExpDateValidation</con:setting>
     <con:setting id="6626ac0f-04f1-4f79-8852-b79164463b17fileName">CCExpDateValidation</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="CCExpDateValidationUpgrade" id="9b702f3e-0f5b-4166-b843-95408a37afb3">
     <con:settings/>
-    <con:config service="REST Service 6" resourcePath="/vtps/rest/ccExpDateValidation" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 6" resourcePath="/vtps/rest/ccExpDateValidation" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CCExpDateValidationUpgrade" id="f3ac439d-7262-471a-a377-1e699347a5b3" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

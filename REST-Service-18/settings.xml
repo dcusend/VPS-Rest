@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:RestService" id="f8910ed3-f4cc-49c3-b1ff-4f4144dc8c8d" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 18" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
+<con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" xsi:type="con:RestService" id="f8910ed3-f4cc-49c3-b1ff-4f4144dc8c8d" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 18" type="rest">
+  <con:settings id="8d674acf-44bb-447f-8d38-c4175374e34f">
     <con:setting id="f8910ed3-f4cc-49c3-b1ff-4f4144dc8c8dfileName">REST-Service-18</con:setting>
   </con:settings>
   <con:definitionCache type="TEXT" rootPart=""/>

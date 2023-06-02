@@ -102,7 +102,7 @@
         </con:settings>
         <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{\r
-   "clientAccountNumber" : "41117511620",\r
+   "clientAccountNumber" : "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",\r
    "customerID" : "2"\r
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
@@ -176,7 +176,7 @@
    "user_defined8" : "",\r
    "user_defined9" : "",\r
    "user_defined10" : "",\r
-   "client_account_number" : "41117511620",\r
+   "client_account_number" : "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",\r
    "paymentMethodID" : "${RetrieveStoredPM-CC-Request#Response#$['paymentMethods'][0]['paymentMethodID']}",\r
    "card_address" : "2311 york road",\r
    "card_name" : "Dggtrd Sgdd",\r

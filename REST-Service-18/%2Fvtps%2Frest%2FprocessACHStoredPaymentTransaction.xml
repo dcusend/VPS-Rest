@@ -17,6 +17,18 @@
       <con:mediaType>application/json</con:mediaType>
       <con:params/>
     </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>text/html; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element>html</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:element xmlns:proc="https://qa.velocitypayment.com/vtps/rest/processACHStoredPaymentTransaction">proc:Fault</con:element>
+    </con:representation>
     <con:request name="POST Request" id="3c1948d7-1b4a-4da9-bc29-757a00259231" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://qa.velocitypayment.com</con:endpoint>

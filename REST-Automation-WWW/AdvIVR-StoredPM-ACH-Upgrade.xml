@@ -99,7 +99,7 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
-        <con:request>{"clientAccountNumber":"17721199780","customerID":"2"}</con:request>
+        <con:request>{"clientAccountNumber":"79607850732","customerID":"2"}</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
         <con:assertion type="JsonPath Match" id="983e09d2-e6a8-4cda-a6da-5339357c8242" name="Match content of [result]">
           <con:configuration>
@@ -156,6 +156,127 @@
         <con:mode>READ</con:mode>
         <con:shared>true</con:shared>
       </con:property>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ProcessACHStoredPMTransaction" id="32b9fd47-d02c-47a9-979c-f9bf8102b95c">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 18" resourcePath="/vtps/rest/processACHStoredPaymentTransaction" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="ProcessACHStoredPMTransaction" id="3c1948d7-1b4a-4da9-bc29-757a00259231" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "amount" : "10.50",\r
+   "transaction_type" : "200",\r
+   "message_version" : "2.0IVR_A",\r
+   "category" : "",\r
+   "requestSource" : "",\r
+   "email" : "",\r
+   "response_format" : "fixed_width",\r
+   "application_id" : "18",\r
+   "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "standard_entry_class" : "WEB",\r
+   "user_defined1" : "",\r
+   "user_defined2" : "",\r
+   "user_defined3" : "",\r
+   "user_defined4" : "",\r
+   "user_defined5" : "",\r
+   "user_defined6" : "",\r
+   "user_defined7" : "",\r
+   "user_defined8" : "",\r
+   "user_defined9" : "",\r
+   "user_defined10" : "",\r
+   "client_account_number" : "${RetrieveStoredPM-ACH-Request#Response#$['clientAccountNumber']}",\r
+   "paymentMethodID" : "${RetrieveStoredPM-ACH-Request#Response#$['paymentMethods'][0]['paymentMethodID']}",\r
+   "account_type" : "",\r
+   "check_type" : "",\r
+   "check_first_name" : "",\r
+   "check_last_name" : "",\r
+   "check_company" : "",\r
+   "check_address" : "",\r
+   "check_city" : "",\r
+   "check_state" : "",\r
+   "check_zip" : "",\r
+   "check_account" : "",\r
+   "routing_number" : ""\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processACHStoredPaymentTransaction</con:originalUri>
+        <con:assertion type="JsonPath Existence Match" id="77e282a2-8402-459e-a085-e4492df73d18" name="Check for existence of [remittanceID]">
+          <con:configuration>
+            <path>$['remittanceID']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="7629cede-0d51-469d-ab34-35732043f69e" name="Check for existence of [transactionID]">
+          <con:configuration>
+            <path>$['transactionID']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="30ecdd85-8c77-4487-a427-dd4cca43d08e" name="Match content of [responseCode]">
+          <con:configuration>
+            <path>$['responseCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="760264e4-d270-4a4b-8b73-0117baa6f9fb" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="89e72adc-704f-43e4-bd45-06e77102466a" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
     </con:config>
   </con:testStep>
   <con:properties/>

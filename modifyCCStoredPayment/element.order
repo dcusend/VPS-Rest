@@ -30,17 +30,3 @@ ACCFeeLookup
 Mod10Check
 modifyACHStoredPayment
 modifyCCStoredPayment
-disableACHStoredPayment
-disableCCStoredPayment
-https%3A%2F%2Fqa.velocitypayment.com-TestSuite
-Test-Suite-1
-Test-Suite-2
-REST-Automation-Upgrade
-REST-Automation-WWW
-WebSocketTesting
-IVRAccountLookup
-Demo-and-Demo2-Test-Suite
-AdvIVR-Automation
-AdvIVR-Automation-QA
-AdvIVR-Automation-QA2
-TestSuite-1

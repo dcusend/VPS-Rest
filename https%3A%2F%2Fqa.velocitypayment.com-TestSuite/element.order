@@ -26,3 +26,9 @@ CallPostback.xml
 Copy-of-AdvancedIVRMultipleBills-Demo3759.xml
 Test-Case-1.xml
 AdvancedIVR-StoredPM-Demo3159.xml
+AdvancedIVR-StoredPM-684.xml
+RetrieveStoredPaymentMethod.xml
+ModifyACHStoredPayment.xml
+ModifyCCStoredPayment.xml
+DisableACHStoredPayment.xml
+DisableCCStoredPayment.xml

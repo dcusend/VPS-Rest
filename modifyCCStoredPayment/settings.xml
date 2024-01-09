@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="e442bfe9-4ccb-46a9-bee4-3c3dde1cbc76" name="modifyCCStoredPayment" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="fc9f1fcc-69b4-4954-8889-9434591f3111">
+    <con:setting id="e442bfe9-4ccb-46a9-bee4-3c3dde1cbc76fileName">modifyCCStoredPayment</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="modifyCCStoredPayment.json">
+    <con:part>
+      <con:url>modifyCCStoredPayment.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"modifyCCStoredPayment","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/vtps/rest/modifyCCStoredPayment":{"post":{"requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}},"components":{"securitySchemes":{"User Iahmed":{"type":"http","scheme":"basic"}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints/>
+</con:interface>

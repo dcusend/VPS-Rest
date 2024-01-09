@@ -29,6 +29,10 @@ REST-Service-26\%2Fvtps%2Frest%2FretrieveStoredPayment.xml
 CANverification\cancheck.xml
 ACCFeeLookup\%2Fvtps%2Frest%2FACCFeeLookup.xml
 Mod10Check\%2Fvtps%2Frest%2Fmod10check.xml
+modifyACHStoredPayment\modifyACHStoredPayment.xml
+modifyCCStoredPayment\modifyCCStoredPayment.xml
+disableACHStoredPayment\disableACHStoredPayment.xml
+disableCCStoredPayment\disableCCStoredPayment.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillLookup.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ParseMoney.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillDueDateValidation.xml
@@ -57,6 +61,12 @@ https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CallPostback.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\Copy-of-AdvancedIVRMultipleBills-Demo3759.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\Test-Case-1.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\AdvancedIVR-StoredPM-Demo3159.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\AdvancedIVR-StoredPM-684.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\RetrieveStoredPaymentMethod.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyACHStoredPayment.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyCCStoredPayment.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\DisableACHStoredPayment.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\DisableCCStoredPayment.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml
 Test-Suite-2\Test-Case-1.xml

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" id="b8d7ca17-796b-4171-96eb-d830cfe0b0c0" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AdvancedIVR StoredPM" searchProperties="true" timeout="0">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="460e98ca-afb0-42db-ba07-e6a8337ee0f8" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AdvancedIVR StoredPM-684" searchProperties="true" timeout="0">
   <con:settings id="c5a46f34-1e05-40d4-a342-a97501ff9835">
-    <con:setting id="b8d7ca17-796b-4171-96eb-d830cfe0b0c0fileName">AdvancedIVR-StoredPM</con:setting>
+    <con:setting id="460e98ca-afb0-42db-ba07-e6a8337ee0f8fileName">AdvancedIVR-StoredPM-684</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="restrequest" name="CreateCCStoredPM Request" id="9d9cc723-27d3-45dc-a79a-3cfde7f3a25c">
+  <con:testStep type="restrequest" name="CreateCCStoredPM Request" id="4095ea4d-b395-4f0b-97c0-bd1698fe7ff9">
     <con:settings/>
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CreateCCStoredPM Request" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
@@ -14,7 +14,7 @@
         <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
-      "clientAccountNumber" : "1235511319",\r
+      "clientAccountNumber" : "1235511311",\r
       "applicationID" : "609",\r
       "customerID" : "195"\r
    },\r
@@ -26,8 +26,8 @@
       "card_exyr" : "2025"\r
    },\r
    "customerInformation" : {\r
-      "firstName" : "Kirans",\r
-      "lastName" : "Mores",\r
+      "firstName" : "Kiran",\r
+      "lastName" : "More",\r
       "companyName" : "ABC Company",\r
       "addressLine1" : "123 Main St",\r
       "city" : "Arlington",\r
@@ -76,7 +76,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="CreateACHStoredPM" id="225bf052-f715-4bf4-b39d-526107de5e1b">
+  <con:testStep type="restrequest" name="CreateACHStoredPM" id="9bd7a2da-009b-4238-a152-e3545c0cc14b">
     <con:settings/>
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 16" resourcePath="/vtps/rest/createACHStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CreateACHStoredPM" id="b4dd6391-8a4c-4f9a-a485-3c85b8888bee" mediaType="application/json" postQueryString="false">
@@ -86,13 +86,13 @@
         <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
-      "clientAccountNumber" : "1235511208",\r
-      "applicationID" : "609",\r
+      "clientAccountNumber" : "1235511302",\r
+      "applicationID" : "684",\r
       "customerID" : "195"\r
    },\r
    "paymentMethod" : {\r
       "paymentMethodType" : "2",\r
-      "accountNumber" : "123413403",\r
+      "accountNumber" : "123413303",\r
       "routingNumber" : "256072691"\r
    },\r
    "customerInformation" : {\r
@@ -137,7 +137,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="RetrieveStoredPM Request" id="c0d50d53-a8a0-4e90-82b6-29739a72c938">
+  <con:testStep type="restrequest" name="RetrieveStoredPM Request" id="ae264e1a-e7bf-4d7c-bc57-5a243536bbaa">
     <con:settings/>
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="RetrieveStoredPM Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
@@ -146,7 +146,7 @@
         </con:settings>
         <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
         <con:request>{\r
-   "clientAccountNumber" : "1235511311",\r
+   "clientAccountNumber" : "1235511302",\r
    "customerID" : "195"\r
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
@@ -180,7 +180,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessCCWithStoredPMTransaction" id="04db6043-2459-495c-bce2-e0b1f3677e7a">
+  <con:testStep type="restrequest" name="ProcessCCWithStoredPMTransaction" id="b752beaf-4b7c-4941-8a35-0870d7c4b0b1">
     <con:settings/>
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessCCWithStoredPMTransaction" id="3d1a6306-7d90-486f-a571-362e8983a93e" mediaType="application/json" postQueryString="false">
@@ -253,7 +253,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessACHStoredPMTransaction" id="02d4cb68-d458-461d-ae9b-7c9940f26b53">
+  <con:testStep type="restrequest" name="ProcessACHStoredPMTransaction" id="34d4f691-a05a-498d-9f40-3d543b35ff87">
     <con:settings/>
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 18" resourcePath="/vtps/rest/processACHStoredPaymentTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessACHStoredPMTransaction" id="3c1948d7-1b4a-4da9-bc29-757a00259231" mediaType="application/json" postQueryString="false">
@@ -329,7 +329,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="CFCCLookupNEW" id="de5699e5-7cf1-4988-90ec-f10347808139">
+  <con:testStep type="restrequest" name="CFCCLookupNEW" id="42f6d0ea-4e9a-417f-92a4-831e12fcb524">
     <con:settings/>
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 19" resourcePath="/vtps/rest/convenienceFeeCCLookup" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CFCCLookupNEW" id="f0aa9450-e550-4455-9415-5c392f6010b9" mediaType="application/json" postQueryString="false">
@@ -379,7 +379,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="CallPostBack" id="0eeb3e1e-6d03-4b8b-a3bf-280639d95b06">
+  <con:testStep type="restrequest" name="CallPostBack" id="ab664d92-a49c-40aa-ad23-0cedde0c846f">
     <con:settings/>
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 20" resourcePath="/vtps/rest/callPostback" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallPostBack" id="3cad5152-6c6f-444a-bb9e-a5bac92bd6f8" mediaType="application/json" postQueryString="false">
@@ -419,7 +419,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessCCWithoutStoredPMTransaction" id="88a9aef6-f85c-4270-b17c-be98cd765190">
+  <con:testStep type="restrequest" name="ProcessCCWithoutStoredPMTransaction" id="f5f88e9c-310e-47e1-b3c3-21ec2f1dced7">
     <con:settings/>
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessCCWithoutStoredPMTransaction" id="3d1a6306-7d90-486f-a571-362e8983a93e" mediaType="application/json" postQueryString="false">
@@ -492,7 +492,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Copy of CreateCCStoredPM Request" id="c1b57528-3e80-4001-b60c-f5ad104eebc1">
+  <con:testStep type="restrequest" name="Copy of CreateCCStoredPM Request" id="28826697-77c1-46bc-9bdc-2f272117e070">
     <con:settings/>
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="Copy of CreateCCStoredPM Request" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
@@ -555,7 +555,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Copy of RetrieveStoredPM Request" id="51d05025-37c0-4dc0-845c-8cfe2f4b65b3">
+  <con:testStep type="restrequest" name="Copy of RetrieveStoredPM Request" id="86417ace-a639-49b6-8e87-882381445903">
     <con:settings/>
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="Copy of RetrieveStoredPM Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
@@ -568,132 +568,6 @@
 "customerID": "195" 
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
-        <con:credentials>
-          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters/>
-        <con:environmentSpec>
-          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="CreateCCStoredPM Request-www-DoNotUseToTest" id="f44c0ceb-aa73-4cdf-bddf-fba5cf144121">
-    <con:settings/>
-    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
-      <con:restRequest name="CreateCCStoredPM Request-www-DoNotUseToTest" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
-        </con:settings>
-        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
-        <con:request>{\r
-   "header" : {\r
-      "clientAccountNumber" : "20271618",\r
-      "applicationID" : "4851",\r
-      "customerID" : "1314"\r
-   },\r
-   "customerInformation" : {\r
-      "firstName" : "Jon",\r
-      "lastName" : "Payer",\r
-      "companyName" : "",\r
-      "addressLine1" : "124 Main Street",\r
-      "city" : "Arlington",\r
-      "state" : "VA",\r
-      "zip" : "22201",\r
-      "country" : ""\r
-   },\r
-   "paymentMethod" : {\r
-      "paymentMethodType" : "1",\r
-      "pan" : "4761730000000244",\r
-      "card_expiration" : "092022",\r
-      "card_exmo" : "09",\r
-      "card_exyr" : "2025"\r
-   }\r
-}</con:request>
-        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/createCCStoredPayment</con:originalUri>
-        <con:credentials>
-          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:jmsPropertyConfig/>
-        <con:parameters/>
-        <con:environmentSpec>
-          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
-            <con:authProfile>Inherit From Parent</con:authProfile>
-          </con:entry>
-        </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="CreateCCStoredPM Request-www-TestCustomer" id="e7174f71-a977-4926-91ed-54ee6d08e583">
-    <con:settings/>
-    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
-      <con:restRequest name="CreateCCStoredPM Request-www-TestCustomer" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
-        </con:settings>
-        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
-        <con:request>{\r
-   "header" : {\r
-      "clientAccountNumber" : "256072201",\r
-      "applicationID" : "2324",\r
-      "customerID" : "2"\r
-   },\r
-   "customerInformation" : {\r
-      "firstName" : "Jons",\r
-      "lastName" : "Payers",\r
-      "companyName" : "",\r
-      "addressLine1" : "124 Main Street",\r
-      "city" : "Arlington",\r
-      "state" : "VA",\r
-      "zip" : "22201",\r
-      "country" : ""\r
-   },\r
-   "paymentMethod" : {\r
-      "paymentMethodType" : "1",\r
-      "pan" : "4111111111111111",\r
-      "card_expiration" : "092022",\r
-      "card_exmo" : "09",\r
-      "card_exyr" : "2025"\r
-   }\r
-}</con:request>
-        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/createCCStoredPayment</con:originalUri>
         <con:credentials>
           <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

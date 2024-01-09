@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="7b727194-5b54-43aa-b7d2-29ce3b242321" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="RetrieveStoredPaymentMethod" searchProperties="true" timeout="0">
+  <con:settings id="18efe718-6638-47c3-869e-bd360d952837">
+    <con:setting id="7b727194-5b54-43aa-b7d2-29ce3b242321fileName">RetrieveStoredPaymentMethod</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="RetrieveStoredPM-VSP Request" id="8e0f1489-1ac2-4a2e-b853-343269726ba6">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="RetrieveStoredPM-VSP Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "clientAccountNumber" : "3055155500",\r
+   "customerID" : "195"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datagen" name="DataGen" id="ba608111-5e36-4c9e-b975-edeb8f21bd87">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataGeneratorStep">
+      <con:property type="Script">
+        <con:configuration>
+          <script>def rand9 = Math.abs( new Random().nextInt(90000000)  ) + 10000000</script>
+        </con:configuration>
+        <con:name>rand9</con:name>
+        <con:mode>STEP</con:mode>
+        <con:shared>true</con:shared>
+      </con:property>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="CreateACHStoredPM" id="3b2349b7-8c8a-4a8e-9243-cd7abcf3098c">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 16" resourcePath="/vtps/rest/createACHStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="CreateACHStoredPM" id="b4dd6391-8a4c-4f9a-a485-3c85b8888bee" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "header" : {\r
+      "clientAccountNumber" : "${DataGen#rand9}",\r
+      "applicationID" : "609",\r
+      "customerID" : "195"\r
+   },\r
+   "paymentMethod" : {\r
+      "paymentMethodType" : "2",\r
+      "accountNumber" : "${DataGen#rand9}",\r
+      "routingNumber" : "256072691"\r
+   },\r
+   "customerInformation" : {\r
+      "firstName" : "KiranCorps",\r
+      "lastName" : "MoreCorps",\r
+      "companyName" : "ABC Company Corps",\r
+      "addressLine1" : "123 Main Street",\r
+      "city" : "Arlington",\r
+      "state" : "VA",\r
+      "zip" : "22201",\r
+      "country" : "840"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/createACHStoredPayment</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="RetrieveStoredPM-AdvIVR Request" id="4580d48a-5978-4e77-ad76-784a48f85ca6">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="RetrieveStoredPM-AdvIVR Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "clientAccountNumber" : "${CreateACHStoredPM#RawRequest#$['paymentMethod']['accountNumber']}",\r
+   "customerID" : "195"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

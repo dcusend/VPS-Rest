@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="modifyACHStoredPayment" path="/vtps/rest/modifyACHStoredPayment" id="406f803d-82e1-45af-adec-0211359bb866">
+  <con:settings id="93cdc213-c46a-4018-a64c-0943ebb4c55c">
+    <con:setting id="406f803d-82e1-45af-adec-0211359bb866fileName">modifyACHStoredPayment</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="fb2ef3d7-49ab-4702-a503-57c20d79a991" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="56344d22-57dd-4b2f-ab68-bf2fc9fc20f9" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

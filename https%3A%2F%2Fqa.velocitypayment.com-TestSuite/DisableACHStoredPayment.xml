@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="ca643038-06ae-4398-a07a-bb60a3a77663" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="DisableACHStoredPayment" searchProperties="true" timeout="0">
+  <con:settings id="f8bf8d7e-f562-47c7-9182-8892d923a3d2">
+    <con:setting id="ca643038-06ae-4398-a07a-bb60a3a77663fileName">DisableACHStoredPayment</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request" id="fe70d715-8a14-4910-bf85-0479ed9621bf">
+    <con:settings/>
+    <con:config service="disableACHStoredPayment" resourcePath="/vtps/rest/disableACHStoredPayment" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request" id="e1a2cc2d-4476-4ce6-992a-2b4bd76eb3c6" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{
+  "header": {
+    "clientAccountNumber": "45325677",
+    "applicationID": "609",
+    "customerID": "195",
+    "paymentMethodID": "90694"
+  },
+  "paymentMethod": {
+    "paymentMethodType": "2",
+    "accountNumber": "123456789",
+    "routingNumber": "12345678"
+  },
+  "customerInformation": {
+    "firstName": "Fred",
+    "lastName": "Smith",
+    "companyName": "ABC Company",
+    "addressLine1": "123 Main St",
+    "city": "Arlington",
+    "state": "VA",
+    "zip": "22201",
+    "country": "840"
+  }
+}</con:request>
+        <con:assertion type="Valid HTTP Status Codes" id="f91c1ece-54b3-4078-b926-42c28ae698dd" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="42058f77-96c6-4b1a-9af7-e68776ea0b8a" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

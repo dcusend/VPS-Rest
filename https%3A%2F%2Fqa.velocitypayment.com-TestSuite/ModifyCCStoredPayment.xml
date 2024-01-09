@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="7bd883b7-af6e-410e-940c-1f6de09f440b" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ModifyCCStoredPayment" searchProperties="true" timeout="0">
+  <con:settings id="81e668e1-f1ff-452f-9fcc-236dc9652a08">
+    <con:setting id="7bd883b7-af6e-410e-940c-1f6de09f440bfileName">ModifyCCStoredPayment</con:setting>
+  </con:settings>
+  <con:testStep type="datagen" name="DataGenRandomRemID" id="fb598247-7079-40a9-bdbb-ce734f400d00">
+    <con:settings/>
+    <con:config xsi:type="con:DataGeneratorStep">
+      <con:property type="Number">
+        <con:configuration>
+          <start>10000000000</start>
+          <end>99999999999</end>
+          <step/>
+          <pattern/>
+          <random>true</random>
+          <persist>false</persist>
+        </con:configuration>
+        <con:name>RandomRemID</con:name>
+        <con:mode>READ</con:mode>
+        <con:shared>true</con:shared>
+      </con:property>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="CreateCCStoredPM Request" id="00366930-b957-4f1a-8ac8-71e250dcb1d3">
+    <con:settings/>
+    <con:config service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="CreateCCStoredPM Request" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "header" : {\r
+      "clientAccountNumber" : "${DataGenRandomRemID#RandomRemID}",\r
+      "applicationID" : "609",\r
+      "customerID" : "195"\r
+   },\r
+   "paymentMethod" : {\r
+      "paymentMethodType" : "1",\r
+      "pan" : "4111111111111111",\r
+      "card_expiration" : "102021",\r
+      "card_exmo" : "01",\r
+      "card_exyr" : "2025"\r
+   },\r
+   "customerInformation" : {\r
+      "firstName" : "FNameToBeModified",\r
+      "lastName" : "LNameToBeModified",\r
+      "companyName" : "CompName ToBeModified",\r
+      "addressLine1" : "AL1 ToBeModified",\r
+      "city" : "Arlington",\r
+      "state" : "VA",\r
+      "zip" : "22201",\r
+      "country" : "840"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/createCCStoredPayment</con:originalUri>
+        <con:assertion type="JsonPath Match" id="018f90ee-fed3-4096-9253-38675c2e9d76" name="Match content of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6e979bf5-23aa-4031-9c37-afd685b7be70" name="Match content of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5fc328e0-2ba9-4b4b-807f-6a8a4e02f6bd" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="8a3f248e-da5f-4161-9a66-5e28c8eca531" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="7c6300a3-a4ab-4034-88bb-1c7ecadb0e9c" name="Check for existence of [paymentMethodID]">
+          <con:configuration>
+            <path>$['paymentMethodID']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="RetrieveStoredPM Request" id="c72b2be0-ee84-4829-a375-3cf1b21eb277">
+    <con:settings/>
+    <con:config service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="RetrieveStoredPM Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "clientAccountNumber" : "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",\r
+   "customerID" : "195"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
+        <con:assertion type="JsonPath Match" id="39ae635f-8df2-4b64-ad06-f0b3a92a9f39" name="Match content of [paymentMethodType]">
+          <con:configuration>
+            <path>$['paymentMethods'][0]['paymentMethodType']</path>
+            <content>"Visa"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="68d23b48-5ceb-4041-81ce-c82e9acd9cb4" name="Check for existence of [Last4Digits]">
+          <con:configuration>
+            <path>$['paymentMethods'][0]['Last4Digits']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="aa91c2dc-b673-471a-8c4a-8d7d949835b4" name="Match content of [count]">
+          <con:configuration>
+            <path>$['count']</path>
+            <content>"1"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="cb73039f-e5db-4cf3-bfe8-e41764d44b2c" name="Match content of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="8b19dae4-80c3-4b4b-b373-29d971131bec" name="Match content of [paymentMethodID]">
+          <con:configuration>
+            <path>$['paymentMethods'][0]['paymentMethodID']</path>
+            <content>${CreateCCStoredPM Request#Response#$['paymentMethodID']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4f342f18-e77e-4552-ba2f-9052cb9eb395" name="Match content of [Last4Digits]">
+          <con:configuration>
+            <path>$['paymentMethods'][0]['Last4Digits']</path>
+            <content>"1111"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="06d48e77-70f8-4a4d-b8b1-82e87588cfc7" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="baaeccf7-1dcc-4992-8bad-a44f46983a73" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="29e877f6-313b-4f79-bcaf-72cd79dc22fd" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ModifyCCPaymentMethod" id="a2dbf627-7024-4f3a-af2e-f8788e29d801">
+    <con:settings/>
+    <con:config service="modifyCCStoredPayment" resourcePath="/vtps/rest/modifyCCStoredPayment" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="ModifyCCPaymentMethod" id="1c97ea33-66ec-417c-ba4d-54d46f2296d4" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{
+  "header": {
+    "clientAccountNumber": "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",
+    "applicationID": "609",
+    "customerID": "195",
+    "paymentMethodID": "${CreateCCStoredPM Request#Response#$['paymentMethodID']}"
+  },
+  "paymentMethod": {
+    "paymentMethodType": "1",
+    "pan": "4111111111111112",
+    "card_expiration": "102021",
+    "card_exmo": "05",
+    "card_exyr": "2026"
+  },
+  "customerInformation": {
+    "firstName": "FNameModified",
+    "lastName": "LNameModified",
+    "addressLine1": "AL1 Modified",
+    "city": "Gambrills",
+    "state": "MD",
+    "zip": "21054",
+    "country": "840"
+  }
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/modifyCCStoredPayment</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="962f9901-1c82-4bc4-9d24-6818198be063" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="74bebad1-d802-49ee-9c77-96e4422e4275" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="1384f587-9673-4e50-ad96-0dc70cf08d3a" name="Match content of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="be957b5d-c755-4f67-b119-255128d2ea44" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="acd7adb1-d235-4238-87f3-604fca1bda43" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="1ef4f46c-d345-4aa0-8e98-09bbb5a494f0" name="Match content of [paymentMethodID]">
+          <con:configuration>
+            <path>$['paymentMethodID']</path>
+            <content>${CreateCCStoredPM Request#Response#$['paymentMethodID']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

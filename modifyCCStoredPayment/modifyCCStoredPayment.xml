@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="modifyCCStoredPayment" path="/vtps/rest/modifyCCStoredPayment" id="188a1b0b-832b-48e2-995b-ad63745be592">
+  <con:settings id="3cf3f5f1-b9ea-4286-a48d-33ffbfc26062">
+    <con:setting id="188a1b0b-832b-48e2-995b-ad63745be592fileName">modifyCCStoredPayment</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="fbf484ed-5bf8-4012-8c27-c4a425b5df4e" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="1c97ea33-66ec-417c-ba4d-54d46f2296d4" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+      <con:request>{
+  "header": {
+    "clientAccountNumber": "42638401",
+    "applicationID": "609",
+    "customerID": "195",
+    "paymentMethodID": "90576"
+  },
+  "paymentMethod": {
+    "paymentMethodType": "1",
+    "pan": "4111111111111111",
+    "card_expiration": "102021",
+    "card_exmo": "10",
+    "card_exyr": "2021"
+  },
+  "customerInformation": {
+    "firstName": "Fred",
+    "lastName": "Smith",
+    "addressLine1": "123 Main St",
+    "city": "Arlington",
+    "state": "VA",
+    "zip": "22201",
+    "country": "840"
+  }
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

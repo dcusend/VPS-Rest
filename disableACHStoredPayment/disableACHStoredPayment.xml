@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:con="http://eviware.com/soapui/config" name="disableACHStoredPayment" path="/vtps/rest/disableACHStoredPayment" id="e933cf2d-e51e-471a-9b7d-fc1212d0f048">
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="disableACHStoredPayment" path="/vtps/rest/disableACHStoredPayment" id="e933cf2d-e51e-471a-9b7d-fc1212d0f048">
   <con:settings id="d50faecd-3f68-4572-abee-fec9f46b3d12">
     <con:setting id="e933cf2d-e51e-471a-9b7d-fc1212d0f048fileName">disableACHStoredPayment</con:setting>
   </con:settings>

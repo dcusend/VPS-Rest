@@ -65,8 +65,7 @@ https%3A%2F%2Fqa.velocitypayment.com-TestSuite\AdvancedIVR-StoredPM-684.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\RetrieveStoredPaymentMethod.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyACHStoredPayment.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyCCStoredPayment.xml
-https%3A%2F%2Fqa.velocitypayment.com-TestSuite\DisableACHStoredPayment.xml
-https%3A%2F%2Fqa.velocitypayment.com-TestSuite\DisableCCStoredPayment.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\DisableStoredPayment.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml
 Test-Suite-2\Test-Case-1.xml

@@ -6,7 +6,7 @@
   <con:definitionCache type="TEXT" rootPart="disableCCStoredPayment.json">
     <con:part>
       <con:url>disableCCStoredPayment.json</con:url>
-      <con:content>{"openapi":"3.0.1","info":{"title":"disableCCStoredPayment","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/vtps/rest/disableCCStoredPayment":{"post":{"requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}},"components":{"securitySchemes":{"User Iahmed":{"type":"http","scheme":"basic"}}}}</con:content>
+      <con:content>{"openapi":"3.0.1","info":{"title":"disableCCStoredPayment","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/vtps/rest/disableStoredPayment":{"description":"","post":{"description":"","requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}},"components":{"securitySchemes":{"User Iahmed":{"type":"http","scheme":"basic"}}}}</con:content>
       <con:type>https://swagger.io/openapiv3/specification</con:type>
     </con:part>
   </con:definitionCache>

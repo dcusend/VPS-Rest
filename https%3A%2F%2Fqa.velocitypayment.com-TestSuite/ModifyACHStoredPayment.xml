@@ -248,11 +248,7 @@
       "customerID" : "195",
       "paymentMethodID": "${CreateACHStoredPM#Response#$['paymentMethodID']}"
    },
-   "paymentMethod" : {
-      "paymentMethodType" : "2",
-      "accountNumber" : "3692581475",
-      "routingNumber" : "256072691"
-   },
+   
    "customerInformation" : {
       "firstName" : "FNameModified",
       "lastName" : "LNameModified",

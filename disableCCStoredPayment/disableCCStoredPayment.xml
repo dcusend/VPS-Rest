@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="disableCCStoredPayment" path="/vtps/rest/disableCCStoredPayment" id="ac3935af-50eb-4b3a-b625-34c69fdf6f7f">
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="disableCCStoredPayment" path="/vtps/rest/disableStoredPayment" id="ac3935af-50eb-4b3a-b625-34c69fdf6f7f">
   <con:settings id="386ce92c-2e5d-4068-a859-2e1e1f508f02">
     <con:setting id="ac3935af-50eb-4b3a-b625-34c69fdf6f7ffileName">disableCCStoredPayment</con:setting>
   </con:settings>

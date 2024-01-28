@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:con="http://eviware.com/soapui/config" name="modifyCCStoredPayment" path="/vtps/rest/modifyCCStoredPayment" id="188a1b0b-832b-48e2-995b-ad63745be592">
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="modifyCCStoredPayment" path="/vtps/rest/modifyCCStoredPayment" id="188a1b0b-832b-48e2-995b-ad63745be592">
   <con:settings id="3cf3f5f1-b9ea-4286-a48d-33ffbfc26062">
     <con:setting id="188a1b0b-832b-48e2-995b-ad63745be592fileName">modifyCCStoredPayment</con:setting>
   </con:settings>

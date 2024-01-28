@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:con="http://eviware.com/soapui/config" name="modifyACHStoredPayment" path="/vtps/rest/modifyACHStoredPayment" id="406f803d-82e1-45af-adec-0211359bb866">
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="modifyACHStoredPayment" path="/vtps/rest/modifyACHStoredPayment" id="406f803d-82e1-45af-adec-0211359bb866">
   <con:settings id="93cdc213-c46a-4018-a64c-0943ebb4c55c">
     <con:setting id="406f803d-82e1-45af-adec-0211359bb866fileName">modifyACHStoredPayment</con:setting>
   </con:settings>

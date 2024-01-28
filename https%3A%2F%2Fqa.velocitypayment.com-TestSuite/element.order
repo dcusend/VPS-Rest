@@ -30,5 +30,4 @@ AdvancedIVR-StoredPM-684.xml
 RetrieveStoredPaymentMethod.xml
 ModifyACHStoredPayment.xml
 ModifyCCStoredPayment.xml
-DisableACHStoredPayment.xml
-DisableCCStoredPayment.xml
+DisableStoredPayment.xml

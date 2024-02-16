@@ -63,9 +63,13 @@ https%3A%2F%2Fqa.velocitypayment.com-TestSuite\Test-Case-1.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\AdvancedIVR-StoredPM-Demo3159.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\AdvancedIVR-StoredPM-684.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\RetrieveStoredPaymentMethod.xml
-https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyACHStoredPayment.xml
-https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyCCStoredPayment.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyACHStoredPayment-PC.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyCCStoredPayment-CC-Published.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\DisableStoredPayment.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyStoredPaymentMethod-NegativeTests.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyACHStoredPayment-PS.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyACHStoredPayment-Corp.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ModifyCCStoredPayment-DifferentCardTypes-Published.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml
 Test-Suite-2\Test-Case-1.xml

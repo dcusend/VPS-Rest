@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="7bd883b7-af6e-410e-940c-1f6de09f440b" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ModifyCCStoredPayment" searchProperties="true" timeout="0">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="7bd883b7-af6e-410e-940c-1f6de09f440b" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ModifyCCStoredPayment-CC-Published" searchProperties="true" timeout="0">
   <con:settings id="81e668e1-f1ff-452f-9fcc-236dc9652a08">
-    <con:setting id="7bd883b7-af6e-410e-940c-1f6de09f440bfileName">ModifyCCStoredPayment</con:setting>
+    <con:setting id="7bd883b7-af6e-410e-940c-1f6de09f440bfileName">ModifyCCStoredPayment-CC-Published</con:setting>
   </con:settings>
   <con:testStep type="datagen" name="DataGenRandomRemID" id="fb598247-7079-40a9-bdbb-ce734f400d00">
     <con:settings/>
@@ -28,7 +28,7 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
       "clientAccountNumber" : "${DataGenRandomRemID#RandomRemID}",\r
@@ -135,7 +135,7 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "clientAccountNumber" : "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",\r
    "customerID" : "195"\r
@@ -259,7 +259,7 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{
   "header": {
     "clientAccountNumber": "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",
@@ -286,11 +286,6 @@
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="74bebad1-d802-49ee-9c77-96e4422e4275" name="Response SLA">
-          <con:configuration>
-            <SLA>200</SLA>
           </con:configuration>
         </con:assertion>
         <con:assertion type="JsonPath Match" id="1384f587-9673-4e50-ad96-0dc70cf08d3a" name="Match content of [result]">
@@ -345,7 +340,7 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "amount" : "10.50",\r
    "email" : "iahmed@govolution.com",\r

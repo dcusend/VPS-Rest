@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="7912f4cd-0217-4a55-b9b9-c47f32b57d35" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="ModifyStoredPaymentMethod-NegativeTests" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="">
+  <con:settings id="aa8e6546-8835-458c-89bf-50a5725f9199">
+    <con:setting id="7912f4cd-0217-4a55-b9b9-c47f32b57d35fileName">ModifyStoredPaymentMethod-NegativeTests</con:setting>
+  </con:settings>
+  <con:testStep type="datagen" name="DataGenRandomRemID" id="f137b134-c78e-4ba7-a3eb-d3125fe09477">
+    <con:settings/>
+    <con:config xsi:type="con:DataGeneratorStep">
+      <con:property type="Number">
+        <con:configuration>
+          <start>10000000000</start>
+          <end>99999999999</end>
+          <step/>
+          <pattern/>
+          <random>true</random>
+          <persist>false</persist>
+        </con:configuration>
+        <con:name>RandomRemID</con:name>
+        <con:mode>READ</con:mode>
+        <con:shared>true</con:shared>
+      </con:property>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="Data Source ModifyCCStoredPM Negative" id="1ac117b7-4aeb-467f-b424-d2420c26c922">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/SoapData/ModifyStoredPMNegative.xlsx</file>
+          <worksheet/>
+          <cell>A2</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Tests</con:property>
+      <con:property>AppID</con:property>
+      <con:property>CustID</con:property>
+      <con:property>PMID</con:property>
+      <con:property>ErrorCode</con:property>
+      <con:property>ErrorMsg</con:property>
+      <con:property>ResponsePMID</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ModifyCCPaymentMethod" id="2e0c4610-0712-4ade-b3d1-e06d41061811">
+    <con:settings/>
+    <con:config service="modifyCCStoredPayment" resourcePath="/vtps/rest/modifyCCStoredPayment" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="ModifyCCPaymentMethod" id="1c97ea33-66ec-417c-ba4d-54d46f2296d4" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{
+  "header": {
+    "clientAccountNumber": "139654",
+    "applicationID": "${Data Source ModifyCCStoredPM Negative#AppID}",
+    "customerID": "${Data Source ModifyCCStoredPM Negative#CustID}",
+    "paymentMethodID": "${Data Source ModifyCCStoredPM Negative#PMID}"
+  },
+  "paymentMethod": {
+    "card_exmo": "05",
+    "card_exyr": "2026"
+  },
+  "customerInformation": {
+    "firstName": "FNameModified",
+    "lastName": "LNameModified",
+    "addressLine1": "AL1 Modified",
+    "city": "Gambrills",
+    "state": "MD",
+    "zip": "21054",
+    "country": "840"
+  }
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/modifyCCStoredPayment</con:originalUri>
+        <con:assertion type="JsonPath Match" id="1384f587-9673-4e50-ad96-0dc70cf08d3a" name="Match content of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>"1"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="be957b5d-c755-4f67-b119-255128d2ea44" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>${Data Source ModifyCCStoredPM Negative#ErrorCode}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="acd7adb1-d235-4238-87f3-604fca1bda43" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>${Data Source ModifyCCStoredPM Negative#ErrorMsg}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="1ef4f46c-d345-4aa0-8e98-09bbb5a494f0" name="Match content of [paymentMethodID]">
+          <con:configuration>
+            <path>$['paymentMethodID']</path>
+            <content>${Data Source ModifyCCStoredPM Negative#ResponsePMID}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="5e96958d-e8b1-46cf-a236-13962badd98a">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source ModifyCCStoredPM Negative</dataSourceStep>
+      <targetStep>ModifyCCPaymentMethod</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

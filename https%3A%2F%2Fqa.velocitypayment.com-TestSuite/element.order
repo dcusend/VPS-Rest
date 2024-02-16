@@ -28,6 +28,10 @@ Test-Case-1.xml
 AdvancedIVR-StoredPM-Demo3159.xml
 AdvancedIVR-StoredPM-684.xml
 RetrieveStoredPaymentMethod.xml
-ModifyACHStoredPayment.xml
-ModifyCCStoredPayment.xml
+ModifyACHStoredPayment-PC.xml
+ModifyCCStoredPayment-CC-Published.xml
 DisableStoredPayment.xml
+ModifyStoredPaymentMethod-NegativeTests.xml
+ModifyACHStoredPayment-PS.xml
+ModifyACHStoredPayment-Corp.xml
+ModifyCCStoredPayment-DifferentCardTypes-Published.xml

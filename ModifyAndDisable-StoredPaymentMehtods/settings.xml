@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="31f1e30f-577b-461c-8b0c-9362be5af1cc" name="ModifyAndDisable-StoredPaymentMehtods">
+  <con:settings id="479215c7-3461-442a-bb38-911780eca2f2">
+    <con:setting id="31f1e30f-577b-461c-8b0c-9362be5af1ccfileName">ModifyAndDisable-StoredPaymentMehtods</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

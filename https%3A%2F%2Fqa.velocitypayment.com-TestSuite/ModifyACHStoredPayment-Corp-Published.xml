@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" id="d3aeab1a-ec4c-4d9e-a693-8ae925ef31b9" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="ModifyACHStoredPayment-PS" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="">
+<con:testCase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" id="a356fc35-613a-4bb5-b85c-8e084762b0a8" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="ModifyACHStoredPayment-Corp-Published" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="">
   <con:settings id="d3ff93ba-c581-4064-a01b-ab8d71d5fce3">
-    <con:setting id="d3aeab1a-ec4c-4d9e-a693-8ae925ef31b9fileName">ModifyACHStoredPayment-PS</con:setting>
+    <con:setting id="a356fc35-613a-4bb5-b85c-8e084762b0a8fileName">ModifyACHStoredPayment-Corp-Published</con:setting>
   </con:settings>
-  <con:testStep type="datagen" name="DataGenRandomRemID" id="297c5090-4993-4c0e-b215-30716116b624">
+  <con:testStep type="datagen" name="DataGenRandomRemID" id="002f636a-481e-4c91-842d-78287dbc09a0">
     <con:settings/>
     <con:config xsi:type="con:DataGeneratorStep">
       <con:property type="Number">
@@ -21,7 +21,7 @@
       </con:property>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="CreateACHStoredPM" id="cbaa9efb-e235-49ea-8428-bf49ad4fcd58">
+  <con:testStep type="restrequest" name="CreateACHStoredPM" id="62d0e06d-b5b5-4f28-b83d-27f73ac76c35">
     <con:settings/>
     <con:config service="REST Service 16" resourcePath="/vtps/rest/createACHStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CreateACHStoredPM" id="b4dd6391-8a4c-4f9a-a485-3c85b8888bee" mediaType="application/json" postQueryString="false">
@@ -36,7 +36,7 @@
       "customerID" : "195"\r
    },\r
    "paymentMethod" : {\r
-      "paymentMethodType" : "3",\r
+      "paymentMethodType" : "4",\r
       "accountNumber" : "${DataGenRandomRemID#RandomRemID}",\r
       "routingNumber" : "256072691"\r
    },\r
@@ -118,7 +118,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="RetrieveStoredPM Request" id="88fac1c9-e1ac-4a73-b337-5611bf23fb8b">
+  <con:testStep type="restrequest" name="RetrieveStoredPM Request" id="a2cbcae6-a01c-4d9e-9842-bf6f96bbfaa6">
     <con:settings/>
     <con:config service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="RetrieveStoredPM Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
@@ -134,7 +134,7 @@
         <con:assertion type="JsonPath Match" id="4b977ef0-b52c-4fbb-8ef1-bf5532d1dfce" name="Match content of [paymentMethodType]">
           <con:configuration>
             <path>$['paymentMethods'][0]['paymentMethodType']</path>
-            <content>"Personal Savings"</content>
+            <content>"Corporate Checking"</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
@@ -233,7 +233,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ModifyACHPaymentMethod" id="f4b17801-ecd1-40a6-91b4-3e37f4ad91ef">
+  <con:testStep type="restrequest" name="ModifyACHPaymentMethod" id="21c0aed7-0b3d-43aa-bae2-fdd260614a81">
     <con:settings/>
     <con:config service="modifyACHStoredPayment" resourcePath="/vtps/rest/modifyACHStoredPayment" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="ModifyACHPaymentMethod" id="56344d22-57dd-4b2f-ab68-bf2fc9fc20f9" mediaType="application/json" postQueryString="false">
@@ -312,7 +312,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessACHStoredPMTransaction" id="aefef037-ee4b-44a2-a4b4-9f18aa108af2">
+  <con:testStep type="restrequest" name="ProcessACHStoredPMTransaction" id="367154d8-1e7e-4bec-b5b5-ec36a066e268">
     <con:settings/>
     <con:config service="REST Service 18" resourcePath="/vtps/rest/processACHStoredPaymentTransaction" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessACHStoredPMTransaction" id="3c1948d7-1b4a-4da9-bc29-757a00259231" mediaType="application/json" postQueryString="false">
@@ -332,7 +332,7 @@
    "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
    "username" : "username",\r
    "password" : "password",\r
-   "standard_entry_class" : "WEB",\r
+   "standard_entry_class" : "CCD",\r
    "user_defined1" : "",\r
    "user_defined2" : "",\r
    "user_defined3" : "",\r

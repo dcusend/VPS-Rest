@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="6753c54e-08e0-41ab-a93c-81aab04f1029" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Call-CreateCCStoredPMTestCase-TestCase" searchProperties="true" timeout="0">
+  <con:settings id="f800223c-f3db-4d4c-a508-345cb086e437">
+    <con:setting id="6753c54e-08e0-41ab-a93c-81aab04f1029fileName">Call-CreateCCStoredPMTestCase-TestCase</con:setting>
+  </con:settings>
+  <con:testStep type="groovy" name="Groovy Script to call another Test Case" id="673c605a-4d29-4447-a4e6-8a4b25cc66fc">
+    <con:settings/>
+    <con:config>
+      <script>// Connect to the test step in another project.
+def prj = testRunner.testCase.testSuite.project.workspace.getProjectByName("REST08182021")
+def tCase = prj.testSuites['https://qa.velocitypayment.com TestSuite'].testCases['CreateCCStoredPM-ReuseableTestCase']
+def tStep = tCase.getTestStepByName("CreateCCStoredPM Request")
+def tStepRN = tCase.getTestStepByName("DataGenRandomRemID")
+
+// Call the test runner and check if it can run the specified step.
+def runner = tStepRN.run(testRunner, context)
+
+runner = tStep.run(testRunner, context)
+log.info ("runner status ....... : " + runner.hasResponse())</script>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

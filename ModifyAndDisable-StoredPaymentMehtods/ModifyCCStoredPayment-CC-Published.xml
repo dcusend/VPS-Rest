@@ -1,35 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" id="2f25e847-b897-4919-a7ee-8c2648dac9f5" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="ModifyCCStoredPayment-DifferentCardTypes-Published" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="">
+<con:testCase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" id="eddd48b2-237d-4724-b667-e7801372adb6" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ModifyCCStoredPayment-CC-Published" searchProperties="true" timeout="0">
   <con:settings id="81e668e1-f1ff-452f-9fcc-236dc9652a08">
-    <con:setting id="2f25e847-b897-4919-a7ee-8c2648dac9f5fileName">ModifyCCStoredPayment-DifferentCardTypes-Published</con:setting>
+    <con:setting id="eddd48b2-237d-4724-b667-e7801372adb6fileName">ModifyCCStoredPayment-CC-Published</con:setting>
   </con:settings>
-  <con:testStep type="datasource" name="Data Source - ModifyCCDiffCardTypes" id="67e97422-1119-4ba2-afd4-be13df35a1a9">
-    <con:settings/>
-    <con:config xsi:type="con:DataSourceStep">
-      <con:dataSource type="Excel">
-        <con:configuration>
-          <file>C:/SoapData/ModifyCCDiffCardTypes.xlsx</file>
-          <worksheet/>
-          <cell>A2</cell>
-          <ignoreEmpty>false</ignoreEmpty>
-          <evaluateFormulas>false</evaluateFormulas>
-        </con:configuration>
-      </con:dataSource>
-      <con:shared>true</con:shared>
-      <con:restartShared>true</con:restartShared>
-      <con:property>Card Type</con:property>
-      <con:property>CardNumber</con:property>
-      <con:property>ExpM</con:property>
-      <con:property>ExpY</con:property>
-      <con:property>NewExpM</con:property>
-      <con:property>NewExpY</con:property>
-      <con:property>ResponseCardType</con:property>
-      <con:property>ResponseLast4</con:property>
-      <con:completeLastOperation>true</con:completeLastOperation>
-      <con:restartOnRun>true</con:restartOnRun>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datagen" name="DataGenRandomRemID" id="239aee21-1bd7-4718-b4cb-5a8b25c412db">
+  <con:testStep type="datagen" name="DataGenRandomRemID" id="fcbbdbe4-f0f8-4102-9b53-59f00db05df4">
     <con:settings/>
     <con:config xsi:type="con:DataGeneratorStep">
       <con:property type="Number">
@@ -47,23 +21,7 @@
       </con:property>
     </con:config>
   </con:testStep>
-  <con:testStep type="datagen" name="DataGen-DateTime" id="5916eb75-8cba-4693-a3d0-901d38f8de51">
-    <con:settings/>
-    <con:config xsi:type="con:DataGeneratorStep">
-      <con:property type="Script">
-        <con:configuration>
-          <script>Date date = new Date()
-String datePart = date.format("MM/dd/yyyy")
-String timePart = date.format("HH:mm:ss")
-DateTime = datePart + " " +  timePart</script>
-        </con:configuration>
-        <con:name>DateTime</con:name>
-        <con:mode>READ</con:mode>
-        <con:shared>false</con:shared>
-      </con:property>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="CreateCCStoredPM Request" id="2551a17f-949f-4691-a893-395f27c9a61d">
+  <con:testStep type="restrequest" name="CreateCCStoredPM Request" id="87229a81-1a25-4156-9f8d-d77a844926e2">
     <con:settings/>
     <con:config service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CreateCCStoredPM Request" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
@@ -79,10 +37,10 @@ DateTime = datePart + " " +  timePart</script>
    },\r
    "paymentMethod" : {\r
       "paymentMethodType" : "1",\r
-      "pan" : "${Data Source - ModifyCCDiffCardTypes#CardNumber}",\r
+      "pan" : "4111111111111111",\r
       "card_expiration" : "102021",\r
-      "card_exmo" : "${Data Source - ModifyCCDiffCardTypes#ExpM}",\r
-      "card_exyr" : "${Data Source - ModifyCCDiffCardTypes#ExpY}"\r
+      "card_exmo" : "01",\r
+      "card_exyr" : "2025"\r
    },\r
    "customerInformation" : {\r
       "firstName" : "FNameToBeModified",\r
@@ -170,66 +128,14 @@ DateTime = datePart + " " +  timePart</script>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="PropertyTransfer 1" id="71ca3448-f105-47ae-9157-b34a34c88ec1">
-    <con:settings/>
-    <con:config xsi:type="con:PropertyTransfersStep">
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>result</con:name>
-        <con:sourceType>Response</con:sourceType>
-        <con:sourceStep>CreateCCStoredPM Request</con:sourceStep>
-        <con:sourcePath>$['result']</con:sourcePath>
-        <con:targetType>ResultCreate</con:targetType>
-        <con:targetStep>Data Sink for Process</con:targetStep>
-        <con:targetPath/>
-        <con:type>JSONPATH</con:type>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="Groovy Script" id="2616faef-2827-4313-bd7b-0ae47f570b3c">
-    <con:settings/>
-    <con:config>
-      <script>// Replace the path with the one you need
-// Make sure the specified folder exists
-//filePath = 'c:/SoapData/TestResults/'
-
-// Create output files
-//fos = new FileOutputStream( filePath + "Hello" + '.txt', true )
-
-// Fill output files
-//pw = new PrintWriter( fos )
-//testStepResult.writeTo( pw )
-
-// Close the output
-//pw.close()
-//fos.close()
-
-results = testRunner.getResults()
-def status = results.get(results.size() - 1).getStatus()
-log.info status
-
-def responseOfCreate = context.expand( '${CreateCCStoredPM Request#Response#$[\'result\']}' )
-log.info "responseOfCreate : " + responseOfCreate
-return responseOfCreate
-
-context.testCase.setPropertyValue('resPaFa', responseOfCreate)
-
-
-
-//if responseOfCreate == 0
-//	log.info "Pass"
-//else
-//	log.info "Fail"</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="RetrieveStoredPM Request" id="485ea7cd-c766-4460-947c-8f63bee19bd6">
+  <con:testStep type="restrequest" name="RetrieveStoredPM Request" id="8f9768fc-309c-46c1-b5bf-62f2e5c977e2">
     <con:settings/>
     <con:config service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="RetrieveStoredPM Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "clientAccountNumber" : "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",\r
    "customerID" : "195"\r
@@ -238,7 +144,7 @@ context.testCase.setPropertyValue('resPaFa', responseOfCreate)
         <con:assertion type="JsonPath Match" id="39ae635f-8df2-4b64-ad06-f0b3a92a9f39" name="Match content of [paymentMethodType]">
           <con:configuration>
             <path>$['paymentMethods'][0]['paymentMethodType']</path>
-            <content>${Data Source - ModifyCCDiffCardTypes#ResponseCardType}</content>
+            <content>"Visa"</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
@@ -283,7 +189,7 @@ context.testCase.setPropertyValue('resPaFa', responseOfCreate)
         <con:assertion type="JsonPath Match" id="4f342f18-e77e-4552-ba2f-9052cb9eb395" name="Match content of [Last4Digits]">
           <con:configuration>
             <path>$['paymentMethods'][0]['Last4Digits']</path>
-            <content>${Data Source - ModifyCCDiffCardTypes#ResponseLast4}</content>
+            <content>"1111"</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
@@ -346,31 +252,14 @@ context.testCase.setPropertyValue('resPaFa', responseOfCreate)
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="PropertyTransfer 2" id="9abed5f5-dbf8-47e0-8783-a000e511e3b2">
-    <con:settings/>
-    <con:config xsi:type="con:PropertyTransfersStep">
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>result</con:name>
-        <con:sourceType>Response</con:sourceType>
-        <con:sourceStep>RetrieveStoredPM Request</con:sourceStep>
-        <con:sourcePath>$['result']</con:sourcePath>
-        <con:targetType>ResultRetrieve</con:targetType>
-        <con:targetStep>Data Sink for Process</con:targetStep>
-        <con:targetPath/>
-        <con:type>JSONPATH</con:type>
-        <con:targetTransferType>JSONPATH</con:targetTransferType>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="ModifyCCPaymentMethod" id="982f2d40-e2a4-45cc-bc1a-9da0a3cf1784">
+  <con:testStep type="restrequest" name="ModifyCCPaymentMethod" id="bde2c9cb-2ebe-479a-bcef-91d9f4ccbbdb">
     <con:settings/>
     <con:config service="modifyCCStoredPayment" resourcePath="/vtps/rest/modifyCCStoredPayment" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="ModifyCCPaymentMethod" id="1c97ea33-66ec-417c-ba4d-54d46f2296d4" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{
   "header": {
     "clientAccountNumber": "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",
@@ -379,8 +268,8 @@ context.testCase.setPropertyValue('resPaFa', responseOfCreate)
     "paymentMethodID": "${CreateCCStoredPM Request#Response#$['paymentMethodID']}"
   },
   "paymentMethod": {
-    "card_exmo": "${Data Source - ModifyCCDiffCardTypes#NewExpM}",
-    "card_exyr": "${Data Source - ModifyCCDiffCardTypes#NewExpY}"
+    "card_exmo": "05",
+    "card_exyr": "2026"
   },
   "customerInformation": {
     "firstName": "FNameModified",
@@ -444,31 +333,14 @@ context.testCase.setPropertyValue('resPaFa', responseOfCreate)
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="PropertyTransfer 5" id="ed6ef2bb-86c4-4728-b577-3f2d44056543">
-    <con:settings/>
-    <con:config xsi:type="con:PropertyTransfersStep">
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>result</con:name>
-        <con:sourceType>Response</con:sourceType>
-        <con:sourceStep>ModifyCCPaymentMethod</con:sourceStep>
-        <con:sourcePath>$['result']</con:sourcePath>
-        <con:targetType>ResultModify</con:targetType>
-        <con:targetStep>Data Sink for Process</con:targetStep>
-        <con:targetPath/>
-        <con:type>JSONPATH</con:type>
-        <con:targetTransferType>JSONPATH</con:targetTransferType>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="ProcessCCWithStoredPMTransaction" id="416efe9c-aa7e-4ee7-a799-5c3d0b1527e0">
+  <con:testStep type="restrequest" name="ProcessCCWithStoredPMTransaction" id="fcd69f60-e6f3-48af-9c5f-7771283d534e">
     <con:settings/>
     <con:config service="REST Service 17" resourcePath="/vtps/rest/processCCStoredPaymentTransaction" methodName="GET" xsi:type="con:RestRequestStep">
       <con:restRequest name="ProcessCCWithStoredPMTransaction" id="3d1a6306-7d90-486f-a571-362e8983a93e" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "amount" : "10.50",\r
    "email" : "iahmed@govolution.com",\r
@@ -597,127 +469,6 @@ context.testCase.setPropertyValue('resPaFa', responseOfCreate)
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="PropertyTransfer 4" id="a23c1a66-e72d-4c4f-87d9-d783e6e5bf12">
-    <con:settings/>
-    <con:config xsi:type="con:PropertyTransfersStep">
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>errorCode</con:name>
-        <con:sourceType>Response</con:sourceType>
-        <con:sourceStep>ProcessCCWithStoredPMTransaction</con:sourceStep>
-        <con:sourcePath>$['errorCode']</con:sourcePath>
-        <con:targetType>ResultProcess</con:targetType>
-        <con:targetStep>Data Sink for Process</con:targetStep>
-        <con:targetPath/>
-        <con:type>JSONPATH</con:type>
-        <con:targetTransferType>JSONPATH</con:targetTransferType>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="transfer" name="Property Transfer - DateTime" id="a15f1469-bcb9-407b-97e4-160dbbe9c9f4">
-    <con:settings/>
-    <con:config xsi:type="con:PropertyTransfersStep">
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>DateTimeToBeTransferred</con:name>
-        <con:sourceType>DateTime</con:sourceType>
-        <con:sourceStep>DataGen-DateTime</con:sourceStep>
-        <con:sourcePath/>
-        <con:targetType>DateTime</con:targetType>
-        <con:targetStep>Data Sink for Process</con:targetStep>
-        <con:targetPath/>
-        <con:upgraded>true</con:upgraded>
-      </con:transfers>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasink" name="Data Sink for Process" id="b4e208ac-c924-4da4-ad9a-dc61c5860fc1">
-    <con:settings/>
-    <con:config xsi:type="con:DataSinkStep">
-      <con:dataSink type="Excel">
-        <con:configuration>
-          <file/>
-          <outfile>C:/SoapData/ModifyCCDiffCardTypes.xlsx</outfile>
-          <worksheet>Sheet1</worksheet>
-          <cell>I2</cell>
-          <evaluateFormulas>false</evaluateFormulas>
-          <append>false</append>
-        </con:configuration>
-      </con:dataSink>
-      <con:properties>
-        <con:property>
-          <con:name>ResultCreate</con:name>
-          <con:value>0</con:value>
-        </con:property>
-        <con:property>
-          <con:name>ResultRetrieve</con:name>
-          <con:value>0</con:value>
-        </con:property>
-        <con:property>
-          <con:name>ResultModify</con:name>
-          <con:value>0</con:value>
-        </con:property>
-        <con:property>
-          <con:name>ResultProcess</con:name>
-          <con:value>0</con:value>
-        </con:property>
-        <con:property>
-          <con:name>DateTime</con:name>
-          <con:value>02/16/2024 22:52:47</con:value>
-        </con:property>
-        <con:property>
-          <con:name>ResultPassFail</con:name>
-          <con:value xsi:nil="true"/>
-        </con:property>
-      </con:properties>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="datasourceloop" name="Data Source Loop" id="8642af1b-3155-4ee7-834c-21443faef8b8">
-    <con:settings/>
-    <con:config>
-      <dataSourceStep>Data Source - ModifyCCDiffCardTypes</dataSourceStep>
-      <targetStep>CreateCCStoredPM Request</targetStep>
-      <discardResults>true</discardResults>
-    </con:config>
-  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
-  <con:breakPoints>
-    <con:testStepId>67e97422-1119-4ba2-afd4-be13df35a1a9</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>239aee21-1bd7-4718-b4cb-5a8b25c412db</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>2551a17f-949f-4691-a893-395f27c9a61d</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>2616faef-2827-4313-bd7b-0ae47f570b3c</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>485ea7cd-c766-4460-947c-8f63bee19bd6</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>982f2d40-e2a4-45cc-bc1a-9da0a3cf1784</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>416efe9c-aa7e-4ee7-a799-5c3d0b1527e0</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>8642af1b-3155-4ee7-834c-21443faef8b8</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
 </con:testCase>

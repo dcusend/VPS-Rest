@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="5072b097-2270-4a4c-9014-b133861e76ec" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestDataDriven" searchProperties="true" timeout="0">
+  <con:settings id="1cfd5f34-1744-4a02-9e15-5497a06a5dd4">
+    <con:setting id="5072b097-2270-4a4c-9014-b133861e76ecfileName">TestDataDriven</con:setting>
+  </con:settings>
+  <con:testStep type="datasource" name="Data Source - ModifyCCDiffCardTypes" id="e3c507dc-3289-49ab-8892-daa331b9ae96">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/SoapData/ModifyCCDiffCardTypes.xlsx</file>
+          <worksheet>Sheet2</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>Execute</con:property>
+      <con:property>Card Type</con:property>
+      <con:property>CardNumber</con:property>
+      <con:property>ExpM</con:property>
+      <con:property>ExpY</con:property>
+      <con:property>NewExpM</con:property>
+      <con:property>NewExpY</con:property>
+      <con:property>ResponseCardType</con:property>
+      <con:property>ResponseLast4</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datagen" name="DataGenRandomRemID" id="8084efd3-80a4-4690-9e01-70a300e61208">
+    <con:settings/>
+    <con:config xsi:type="con:DataGeneratorStep">
+      <con:property type="Number">
+        <con:configuration>
+          <start>10000000000</start>
+          <end>99999999999</end>
+          <step/>
+          <pattern/>
+          <random>true</random>
+          <persist>false</persist>
+        </con:configuration>
+        <con:name>RandomRemID</con:name>
+        <con:mode>READ</con:mode>
+        <con:shared>true</con:shared>
+      </con:property>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datagen" name="DataGen-DateTime" id="f36ffa3a-4d4a-473e-b46a-cede09c4dd96">
+    <con:settings/>
+    <con:config xsi:type="con:DataGeneratorStep">
+      <con:property type="Script">
+        <con:configuration>
+          <script>Date date = new Date()
+String datePart = date.format("MM/dd/yyyy")
+String timePart = date.format("HH:mm:ss")
+DateTime = datePart + " " +  timePart</script>
+        </con:configuration>
+        <con:name>DateTime</con:name>
+        <con:mode>READ</con:mode>
+        <con:shared>false</con:shared>
+      </con:property>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="ea30f311-c2d7-4694-a36c-eaa48a17d601">
+    <con:settings/>
+    <con:config>
+      <script>// Replace the path with the one you need
+// Make sure the specified folder exists
+//filePath = 'c:/SoapData/TestResults/'
+
+// Create output files
+//fos = new FileOutputStream( filePath + "Hello" + '.txt', true )
+
+// Fill output files
+//pw = new PrintWriter( fos )
+//testStepResult.writeTo( pw )
+
+// Close the output
+//pw.close()
+//fos.close()
+
+results = testRunner.getResults()
+def status = results.get(results.size() - 1).getStatus()
+log.info status
+
+
+def executeYN = context.expand( '${Data Source - ModifyCCDiffCardTypes#Execute}' )
+
+log.info executeYN
+
+if (executeYN = "Y")
+{
+log.info "Value is: " + executeYN
+
+testRunner.runTestStepByName("CreateCCStoredPMRequestCalled")
+
+
+
+}
+
+context.testCase.setPropertyValue('COLOR', 'purple')
+
+def cOLOR = context.expand( '${Properties#COLOR}' )
+log.info "Color  is: " + cOLOR
+
+//def responseOfCreate = context.expand( '${CreateCCStoredPMRequestCalled#Response#$[\'result\']}' )
+//log.info "responseOfCreate : " + responseOfCreate
+//return responseOfCreate
+
+//context.testCase.setPropertyValue('resPaFa', responseOfCreate)
+
+
+
+//if responseOfCreate == 0
+//	log.info "Pass"
+//else
+//	log.info "Fail"</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="CreateCCStoredPMRequestCalled" id="bd1b4367-2197-44c1-8ec1-042c68fc0cbf">
+    <con:settings/>
+    <con:config service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="CreateCCStoredPMRequestCalled" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "header" : {\r
+      "clientAccountNumber" : "${DataGenRandomRemID#RandomRemID}",\r
+      "applicationID" : "609",\r
+      "customerID" : "195"\r
+   },\r
+   "paymentMethod" : {\r
+      "paymentMethodType" : "1",\r
+      "pan" : "${Data Source - ModifyCCDiffCardTypes#CardNumber}",\r
+      "card_expiration" : "102021",\r
+      "card_exmo" : "${Data Source - ModifyCCDiffCardTypes#ExpM}",\r
+      "card_exyr" : "${Data Source - ModifyCCDiffCardTypes#ExpY}"\r
+   },\r
+   "customerInformation" : {\r
+      "firstName" : "FNameToBeModified",\r
+      "lastName" : "LNameToBeModified",\r
+      "addressLine1" : "AL1 ToBeModified",\r
+      "city" : "Arlington",\r
+      "state" : "VA",\r
+      "zip" : "22201",\r
+      "country" : "840"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/createCCStoredPayment</con:originalUri>
+        <con:assertion type="JsonPath Match" id="018f90ee-fed3-4096-9253-38675c2e9d76" name="Match content of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6e979bf5-23aa-4031-9c37-afd685b7be70" name="Match content of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5fc328e0-2ba9-4b4b-807f-6a8a4e02f6bd" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="8a3f248e-da5f-4161-9a66-5e28c8eca531" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="7c6300a3-a4ab-4034-88bb-1c7ecadb0e9c" name="Check for existence of [paymentMethodID]">
+          <con:configuration>
+            <path>$['paymentMethodID']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="PropertyTransfer 1" id="dfbd84b2-576c-41c4-b663-0a9f393eda34">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>result</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>CreateCCStoredPMRequestCalled</con:sourceStep>
+        <con:sourcePath>$['result']</con:sourcePath>
+        <con:targetType>ResultCreate</con:targetType>
+        <con:targetStep>Data Sink for Process</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="Property Transfer - DateTime" id="5cb5e3f8-5ab7-428d-8d7d-501e691b58e7">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>DateTimeToBeTransferred</con:name>
+        <con:sourceType>DateTime</con:sourceType>
+        <con:sourceStep>DataGen-DateTime</con:sourceStep>
+        <con:sourcePath/>
+        <con:targetType>DateTime</con:targetType>
+        <con:targetStep>Data Sink for Process</con:targetStep>
+        <con:targetPath/>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="properties" name="Properties" id="7c2cfee6-44da-4064-a89b-40f331448406">
+    <con:settings/>
+    <con:config xsi:type="con:PropertiesStep" saveFirst="true">
+      <con:properties>
+        <con:property>
+          <con:name>COLOR</con:name>
+          <con:value>Black</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasink" name="Data Sink for Process" id="5808b0fb-9259-4cf9-a259-a38c1f2a2d95">
+    <con:settings/>
+    <con:config xsi:type="con:DataSinkStep">
+      <con:dataSink type="Excel">
+        <con:configuration>
+          <file/>
+          <outfile>C:/SoapData/ModifyCCDiffCardTypes.xlsx</outfile>
+          <worksheet>Sheet2</worksheet>
+          <cell>J2</cell>
+          <evaluateFormulas>false</evaluateFormulas>
+          <append>false</append>
+        </con:configuration>
+      </con:dataSink>
+      <con:properties>
+        <con:property>
+          <con:name>ResultCreate</con:name>
+          <con:value>0</con:value>
+        </con:property>
+        <con:property>
+          <con:name>ResultRetrieve</con:name>
+          <con:value>0</con:value>
+        </con:property>
+        <con:property>
+          <con:name>ResultModify</con:name>
+          <con:value>0</con:value>
+        </con:property>
+        <con:property>
+          <con:name>ResultProcess</con:name>
+          <con:value>0</con:value>
+        </con:property>
+        <con:property>
+          <con:name>DateTime</con:name>
+          <con:value>02/16/2024 23:30:23</con:value>
+        </con:property>
+        <con:property>
+          <con:name>ResultPassFail</con:name>
+          <con:value xsi:nil="true"/>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="652c3f04-4438-44b0-bca9-071ba97cb2c5">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>Data Source - ModifyCCDiffCardTypes</dataSourceStep>
+      <targetStep>Groovy Script</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>COLOR</con:name>
+      <con:value>purple</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

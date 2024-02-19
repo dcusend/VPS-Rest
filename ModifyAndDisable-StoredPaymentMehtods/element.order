@@ -4,3 +4,10 @@ ModifyCCStoredPayment-CC-Published.xml
 ModifyACHStoredPayment-PC-Published.xml
 ModifyACHStoredPayment-PS-Published.xml
 ModifyACHStoredPayment-Corp-Published.xml
+Create-Disable-PM-PC-Published.xml
+Create-Disable-PM-PS-Published.xml
+Create-Disable-PM-Corp-Published.xml
+Create-Pay-Disable-CC-Published.xml
+Create-Pay-Disable-PC-Published.xml
+Create-Pay-Disable-PS-Published.xml
+Create-Pay-Disable-Corp-Published.xml

@@ -144,3 +144,10 @@ ModifyAndDisable-StoredPaymentMehtods\ModifyCCStoredPayment-CC-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\ModifyACHStoredPayment-PC-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\ModifyACHStoredPayment-PS-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\ModifyACHStoredPayment-Corp-Published.xml
+ModifyAndDisable-StoredPaymentMehtods\Create-Disable-PM-PC-Published.xml
+ModifyAndDisable-StoredPaymentMehtods\Create-Disable-PM-PS-Published.xml
+ModifyAndDisable-StoredPaymentMehtods\Create-Disable-PM-Corp-Published.xml
+ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-CC-Published.xml
+ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-PC-Published.xml
+ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-PS-Published.xml
+ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-Corp-Published.xml

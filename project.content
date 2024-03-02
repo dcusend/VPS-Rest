@@ -33,6 +33,7 @@ modifyACHStoredPayment\modifyACHStoredPayment.xml
 modifyCCStoredPayment\modifyCCStoredPayment.xml
 disableACHStoredPayment\disableACHStoredPayment.xml
 disableCCStoredPayment\disableCCStoredPayment.xml
+ValidateRTN\validateRTN.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillLookup.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ParseMoney.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillDueDateValidation.xml
@@ -151,3 +152,6 @@ ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-CC-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-PC-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-PS-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-Corp-Published.xml
+ValidateRTN-QA\Validate-RTN-Positive.xml
+ValidateRTN-QA\MissingRTN.xml
+ValidateRTN-QA\InvalidRTN.xml

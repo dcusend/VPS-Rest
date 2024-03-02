@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="ed5ec01f-868a-426b-a749-a5b325a69290" name="ValidateRTN-QA">
+  <con:settings id="8286b8a3-709a-4f68-b750-e489997aef14">
+    <con:setting id="ed5ec01f-868a-426b-a749-a5b325a69290fileName">ValidateRTN-QA</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

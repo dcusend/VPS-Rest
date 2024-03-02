@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="validateRTN" path="/vtps/rest/validateRTN" id="132191d8-9ea9-4f37-bbb6-55c6e0b4a5ab">
+  <con:settings id="704acb68-d071-48c3-adf8-adc2cf896aed">
+    <con:setting id="132191d8-9ea9-4f37-bbb6-55c6e0b4a5abfileName">validateRTN</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="4589338c-9049-4c47-a8ac-d6fe6773629a" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="e8017380-3ac4-4376-8fb8-fc52266f1971" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

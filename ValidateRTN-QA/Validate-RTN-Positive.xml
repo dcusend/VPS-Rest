@@ -82,7 +82,7 @@
         <con:assertion type="JsonPath Match" id="9257fc73-568d-4744-97f8-81c8b6c2f419" name="Match content of [result]">
           <con:configuration>
             <path>$['result']</path>
-            <content>null</content>
+            <content>"0"</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>

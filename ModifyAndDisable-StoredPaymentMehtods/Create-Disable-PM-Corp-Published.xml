@@ -165,7 +165,7 @@
         <con:assertion type="JsonPath Match" id="e208cf20-a2cc-4de3-ac2e-97f90858cf84" name="Match content of [paymentMethodID]">
           <con:configuration>
             <path>$['paymentMethodID']</path>
-            <content>${CreateCCStoredPM Request#Response#$['paymentMethodID']}</content>
+            <content>${CreateACHStoredPM-Corp#Response#$['paymentMethodID']}</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>

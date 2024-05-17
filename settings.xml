@@ -68,7 +68,7 @@
   </con:environment>
   <con:environment id="541337b0-c6f7-463f-bdba-824b4f050119" name="QA2rest" index="1">
     <con:service type="REST" name="https://qa.velocitypayment.com">
-      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://qa2.velocitypayment.com</con:endpoint>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qa2.velocitypayment.com</con:endpoint>
     </con:service>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>

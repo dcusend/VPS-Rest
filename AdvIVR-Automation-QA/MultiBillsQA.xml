@@ -13,11 +13,11 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{
           "applicationID":"684",
           "customerID":"195",
-          "clientAccountNumber":"666666"
+          "clientAccountNumber":"888888"
      }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/searchBills</con:originalUri>
         <con:assertion type="JsonPath Match" id="787454e9-7c38-4813-89ee-53eb7598c5b9" name="Match content of [applicationId]">
@@ -174,11 +174,11 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{
           "applicationID":"684",
           "customerID":"195",
-          "clientAccountNumber":"666666",
+          "clientAccountNumber":"888888",
           "billPayOption":"All"
      }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/payBills</con:originalUri>
@@ -367,7 +367,7 @@
         <con:request>{
           "applicationID":"684",
           "customerID":"195",
-          "clientAccountNumber":"666666",
+          "clientAccountNumber":"888888",
           "billPayOption":"Current"
      }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/payBills</con:originalUri>
@@ -556,7 +556,7 @@
         <con:request>{
           "applicationID":"684",
           "customerID":"195",
-          "clientAccountNumber":"666666",
+          "clientAccountNumber":"888888",
           "billPayOption":"OverDue"
      }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/payBills</con:originalUri>

@@ -10,7 +10,7 @@
         <con:configuration>
           <file>C:/SoapData/ModifyCCDiffCardTypes.xlsx</file>
           <worksheet/>
-          <cell>A1</cell>
+          <cell>A2</cell>
           <ignoreEmpty>false</ignoreEmpty>
           <evaluateFormulas>false</evaluateFormulas>
         </con:configuration>

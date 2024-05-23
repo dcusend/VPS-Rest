@@ -4,7 +4,10 @@
     <con:setting id="1773b720-3164-4797-922c-1d85ef65de28fileName">REST-Service-16</con:setting>
   </con:settings>
   <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints/>
+  <con:endpoints>
+    <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+    <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+  </con:endpoints>
   <con:environmentSpec>
     <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
       <con:authProfile>Inherit From Parent</con:authProfile>

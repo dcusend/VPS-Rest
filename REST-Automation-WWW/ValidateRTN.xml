@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="b3c677df-97da-427c-8e3d-d84405d05a05" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ValidateRTN" searchProperties="true" timeout="0">
+  <con:settings id="0b0c28ab-2dd4-4d7e-a979-04b8bc0ff7e9">
+    <con:setting id="b3c677df-97da-427c-8e3d-d84405d05a05fileName">ValidateRTN</con:setting>
+  </con:settings>
+  <con:testStep xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="restrequest" name="REST Request" id="b8bbd931-19d5-4bda-908e-4ee489806d33">
+    <con:settings/>
+    <con:config service="ValidateRTN" resourcePath="/vtps/rest/validateRTN" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request" id="e8017380-3ac4-4376-8fb8-fc52266f1971" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "RTN": "256072691"
+}</con:request>
+        <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/validateRTN</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="64d8c0f1-7cd7-4f90-a379-633aec7adc8e" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="757fa7e2-11d2-4112-9a48-35f4b150eca0" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e5ca62af-8404-4e8b-896a-226108ce61be" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>"No Error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9257fc73-568d-4744-97f8-81c8b6c2f419" name="Match content of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d3302311-06c9-4b06-aaa1-02d650421755" name="Match content of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0dff59f9-70ad-4fa2-87a8-2f23618dcfed" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="543a6412-642c-4f1a-ad2c-c1492e2bda84" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>"No Error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="65001a89-e1e2-4d18-bcbe-1781b53c26fa" name="Match content of [RTN]">
+          <con:configuration>
+            <path>$['RTN']</path>
+            <content>"256072691"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b73ed7ef-dff0-45cd-9480-c84e42db2266" name="Match content of [bankName]">
+          <con:configuration>
+            <path>$['bankName']</path>
+            <content>"MORGAN STANLEY PRIVATE BANK NA"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -13,3 +13,5 @@ AdvIVR-StoredPM-ACH-Upgrade.xml
 IVRACLookup-ValidRequest.xml
 ACCFeeLookup.xml
 Mod10Check.xml
+DisableStoredPayment.xml
+ValidateRTN.xml

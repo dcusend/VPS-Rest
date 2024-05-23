@@ -93,6 +93,8 @@ REST-Automation-Upgrade\AdvIVR-StoredPM-ACH-Upgrade.xml
 REST-Automation-Upgrade\IVRACLookup-ValidRequest.xml
 REST-Automation-Upgrade\ACCFeeLookup.xml
 REST-Automation-Upgrade\Mod10Check.xml
+REST-Automation-Upgrade\DisableStoredPayment.xml
+REST-Automation-Upgrade\ValidateRTN.xml
 REST-Automation-WWW\BillLookup.xml
 REST-Automation-WWW\ParseMoney.xml
 REST-Automation-WWW\BillDueDateValidation.xml
@@ -108,6 +110,8 @@ REST-Automation-WWW\AdvIVR-StoredPM-ACH-Upgrade.xml
 REST-Automation-WWW\IVRACLookup-ValidRequest.xml
 REST-Automation-WWW\ACCFeeLookup.xml
 REST-Automation-WWW\Mod10Check.xml
+REST-Automation-WWW\DisableStoredPayment.xml
+REST-Automation-WWW\ValidateRTN.xml
 WebSocketTesting\Test-Case-1.xml
 IVRAccountLookup\IVRACLookup-ValidRequest.xml
 IVRAccountLookup\IVRACLookup-InvalidRequest.xml

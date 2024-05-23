@@ -7,6 +7,8 @@
   <con:endpoints>
     <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
     <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+    <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+    <con:endpoint>https://www.velocitypayment.com</con:endpoint>
   </con:endpoints>
   <con:environmentSpec>
     <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">

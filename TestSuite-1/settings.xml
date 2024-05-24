@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:testSuite xmlns:con="http://eviware.com/soapui/config" id="7b4e8ad6-838f-473d-a404-5dd9c6ac0048" name="TestSuite 1">
-  <con:settings id="5530d8ce-6350-4091-978d-852f20175f41">
+  <con:settings id="b2fdaa3f-d3f5-4f94-8dc7-5277d91898fa">
     <con:setting id="7b4e8ad6-838f-473d-a404-5dd9c6ac0048fileName">TestSuite-1</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>

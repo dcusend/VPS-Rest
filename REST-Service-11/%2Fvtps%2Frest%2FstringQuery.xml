@@ -7,7 +7,7 @@
   <con:method name="POST" id="e3fb0bb8-8788-4a59-aebc-5612348f182c" method="POST">
     <con:settings/>
     <con:parameters/>
-    <con:request name="POST Request" id="312ff84d-2e3a-49a8-a334-fc0469e34a3f" mediaType="application/json">
+    <con:request name="POST Request" id="312ff84d-2e3a-49a8-a334-fc0469e34a3f" mediaType="application/json" postQueryString="false">
       <con:settings/>
       <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
       <con:request/>

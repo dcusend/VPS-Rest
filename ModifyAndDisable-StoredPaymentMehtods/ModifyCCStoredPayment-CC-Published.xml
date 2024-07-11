@@ -38,9 +38,9 @@
    "paymentMethod" : {\r
       "paymentMethodType" : "1",\r
       "pan" : "4111111111111111",\r
-      "card_expiration" : "102021",\r
+      "card_expiration" : "102029",\r
       "card_exmo" : "01",\r
-      "card_exyr" : "2025"\r
+      "card_exyr" : "2029"\r
    },\r
    "customerInformation" : {\r
       "firstName" : "FNameToBeModified",\r
@@ -217,6 +217,15 @@
           <con:configuration>
             <path>$['errorMessage']</path>
             <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="79935f3c-c9df-4ed7-ac55-b7b52b42e1f1" name="Match content of [paymentMethodState]">
+          <con:configuration>
+            <path>$['paymentMethods'][0]['paymentMethodState']</path>
+            <content>"Enabled"</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>

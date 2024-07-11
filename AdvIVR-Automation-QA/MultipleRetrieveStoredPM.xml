@@ -26,41 +26,49 @@
    {
       "paymentMethodType" : "Visa",
       "paymentMethodID" : "90418",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1111"
    },
    {
       "paymentMethodType" : "Discover",
       "paymentMethodID" : "90415",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0005"
    },
    {
       "paymentMethodType" : "American Express",
       "paymentMethodID" : "90417",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0002"
    },
    {
       "paymentMethodType" : "MasterCard",
       "paymentMethodID" : "90416",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0015"
    },
    {
       "paymentMethodType" : "Corporate Checking",
       "paymentMethodID" : "83851",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1292"
    },
    {
       "paymentMethodType" : "Personal Checking",
       "paymentMethodID" : "83848",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1289"
    },
    {
       "paymentMethodType" : "Personal Savings",
       "paymentMethodID" : "83850",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1291"
    },
    {
       "paymentMethodType" : "Personal Checking",
       "paymentMethodID" : "83849",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1290"
    }
 ]</content>
@@ -200,41 +208,49 @@
    {
       "paymentMethodType" : "Visa",
       "paymentMethodID" : "90419",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1111"
    },
    {
       "paymentMethodType" : "Visa",
       "paymentMethodID" : "90420",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1112"
    },
    {
       "paymentMethodType" : "Discover",
       "paymentMethodID" : "90423",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0004"
    },
    {
       "paymentMethodType" : "Discover",
       "paymentMethodID" : "90424",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0005"
    },
    {
       "paymentMethodType" : "American Express",
       "paymentMethodID" : "90421",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0002"
    },
    {
       "paymentMethodType" : "American Express",
       "paymentMethodID" : "90422",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0003"
    },
    {
       "paymentMethodType" : "MasterCard",
       "paymentMethodID" : "90426",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0016"
    },
    {
       "paymentMethodType" : "MasterCard",
       "paymentMethodID" : "90425",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0015"
    }
 ]</content>
@@ -338,41 +354,49 @@
    {
       "paymentMethodType" : "Personal Checking",
       "paymentMethodID" : "83860",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1320"
    },
    {
       "paymentMethodType" : "Personal Checking",
       "paymentMethodID" : "83861",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1321"
    },
    {
       "paymentMethodType" : "Corporate Checking",
       "paymentMethodID" : "83867",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1327"
    },
    {
       "paymentMethodType" : "Personal Checking",
       "paymentMethodID" : "83862",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1322"
    },
    {
       "paymentMethodType" : "Corporate Checking",
       "paymentMethodID" : "83866",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1326"
    },
    {
       "paymentMethodType" : "Personal Savings",
       "paymentMethodID" : "83863",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1323"
    },
    {
       "paymentMethodType" : "Personal Savings",
       "paymentMethodID" : "83865",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1325"
    },
    {
       "paymentMethodType" : "Personal Savings",
       "paymentMethodID" : "83864",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1324"
    }
 ]</content>
@@ -427,7 +451,7 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "clientAccountNumber" : "1235511183",\r
    "customerID" : "195"\r
@@ -476,51 +500,61 @@
    {
       "paymentMethodType" : "Visa",
       "paymentMethodID" : "90428",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1111"
    },
    {
       "paymentMethodType" : "Visa",
       "paymentMethodID" : "90429",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1112"
    },
    {
       "paymentMethodType" : "Discover",
       "paymentMethodID" : "90431",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0004"
    },
    {
       "paymentMethodType" : "American Express",
       "paymentMethodID" : "90430",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0002"
    },
    {
       "paymentMethodType" : "MasterCard",
       "paymentMethodID" : "90427",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "0015"
    },
    {
       "paymentMethodType" : "Corporate Checking",
       "paymentMethodID" : "83877",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1332"
    },
    {
       "paymentMethodType" : "Personal Checking",
       "paymentMethodID" : "83873",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1328"
    },
    {
       "paymentMethodType" : "Personal Checking",
       "paymentMethodID" : "83874",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1329"
    },
    {
       "paymentMethodType" : "Personal Savings",
       "paymentMethodID" : "83875",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1330"
    },
    {
       "paymentMethodType" : "Personal Savings",
       "paymentMethodID" : "83876",
+      "paymentMethodState" : "Enabled",
       "Last4Digits" : "1331"
    }
 ]</content>

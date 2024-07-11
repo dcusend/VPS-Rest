@@ -38,9 +38,9 @@
    "paymentMethod" : {\r
       "paymentMethodType" : "1",\r
       "pan" : "4111111111111111",\r
-      "card_expiration" : "102021",\r
+      "card_expiration" : "102029",\r
       "card_exmo" : "01",\r
-      "card_exyr" : "2025"\r
+      "card_exyr" : "2029"\r
    },\r
    "customerInformation" : {\r
       "firstName" : "FNameToBeModified",\r

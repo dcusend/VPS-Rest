@@ -64,7 +64,7 @@
    "paymentMethod" : {\r
       "paymentMethodType" : "1",\r
       "pan" : "${Data Source - ModifyCCDiffCardTypes#CardNumber}",\r
-      "card_expiration" : "102021",\r
+      "card_expiration" : "102029",\r
       "card_exmo" : "${Data Source - ModifyCCDiffCardTypes#ExpM}",\r
       "card_exyr" : "${Data Source - ModifyCCDiffCardTypes#ExpY}"\r
    },\r
@@ -243,6 +243,15 @@
           <con:configuration>
             <path>$['errorMessage']</path>
             <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="8ab1ec7f-e598-4bf1-908d-6832f790fc32" name="Match content of [paymentMethodState]">
+          <con:configuration>
+            <path>$['paymentMethods'][0]['paymentMethodState']</path>
+            <content>"Enabled"</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>

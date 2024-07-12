@@ -5,6 +5,7 @@
   </con:settings>
   <con:definitionCache type="TEXT" rootPart=""/>
   <con:endpoints>
+    <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
     <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
     <con:endpoint>https://www.velocitypayment.com</con:endpoint>
   </con:endpoints>

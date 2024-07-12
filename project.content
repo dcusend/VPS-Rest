@@ -116,6 +116,11 @@ WebSocketTesting\Test-Case-1.xml
 IVRAccountLookup\IVRACLookup-ValidRequest.xml
 IVRAccountLookup\IVRACLookup-InvalidRequest.xml
 Demo-and-Demo2-Test-Suite\Demo-and-Demo2-Test-Case.xml
+Demo-and-Demo2-Test-Suite\Create-Retrieve-Disable-Retrieve-PM-CC.xml
+Demo-and-Demo2-Test-Suite\Create-Retrieve-Disable-Retrieve-PM-PC.xml
+Demo-and-Demo2-Test-Suite\Create-Retrieve-Disable-Retrieve-PM-PS.xml
+Demo-and-Demo2-Test-Suite\Create-Retrieve-Disable-Retrieve-PM-Corp.xml
+Demo-and-Demo2-Test-Suite\Create-Modify-PM-CC.xml
 AdvIVR-Automation-QA\CreateAndRetrieveCCStoredPM.xml
 AdvIVR-Automation-QA\DuplicateCreateCCStoredPM.xml
 AdvIVR-Automation-QA\MultipleCreateAndRetrieveCCStoredPM.xml

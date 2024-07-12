@@ -4,3 +4,10 @@ Create-Retrieve-Disable-Retrieve-PM-PC.xml
 Create-Retrieve-Disable-Retrieve-PM-PS.xml
 Create-Retrieve-Disable-Retrieve-PM-Corp.xml
 Create-Modify-PM-CC.xml
+Create-Modify-PM-PC.xml
+Create-Modify-PM-PS.xml
+Create-Modify-PM-Corp.xml
+Create-PaymentWithStoredPM-CC.xml
+Create-PaymentWithStoredPM-PC.xml
+Create-PaymentWithStoredPM-PS.xml
+Create-PaymentWithStoredPM-Corp.xml

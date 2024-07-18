@@ -75,6 +75,8 @@ https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CreateCCStoredPM-ReuseableTestCas
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\Call-CreateCCStoredPMTestCase-TestCase.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\Create-Disable-PaymentMethod-CC-Published.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\TestDataDriven.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CreatePM-CC.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CreatePM-PC.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml
 Test-Suite-2\Test-Case-1.xml
@@ -168,6 +170,7 @@ ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-CC-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-PC-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-PS-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-Corp-Published.xml
+ModifyAndDisable-StoredPaymentMehtods\Create-Disable-Pay-CC-Published.xml
 ValidateRTN-QA\Validate-RTN-Positive.xml
 ValidateRTN-QA\MissingRTN.xml
 ValidateRTN-QA\InvalidRTN.xml

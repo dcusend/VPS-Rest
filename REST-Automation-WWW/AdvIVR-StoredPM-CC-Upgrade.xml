@@ -116,6 +116,15 @@
             <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
+        <con:assertion type="JsonPath Match" id="116f5e59-e5b5-4806-a0db-0980692c0dc4" name="Match content of [paymentMethodState]">
+          <con:configuration>
+            <path>$['paymentMethods'][0]['paymentMethodState']</path>
+            <content>"Enabled"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

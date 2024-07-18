@@ -39,3 +39,5 @@ CreateCCStoredPM-ReuseableTestCase.xml
 Call-CreateCCStoredPMTestCase-TestCase.xml
 Create-Disable-PaymentMethod-CC-Published.xml
 TestDataDriven.xml
+CreatePM-CC.xml
+CreatePM-PC.xml

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" id="5355a4bc-23db-4a94-a334-10a1051593f6" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="DisableStoredPayment" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="">
-  <con:settings id="f8bf8d7e-f562-47c7-9182-8892d923a3d2">
-    <con:setting id="5355a4bc-23db-4a94-a334-10a1051593f6fileName">DisableStoredPayment</con:setting>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="923000d2-1b57-4cc3-aae1-72da87bc1185" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CreatePM-CC" searchProperties="true" timeout="0">
+  <con:settings id="30a903e7-89b0-4c8a-871d-943220eaa6b0">
+    <con:setting id="923000d2-1b57-4cc3-aae1-72da87bc1185fileName">CreatePM-CC</con:setting>
   </con:settings>
-  <con:testStep type="datagen" name="DataGenRandomRemID" id="a13a7d24-f2e0-4f14-8605-5cae7df5c95f">
+  <con:testStep xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="datagen" name="DataGenRandomRemID" id="44c7ecae-6b70-4375-b2dd-d150d8ffc676">
     <con:settings/>
     <con:config xsi:type="con:DataGeneratorStep">
       <con:property type="Number">
@@ -21,19 +21,19 @@
       </con:property>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="CreateCCStoredPM Request" id="0703a992-6d74-4bda-8698-be66ca71f9c1">
+  <con:testStep xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="restrequest" name="CreateCCStoredPM Request" id="c1d16ff5-3fcd-4961-a5b5-dd7ac48502c1">
     <con:settings/>
     <con:config service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CreateCCStoredPM Request" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
-      "clientAccountNumber" : "${DataGenRandomRemID#RandomRemID}",\r
-      "applicationID" : "18",\r
-      "customerID" : "2"\r
+      "clientAccountNumber" : "87987458",\r
+      "applicationID" : "609",\r
+      "customerID" : "195"\r
    },\r
    "paymentMethod" : {\r
       "paymentMethodType" : "1",\r
@@ -43,10 +43,9 @@
       "card_exyr" : "2025"\r
    },\r
    "customerInformation" : {\r
-      "firstName" : "Fuqura",\r
-      "lastName" : "Justin",\r
-      "companyName" : "",\r
-      "addressLine1" : "9852 Main Street",\r
+      "firstName" : "FNameToBeModified",\r
+      "lastName" : "LNameToBeModified",\r
+      "addressLine1" : "AL1 ToBeModified",\r
       "city" : "Arlington",\r
       "state" : "VA",\r
       "zip" : "22201",\r
@@ -129,27 +128,57 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="DisableStoredPayment-CreditCard" id="59835098-8939-477c-b6fb-5ad908f77234">
+  <con:testStep xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="restrequest" name="DisableStoredPayment-CC" id="aa2be97a-23c2-4b54-9a98-5f92b55e7617">
     <con:settings/>
     <con:config service="disableCCStoredPayment" resourcePath="/vtps/rest/disableStoredPayment" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="DisableStoredPayment-CreditCard" id="8880e422-d73e-4251-b9be-e7f03913c92e" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="DisableStoredPayment-CC" id="8880e422-d73e-4251-b9be-e7f03913c92e" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
-        <con:request>{
-  "header": {
-    "clientAccountNumber": "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",
-    "applicationID": "18",
-    "customerID": "2",
-    "paymentMethodID": "${CreateCCStoredPM Request#Response#$['paymentMethodID']}"
-  }
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "header" : {\r
+      "clientAccountNumber" : "87987458",\r
+      "applicationID" : "609",\r
+      "customerID" : "195",\r
+      "paymentMethodID" : "93848"\r
+   }\r
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/disableStoredPayment</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="63bf2e5a-9138-4bed-ba03-720d4a8723a0" name="Valid HTTP Status Codes">
-          <con:settings/>
+        <con:assertion type="JsonPath Match" id="414707e3-d17a-4c27-836d-164a3fce4516" name="Match content of [result]">
           <con:configuration>
-            <codes>200</codes>
+            <path>$['result']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0b561d74-a735-423e-81bf-b3d73ca7026e" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="de271b9a-5a7e-4d1c-919b-d52cee56e832" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e208cf20-a2cc-4de3-ac2e-97f90858cf84" name="Match content of [paymentMethodID]">
+          <con:configuration>
+            <path>$['paymentMethodID']</path>
+            <content>${CreateCCStoredPM Request#Response#$['paymentMethodID']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -161,38 +190,82 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="CreateACHStoredPM" id="437be646-f020-4495-8a46-c2b3496a5d70">
+  <con:testStep type="restrequest" name="RetrieveStoredPM-VSP Request" id="7cc406fe-4e3a-4e12-ba97-9cd7a6bb7f7b">
     <con:settings/>
-    <con:config service="REST Service 16" resourcePath="/vtps/rest/createACHStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
-      <con:restRequest name="CreateACHStoredPM" id="b4dd6391-8a4c-4f9a-a485-3c85b8888bee" mediaType="application/json" postQueryString="false">
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 15" resourcePath="/vtps/rest/retrieveStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="RetrieveStoredPM-VSP Request" id="223f6ece-aabf-49de-940b-992579323348" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "clientAccountNumber" : "3055155500",\r
+   "customerID" : "195"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="restrequest" name="CreateCCStoredPM Request 2" id="7563430b-42dc-48ba-9b35-5e1ae1c5f68b">
+    <con:settings/>
+    <con:config service="REST Service 14" resourcePath="/vtps/rest/createCCStoredPayment" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="CreateCCStoredPM Request 2" id="993d281f-9a20-435c-9a55-1c3d55bdd422" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
-      "clientAccountNumber" : "${DataGenRandomRemID#RandomRemID}",\r
-      "applicationID" : "18",\r
-      "customerID" : "2"\r
+      "clientAccountNumber" : "87987458",\r
+      "applicationID" : "609",\r
+      "customerID" : "195"\r
    },\r
    "paymentMethod" : {\r
-      "paymentMethodType" : "2",\r
-      "accountNumber" : "${DataGenRandomRemID#RandomRemID}",\r
-      "routingNumber" : "256072691"\r
+      "paymentMethodType" : "1",\r
+      "pan" : "4111111111111111",\r
+      "card_expiration" : "102025",\r
+      "card_exmo" : "01",\r
+      "card_exyr" : "2025"\r
    },\r
    "customerInformation" : {\r
-      "firstName" : "Anothony",\r
-      "lastName" : "Zaqariah",\r
-      "companyName" : "Company of Anthony",\r
-      "addressLine1" : "2587 Main Street",\r
+      "firstName" : "FNameToBeModified",\r
+      "lastName" : "LNameToBeModified",\r
+      "addressLine1" : "AL1 ToBeModified",\r
       "city" : "Arlington",\r
       "state" : "VA",\r
       "zip" : "22201",\r
       "country" : "840"\r
    }\r
 }</con:request>
-        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/createACHStoredPayment</con:originalUri>
-        <con:assertion type="JsonPath Match" id="e6cf547b-dab4-4002-8bfa-796cb9a060d1" name="Match content of [result]">
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/createCCStoredPayment</con:originalUri>
+        <con:assertion type="JsonPath Match" id="018f90ee-fed3-4096-9253-38675c2e9d76" name="Match content of [result]">
           <con:configuration>
             <path>$['result']</path>
             <content>"0"</content>
@@ -201,25 +274,34 @@
             <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="JsonPath Existence Match" id="5d551187-812d-4812-a564-47d017b304da" name="Check for existence of [errorCode]">
+        <con:assertion type="JsonPath Match" id="6e979bf5-23aa-4031-9c37-afd685b7be70" name="Match content of [result]">
+          <con:configuration>
+            <path>$['result']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5fc328e0-2ba9-4b4b-807f-6a8a4e02f6bd" name="Match content of [errorCode]">
           <con:configuration>
             <path>$['errorCode']</path>
-            <content>true</content>
+            <content>null</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="JsonPath Existence Match" id="e865c617-889c-435c-a95e-e32624bc1c1b" name="Check for existence of [errorMessage]">
+        <con:assertion type="JsonPath Match" id="8a3f248e-da5f-4161-9a66-5e28c8eca531" name="Match content of [errorMessage]">
           <con:configuration>
             <path>$['errorMessage']</path>
-            <content>true</content>
+            <content>null</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="JsonPath Existence Match" id="bd39c6f9-4b3b-4ac5-b760-1eac4cc110ba" name="Check for existence of [paymentMethodID]">
+        <con:assertion type="JsonPath Existence Match" id="7c6300a3-a4ab-4034-88bb-1c7ecadb0e9c" name="Check for existence of [paymentMethodID]">
           <con:configuration>
             <path>$['paymentMethodID']</path>
             <content>true</content>
@@ -255,38 +337,6 @@
             <con:authProfile>Inherit From Parent</con:authProfile>
           </con:entry>
         </con:environmentSpec>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="DisableStoredPayment-ACH" id="e9e47ea9-180d-4ed5-b9a8-684169d67eb8">
-    <con:settings/>
-    <con:config service="disableCCStoredPayment" resourcePath="/vtps/rest/disableStoredPayment" methodName="Method 1" xsi:type="con:RestRequestStep">
-      <con:restRequest name="DisableStoredPayment-ACH" id="8880e422-d73e-4251-b9be-e7f03913c92e" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
-        </con:settings>
-        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
-        <con:request>{
-  "header": {
-    "clientAccountNumber": "${CreateACHStoredPM#RawRequest#$['header']['clientAccountNumber']}",
-    "applicationID": "18",
-    "customerID": "2",
-    "paymentMethodID": "${CreateACHStoredPM#Response#$['paymentMethodID']}"
-  }
-}</con:request>
-        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/disableStoredPayment</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="63bf2e5a-9138-4bed-ba03-720d4a8723a0" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
       </con:restRequest>
     </con:config>
   </con:testStep>

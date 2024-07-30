@@ -15,3 +15,5 @@ ACCFeeLookup.xml
 Mod10Check.xml
 DisableStoredPayment.xml
 ValidateRTN.xml
+Create-Disable-CreateDuplicate-CC.xml
+Create-Disable-CreateDuplicate-PC.xml

@@ -31,7 +31,7 @@
         <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
-      "clientAccountNumber" : "87987458",\r
+      "clientAccountNumber" : "${DataGenRandomRemID#RandomRemID}",\r
       "applicationID" : "609",\r
       "customerID" : "195"\r
    },\r
@@ -138,10 +138,10 @@
         <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
-      "clientAccountNumber" : "87987458",\r
+      "clientAccountNumber" : "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",\r
       "applicationID" : "609",\r
       "customerID" : "195",\r
-      "paymentMethodID" : "93848"\r
+      "paymentMethodID" : "${CreateCCStoredPM Request#Response#$['paymentMethodID']}"\r
    }\r
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/disableStoredPayment</con:originalUri>
@@ -199,10 +199,28 @@
         </con:settings>
         <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
-   "clientAccountNumber" : "3055155500",\r
+   "clientAccountNumber" : "${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}",\r
    "customerID" : "195"\r
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>
+        <con:assertion type="JsonPath Match" id="24b29c7a-734c-4912-8d5c-8985c2cfdfd8" name="Match content of [paymentMethodState]">
+          <con:configuration>
+            <path>$['paymentMethods'][0]['paymentMethodState']</path>
+            <content>"Disabled"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="7a6a96cf-ad50-4dee-80fc-6f2f80c6dc86" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>${CreateCCStoredPM Request#RawRequest#$['header']['clientAccountNumber']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -243,7 +261,7 @@
         <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
-      "clientAccountNumber" : "87987458",\r
+      "clientAccountNumber" : "6959636",\r
       "applicationID" : "609",\r
       "customerID" : "195"\r
    },\r

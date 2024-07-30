@@ -97,6 +97,8 @@ REST-Automation-Upgrade\ACCFeeLookup.xml
 REST-Automation-Upgrade\Mod10Check.xml
 REST-Automation-Upgrade\DisableStoredPayment.xml
 REST-Automation-Upgrade\ValidateRTN.xml
+REST-Automation-Upgrade\Create-Disable-CreateDuplicate-CC.xml
+REST-Automation-Upgrade\Create-Disable-CreateDuplicate-PC.xml
 REST-Automation-WWW\BillLookup.xml
 REST-Automation-WWW\ParseMoney.xml
 REST-Automation-WWW\BillDueDateValidation.xml
@@ -114,6 +116,8 @@ REST-Automation-WWW\ACCFeeLookup.xml
 REST-Automation-WWW\Mod10Check.xml
 REST-Automation-WWW\DisableStoredPayment.xml
 REST-Automation-WWW\ValidateRTN.xml
+REST-Automation-WWW\Create-Disable-CreateDuplicate-CC.xml
+REST-Automation-WWW\Create-Disable-CreateDuplicate-PC.xml
 WebSocketTesting\Test-Case-1.xml
 IVRAccountLookup\IVRACLookup-ValidRequest.xml
 IVRAccountLookup\IVRACLookup-InvalidRequest.xml
@@ -171,6 +175,8 @@ ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-PC-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-PS-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\Create-Pay-Disable-Corp-Published.xml
 ModifyAndDisable-StoredPaymentMehtods\Create-Disable-Pay-CC-Published.xml
+ModifyAndDisable-StoredPaymentMehtods\Create-Disable-CreateDuplicate-CC.xml
+ModifyAndDisable-StoredPaymentMehtods\Create-Disable-CreateDuplicate-PC.xml
 ValidateRTN-QA\Validate-RTN-Positive.xml
 ValidateRTN-QA\MissingRTN.xml
 ValidateRTN-QA\InvalidRTN.xml

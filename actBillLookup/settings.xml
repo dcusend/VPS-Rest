@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="224c78e8-0c42-42d2-9d68-58d9666b384e" name="actBillLookup" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="5a344b37-610f-499a-ab9a-9d40c0f2d17e">
+    <con:setting id="224c78e8-0c42-42d2-9d68-58d9666b384efileName">actBillLookup</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="actBillLookup.json">
+    <con:part>
+      <con:url>actBillLookup.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"actBillLookup","description":"","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/vtps/rest/actBillLookup":{"description":"","get":{"description":"","responses":{"default":{"description":"Default response"}}},"post":{"description":"","requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}},"components":{"securitySchemes":{"User Iahmed":{"type":"http","scheme":"basic"}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+  </con:endpoints>
+</con:interface>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="c1b3bd44-7e99-4484-b67f-798eba25b529" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ACTBillLookup" searchProperties="true" timeout="0">
+  <con:settings id="f36fe4c4-8b61-4c45-8e6d-cfc63dcc7c05">
+    <con:setting id="c1b3bd44-7e99-4484-b67f-798eba25b529fileName">ACTBillLookup</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Successful Bill Lookup" id="325df9e0-2bae-49eb-beb5-f5480a15b60b">
+    <con:settings/>
+    <con:config service="actBillLookup" resourcePath="/vtps/rest/actBillLookup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Successful Bill Lookup" id="1296488c-22b7-418b-842f-c23b6a3a64bd" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "applicationID": "61",
+    "account": "611111111111111"
+}</con:request>
+        <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/actBillLookup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="14b8dd31-5d01-4485-a5ef-d9fbb8d9f3e6" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c0f5ecf9-0875-46c5-bbe2-7a9fdd7b73c0" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="No Matching Account" id="ea4b4887-4f8d-4412-8d66-31fb811eead9">
+    <con:settings/>
+    <con:config service="actBillLookup" resourcePath="/vtps/rest/actBillLookup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="No Matching Account" id="1296488c-22b7-418b-842f-c23b6a3a64bd" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "applicationID": "61",
+    "account": "987AQ658"
+}</con:request>
+        <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/actBillLookup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="14b8dd31-5d01-4485-a5ef-d9fbb8d9f3e6" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c0f5ecf9-0875-46c5-bbe2-7a9fdd7b73c0" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Missing Account Number" id="e44bf8ef-128d-4605-9878-536cd5e5ef6d">
+    <con:settings/>
+    <con:config service="actBillLookup" resourcePath="/vtps/rest/actBillLookup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Missing Account Number" id="1296488c-22b7-418b-842f-c23b6a3a64bd" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "applicationID": "61",
+    "account": ""
+}</con:request>
+        <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/actBillLookup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="14b8dd31-5d01-4485-a5ef-d9fbb8d9f3e6" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6b0000ab-590b-4827-94d0-606ae91e9f27" name="Match content of [accounts]">
+          <con:configuration>
+            <path>$['accounts']</path>
+            <content>[ ]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="dc355c73-ab31-420e-a90a-3d0b2fe065a6" name="Match content of [count]">
+          <con:configuration>
+            <path>$['count']</path>
+            <content>0</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d6ce95d4-92e1-44fd-95e0-35cce813c4ea" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"6001"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="58bbd6e0-84ea-4818-bf3e-d1983d296a30" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Missing Account Number"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Missing Application ID" id="758ef557-96a1-424d-94aa-9cd2f29ba6f4">
+    <con:settings/>
+    <con:config service="actBillLookup" resourcePath="/vtps/rest/actBillLookup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Missing Application ID" id="1296488c-22b7-418b-842f-c23b6a3a64bd" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "applicationID": "",
+    "account": "611111111111111"
+}</con:request>
+        <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/actBillLookup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="14b8dd31-5d01-4485-a5ef-d9fbb8d9f3e6" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="320c1079-1967-42ac-beda-95d62a4749ab" name="Match content of [accounts]">
+          <con:configuration>
+            <path>$['accounts']</path>
+            <content>[ ]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d0ddb6ed-d9b1-4226-a9ef-5d0c993a9824" name="Match content of [count]">
+          <con:configuration>
+            <path>$['count']</path>
+            <content>0</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3ffa45a9-5c5a-41dc-ad38-65e110e59e0c" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"6002"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="defd4d83-6038-4f5f-b712-ea72ebad3a2a" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Missing ApplicationID"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

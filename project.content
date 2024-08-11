@@ -34,6 +34,7 @@ modifyCCStoredPayment\modifyCCStoredPayment.xml
 disableACHStoredPayment\disableACHStoredPayment.xml
 disableCCStoredPayment\disableCCStoredPayment.xml
 ValidateRTN\validateRTN.xml
+actBillLookup\actBillLookup.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillLookup.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ParseMoney.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillDueDateValidation.xml
@@ -77,6 +78,7 @@ https%3A%2F%2Fqa.velocitypayment.com-TestSuite\Create-Disable-PaymentMethod-CC-P
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\TestDataDriven.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CreatePM-CC.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CreatePM-PC.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ACTBillLookup.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml
 Test-Suite-2\Test-Case-1.xml

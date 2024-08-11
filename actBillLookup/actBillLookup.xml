@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="actBillLookup" path="vtps/rest/actBillLookup" id="004ec045-1038-4312-845d-7be07e3da0cd">
+  <con:settings id="3686bcff-ce4b-4c87-9bdc-042a300d17fd">
+    <con:setting id="004ec045-1038-4312-845d-7be07e3da0cdfileName">actBillLookup</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="3b656beb-0eb5-41cc-8622-252122799439" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="1296488c-22b7-418b-842f-c23b6a3a64bd" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint xsi:nil="true"/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="4ba3bc05-a178-45ff-81e7-456b96271139" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="84a30fef-1deb-41a4-904c-ff14f4d57fff" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint xsi:nil="true"/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

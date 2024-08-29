@@ -201,6 +201,391 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
+  <con:testStep type="restrequest" name="Successful Bill Lookup Govolution" id="befd6429-8850-4c71-b095-908742c30074">
+    <con:settings/>
+    <con:config service="actBillLookup" resourcePath="/vtps/rest/actBillLookup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Successful Bill Lookup Govolution" id="1296488c-22b7-418b-842f-c23b6a3a64bd" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic QWNjb3VudERhdGE6RGFsbGFzIENvdW50eQ==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{"client":"836","account":"00000130306000000"}</con:request>
+        <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/actBillLookup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="ee379948-556a-4d5e-83f8-085724058778" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="be5a6878-928f-4558-b30a-03a808a41607" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Successful Bill Lookup Client" id="244e00a1-36e6-42b1-bf2e-65bc73995784">
+    <con:settings/>
+    <con:config service="ACtBillLookupClient" resourcePath="/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Successful Bill Lookup Client" id="57b56ab0-94ce-4af7-a03e-5fb807d486f3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="ACTAuthorization" value="Basic QWNjb3VudERhdGE6RGFsbGFzIENvdW50eQ==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.dallaseval.dallasact.com</con:endpoint>
+        <con:request>{"client":"7580","account":"00000130306000000"}</con:request>
+        <con:originalUri>https://www.dallaseval.dallasact.com/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7a6b6cc9-4c44-4010-909c-5c34749a6705" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="af0c6726-0af2-4c37-a0fc-bd1c44623170" name="Match content of [count]">
+          <con:configuration>
+            <path>$['count']</path>
+            <content>1</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a733aa3b-2bc9-470c-b63e-bcf790956a79" name="Match content of [accounts]">
+          <con:configuration>
+            <path>$['accounts']</path>
+            <content>[
+   {
+      "clientId" : "7580",
+      "account" : "00000130306000000",
+      "taxyear" : "2023",
+      "name" : "MUHAMED MULAT",
+      "address1" : "1817 TWIN COURT PL",
+      "address2" : "",
+      "address3" : "",
+      "city" : "GARLAND",
+      "state" : "TX",
+      "zipcode" : "75044",
+      "currentDue" : {
+         "amount" : 4418.39,
+         "year" : "123"
+      },
+      "delinquentDue" : {
+         "amount" : 0.00,
+         "year" : ""
+      },
+      "totalDue" : {
+         "amount" : 4418.39,
+         "year" : "123"
+      },
+      "dueDate" : "08292024",
+      "blocked" : "N",
+      "isDelinquent" : false
+   }
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Successful Bill Lookup Client Matching Accounts" id="2dc59613-66fe-4ee5-b53b-3763b7aa5bd5">
+    <con:settings/>
+    <con:config service="ACtBillLookupClient" resourcePath="/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Successful Bill Lookup Client Matching Accounts" id="57b56ab0-94ce-4af7-a03e-5fb807d486f3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="ACTAuthorization" value="Basic QWNjb3VudERhdGE6RGFsbGFzIENvdW50eQ==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.dallaseval.dallasact.com</con:endpoint>
+        <con:request>{"client":"7580","account":"007364000E0040000"}</con:request>
+        <con:originalUri>https://www.dallaseval.dallasact.com/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7a6b6cc9-4c44-4010-909c-5c34749a6705" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="af0c6726-0af2-4c37-a0fc-bd1c44623170" name="Match content of [count]">
+          <con:configuration>
+            <path>$['count']</path>
+            <content>1</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a733aa3b-2bc9-470c-b63e-bcf790956a79" name="Match content of [accounts]">
+          <con:configuration>
+            <path>$['accounts']</path>
+            <content>[
+   {
+      "clientId" : "7580",
+      "account" : "007364000E0040000",
+      "taxyear" : "2023",
+      "name" : "FLORES LEONARDO SANDOVAL",
+      "address1" : "2313 LIGHT SHORE DR",
+      "address2" : "",
+      "address3" : "",
+      "city" : "DALLAS",
+      "state" : "TX",
+      "zipcode" : "75228",
+      "currentDue" : {
+         "amount" : 943.37,
+         "year" : "123"
+      },
+      "delinquentDue" : {
+         "amount" : 10111.77,
+         "year" : "000"
+      },
+      "totalDue" : {
+         "amount" : 11055.14,
+         "year" : "123"
+      },
+      "dueDate" : "08292024",
+      "blocked" : "N",
+      "isDelinquent" : true
+   }
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Successful Bill Lookup Client AC with Balances" id="8b29a034-8b32-4e3a-98e5-5063eeda3a76">
+    <con:settings/>
+    <con:config service="ACtBillLookupClient" resourcePath="/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Successful Bill Lookup Client AC with Balances" id="57b56ab0-94ce-4af7-a03e-5fb807d486f3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="ACTAuthorization" value="Basic QWNjb3VudERhdGE6RGFsbGFzIENvdW50eQ==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.dallaseval.dallasact.com</con:endpoint>
+        <con:request>{"client":"7580","account":"00000441454000000"}</con:request>
+        <con:originalUri>https://www.dallaseval.dallasact.com/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7a6b6cc9-4c44-4010-909c-5c34749a6705" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="af0c6726-0af2-4c37-a0fc-bd1c44623170" name="Match content of [count]">
+          <con:configuration>
+            <path>$['count']</path>
+            <content>1</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a733aa3b-2bc9-470c-b63e-bcf790956a79" name="Match content of [accounts]">
+          <con:configuration>
+            <path>$['accounts']</path>
+            <content>[
+   {
+      "clientId" : "7580",
+      "account" : "00000130306000000",
+      "taxyear" : "2023",
+      "name" : "MUHAMED MULAT",
+      "address1" : "1817 TWIN COURT PL",
+      "address2" : "",
+      "address3" : "",
+      "city" : "GARLAND",
+      "state" : "TX",
+      "zipcode" : "75044",
+      "currentDue" : {
+         "amount" : 4418.39,
+         "year" : "123"
+      },
+      "delinquentDue" : {
+         "amount" : 0.00,
+         "year" : ""
+      },
+      "totalDue" : {
+         "amount" : 4418.39,
+         "year" : "123"
+      },
+      "dueDate" : "08292024",
+      "blocked" : "N",
+      "isDelinquent" : false
+   }
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Successful Bill Lookup Client AC with Balances Current Year" id="ade53287-619d-4574-9ce3-d3dacbb106c4">
+    <con:settings/>
+    <con:config service="ACtBillLookupClient" resourcePath="/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Successful Bill Lookup Client AC with Balances Current Year" id="57b56ab0-94ce-4af7-a03e-5fb807d486f3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="ACTAuthorization" value="Basic QWNjb3VudERhdGE6RGFsbGFzIENvdW50eQ==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.dallaseval.dallasact.com</con:endpoint>
+        <con:request>{"client":"7580","account":"00C06680000B00230"}</con:request>
+        <con:originalUri>https://www.dallaseval.dallasact.com/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7a6b6cc9-4c44-4010-909c-5c34749a6705" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="af0c6726-0af2-4c37-a0fc-bd1c44623170" name="Match content of [count]">
+          <con:configuration>
+            <path>$['count']</path>
+            <content>1</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a733aa3b-2bc9-470c-b63e-bcf790956a79" name="Match content of [accounts]">
+          <con:configuration>
+            <path>$['accounts']</path>
+            <content>[
+   {
+      "clientId" : "7580",
+      "account" : "00C06680000B00230",
+      "taxyear" : "2023",
+      "name" : "PEAK JASON",
+      "address1" : "1010 ALLEN ST #230",
+      "address2" : "",
+      "address3" : "",
+      "city" : "DALLAS",
+      "state" : "TX",
+      "zipcode" : "75204",
+      "currentDue" : {
+         "amount" : 2286.65,
+         "year" : "123"
+      },
+      "delinquentDue" : {
+         "amount" : 6734.09,
+         "year" : "000"
+      },
+      "totalDue" : {
+         "amount" : 9020.74,
+         "year" : "123"
+      },
+      "dueDate" : "08292024",
+      "blocked" : "N",
+      "isDelinquent" : true
+   }
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Successful Bill Lookup Client Asterisk" id="03d81b28-b078-4583-b170-387aa0a5fc31">
+    <con:settings/>
+    <con:config service="ACtBillLookupClient" resourcePath="/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Successful Bill Lookup Client Asterisk" id="57b56ab0-94ce-4af7-a03e-5fb807d486f3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="ACTAuthorization" value="Basic QWNjb3VudERhdGE6RGFsbGFzIENvdW50eQ==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.dallaseval.dallasact.com</con:endpoint>
+        <con:request>{"client":"7580","account":"00*06680000*00230"}</con:request>
+        <con:originalUri>https://www.dallaseval.dallasact.com/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7a6b6cc9-4c44-4010-909c-5c34749a6705" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="af0c6726-0af2-4c37-a0fc-bd1c44623170" name="Match content of [count]">
+          <con:configuration>
+            <path>$['count']</path>
+            <content>1</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a733aa3b-2bc9-470c-b63e-bcf790956a79" name="Match content of [accounts]">
+          <con:configuration>
+            <path>$['accounts']</path>
+            <content>[
+   {
+      "clientId" : "7580",
+      "account" : "00C06680000B00230",
+      "taxyear" : "2023",
+      "name" : "PEAK JASON",
+      "address1" : "1010 ALLEN ST #230",
+      "address2" : "",
+      "address3" : "",
+      "city" : "DALLAS",
+      "state" : "TX",
+      "zipcode" : "75204",
+      "currentDue" : {
+         "amount" : 2286.65,
+         "year" : "123"
+      },
+      "delinquentDue" : {
+         "amount" : 6734.09,
+         "year" : "000"
+      },
+      "totalDue" : {
+         "amount" : 9020.74,
+         "year" : "123"
+      },
+      "dueDate" : "08292024",
+      "blocked" : "N",
+      "isDelinquent" : true
+   }
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
 </con:testCase>

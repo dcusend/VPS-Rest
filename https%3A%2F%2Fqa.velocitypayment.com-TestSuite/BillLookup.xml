@@ -12,7 +12,7 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment>&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry key="content-type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></con:setting>
           <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@follow-redirects">true</con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{
    "applicationID": "609",
    "customerID": "195",

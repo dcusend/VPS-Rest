@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ivrAccountData.jsp" path="act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp" id="c381e4bc-cfa7-40f6-8d26-fc65c5067bdc">
+  <con:settings id="047b4879-be48-49ae-aff8-1cc2839a82b9">
+    <con:setting id="c381e4bc-cfa7-40f6-8d26-fc65c5067bdcfileName">ivrAccountData.jsp</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="1cec8089-768a-4c3e-85e8-ee4664922422" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="57b56ab0-94ce-4af7-a03e-5fb807d486f3" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint xsi:nil="true"/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="a95808e0-4419-4d7f-a5f8-4f5f15ec023b" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="74c1a0e0-4fe5-4590-9a54-7802f8262163" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint xsi:nil="true"/>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

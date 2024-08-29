@@ -9,16 +9,17 @@
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 11" resourcePath="/vtps/rest/stringQuery" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="StringQuery" id="312ff84d-2e3a-49a8-a334-fc0469e34a3f" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{
-  "language": "",
-  "string": "",  
+  "language": "en_US",
+  "string": "8",  
   "prompt": "",
   "results_page": "",
-  "audio_path": ""
+  "audio_path": "8"
 }</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/stringQuery</con:originalUri>
         <con:credentials>
           <con:username>iahmed</con:username>
           <con:password>hello6666</con:password>

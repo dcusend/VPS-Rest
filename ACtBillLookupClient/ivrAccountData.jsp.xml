@@ -9,7 +9,7 @@
     <con:parameters/>
     <con:request name="Request 1" id="57b56ab0-94ce-4af7-a03e-5fb807d486f3" mediaType="application/json" postQueryString="false">
       <con:settings/>
-      <con:endpoint xsi:nil="true"/>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
       <con:request/>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
@@ -24,7 +24,7 @@
     <con:parameters/>
     <con:request name="Request 1" id="74c1a0e0-4fe5-4590-9a54-7802f8262163" mediaType="application/json">
       <con:settings/>
-      <con:endpoint xsi:nil="true"/>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
       <con:request/>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>

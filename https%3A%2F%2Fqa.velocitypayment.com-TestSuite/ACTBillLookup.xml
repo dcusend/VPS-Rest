@@ -206,10 +206,13 @@
     <con:config service="actBillLookup" resourcePath="/vtps/rest/actBillLookup" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="Successful Bill Lookup Govolution" id="1296488c-22b7-418b-842f-c23b6a3a64bd" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic QWNjb3VudERhdGE6RGFsbGFzIENvdW50eQ==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
-        <con:request>{"client":"836","account":"00000130306000000"}</con:request>
+        <con:request>{
+    "applicationID": "836",
+    "account": "00000130306000000"
+}</con:request>
         <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/actBillLookup</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="ee379948-556a-4d5e-83f8-085724058778" name="Valid HTTP Status Codes">
           <con:settings/>
@@ -217,9 +220,69 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="be5a6878-928f-4558-b30a-03a808a41607" name="Response SLA">
+        <con:assertion type="JsonPath Match" id="02cdc8ec-5e43-43b9-be4b-b823fffce775" name="Match content of [accounts]">
           <con:configuration>
-            <SLA>200</SLA>
+            <path>$['accounts']</path>
+            <content>[
+   {
+      "account" : "00000130306000000",
+      "address1" : "1817 TWIN COURT PL",
+      "address2" : "",
+      "address3" : "",
+      "blocked" : "N",
+      "city" : "GARLAND",
+      "clientId" : "7580",
+      "currentDue" : {
+         "amount" : 4455.53,
+         "year" : "123"
+      },
+      "delinquentDue" : {
+         "amount" : 0.0,
+         "year" : ""
+      },
+      "dueDate" : "09042024",
+      "isDelinquent" : false,
+      "isValidAccount" : null,
+      "name" : "MUHAMED MULAT",
+      "state" : "TX",
+      "taxyear" : "2023",
+      "totalDue" : {
+         "amount" : 4455.53,
+         "year" : "123"
+      },
+      "zipcode" : "75044"
+   }
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="7c840d83-b9d8-4578-ab6c-75babf0acc8a" name="Match content of [count]">
+          <con:configuration>
+            <path>$['count']</path>
+            <content>1</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b3c61be2-b9f7-4a08-97a6-8bf13bfea691" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="848535fc-241a-44eb-af2a-54da4fcb7000" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"No Error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -272,7 +335,7 @@
       "state" : "TX",
       "zipcode" : "75044",
       "currentDue" : {
-         "amount" : 4418.39,
+         "amount" : 4455.53,
          "year" : "123"
       },
       "delinquentDue" : {
@@ -280,10 +343,10 @@
          "year" : ""
       },
       "totalDue" : {
-         "amount" : 4418.39,
+         "amount" : 4455.53,
          "year" : "123"
       },
-      "dueDate" : "08292024",
+      "dueDate" : "09042024",
       "blocked" : "N",
       "isDelinquent" : false
    }
@@ -572,6 +635,170 @@
       "isDelinquent" : true
    }
 ]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Blocked Bill Lookup Client" id="175a2c9d-3c6b-4df6-a29e-fff7b0c1b07b">
+    <con:settings/>
+    <con:config service="ACtBillLookupClient" resourcePath="/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Blocked Bill Lookup Client" id="57b56ab0-94ce-4af7-a03e-5fb807d486f3" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="ACTAuthorization" value="Basic QWNjb3VudERhdGE6RGFsbGFzIENvdW50eQ==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.dallaseval.dallasact.com</con:endpoint>
+        <con:request>{"client":"7580","account":"99P13472500000000"}</con:request>
+        <con:originalUri>https://www.dallaseval.dallasact.com/act_webdev/dallas/webpay/services/velocity/ivrAccountData.jsp</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7a6b6cc9-4c44-4010-909c-5c34749a6705" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="af0c6726-0af2-4c37-a0fc-bd1c44623170" name="Match content of [count]">
+          <con:configuration>
+            <path>$['count']</path>
+            <content>1</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a733aa3b-2bc9-470c-b63e-bcf790956a79" name="Match content of [accounts]">
+          <con:configuration>
+            <path>$['accounts']</path>
+            <content>[
+   {
+      "clientId" : "7580",
+      "account" : "99P13472500000000",
+      "taxyear" : "2023",
+      "name" : "FADES CAR SALES INC",
+      "address1" : "%DARRELL HARRISON PRES",
+      "address2" : "6805 SECO BLVD",
+      "address3" : "",
+      "city" : "DALLAS",
+      "state" : "TX",
+      "zipcode" : "75217",
+      "currentDue" : {
+         "amount" : 93.50,
+         "year" : "123"
+      },
+      "delinquentDue" : {
+         "amount" : 17.80,
+         "year" : "000"
+      },
+      "totalDue" : {
+         "amount" : 111.30,
+         "year" : "123"
+      },
+      "dueDate" : "09042024",
+      "blocked" : "Y",
+      "isDelinquent" : true
+   }
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Successful Bill Lookup Govolution - WWW" id="c61bd123-afff-47d1-8d9b-5d28f71434d0">
+    <con:settings/>
+    <con:config service="actBillLookup" resourcePath="/vtps/rest/actBillLookup" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Successful Bill Lookup Govolution - WWW" id="1296488c-22b7-418b-842f-c23b6a3a64bd" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "applicationID": "2326",
+    "account": "00000130306000000"
+}</con:request>
+        <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/actBillLookup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="ee379948-556a-4d5e-83f8-085724058778" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="02cdc8ec-5e43-43b9-be4b-b823fffce775" name="Match content of [accounts]">
+          <con:configuration>
+            <path>$['accounts']</path>
+            <content>[
+   {
+      "account" : "00000130306000000",
+      "address1" : "1817 TWIN COURT PL",
+      "address2" : "",
+      "address3" : "",
+      "blocked" : "N",
+      "city" : "GARLAND",
+      "clientId" : "7580",
+      "currentDue" : {
+         "amount" : 4455.53,
+         "year" : "123"
+      },
+      "delinquentDue" : {
+         "amount" : 0.0,
+         "year" : ""
+      },
+      "dueDate" : "09042024",
+      "isDelinquent" : false,
+      "isValidAccount" : null,
+      "name" : "MUHAMED MULAT",
+      "state" : "TX",
+      "taxyear" : "2023",
+      "totalDue" : {
+         "amount" : 4455.53,
+         "year" : "123"
+      },
+      "zipcode" : "75044"
+   }
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="7c840d83-b9d8-4578-ab6c-75babf0acc8a" name="Match content of [count]">
+          <con:configuration>
+            <path>$['count']</path>
+            <content>1</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b3c61be2-b9f7-4a08-97a6-8bf13bfea691" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="848535fc-241a-44eb-af2a-54da4fcb7000" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"No Error"</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>

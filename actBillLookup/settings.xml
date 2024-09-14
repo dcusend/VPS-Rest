@@ -13,5 +13,6 @@
   <con:endpoints>
     <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
     <con:endpoint>https://www.dallaseval.dallasact.com</con:endpoint>
+    <con:endpoint>https://www.velocitypayment.com</con:endpoint>
   </con:endpoints>
 </con:interface>

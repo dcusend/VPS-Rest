@@ -5,12 +5,12 @@
     <con:setting id="7605f460-0f81-423e-9756-0cf4d77b011ffileName">BillTransfer-WWW</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="restrequest" name="BillTransferQA" id="cfada396-cc19-4597-b0e4-72fcc0aeaaa0">
+  <con:testStep type="restrequest" name="BillTransferWWW" id="cfada396-cc19-4597-b0e4-72fcc0aeaaa0">
     <con:settings/>
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep">
-      <con:restRequest name="BillTransferQA" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="BillTransferWWW" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic aWFobWVkOmhlbGxvNzc3Nw==" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
         <con:request>{
@@ -18,7 +18,7 @@
         "applicationID":18,
         "callerID":7038949003,
         "clientAccountNumber":"20200504090687579003",
-        "amount":"200.00",
+        "amount":"10.00",
         "remittanceID":"92329859003",
         "customerID":2,
         "language":"en_US",    
@@ -234,7 +234,7 @@
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 12" resourcePath="/vtps/rest/transferBill" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillTransfer-WWW" id="39aef5b8-4f9c-4ff8-9dae-e5ab8120f4b0" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bWRtdmFpdnI6dyFNdyRVRTVfSHo6NUFG" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://www.velocitypayment.com</con:endpoint>
         <con:request>{\r

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/api/Invoices" path="/api/Invoices" id="8902c853-38cc-4fea-8baf-d37db89a2e07">
+  <con:settings>
+    <con:setting id="8902c853-38cc-4fea-8baf-d37db89a2e07fileName">%2Fapi%2FInvoices</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GetInvoiceDetails" id="056aed22-eb05-4688-91fc-e65ce6c11ad8" method="GET">
+    <con:description>Get the details for an invoice.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>InvoiceNumber</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "lines" : [ {
+    "accountId" : 0,
+    "taxUnitId" : 0,
+    "year" : 0
+  } ],
+  "accounts" : [ {
+    "accountId" : 0,
+    "taxAccountNumber" : "string",
+    "owner" : "string",
+    "propertyType" : "string",
+    "propertyLocation" : "string"
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "lines" : [ {
+    "accountId" : 0,
+    "taxUnitId" : 0,
+    "year" : 0
+  } ],
+  "accounts" : [ {
+    "accountId" : 0,
+    "taxAccountNumber" : "string",
+    "owner" : "string",
+    "propertyType" : "string",
+    "propertyLocation" : "string"
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:description>Not Found</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:description>Not Found</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="f38b68e5-a8c5-45c9-baf0-1c8a97676900" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="CreateInvoice" id="752f8052-4fc3-472e-9a54-ecbe916f1f16" method="POST">
+    <con:description>Creates an invoice from a list of accounts</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "invoiceNumber" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "invoiceNumber" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "invoiceLines" : [ {
+    "accountId" : 0,
+    "amount" : 1.100000023841858,
+    "taxUnitId" : 0,
+    "year" : 0,
+    "paymentScenario" : { }
+  } ],
+  "hideYearsUnderProtest" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "invoiceLines" : [ {
+    "accountId" : 0,
+    "amount" : 1.100000023841858,
+    "taxUnitId" : 0,
+    "year" : 0,
+    "paymentScenario" : { }
+  } ],
+  "hideYearsUnderProtest" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>text/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "invoiceLines" : [ {
+    "accountId" : 0,
+    "amount" : 1.100000023841858,
+    "taxUnitId" : 0,
+    "year" : 0,
+    "paymentScenario" : { }
+  } ],
+  "hideYearsUnderProtest" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/*+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "invoiceLines" : [ {
+    "accountId" : 0,
+    "amount" : 1.100000023841858,
+    "taxUnitId" : 0,
+    "year" : 0,
+    "paymentScenario" : { }
+  } ],
+  "hideYearsUnderProtest" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="dbe11322-2706-4ce4-b677-cebbd9dd55a1" mediaType="application/json-patch+json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "invoiceLines" : [ {\r
+    "accountId" : 0,\r
+    "amount" : 1.100000023841858,\r
+    "taxUnitId" : 0,\r
+    "year" : 0,\r
+    "paymentScenario" : { }\r
+  } ],\r
+  "hideYearsUnderProtest" : true\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 2" id="4c04adcb-a7be-4964-8ecd-acbdf5d9d682" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "invoiceLines" : [ {\r
+    "accountId" : 0,\r
+    "amount" : 1.100000023841858,\r
+    "taxUnitId" : 0,\r
+    "year" : 0,\r
+    "paymentScenario" : { }\r
+  } ],\r
+  "hideYearsUnderProtest" : true\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 3" id="2739564f-2893-411c-b170-ebfbf4511ab6" mediaType="text/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "invoiceLines" : [ {\r
+    "accountId" : 0,\r
+    "amount" : 1.100000023841858,\r
+    "taxUnitId" : 0,\r
+    "year" : 0,\r
+    "paymentScenario" : { }\r
+  } ],\r
+  "hideYearsUnderProtest" : true\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 4" id="a80b50ae-c54b-442f-9a69-cfa50b7bca66" mediaType="application/*+json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "invoiceLines" : [ {\r
+    "accountId" : 0,\r
+    "amount" : 1.100000023841858,\r
+    "taxUnitId" : 0,\r
+    "year" : 0,\r
+    "paymentScenario" : { }\r
+  } ],\r
+  "hideYearsUnderProtest" : true\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

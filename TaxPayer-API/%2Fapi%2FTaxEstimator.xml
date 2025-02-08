@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/api/TaxEstimator" path="/api/TaxEstimator" id="db905dac-b8ad-4d31-ad98-6b75acf06abe">
+  <con:settings>
+    <con:setting id="db905dac-b8ad-4d31-ad98-6b75acf06abefileName">%2Fapi%2FTaxEstimator</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GetTaxUnits" id="54014bc5-f6f4-4a43-8150-81bd1c2f1c10" method="GET">
+    <con:description>The model used for the Tax Estimator</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>ShowPIDTaxUnitsWithRates</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "taxUnits" : [ {
+    "code" : "string",
+    "name" : "string",
+    "taxUnitType" : { }
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "taxUnits" : [ {
+    "code" : "string",
+    "name" : "string",
+    "taxUnitType" : { }
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="94fbe8a4-6be0-4679-95be-0cd4cc83ff79" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="CalculateTaxes" id="157a0a50-3160-4ea9-b429-63aa7a01519f" method="POST">
+    <con:description>Calculates taxes</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "webCurrentYear" : 0,
+  "preliminaryTaxYear" : 0,
+  "selectedYear" : 0,
+  "taxUnits" : [ {
+    "taxUnitCode" : "string",
+    "taxUnitName" : "string",
+    "propertyValue" : 0,
+    "exemptionAmount" : 0,
+    "taxableValue" : 0,
+    "exemptions" : [ {
+      "description" : "string",
+      "amount" : 0
+    } ]
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "webCurrentYear" : 0,
+  "preliminaryTaxYear" : 0,
+  "selectedYear" : 0,
+  "taxUnits" : [ {
+    "taxUnitCode" : "string",
+    "taxUnitName" : "string",
+    "propertyValue" : 0,
+    "exemptionAmount" : 0,
+    "taxableValue" : 0,
+    "exemptions" : [ {
+      "description" : "string",
+      "amount" : 0
+    } ]
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "taxUnitCodes" : [ "string" ],
+  "exemptionTypes" : [ { } ],
+  "propertyValue" : 0,
+  "taxYear" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "taxUnitCodes" : [ "string" ],
+  "exemptionTypes" : [ { } ],
+  "propertyValue" : 0,
+  "taxYear" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>text/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "taxUnitCodes" : [ "string" ],
+  "exemptionTypes" : [ { } ],
+  "propertyValue" : 0,
+  "taxYear" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/*+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "taxUnitCodes" : [ "string" ],
+  "exemptionTypes" : [ { } ],
+  "propertyValue" : 0,
+  "taxYear" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="d746c365-7e3c-4203-8869-49cf7b30e217" mediaType="application/json-patch+json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "taxUnitCodes" : [ "string" ],\r
+  "exemptionTypes" : [ { } ],\r
+  "propertyValue" : 0,\r
+  "taxYear" : 0\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 2" id="f84942ac-a64c-4e6d-931e-375b58524b22" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "taxUnitCodes" : [ "string" ],\r
+  "exemptionTypes" : [ { } ],\r
+  "propertyValue" : 0,\r
+  "taxYear" : 0\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 3" id="0075b951-c208-4ff3-84e9-5c0e4d7d6268" mediaType="text/json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "taxUnitCodes" : [ "string" ],\r
+  "exemptionTypes" : [ { } ],\r
+  "propertyValue" : 0,\r
+  "taxYear" : 0\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 4" id="2b81d253-d937-4621-bda8-653371f0870b" mediaType="application/*+json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "taxUnitCodes" : [ "string" ],\r
+  "exemptionTypes" : [ { } ],\r
+  "propertyValue" : 0,\r
+  "taxYear" : 0\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

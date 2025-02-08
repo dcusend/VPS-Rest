@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="86bd775c-ff8a-43e5-9528-6816c2bdf9cf" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="SpindleMedia" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="86bd775c-ff8a-43e5-9528-6816c2bdf9cffileName">SpindleMedia</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="AccountDetails-DoNotUse" id="66ab05c4-5b60-401d-8f19-524dec7e0353">
+    <con:settings/>
+    <con:config service="TaxPayer API" resourcePath="/api/Accounts/detail" methodName="GetAccountDetail" xsi:type="con:RestRequestStep">
+      <con:restRequest name="AccountDetails-DoNotUse" id="dcebad6b-2d3d-4367-86fe-6ba58abff587" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://taxpayerapi.myprop.tax/api/Accounts/detail</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="6ea07d34-a826-48ee-99c4-c5e96bfcddb2" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="d8dda96d-729f-4537-989c-35a3ff6cf22d" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Brazoria</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="TaxAccountNumber" value="91000157000"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="AccountLookup-DoNotUse" id="a75fba97-2b5e-4b7f-bb2b-c9e99f89cb33">
+    <con:settings/>
+    <con:config service="TaxPayer API" resourcePath="/api/Accounts" methodName="SearchAccounts" xsi:type="con:RestRequestStep">
+      <con:restRequest name="AccountLookup-DoNotUse" id="dc8cd51a-57a9-442a-a31d-204800248a6a" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="New header" value="" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://taxpayerapi.myprop.tax/api/Accounts</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="8b868742-876a-453e-a1ab-3eef17fa2fbf" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="26fcc8f9-4245-4960-a6d6-d8d8eaa083b9" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>oauth2 CLIENT CRED</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="SearchField" value="AccountNumber"/>
+          <con:entry key="SearchText" value="91000157000"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="CreateInvoice-DoNotUse" id="5bc6b7b2-b9e4-4fc8-9822-2fa148c5426e">
+    <con:settings/>
+    <con:config service="TaxPayer API" resourcePath="/api/Invoices" methodName="CreateInvoice" xsi:type="con:RestRequestStep">
+      <con:restRequest name="CreateInvoice-DoNotUse" id="4c04adcb-a7be-4964-8ecd-acbdf5d9d682" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+        <con:request>{\r
+  "invoiceLines" : [ {\r
+    "accountId" : 319158,\r
+    "amount" : 0,\r
+    "taxUnitId" : 0,\r
+    "year" : 0,\r
+    "paymentScenario" : "TotalDue"\r
+  } ],\r
+  "hideYearsUnderProtest" : true\r
+}</con:request>
+        <con:originalUri>https://taxpayerapi.myprop.tax/api/Invoices</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="290c8671-8586-4961-9374-9cd51c52a135" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="03537174-0401-4711-8b13-d1c2dad27354" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="InvoicePostGovolution" id="2bc94bb7-a85a-45a8-b9c8-d48e676596a8">
+    <con:settings/>
+    <con:config service="https://dev2.velocitypayment.com/vtps/rest/" resourcePath="/vtps/rest/spindleMediaInvoice" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="InvoicePostGovolution" id="6fd08dca-0bec-4999-8748-8e3209c1187b" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{
+                "accountId": 319158,
+                "originalAmount" : 883.68,
+                "amountToPay" : 667.05,
+                "applicationId" : '836'
+}
+</con:request>
+        <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/spindleMediaInvoice</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="6706b29b-4593-4041-9af5-d165c186dce8" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f3047451-768b-40f6-9090-053eb42e4a8a" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>"667.05"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="7a909776-3e03-48fc-8126-bd833266106c" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b3f9e8d9-908d-41e0-a2a0-4738722b64f3" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"No Error"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="BillLookupGovolution" id="33811dd3-28c7-45c2-9149-1708cea9ded0">
+    <con:settings/>
+    <con:config service="https://dev2.velocitypayment.com/vtps/rest/" resourcePath="/vtps/rest/spindleMediaBillLookup" methodName="Method 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="BillLookupGovolution" id="c41978eb-cac5-4def-98ac-a611a0660ce4" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment>&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{ 
+                searchText: '91000157000',
+                applicationId: '836'
+}
+</con:request>
+        <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/spindleMediaBillLookup</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="cbbe9998-1dd9-4ceb-975c-56fe13ab7fe7" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c191090e-add7-4c4f-8f90-c58d105f0aea" name="Match content of [results]">
+          <con:configuration>
+            <path>$['results']</path>
+            <content>[
+   {
+      "accountId" : "319158",
+      "taxAccountNumber" : "91000157000",
+      "propertyType" : "Personal",
+      "propertyLocation" : "11200 BROADWAY",
+      "owner" : {
+         "name1" : "BLCK MARKET LLC",
+         "name2" : "JEREMY O MALONE SR",
+         "address1" : "4314 LIMESTONE TERRACE",
+         "address2" : "",
+         "city" : "MANVEL",
+         "state" : "TX",
+         "postalCode" : "775782142"
+      },
+      "currentDue" : 190.04,
+      "totalDue" : 883.68,
+      "priorDue" : 693.64,
+      "quarterAmount" : null,
+      "halfAmount" : null,
+      "splitStatus" : null,
+      "inSuit" : "false",
+      "inBankruptcy" : "false",
+      "allowPayment" : "true",
+      "confidentialOwner" : "false",
+      "isPastDue" : "true",
+      "isActive" : "true",
+      "pendingPaymentAmount" : "0.0",
+      "legalDescription" : "FURN FIXT EQUIP INV OTHER PERSONAL PROPERTY"
+   }
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

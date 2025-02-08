@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="14cad8a6-caa9-4cec-8c14-930e343cc582" name="https://dev2.velocitypayment.com/vtps/rest/" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="77e83d31-750d-4e57-8ac7-4065e1455b4d">
+    <con:setting id="14cad8a6-caa9-4cec-8c14-930e343cc582fileName">https%3A%2F%2Fdev2.velocitypayment.com%2Fvtps%2Frest%2F</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="https://dev2.velocitypayment.com/vtps/rest/.json">
+    <con:part>
+      <con:url>https://dev2.velocitypayment.com/vtps/rest/.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"https://dev2.velocitypayment.com/vtps/rest/","description":"","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/vtps/rest/spindleMediaBillLookup":{"description":"","get":{"description":"","parameters":[{"name":"searchText","in":"query","required":true,"style":"form","explode":true,"schema":{"type":"string"}},{"name":"applicationID","in":"query","required":true,"style":"form","explode":true,"schema":{"type":"string"}}],"responses":{"default":{"description":"Default response"}}},"post":{"description":"","requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}},"/vtps/rest/spindleMediaInvoice":{"description":"","get":{"description":"","responses":{"default":{"description":"Default response"}}},"post":{"description":"","requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}},"components":{"securitySchemes":{"Brazoria":{"type":"oauth2","flows":{"clientCredentials":{"tokenUrl":"https://login.taxsandbox.dev/oauth/token","scopes":{}}}},"User Iahmed":{"type":"http","scheme":"basic"},"oauth2":{"type":"oauth2","flows":{"clientCredentials":{"tokenUrl":"https://login.taxsandbox.dev/oauth/token","scopes":{}}}}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://dev2.velocitypayment.com/vtps/rest</con:endpoint>
+    <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+  </con:endpoints>
+</con:interface>

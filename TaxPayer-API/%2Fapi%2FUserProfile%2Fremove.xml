@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/api/UserProfile/remove" path="/api/UserProfile/remove" id="f132733c-fc0a-4018-b459-1acee2d647fb">
+  <con:settings>
+    <con:setting id="f132733c-fc0a-4018-b459-1acee2d647fbfileName">%2Fapi%2FUserProfile%2Fremove</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="RemoveTaxAccounts" id="23e5114d-df49-449b-9f80-e2b5046a55f8" method="POST">
+    <con:description>Remove Tax Accounts from a profile</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "email" : "string",
+  "taxAccountIds" : [ 0 ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "email" : "string",
+  "taxAccountIds" : [ 0 ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>text/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "email" : "string",
+  "taxAccountIds" : [ 0 ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/*+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "email" : "string",
+  "taxAccountIds" : [ 0 ]
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="397823b2-cd44-4adc-b1fd-b3f9da4bf2f2" mediaType="application/json-patch+json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "email" : "string",\r
+  "taxAccountIds" : [ 0 ]\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 2" id="e6d9da05-f8bc-4746-b5e8-e07a8850a360" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "email" : "string",\r
+  "taxAccountIds" : [ 0 ]\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 3" id="491591f4-6a0c-4587-a4b4-463fef40808a" mediaType="text/json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "email" : "string",\r
+  "taxAccountIds" : [ 0 ]\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 4" id="931c0762-4118-4d3d-9c09-15d59496a325" mediaType="application/*+json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "email" : "string",\r
+  "taxAccountIds" : [ 0 ]\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

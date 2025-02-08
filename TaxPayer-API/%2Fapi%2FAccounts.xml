@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/api/Accounts" path="/api/Accounts" id="da0a8ac5-2f5d-461f-8f09-6cad03028c5d">
+  <con:settings>
+    <con:setting id="da0a8ac5-2f5d-461f-8f09-6cad03028c5dfileName">%2Fapi%2FAccounts</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="SearchAccounts" id="46e046ea-1374-43bd-a608-7e12e8346878" method="GET">
+    <con:description>Searches for accounts</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>SearchField</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>SearchText</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>PropertyType</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>BalanceFilter</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>IncludeConfidential</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>IncludeInactiveAccounts</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>HideYearsUnderProtest</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>PageNumber</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>PageSize</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "totalItems" : 0,
+  "pageNumber" : 0,
+  "pageSize" : 0,
+  "pageCount" : 0,
+  "results" : [ {
+    "accountId" : 0,
+    "taxAccountNumber" : "string",
+    "propertyType" : "string",
+    "propertyLocation" : "string",
+    "owner" : {
+      "name1" : "string",
+      "name2" : "string",
+      "address1" : "string",
+      "address2" : "string",
+      "city" : "string",
+      "state" : "string",
+      "postalCode" : "string"
+    },
+    "quarterAmount" : 1.100000023841858,
+    "halfAmount" : 1.100000023841858,
+    "splitStatus" : { },
+    "inSuit" : true,
+    "inBankruptcy" : true,
+    "allowPayment" : true,
+    "confidentialOwner" : true,
+    "isPastDue" : true,
+    "isActive" : true,
+    "legalDescription" : "string",
+    "yearSummaries" : [ {
+      "year" : 0
+    } ],
+    "taxUnitSummaries" : [ {
+      "taxUnitId" : 0
+    } ],
+    "taxUnitYearSummaries" : [ {
+      "year" : 0,
+      "taxUnitId" : 0,
+      "taxUnitName" : "string"
+    } ]
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "totalItems" : 0,
+  "pageNumber" : 0,
+  "pageSize" : 0,
+  "pageCount" : 0,
+  "results" : [ {
+    "accountId" : 0,
+    "taxAccountNumber" : "string",
+    "propertyType" : "string",
+    "propertyLocation" : "string",
+    "owner" : {
+      "name1" : "string",
+      "name2" : "string",
+      "address1" : "string",
+      "address2" : "string",
+      "city" : "string",
+      "state" : "string",
+      "postalCode" : "string"
+    },
+    "quarterAmount" : 1.100000023841858,
+    "halfAmount" : 1.100000023841858,
+    "splitStatus" : { },
+    "inSuit" : true,
+    "inBankruptcy" : true,
+    "allowPayment" : true,
+    "confidentialOwner" : true,
+    "isPastDue" : true,
+    "isActive" : true,
+    "legalDescription" : "string",
+    "yearSummaries" : [ {
+      "year" : 0
+    } ],
+    "taxUnitSummaries" : [ {
+      "taxUnitId" : 0
+    } ],
+    "taxUnitYearSummaries" : [ {
+      "year" : 0,
+      "taxUnitId" : 0,
+      "taxUnitName" : "string"
+    } ]
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="dc8cd51a-57a9-442a-a31d-204800248a6a" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="New header" value="" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://taxpayerapi.myprop.tax/api/Accounts</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>oauth2 CLIENT CRED</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="SearchField" value="AccountNumber"/>
+        <con:entry key="SearchText" value="91000157000"/>
+      </con:parameters>
+    </con:request>
+  </con:method>
+  <con:method name="RetrieveAccountsByIds" id="a9d50513-0633-4e8a-b917-b5d392ec8529" method="POST">
+    <con:description>Retrieves account search results by a list of account ids</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "accountId" : 0,
+  "taxAccountNumber" : "string",
+  "propertyType" : "string",
+  "propertyLocation" : "string",
+  "owner" : {
+    "name1" : "string",
+    "name2" : "string",
+    "address1" : "string",
+    "address2" : "string",
+    "city" : "string",
+    "state" : "string",
+    "postalCode" : "string"
+  },
+  "quarterAmount" : 1.100000023841858,
+  "halfAmount" : 1.100000023841858,
+  "splitStatus" : { },
+  "inSuit" : true,
+  "inBankruptcy" : true,
+  "allowPayment" : true,
+  "confidentialOwner" : true,
+  "isPastDue" : true,
+  "isActive" : true,
+  "legalDescription" : "string",
+  "yearSummaries" : [ {
+    "year" : 0
+  } ],
+  "taxUnitSummaries" : [ {
+    "taxUnitId" : 0
+  } ],
+  "taxUnitYearSummaries" : [ {
+    "year" : 0,
+    "taxUnitId" : 0,
+    "taxUnitName" : "string"
+  } ]
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "accountId" : 0,
+  "taxAccountNumber" : "string",
+  "propertyType" : "string",
+  "propertyLocation" : "string",
+  "owner" : {
+    "name1" : "string",
+    "name2" : "string",
+    "address1" : "string",
+    "address2" : "string",
+    "city" : "string",
+    "state" : "string",
+    "postalCode" : "string"
+  },
+  "quarterAmount" : 1.100000023841858,
+  "halfAmount" : 1.100000023841858,
+  "splitStatus" : { },
+  "inSuit" : true,
+  "inBankruptcy" : true,
+  "allowPayment" : true,
+  "confidentialOwner" : true,
+  "isPastDue" : true,
+  "isActive" : true,
+  "legalDescription" : "string",
+  "yearSummaries" : [ {
+    "year" : 0
+  } ],
+  "taxUnitSummaries" : [ {
+    "taxUnitId" : 0
+  } ],
+  "taxUnitYearSummaries" : [ {
+    "year" : 0,
+    "taxUnitId" : 0,
+    "taxUnitName" : "string"
+  } ]
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "accountIds" : [ 0 ],
+  "hideYearsUnderProtest" : true,
+  "includePaidReceivables" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "accountIds" : [ 0 ],
+  "hideYearsUnderProtest" : true,
+  "includePaidReceivables" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>text/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "accountIds" : [ 0 ],
+  "hideYearsUnderProtest" : true,
+  "includePaidReceivables" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/*+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "accountIds" : [ 0 ],
+  "hideYearsUnderProtest" : true,
+  "includePaidReceivables" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="2d83c00a-e929-4217-bb7a-aad2d43b6ca8" mediaType="application/json-patch+json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "accountIds" : [ 0 ],\r
+  "hideYearsUnderProtest" : true,\r
+  "includePaidReceivables" : true\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 2" id="afe6f712-c872-4fb0-880c-86e9352a2594" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "accountIds" : [ 0 ],\r
+  "hideYearsUnderProtest" : true,\r
+  "includePaidReceivables" : true\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 3" id="72c10225-7f1d-450a-a8b8-4d43b19d177f" mediaType="text/json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "accountIds" : [ 0 ],\r
+  "hideYearsUnderProtest" : true,\r
+  "includePaidReceivables" : true\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 4" id="309a3baa-de98-40ca-b573-cfff82176129" mediaType="application/*+json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request>{\r
+  "accountIds" : [ 0 ],\r
+  "hideYearsUnderProtest" : true,\r
+  "includePaidReceivables" : true\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

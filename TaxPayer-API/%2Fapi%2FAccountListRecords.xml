@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/api/AccountListRecords" path="/api/AccountListRecords" id="99394051-1f99-48c8-8db9-01d55977bfb1">
+  <con:settings>
+    <con:setting id="99394051-1f99-48c8-8db9-01d55977bfb1fileName">%2Fapi%2FAccountListRecords</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GetAccountListRecordsByUserAndListId" id="993891ea-9fe4-4672-bd99-4d6f5f52bf40" method="GET">
+    <con:description>Retrieves account lists associated to the specified profile</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>email</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Email associated with the profile</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>accountListId</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "accountId" : 0,
+  "accountData" : {
+    "accountId" : 0,
+    "taxAccountNumber" : "string",
+    "propertyType" : "string",
+    "propertyLocation" : "string",
+    "owner" : {
+      "name1" : "string",
+      "name2" : "string",
+      "address1" : "string",
+      "address2" : "string",
+      "city" : "string",
+      "state" : "string",
+      "postalCode" : "string"
+    },
+    "quarterAmount" : 1.100000023841858,
+    "halfAmount" : 1.100000023841858,
+    "splitStatus" : { },
+    "inSuit" : true,
+    "inBankruptcy" : true,
+    "allowPayment" : true,
+    "confidentialOwner" : true,
+    "isPastDue" : true,
+    "isActive" : true,
+    "legalDescription" : "string",
+    "yearSummaries" : [ {
+      "year" : 0
+    } ],
+    "taxUnitSummaries" : [ {
+      "taxUnitId" : 0
+    } ],
+    "taxUnitYearSummaries" : [ {
+      "year" : 0,
+      "taxUnitId" : 0,
+      "taxUnitName" : "string"
+    } ]
+  }
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "accountId" : 0,
+  "accountData" : {
+    "accountId" : 0,
+    "taxAccountNumber" : "string",
+    "propertyType" : "string",
+    "propertyLocation" : "string",
+    "owner" : {
+      "name1" : "string",
+      "name2" : "string",
+      "address1" : "string",
+      "address2" : "string",
+      "city" : "string",
+      "state" : "string",
+      "postalCode" : "string"
+    },
+    "quarterAmount" : 1.100000023841858,
+    "halfAmount" : 1.100000023841858,
+    "splitStatus" : { },
+    "inSuit" : true,
+    "inBankruptcy" : true,
+    "allowPayment" : true,
+    "confidentialOwner" : true,
+    "isPastDue" : true,
+    "isActive" : true,
+    "legalDescription" : "string",
+    "yearSummaries" : [ {
+      "year" : 0
+    } ],
+    "taxUnitSummaries" : [ {
+      "taxUnitId" : 0
+    } ],
+    "taxUnitYearSummaries" : [ {
+      "year" : 0,
+      "taxUnitId" : 0,
+      "taxUnitName" : "string"
+    } ]
+  }
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="30443f79-c2e7-4b18-8dbc-dfd5ee3fd8d6" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

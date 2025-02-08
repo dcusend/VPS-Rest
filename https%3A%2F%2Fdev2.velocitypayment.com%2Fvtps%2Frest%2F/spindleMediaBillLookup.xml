@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="spindleMediaBillLookup" path="/vtps/rest/spindleMediaBillLookup" id="7e83e29e-77d4-48af-be1b-bd26b4907191">
+  <con:settings>
+    <con:setting id="7e83e29e-77d4-48af-be1b-bd26b4907191fileName">spindleMediaBillLookup</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="bf55eae1-f488-4767-86f1-0d340fbcd6b7" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>searchText</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>applicationID</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="bcbb13d3-ac16-45a0-9161-9b2d5666a1bb" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://dev2.velocitypayment.com/vtps/rest/spindleMediaBillLookup</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>searchText</con:entry>
+        <con:entry>applicationID</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="e0dd61f8-db05-4347-b951-10713e02eb1f" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="c41978eb-cac5-4def-98ac-a611a0660ce4" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

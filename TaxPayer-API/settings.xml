@@ -1,0 +1,3539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="5f29af30-feaa-4f0f-9afc-600ecd0077a5" name="TaxPayer API" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" definitionUrl="https://taxpayerapi.myprop.tax/swagger/v1/swagger.json">
+  <con:description>The TaxPayer Api.</con:description>
+  <con:settings id="09a59bbe-230a-479e-819f-a7d9a485608d">
+    <con:setting id="5f29af30-feaa-4f0f-9afc-600ecd0077a5fileName">TaxPayer-API</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="https://taxpayerapi.myprop.tax/swagger/v1/swagger.json">
+    <con:part>
+      <con:url>https://taxpayerapi.myprop.tax/swagger/v1/swagger.json</con:url>
+      <con:content>{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "TaxPayer API",
+    "description": "The TaxPayer Api.",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/AccountListDetails": {
+      "get": {
+        "tags": [
+          "AccountListDetails"
+        ],
+        "summary": "Retrieves account lists associated to the specified profile",
+        "operationId": "GetAccountListDetailsByUserProfile",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "description": "Email associated with the profile",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListDetails_Model"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListDetails_Model"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "AccountListDetails"
+        ],
+        "summary": "Creates or updates an AccountListDetails record and its associated account records",
+        "operationId": "AddOrUpdateAccountListDetails",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Account List details and its account records",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListDetailsQueries_AddOrUpdate"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListDetailsQueries_AddOrUpdate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListDetailsQueries_AddOrUpdate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListDetailsQueries_AddOrUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "AccountListDetails"
+        ],
+        "summary": "Removes an account list associated with the specified user",
+        "operationId": "DeleteAccountListDetails",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "description": "User email",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountListDetailsId",
+            "in": "query",
+            "description": "Account list id",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/AccountListRecords": {
+      "get": {
+        "tags": [
+          "AccountListRecords"
+        ],
+        "summary": "Retrieves account lists associated to the specified profile",
+        "operationId": "GetAccountListRecordsByUserAndListId",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "description": "Email associated with the profile",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountListId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListRecord_DtoModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListRecord_DtoModel"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/AccountListRecords/Add": {
+      "post": {
+        "tags": [
+          "AccountListRecords"
+        ],
+        "summary": "Associates accounts with the specified Account List",
+        "operationId": "AddAccountListRecords",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListRecord_AddRemoveRecordsRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListRecord_AddRemoveRecordsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListRecord_AddRemoveRecordsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListRecord_AddRemoveRecordsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/AccountListRecords/Remove": {
+      "post": {
+        "tags": [
+          "AccountListRecords"
+        ],
+        "operationId": "RemoveAccountListRecords",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListRecord_AddRemoveRecordsRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListRecord_AddRemoveRecordsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListRecord_AddRemoveRecordsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListRecord_AddRemoveRecordsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/Accounts": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Searches for accounts",
+        "operationId": "SearchAccounts",
+        "parameters": [
+          {
+            "name": "SearchField",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_SearchField"
+            }
+          },
+          {
+            "name": "SearchText",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PropertyType",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_PropertyType"
+            }
+          },
+          {
+            "name": "BalanceFilter",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_BalanceFilter"
+            }
+          },
+          {
+            "name": "IncludeConfidential",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "IncludeInactiveAccounts",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "HideYearsUnderProtest",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_SearchResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_SearchResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Retrieves account search results by a list of account ids",
+        "operationId": "RetrieveAccountsByIds",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Query parameters",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearchByIds_Query"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearchByIds_Query"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearchByIds_Query"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearchByIds_Query"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_Model"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_Model"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/Accounts/detail": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Retrieves the details for a particular account",
+        "operationId": "GetAccountDetail",
+        "parameters": [
+          {
+            "name": "TaxAccountNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "IncludeConfidential",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "BasicDetailsOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "IncludeLastPayment",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "HideYearsUnderProtest",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "DisplayProtectedExemptionsAsOther",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_Accounts_AccountDetail_Model"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_Accounts_AccountDetail_Model"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/Accounts/paymentHistory": {
+      "get": {
+        "tags": [
+          "Accounts"
+        ],
+        "summary": "Retrieves the payment history for a particular account",
+        "operationId": "GetPaymentHistory",
+        "parameters": [
+          {
+            "name": "TaxAccountNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Shared_Features_Accounts_PaymentHistory_Model"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Shared_Features_Accounts_PaymentHistory_Model"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/Invoices": {
+      "post": {
+        "tags": [
+          "Invoices"
+        ],
+        "summary": "Creates an invoice from a list of accounts",
+        "operationId": "CreateInvoice",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Invoice data",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_Invoices_CreateInvoice_Command"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_Invoices_CreateInvoice_Command"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_Invoices_CreateInvoice_Command"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_Invoices_CreateInvoice_Command"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_Invoices_CreateInvoice_Result"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_Invoices_CreateInvoice_Result"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Invoices"
+        ],
+        "summary": "Get the details for an invoice.",
+        "operationId": "GetInvoiceDetails",
+        "parameters": [
+          {
+            "name": "InvoiceNumber",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_Invoices_GetInvoiceDetails_Response"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_Invoices_GetInvoiceDetails_Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/PaymentReference": {
+      "put": {
+        "tags": [
+          "PaymentReference"
+        ],
+        "operationId": "AddPaymentReference",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceDetails_AddRequest"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceDetails_AddRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceDetails_AddRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceDetails_AddRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/PaymentReference/GetPaymentReferenceByUserProfileAndReferenceId": {
+      "get": {
+        "tags": [
+          "PaymentReference"
+        ],
+        "operationId": "GetPaymentReferenceByUserProfileAndReferenceId",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "paymentReferenceDetailsId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceDetails_PaymentReferenceDetailsDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceDetails_PaymentReferenceDetailsDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/PaymentReference/GetPaymentReferenceSummariesByUserProfile": {
+      "get": {
+        "tags": [
+          "PaymentReference"
+        ],
+        "operationId": "GetPaymentReferenceSummariesByUserProfile",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceDetails_Summary"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceDetails_Summary"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/Settings/MaintenanceMode": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "operationId": "GetMaintenanceMode",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/Settings/CurrentTaxYear": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "operationId": "GetCurrentTaxYear",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/Settings/HalfPay": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "operationId": "GetHalfPay",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/Settings/WebhookPaused": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "operationId": "GetWebhookPaused",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/Settings/AccountListsAndPaymentReferencesEnabled": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "operationId": "GetAccountListsAndPaymentReferencesEnabled",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/Settings/HalfQuarterPay": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "operationId": "GetHalfQuarterPay",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/TaxEstimator": {
+      "get": {
+        "tags": [
+          "TaxEstimator"
+        ],
+        "summary": "The model used for the Tax Estimator",
+        "operationId": "GetTaxUnits",
+        "parameters": [
+          {
+            "name": "ShowPIDTaxUnitsWithRates",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_TaxEstimator_TaxUnits_Model"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_TaxEstimator_TaxUnits_Model"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "TaxEstimator"
+        ],
+        "summary": "Calculates taxes",
+        "operationId": "CalculateTaxes",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Calculate command",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_TaxEstimator_CalculateTaxes_Command"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_TaxEstimator_CalculateTaxes_Command"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_TaxEstimator_CalculateTaxes_Command"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_TaxEstimator_CalculateTaxes_Command"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_TaxEstimator_CalculateTaxes_Result"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_TaxEstimator_CalculateTaxes_Result"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/TaxEstimator/CurrentWebYear": {
+      "get": {
+        "tags": [
+          "TaxEstimator"
+        ],
+        "summary": "Get Current Web Year",
+        "operationId": "GetWebPayCurrentYear",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/TaxEstimator/PreliminaryYear": {
+      "get": {
+        "tags": [
+          "TaxEstimator"
+        ],
+        "summary": "Get Preliminary Year",
+        "operationId": "GetPreliminaryTaxYear",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/TruthInTaxation": {
+      "get": {
+        "tags": [
+          "TruthInTaxation"
+        ],
+        "operationId": "GetTruthInTaxation",
+        "parameters": [
+          {
+            "name": "backdatedYears",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_TruthInTaxation_GetTruthInTaxation_Result"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_TruthInTaxation_GetTruthInTaxation_Result"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/UserProfile": {
+      "post": {
+        "tags": [
+          "UserProfile"
+        ],
+        "summary": "Create/update user profile",
+        "operationId": "CreateOrUpdateProfile",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The profile command",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_CreateUpdateProfile_Command"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_CreateUpdateProfile_Command"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_CreateUpdateProfile_Command"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_CreateUpdateProfile_Command"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "UserProfile"
+        ],
+        "summary": "Retrieves the details and accounts for a user profile",
+        "operationId": "GetProfileDetails",
+        "parameters": [
+          {
+            "name": "Email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_UserProfile_RetrieveProfile_Model"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Shared_Features_UserProfile_RetrieveProfile_Model"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/UserProfile/add": {
+      "post": {
+        "tags": [
+          "UserProfile"
+        ],
+        "summary": "Add Tax Accounts to a profile",
+        "operationId": "AddTaxAccounts",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The add accounts command",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AddTaxAccounts_Command"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AddTaxAccounts_Command"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AddTaxAccounts_Command"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_AddTaxAccounts_Command"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    },
+    "/api/UserProfile/remove": {
+      "post": {
+        "tags": [
+          "UserProfile"
+        ],
+        "summary": "Remove Tax Accounts from a profile",
+        "operationId": "RemoveTaxAccounts",
+        "parameters": [
+          {
+            "name": "Tenant",
+            "in": "header",
+            "description": "Tenant Id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The remove accounts command",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_RemoveTaxAccounts_Command"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_RemoveTaxAccounts_Command"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_RemoveTaxAccounts_Command"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Shared_Features_UserProfile_RemoveTaxAccounts_Command"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Microsoft.AspNetCore.Mvc.ValidationProblemDetails": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountDetail_Model": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxAccountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "propertyType": {
+            "type": "string",
+            "nullable": true
+          },
+          "apdNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "propertyLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "legalDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "owner": {
+            "$ref": "#/components/schemas/Shared_Features_Accounts_Owner"
+          },
+          "acres": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "yearBuilt": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "squareFeet": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "currentTaxYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "udi": {
+            "type": "string",
+            "nullable": true
+          },
+          "deferralStart": {
+            "type": "string",
+            "nullable": true
+          },
+          "deferralEnd": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "ownershipPercent": {
+            "type": "number",
+            "format": "double"
+          },
+          "isPastDue": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "hasEStatement": {
+            "type": "boolean"
+          },
+          "isPayable": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "currentValues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountDetail_Model_ValueDetail"
+            },
+            "nullable": true
+          },
+          "previousValues": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountDetail_Model_ValueDetail"
+            },
+            "nullable": true
+          },
+          "currentExemptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountDetail_Model_ValueDetail"
+            },
+            "nullable": true
+          },
+          "previousExemptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountDetail_Model_ValueDetail"
+            },
+            "nullable": true
+          },
+          "taxRecords": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountDetail_Model_TaxRecord"
+            },
+            "nullable": true
+          },
+          "lastPayment": {
+            "$ref": "#/components/schemas/Shared_Features_Accounts_PaymentHistory_Model"
+          },
+          "inSuit": {
+            "type": "boolean"
+          },
+          "inBankruptcy": {
+            "type": "boolean"
+          },
+          "allowPayment": {
+            "type": "boolean"
+          },
+          "confidentialOwner": {
+            "type": "boolean"
+          },
+          "pendingPaymentAmount": {
+            "type": "number",
+            "format": "decimal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountDetail_Model_TaxRecord": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "baseTax": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "baseTaxPaid": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "baseTaxDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "penaltyDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "interestDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "collectionPenaltyDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "totalDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountDetail_Model_ValueDetail"
+            },
+            "nullable": true
+          },
+          "exemptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountDetail_Model_ValueDetail"
+            },
+            "nullable": true
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountDetail_Model_TaxRecordDetail"
+            },
+            "nullable": true
+          },
+          "receiptDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "delinquencyDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isPastDue": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountDetail_Model_TaxRecordDetail": {
+        "type": "object",
+        "properties": {
+          "taxUnitCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxUnitName": {
+            "type": "string",
+            "nullable": true
+          },
+          "baseTax": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "baseTaxPaid": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "baseTaxDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "penaltyDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "interestDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "collectionPenaltyDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "totalDue": {
+            "type": "number",
+            "format": "decimal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountDetail_Model_ValueDetail": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountSearchByIds_Query": {
+        "type": "object",
+        "properties": {
+          "accountIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "hideYearsUnderProtest": {
+            "type": "boolean"
+          },
+          "includePaidReceivables": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountSearch_BalanceFilter": {
+        "enum": [
+          "Paid",
+          "Unpaid"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountSearch_Model": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxAccountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "propertyType": {
+            "type": "string",
+            "nullable": true
+          },
+          "propertyLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "owner": {
+            "$ref": "#/components/schemas/Shared_Features_Accounts_Owner"
+          },
+          "currentDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "totalDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "priorDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "quarterAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "halfAmount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "splitStatus": {
+            "$ref": "#/components/schemas/Shared_Features_Invoices_PaymentScenario"
+          },
+          "inSuit": {
+            "type": "boolean"
+          },
+          "inBankruptcy": {
+            "type": "boolean"
+          },
+          "allowPayment": {
+            "type": "boolean"
+          },
+          "confidentialOwner": {
+            "type": "boolean"
+          },
+          "isPastDue": {
+            "type": "boolean"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "pendingPaymentAmount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "legalDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "yearSummaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_Model_YearSummary"
+            },
+            "nullable": true
+          },
+          "taxUnitSummaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_Model_TaxUnitSummary"
+            },
+            "nullable": true
+          },
+          "taxUnitYearSummaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_Model_TaxUnitYearSummary"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountSearch_Model_TaxUnitSummary": {
+        "type": "object",
+        "properties": {
+          "taxUnitId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "due": {
+            "type": "number",
+            "format": "decimal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountSearch_Model_TaxUnitYearSummary": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxUnitId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxUnitName": {
+            "type": "string",
+            "nullable": true
+          },
+          "due": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "originalAmount": {
+            "type": "number",
+            "format": "decimal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountSearch_Model_YearSummary": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "due": {
+            "type": "number",
+            "format": "decimal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountSearch_SearchField": {
+        "enum": [
+          "AccountNumber",
+          "OwnerName",
+          "OwnerAddress",
+          "OwnerId",
+          "PropertyLocation",
+          "AppraisalDistrictNumber",
+          "StatementNumber",
+          "LegalDescription"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_AccountSearch_SearchResult": {
+        "type": "object",
+        "properties": {
+          "totalItems": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_Model"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_Owner": {
+        "type": "object",
+        "properties": {
+          "name1": {
+            "type": "string",
+            "nullable": true
+          },
+          "name2": {
+            "type": "string",
+            "nullable": true
+          },
+          "address1": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_PaymentHistory_Model": {
+        "type": "object",
+        "properties": {
+          "paymentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "receiptDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "paymentAmount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "taxYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "payerName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Accounts_PropertyType": {
+        "enum": [
+          "Real",
+          "BusinessPersonalProperty",
+          "Mineral",
+          "Commercial",
+          "Other"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Shared_Features_Invoices_CreateInvoice_Command": {
+        "type": "object",
+        "properties": {
+          "invoiceLines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Invoices_CreateInvoice_InvoiceLine"
+            },
+            "nullable": true
+          },
+          "hideYearsUnderProtest": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Invoices_CreateInvoice_InvoiceLine": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "taxUnitId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "year": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paymentScenario": {
+            "$ref": "#/components/schemas/Shared_Features_Invoices_PaymentScenario"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Invoices_CreateInvoice_Result": {
+        "type": "object",
+        "properties": {
+          "invoiceNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "decimal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Invoices_GetInvoiceDetails_Account": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxAccountNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "owner": {
+            "type": "string",
+            "nullable": true
+          },
+          "propertyType": {
+            "type": "string",
+            "nullable": true
+          },
+          "propertyLocation": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Invoices_GetInvoiceDetails_InvoiceLine": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxUnitId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "year": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paymentAmount": {
+            "type": "number",
+            "format": "decimal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Invoices_GetInvoiceDetails_Response": {
+        "type": "object",
+        "properties": {
+          "lines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Invoices_GetInvoiceDetails_InvoiceLine"
+            },
+            "nullable": true
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Invoices_GetInvoiceDetails_Account"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_Invoices_PaymentScenario": {
+        "enum": [
+          "TotalDue",
+          "CurrentTotalDue",
+          "CurrentQuarterDue",
+          "CurrentHalfDue",
+          "PriorDue",
+          "Partial"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Shared_Features_TaxEstimator_CalculateTaxes_Command": {
+        "type": "object",
+        "properties": {
+          "taxUnitCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "exemptionTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_TaxEstimator_ExemptionType"
+            },
+            "nullable": true
+          },
+          "propertyValue": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxYear": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_TaxEstimator_CalculateTaxes_Result": {
+        "type": "object",
+        "properties": {
+          "webCurrentYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "preliminaryTaxYear": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "selectedYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxUnits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_TaxEstimator_CalculateTaxes_Result_Model"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_TaxEstimator_CalculateTaxes_Result_Model": {
+        "type": "object",
+        "properties": {
+          "taxUnitCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxUnitName": {
+            "type": "string",
+            "nullable": true
+          },
+          "propertyValue": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "exemptionAmount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxableValue": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxRate": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "estimatedTax": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "exemptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_TaxEstimator_CalculateTaxes_Result_Model_Exemption"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_TaxEstimator_CalculateTaxes_Result_Model_Exemption": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_TaxEstimator_ExemptionType": {
+        "enum": [
+          "Homestead",
+          "Over65",
+          "DisabledPerson",
+          "SurvivingSpouse",
+          "DisabledVet1",
+          "DisabledVet2",
+          "DisabledVet3",
+          "DisabledVet4"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Shared_Features_TaxEstimator_TaxUnitType": {
+        "enum": [
+          "County",
+          "City",
+          "School",
+          "WaterDistrict",
+          "Hospital",
+          "JuniorCollege",
+          "Other"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Shared_Features_TaxEstimator_TaxUnits_Model": {
+        "type": "object",
+        "properties": {
+          "taxUnits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_TaxEstimator_TaxUnits_Model_TaxUnit"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_TaxEstimator_TaxUnits_Model_TaxUnit": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxUnitType": {
+            "$ref": "#/components/schemas/Shared_Features_TaxEstimator_TaxUnitType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_TruthInTaxation_GetTruthInTaxation_Model": {
+        "type": "object",
+        "properties": {
+          "taxUnitName": {
+            "type": "string",
+            "nullable": true
+          },
+          "year": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "taxUnitNumber": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "adoptedTaxRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "maintenanceAndOperationsRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "debtRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "specialRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "noNewRevenueTaxRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "noNewRevenueTaxMaintenanceAndOperationsRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "voterApprovalTaxRate": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_TruthInTaxation_GetTruthInTaxation_Result": {
+        "type": "object",
+        "properties": {
+          "lineItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_TruthInTaxation_GetTruthInTaxation_Model"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_AccountListDetailsQueries_AddOrUpdate": {
+        "type": "object",
+        "properties": {
+          "accountList": {
+            "$ref": "#/components/schemas/Shared_Features_UserProfile_AccountListDetails_Model"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_AccountListDetails_Model": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userProfileId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "modified": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastPaymentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "recordCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenantId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_AccountListRecord_AddRemoveRecordsRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountListId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_AccountListRecord_DtoModel": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountData": {
+            "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_Model"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_AddTaxAccounts_Command": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxAccountIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_CreateUpdateProfile_Command": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "profileData": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_PaymentReferenceDetails_AddRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentReferenceDetails": {
+            "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceDetails_Model"
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceRecord"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_PaymentReferenceDetails_Model": {
+        "required": [
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userProfileId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paymentScenario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "tenantId": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "modified": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "interfaced": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "interfacedBy": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_PaymentReferenceDetails_PaymentReferenceDetailsDto": {
+        "type": "object",
+        "properties": {
+          "paymentReferenceDetails": {
+            "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceDetails_Model"
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceDetails_PaymentReferenceRecordDto"
+            },
+            "nullable": true
+          },
+          "accountData": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_Model"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_PaymentReferenceDetails_PaymentReferenceRecordDto": {
+        "type": "object",
+        "properties": {
+          "record": {
+            "$ref": "#/components/schemas/Shared_Features_UserProfile_PaymentReferenceRecord"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_PaymentReferenceDetails_Summary": {
+        "required": [
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "paymentAmount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "accountsInPayment": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userProfileId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "paymentScenario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "tenantId": {
+            "type": "string",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "modified": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modifiedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "interfaced": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "interfacedBy": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_PaymentReferenceRecord": {
+        "type": "object",
+        "properties": {
+          "paymentReferenceDetailsId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amountDue": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "amountToApply": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "taxUnitId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "taxUnitName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_RemoveTaxAccounts_Command": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxAccountIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Shared_Features_UserProfile_RetrieveProfile_Model": {
+        "type": "object",
+        "properties": {
+          "userProfileId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "taxAccounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Shared_Features_Accounts_AccountSearch_Model"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "/token",
+            "scopes": { }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "https://login.taxsandbox.dev/authorize",
+            "tokenUrl": "https://login.taxsandbox.dev/oauth/token",
+            "scopes": {
+              "accounts.search": "Search for accounts",
+              "accounts.detail": "Retrieve account details",
+              "userProfiles.manage": "Manage user profiles",
+              "invoice.create": "Ability to create invoices",
+              "invoice.details": "Ability to see invoice details",
+              "taxEstimator": "Ability to use tax estimator",
+              "truthInTaxation": "Retrieve Truth in Taxation information"
+            }
+          }
+        }
+      }
+    }
+  }
+}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+  </con:endpoints>
+</con:interface>

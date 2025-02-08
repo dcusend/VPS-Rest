@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/api/Accounts/detail" path="/api/Accounts/detail" id="b58b9f59-ec58-467a-ad45-51d36b38a5e4">
+  <con:settings>
+    <con:setting id="b58b9f59-ec58-467a-ad45-51d36b38a5e4fileName">%2Fapi%2FAccounts%2Fdetail</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GetAccountDetail" id="cedc5d1c-e460-4312-b5e5-dec61f37ec83" method="GET">
+    <con:description>Retrieves the details for a particular account</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>TaxAccountNumber</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>IncludeConfidential</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>BasicDetailsOnly</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>IncludeLastPayment</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>HideYearsUnderProtest</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>DisplayProtectedExemptionsAsOther</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "accountId" : 0,
+  "taxAccountNumber" : "string",
+  "propertyType" : "string",
+  "apdNumber" : "string",
+  "propertyLocation" : "string",
+  "legalDescription" : "string",
+  "owner" : {
+    "name1" : "string",
+    "name2" : "string",
+    "address1" : "string",
+    "address2" : "string",
+    "city" : "string",
+    "state" : "string",
+    "postalCode" : "string"
+  },
+  "acres" : 1.100000023841858,
+  "yearBuilt" : 0,
+  "squareFeet" : 0,
+  "currentTaxYear" : 0,
+  "udi" : "string",
+  "deferralStart" : "string",
+  "deferralEnd" : "string",
+  "isActive" : true,
+  "ownershipPercent" : 1.100000023841858,
+  "isPastDue" : true,
+  "hasEStatement" : true,
+  "isPayable" : true,
+  "currentValues" : [ {
+    "id" : 0,
+    "taxYear" : 0,
+    "description" : "string",
+    "value" : 0
+  } ],
+  "previousValues" : [ {
+    "id" : 0,
+    "taxYear" : 0,
+    "description" : "string",
+    "value" : 0
+  } ],
+  "currentExemptions" : [ {
+    "id" : 0,
+    "taxYear" : 0,
+    "description" : "string",
+    "value" : 0
+  } ],
+  "previousExemptions" : [ {
+    "id" : 0,
+    "taxYear" : 0,
+    "description" : "string",
+    "value" : 0
+  } ],
+  "taxRecords" : [ {
+    "year" : 0,
+    "values" : [ {
+      "id" : 0,
+      "taxYear" : 0,
+      "description" : "string",
+      "value" : 0
+    } ],
+    "exemptions" : [ {
+      "id" : 0,
+      "taxYear" : 0,
+      "description" : "string",
+      "value" : 0
+    } ],
+    "details" : [ {
+      "taxUnitCode" : "string",
+      "taxUnitName" : "string"
+    } ],
+    "receiptDate" : "2015-07-20T15:49:04-07:00",
+    "delinquencyDate" : "2015-07-20T15:49:04-07:00",
+    "isPastDue" : true
+  } ],
+  "lastPayment" : {
+    "paymentId" : 0,
+    "receiptDate" : "2015-07-20T15:49:04-07:00",
+    "taxYear" : 0,
+    "payerName" : "string"
+  },
+  "inSuit" : true,
+  "inBankruptcy" : true,
+  "allowPayment" : true,
+  "confidentialOwner" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "accountId" : 0,
+  "taxAccountNumber" : "string",
+  "propertyType" : "string",
+  "apdNumber" : "string",
+  "propertyLocation" : "string",
+  "legalDescription" : "string",
+  "owner" : {
+    "name1" : "string",
+    "name2" : "string",
+    "address1" : "string",
+    "address2" : "string",
+    "city" : "string",
+    "state" : "string",
+    "postalCode" : "string"
+  },
+  "acres" : 1.100000023841858,
+  "yearBuilt" : 0,
+  "squareFeet" : 0,
+  "currentTaxYear" : 0,
+  "udi" : "string",
+  "deferralStart" : "string",
+  "deferralEnd" : "string",
+  "isActive" : true,
+  "ownershipPercent" : 1.100000023841858,
+  "isPastDue" : true,
+  "hasEStatement" : true,
+  "isPayable" : true,
+  "currentValues" : [ {
+    "id" : 0,
+    "taxYear" : 0,
+    "description" : "string",
+    "value" : 0
+  } ],
+  "previousValues" : [ {
+    "id" : 0,
+    "taxYear" : 0,
+    "description" : "string",
+    "value" : 0
+  } ],
+  "currentExemptions" : [ {
+    "id" : 0,
+    "taxYear" : 0,
+    "description" : "string",
+    "value" : 0
+  } ],
+  "previousExemptions" : [ {
+    "id" : 0,
+    "taxYear" : 0,
+    "description" : "string",
+    "value" : 0
+  } ],
+  "taxRecords" : [ {
+    "year" : 0,
+    "values" : [ {
+      "id" : 0,
+      "taxYear" : 0,
+      "description" : "string",
+      "value" : 0
+    } ],
+    "exemptions" : [ {
+      "id" : 0,
+      "taxYear" : 0,
+      "description" : "string",
+      "value" : 0
+    } ],
+    "details" : [ {
+      "taxUnitCode" : "string",
+      "taxUnitName" : "string"
+    } ],
+    "receiptDate" : "2015-07-20T15:49:04-07:00",
+    "delinquencyDate" : "2015-07-20T15:49:04-07:00",
+    "isPastDue" : true
+  } ],
+  "lastPayment" : {
+    "paymentId" : 0,
+    "receiptDate" : "2015-07-20T15:49:04-07:00",
+    "taxYear" : 0,
+    "payerName" : "string"
+  },
+  "inSuit" : true,
+  "inBankruptcy" : true,
+  "allowPayment" : true,
+  "confidentialOwner" : true
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="dcebad6b-2d3d-4367-86fe-6ba58abff587" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

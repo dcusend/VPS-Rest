@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/api/PaymentReference/GetPaymentReferenceSummariesByUserProfile" path="/api/PaymentReference/GetPaymentReferenceSummariesByUserProfile" id="bdddc988-683f-43df-8175-014148295174">
+  <con:settings>
+    <con:setting id="bdddc988-683f-43df-8175-014148295174fileName">%2Fapi%2FPaymentReference%2FGetPaymentReferenceSummariesByUserProfile</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GetPaymentReferenceSummariesByUserProfile" id="16009be7-2bd8-454c-a22f-f4f4b7baf617" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>email</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "accountsInPayment" : 0,
+  "id" : 0,
+  "userProfileId" : 0,
+  "paymentScenario" : 0,
+  "description" : "string",
+  "tenantId" : "string",
+  "created" : "2015-07-20T15:49:04-07:00",
+  "createdBy" : "string",
+  "modified" : "2015-07-20T15:49:04-07:00",
+  "modifiedBy" : "string",
+  "interfaced" : "2015-07-20T15:49:04-07:00",
+  "interfacedBy" : "string"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "accountsInPayment" : 0,
+  "id" : 0,
+  "userProfileId" : 0,
+  "paymentScenario" : 0,
+  "description" : "string",
+  "tenantId" : "string",
+  "created" : "2015-07-20T15:49:04-07:00",
+  "createdBy" : "string",
+  "modified" : "2015-07-20T15:49:04-07:00",
+  "modifiedBy" : "string",
+  "interfaced" : "2015-07-20T15:49:04-07:00",
+  "interfacedBy" : "string"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:description>Not Found</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:description>Not Found</con:description>
+      <con:sampleContent>{
+  "errors" : {
+    "additionalProp1" : [ "string" ],
+    "additionalProp2" : [ "string" ],
+    "additionalProp3" : [ "string" ]
+  },
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="b2103027-a59d-4ac8-9f07-3050f27d5ec6" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

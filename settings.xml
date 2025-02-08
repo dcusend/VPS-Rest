@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project xmlns:con="http://eviware.com/soapui/config" id="9f1134cd-89f4-4a88-9103-f9e922640124" activeEnvironment="Default environment" name="REST08182021" lastOpened="2018-03-09T16:27:13.947-05:00" resourceRoot="" soapui-version="6.0.0" encryptionMode="Not encrypted" updated="3.54.0" projectVersion="">
+<con:soapui-project xmlns:con="http://eviware.com/soapui/config" id="9f1134cd-89f4-4a88-9103-f9e922640124" activeEnvironment="Default environment" name="REST08182021" lastOpened="2018-03-09T16:27:13.947-05:00" resourceRoot="" soapui-version="6.0.0" encryptionMode="Not encrypted" updated="3.57.0" projectVersion="">
   <con:settings>
     <con:setting id="9f1134cd-89f4-4a88-9103-f9e922640124fileName">REST-Project-2-soapui-project</con:setting>
     <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerUIAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
@@ -50,7 +50,52 @@
   <con:wssContainer/>
   <con:databaseConnectionContainer/>
   <con:jmsConnectionContainer/>
-  <con:oAuth2ProfileContainer/>
+  <con:oAuth2ProfileContainer>
+    <con:oAuth2Profile>
+      <con:name>oauth2 AUTHORIZATION</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:authorizationURI>https://login.taxsandbox.dev/authorize</con:authorizationURI>
+      <con:accessTokenURI>https://login.taxsandbox.dev/oauth/token</con:accessTokenURI>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:scope>accounts.search accounts.detail userProfiles.manage invoice.create invoice.details taxEstimator truthInTaxation</con:scope>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth2Profile>
+    <con:oAuth2Profile>
+      <con:name>oauth2 CLIENT CRED</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessTokenURI>https://login.taxsandbox.dev/oauth/token</con:accessTokenURI>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStatus>EXPIRED</con:accessTokenStatus>
+      <con:accessTokenStartingStatus>EXPIRED</con:accessTokenStartingStatus>
+      <con:clientID>cUbfDKeVot3aO5GXkD4NzWEvop4mi7iq</con:clientID>
+      <con:clientSecret>C9gCXj_NHp7BLSKylu8iok2tkDzUmnpOhGzvkhTtloQxOBMtpupRTeW_NMSckJ3C</con:clientSecret>
+      <con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:scope/>
+      <con:audience>https://api.spindlemedia.com/taxpayer</con:audience>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth2Profile>
+    <con:oAuth2Profile>
+      <con:name>Brazoria</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessTokenURI>https://login.taxsandbox.dev/oauth/token</con:accessTokenURI>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStatus>EXPIRED</con:accessTokenStatus>
+      <con:accessTokenStartingStatus>EXPIRED</con:accessTokenStartingStatus>
+      <con:manualAccessTokenExpirationTimeUnit>SECONDS</con:manualAccessTokenExpirationTimeUnit>
+      <con:clientID>cUbfDKeVot3aO5GXkD4NzWEvop4mi7iq</con:clientID>
+      <con:clientSecret>C9gCXj_NHp7BLSKylu8iok2tkDzUmnpOhGzvkhTtloQxOBMtpupRTeW_NMSckJ3C</con:clientSecret>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:enablePKCE>false</con:enablePKCE>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth2Profile>
+  </con:oAuth2ProfileContainer>
   <con:oAuth1ProfileContainer/>
   <con:environment id="359f9592-92b8-4782-9e0a-30ec59b1ae5a" name="UPGRADErest" index="4">
     <con:service type="REST" name="https://qa.velocitypayment.com">
@@ -101,6 +146,50 @@
       <con:username>username</con:username>
       <con:password>password</con:password>
     </con:basicAuthEntry>
+    <con:oAuth20AuthEntry>
+      <con:name>oauth2 AUTHORIZATION</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:authorizationURI>https://login.taxsandbox.dev/authorize</con:authorizationURI>
+      <con:accessTokenURI>https://login.taxsandbox.dev/oauth/token</con:accessTokenURI>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:scope>accounts.search accounts.detail userProfiles.manage invoice.create invoice.details taxEstimator truthInTaxation</con:scope>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth20AuthEntry>
+    <con:oAuth20AuthEntry>
+      <con:name>oauth2 CLIENT CRED</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessTokenURI>https://login.taxsandbox.dev/oauth/token</con:accessTokenURI>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStatus>EXPIRED</con:accessTokenStatus>
+      <con:accessTokenStartingStatus>EXPIRED</con:accessTokenStartingStatus>
+      <con:clientID>cUbfDKeVot3aO5GXkD4NzWEvop4mi7iq</con:clientID>
+      <con:clientSecret>C9gCXj_NHp7BLSKylu8iok2tkDzUmnpOhGzvkhTtloQxOBMtpupRTeW_NMSckJ3C</con:clientSecret>
+      <con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:scope/>
+      <con:audience>https://api.spindlemedia.com/taxpayer</con:audience>
+      <con:jwtConfiguration/>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth20AuthEntry>
+    <con:oAuth20AuthEntry>
+      <con:name>Brazoria</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessTokenURI>https://login.taxsandbox.dev/oauth/token</con:accessTokenURI>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStatus>EXPIRED</con:accessTokenStatus>
+      <con:accessTokenStartingStatus>EXPIRED</con:accessTokenStartingStatus>
+      <con:manualAccessTokenExpirationTimeUnit>SECONDS</con:manualAccessTokenExpirationTimeUnit>
+      <con:clientID>cUbfDKeVot3aO5GXkD4NzWEvop4mi7iq</con:clientID>
+      <con:clientSecret>C9gCXj_NHp7BLSKylu8iok2tkDzUmnpOhGzvkhTtloQxOBMtpupRTeW_NMSckJ3C</con:clientSecret>
+      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:jwtConfiguration/>
+      <con:enablePKCE>false</con:enablePKCE>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth20AuthEntry>
   </con:authRepository>
   <con:environmentSpec>
     <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/api/Settings/MaintenanceMode" path="/api/Settings/MaintenanceMode" id="c027416b-7cad-4859-92b0-0a742eb037f8">
+  <con:settings>
+    <con:setting id="c027416b-7cad-4859-92b0-0a742eb037f8fileName">%2Fapi%2FSettings%2FMaintenanceMode</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GetMaintenanceMode" id="d705c2f0-b213-430f-a4d6-bff48e2017a4" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>true</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>true</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="16698610-bd55-4b22-a826-299e81c307df" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="8e99c60d-3d40-4366-96b2-103d536fc025" name="https://dev2.velocitypayment.com/vtps/rest/spindleMediaBillLookup" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="3846df4a-9615-480f-bb2f-53726a64d9fd">
+    <con:setting id="8e99c60d-3d40-4366-96b2-103d536fc025fileName">https%3A%2F%2Fdev2.velocitypayment.com%2Fvtps%2Frest%2FspindleMediaBillLookup</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="https://dev2.velocitypayment.com/vtps/rest/spindleMediaBillLookup.json">
+    <con:part>
+      <con:url>https://dev2.velocitypayment.com/vtps/rest/spindleMediaBillLookup.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"https://dev2.velocitypayment.com/vtps/rest/spindleMediaBillLookup","description":"","version":"1.0.0"},"servers":[],"paths":{},"components":{"securitySchemes":{"Brazoria":{"type":"oauth2","flows":{"clientCredentials":{"tokenUrl":"https://login.taxsandbox.dev","scopes":{}}}},"User Iahmed":{"type":"http","scheme":"basic"},"oauth2":{"type":"oauth2","flows":{"authorizationCode":{"authorizationUrl":"https://login.taxsandbox.dev/authorize","tokenUrl":"https://login.taxsandbox.dev/oauth/token","scopes":{"accounts.search":"","accounts.detail":"","userProfiles.manage":"","invoice.create":"","invoice.details":"","taxEstimator":"","truthInTaxation":""}}}}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints/>
+</con:interface>

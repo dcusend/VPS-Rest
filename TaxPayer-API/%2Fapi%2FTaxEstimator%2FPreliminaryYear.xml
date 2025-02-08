@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/api/TaxEstimator/PreliminaryYear" path="/api/TaxEstimator/PreliminaryYear" id="9d32bbbd-a9eb-4c79-9c0b-05876b6f6386">
+  <con:settings>
+    <con:setting id="9d32bbbd-a9eb-4c79-9c0b-05876b6f6386fileName">%2Fapi%2FTaxEstimator%2FPreliminaryYear</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GetPreliminaryTaxYear" id="ef786e51-014e-4acc-a75a-72fecf72669a" method="GET">
+    <con:description>Get Preliminary Year</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>Tenant</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Tenant Id</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>0</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>0</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="bc1ff967-cdac-44c3-befa-3a0212514f09" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://taxpayerapi.myprop.tax/</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

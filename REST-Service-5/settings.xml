@@ -4,7 +4,9 @@
     <con:setting id="33cc2585-ce28-421b-beca-841ed34faa33fileName">REST-Service-5</con:setting>
   </con:settings>
   <con:definitionCache type="TEXT" rootPart=""/>
-  <con:endpoints/>
+  <con:endpoints>
+    <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+  </con:endpoints>
   <con:environmentSpec>
     <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
       <con:authProfile>Inherit From Parent</con:authProfile>

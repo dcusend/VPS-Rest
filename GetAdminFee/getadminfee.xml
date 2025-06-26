@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="getadminfee" path="vtps/rest/customerconnect/getadminfee" id="bb9391f7-b676-4961-9cf7-f25352b6c42d">
+  <con:settings>
+    <con:setting id="bb9391f7-b676-4961-9cf7-f25352b6c42dfileName">getadminfee</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="d5b1666d-284c-4b42-b89a-86c867fd4319" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="00ecaea1-6a7d-478f-b7d0-9299037188e0" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="aWFobWVkMTpIZWxsbyE4ODg4ODg4" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+      <con:request>{
+    "TitleNumber": "XYZ12345"
+}
+</con:request>
+      <con:originalUri>https://demo.velocitypayment.com/vtps/rest/customerconnect/getadminfee</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

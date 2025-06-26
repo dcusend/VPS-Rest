@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="getcaseinfo" path="vtps/rest/customerconnect/getcaseinfo" id="ce35cac9-1f1e-4163-8569-52c9596b9c1e">
+  <con:settings>
+    <con:setting id="ce35cac9-1f1e-4163-8569-52c9596b9c1efileName">getcaseinfo</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="bda08c9c-6a3a-41ea-b590-d4e119dd6146" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="e7e8ca58-5c06-4077-8698-f2c245305ef1" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="aWFobWVkMTpIZWxsbyE4ODg4ODg4" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+      <con:request>{
+    "CaseNumber": "110176013"
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="a15f14b9-4b7f-4fa0-ac2b-eb69a814c703" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="0df6b4cb-d042-4dc7-96e0-eaabc80e8f41" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="aWFobWVkMTpIZWxsbyE4ODg4ODg4" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

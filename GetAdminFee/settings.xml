@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="4fc770ac-d2a3-4aa8-991b-4bbcdd452c3a" name="GetAdminFee" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="6b9b8fa2-8576-4313-8ee1-9056bd862560">
+    <con:setting id="4fc770ac-d2a3-4aa8-991b-4bbcdd452c3afileName">GetAdminFee</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="GetAdminFee.json">
+    <con:part>
+      <con:url>GetAdminFee.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"GetAdminFee","description":"","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/vtps/rest/customerconnect/getadminfee":{"description":"","post":{"description":"","requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}},"components":{"securitySchemes":{"Brazoria":{"type":"oauth2","flows":{"authorizationCode":{"authorizationUrl":"","tokenUrl":"https://login.taxsandbox.dev/oauth/token","scopes":{}}}},"User Iahmed":{"type":"http","scheme":"basic"},"oauth2":{"type":"oauth2","flows":{"authorizationCode":{"authorizationUrl":"https://login.taxsandbox.dev/authorize","tokenUrl":"https://login.taxsandbox.dev/oauth/token","scopes":{"accounts.search":"","accounts.detail":"","userProfiles.manage":"","invoice.create":"","invoice.details":"","taxEstimator":"","truthInTaxation":""}}}}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+  </con:endpoints>
+</con:interface>

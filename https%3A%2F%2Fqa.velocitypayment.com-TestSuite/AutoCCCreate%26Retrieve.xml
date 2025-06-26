@@ -10,7 +10,7 @@
     <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:DataSourceStep">
       <con:dataSource type="Excel">
         <con:configuration>
-          <file>C:/Users/iahmed/Documents/AutoCCCreate&amp;Retrieve-Pavneet.xlsx</file>
+          <file>C:/SoapData/AutoCCCreate&amp;Retrieve-Pavneet.xlsx</file>
           <worksheet>Sheet1</worksheet>
           <cell>A2</cell>
           <ignoreEmpty>true</ignoreEmpty>

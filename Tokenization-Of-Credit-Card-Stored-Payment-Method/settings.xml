@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="5693cbad-d393-4948-884e-5cc80b91a991" name="Tokenization Of Credit Card Stored Payment Method">
+  <con:settings id="4912aa2c-e9a8-4650-9018-ad269d2f05a3">
+    <con:setting id="5693cbad-d393-4948-884e-5cc80b91a991fileName">Tokenization-Of-Credit-Card-Stored-Payment-Method</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

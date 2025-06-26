@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="44e6269e-9345-4094-b170-3aab404369ec" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="MVA-IVR-TestCase" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="44e6269e-9345-4094-b170-3aab404369ecfileName">MVA-IVR-TestCase</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="GetCaseInfo-110176013" id="d96f3949-765b-4ac5-b049-26efbfa63e0b">
+    <con:settings/>
+    <con:config service="getcaseinfo" resourcePath="/vtps/rest/customerconnect/getcaseinfo" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="GetCaseInfo-110176013" id="e7e8ca58-5c06-4077-8698-f2c245305ef1" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="aWFobWVkMTpIZWxsbyE4ODg4ODg4" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "CaseNumber": "110176013"
+}</con:request>
+        <con:originalUri>https://demo.velocitypayment.com/vtps/rest/customerconnect/getcaseinfo</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="47c217e5-f0f1-4f2f-89c9-4bf6960c351c" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="ab3a6c83-ba25-4cfa-8a0d-075829838f0a" name="Check for existence of [IvrCallKey]">
+          <con:configuration>
+            <path>$['IvrCallKey']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ef62af60-510b-48ee-8a51-ec9817d4eaf6" name="Match content of [Status]">
+          <con:configuration>
+            <path>$['Case']['Status']</path>
+            <content>"Open"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="63f3b301-d7ac-4242-b237-30ca71681bda" name="Match content of [OpenDate]">
+          <con:configuration>
+            <path>$['Case']['OpenDate']</path>
+            <content>"4/10/2025 1:11:47 AM"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="32d4c699-3a24-44a6-8f3d-560b6b7aaa2e" name="Match content of [Fines]">
+          <con:configuration>
+            <path>$['Case']['Fines']</path>
+            <content>200</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="cdc8ccf3-5ac6-42e0-8082-3e80c3383c5c" name="Match content of [TitleNumber]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['TitleNumber']</path>
+            <content>"60817092"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c94e0002-44eb-4f67-b1aa-79e17ddf517d" name="Match content of [CaseNumber]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['CaseNumber']</path>
+            <content>"110176013"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="55448c9a-b646-425d-b0d6-59b303ac783b" name="Match content of [CaseOpenDate]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['CaseOpenDate']</path>
+            <content>"4/10/2025 12:00:00 AM"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a78ed24f-1381-4248-8452-28c6d62e69eb" name="Match content of [Fine]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['Fine']</path>
+            <content>200</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="00726294-b323-40e6-b77f-00af21ddeb09" name="Match content of [Status]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['Status']</path>
+            <content>"Notice3"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="20579b85-084d-4f6b-bff9-7a81d74dbe94" name="Match content of [ThirdNoticeDate]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['ThirdNoticeDate']</path>
+            <content>"6/10/2025 12:00:00 AM"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetCaseInfo-110127995" id="0876c7d1-58e2-4be9-88c2-8661fcf4b947">
+    <con:settings/>
+    <con:config service="getcaseinfo" resourcePath="/vtps/rest/customerconnect/getcaseinfo" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="GetCaseInfo-110127995" id="e7e8ca58-5c06-4077-8698-f2c245305ef1" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="aWFobWVkMTpIZWxsbyE4ODg4ODg4" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "CaseNumber": "110127995"
+}</con:request>
+        <con:originalUri>https://demo.velocitypayment.com/vtps/rest/customerconnect/getcaseinfo</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="47c217e5-f0f1-4f2f-89c9-4bf6960c351c" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="ab3a6c83-ba25-4cfa-8a0d-075829838f0a" name="Check for existence of [IvrCallKey]">
+          <con:configuration>
+            <path>$['IvrCallKey']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ef62af60-510b-48ee-8a51-ec9817d4eaf6" name="Match content of [Status]">
+          <con:configuration>
+            <path>$['Case']['Status']</path>
+            <content>"Open"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="63f3b301-d7ac-4242-b237-30ca71681bda" name="Match content of [OpenDate]">
+          <con:configuration>
+            <path>$['Case']['OpenDate']</path>
+            <content>"3/31/2025 1:21:12 AM"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="32d4c699-3a24-44a6-8f3d-560b6b7aaa2e" name="Match content of [Fines]">
+          <con:configuration>
+            <path>$['Case']['Fines']</path>
+            <content>200</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="cdc8ccf3-5ac6-42e0-8082-3e80c3383c5c" name="Match content of [TitleNumber]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['TitleNumber']</path>
+            <content>"54270964"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c94e0002-44eb-4f67-b1aa-79e17ddf517d" name="Match content of [CaseNumber]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['CaseNumber']</path>
+            <content>"110127995"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="55448c9a-b646-425d-b0d6-59b303ac783b" name="Match content of [CaseOpenDate]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['CaseOpenDate']</path>
+            <content>"3/31/2025 12:00:00 AM"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="a78ed24f-1381-4248-8452-28c6d62e69eb" name="Match content of [Fine]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['Fine']</path>
+            <content>200</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="00726294-b323-40e6-b77f-00af21ddeb09" name="Match content of [Status]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['Status']</path>
+            <content>"Notice3"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="20579b85-084d-4f6b-bff9-7a81d74dbe94" name="Match content of [ThirdNoticeDate]">
+          <con:configuration>
+            <path>$['Vehicle'][0]['ThirdNoticeDate']</path>
+            <content>"6/10/2025 12:00:00 AM"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetCaseInfo-Missing-Error" id="99f24456-a5c9-43fc-a4db-91f939306d5a">
+    <con:settings/>
+    <con:config service="getcaseinfo" resourcePath="/vtps/rest/customerconnect/getcaseinfo" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="GetCaseInfo-Missing-Error" id="e7e8ca58-5c06-4077-8698-f2c245305ef1" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="aWFobWVkMTpIZWxsbyE4ODg4ODg4" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "CaseNumber": ""
+}</con:request>
+        <con:originalUri>https://demo.velocitypayment.com/vtps/rest/customerconnect/getcaseinfo</con:originalUri>
+        <con:assertion type="JsonPath Match" id="79f2fe66-4b39-4bfa-8dac-37bb6da1f67a" name="Match content of [ErrorText]">
+          <con:configuration>
+            <path>$['ErrorText']</path>
+            <content>"Missing CaseNumber in request."</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetAdminFee-54763962" id="ee95f974-17a8-4aca-b5d9-3f3d7bddba49">
+    <con:settings/>
+    <con:config service="GetAdminFee" resourcePath="/vtps/rest/customerconnect/getadminfee" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="GetAdminFee-54763962" id="00ecaea1-6a7d-478f-b7d0-9299037188e0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="aWFobWVkMTpIZWxsbyE4ODg4ODg4" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "TitleNumber": "54763962"
+}
+</con:request>
+        <con:originalUri>https://demo.velocitypayment.com/vtps/rest/customerconnect/getadminfee</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="776df35f-50b6-41c0-94de-c87096786ba2" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="de287ded-7ae1-488f-8707-18a6463773e5" name="Check for existence of [IvrCallKey]">
+          <con:configuration>
+            <path>$['IvrCallKey']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="27a6a563-b82f-4749-9e0e-79c3f52cfca9" name="Match content of [TagNumber]">
+          <con:configuration>
+            <path>$['TagNumber']</path>
+            <content>"2ET7510"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5c44702a-32d1-4e37-8a3e-8836048791bf" name="Match content of [AdminFees]">
+          <con:configuration>
+            <path>$['AdminFees']</path>
+            <content>120.0</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="8137ac42-162e-4075-8653-e5c256db63b8" name="Match content of [AdminFlagCount]">
+          <con:configuration>
+            <path>$['AdminFlagCount']</path>
+            <content>4</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetAdminFee-55466117" id="97a39d4b-a10f-437c-a073-b88bab66203c">
+    <con:settings/>
+    <con:config service="GetAdminFee" resourcePath="/vtps/rest/customerconnect/getadminfee" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="GetAdminFee-55466117" id="00ecaea1-6a7d-478f-b7d0-9299037188e0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="aWFobWVkMTpIZWxsbyE4ODg4ODg4" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "TitleNumber": "55466117"
+}
+</con:request>
+        <con:originalUri>https://demo.velocitypayment.com/vtps/rest/customerconnect/getadminfee</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="776df35f-50b6-41c0-94de-c87096786ba2" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="de287ded-7ae1-488f-8707-18a6463773e5" name="Check for existence of [IvrCallKey]">
+          <con:configuration>
+            <path>$['IvrCallKey']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="27a6a563-b82f-4749-9e0e-79c3f52cfca9" name="Match content of [TagNumber]">
+          <con:configuration>
+            <path>$['TagNumber']</path>
+            <content>"7EX1216"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5c44702a-32d1-4e37-8a3e-8836048791bf" name="Match content of [AdminFees]">
+          <con:configuration>
+            <path>$['AdminFees']</path>
+            <content>90.0</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="8137ac42-162e-4075-8653-e5c256db63b8" name="Match content of [AdminFlagCount]">
+          <con:configuration>
+            <path>$['AdminFlagCount']</path>
+            <content>3</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetAdminFee-55448355" id="a8e541f3-d5e2-480f-8abc-25407570fea1">
+    <con:settings/>
+    <con:config service="GetAdminFee" resourcePath="/vtps/rest/customerconnect/getadminfee" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="GetAdminFee-55448355" id="00ecaea1-6a7d-478f-b7d0-9299037188e0" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="aWFobWVkMTpIZWxsbyE4ODg4ODg4" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "TitleNumber": "55448355"
+}
+</con:request>
+        <con:originalUri>https://demo.velocitypayment.com/vtps/rest/customerconnect/getadminfee</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="776df35f-50b6-41c0-94de-c87096786ba2" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="de287ded-7ae1-488f-8707-18a6463773e5" name="Check for existence of [IvrCallKey]">
+          <con:configuration>
+            <path>$['IvrCallKey']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="27a6a563-b82f-4749-9e0e-79c3f52cfca9" name="Match content of [TagNumber]">
+          <con:configuration>
+            <path>$['TagNumber']</path>
+            <content>"FL3351"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5c44702a-32d1-4e37-8a3e-8836048791bf" name="Match content of [AdminFees]">
+          <con:configuration>
+            <path>$['AdminFees']</path>
+            <content>630.0</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="8137ac42-162e-4075-8653-e5c256db63b8" name="Match content of [AdminFlagCount]">
+          <con:configuration>
+            <path>$['AdminFlagCount']</path>
+            <content>21</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

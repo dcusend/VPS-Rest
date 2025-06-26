@@ -31,7 +31,7 @@
    "account_type" : "",\r
    "response_format" : "fixed_width",\r
    "application_id" : "609",\r
-   "remittance_id" : "testivrach361",\r
+   "remittance_id" : "testivrach362",\r
    "username" : "username",\r
    "password" : "password",\r
    "check_type" : "C",\r
@@ -574,7 +574,7 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "amount" : "31.50",\r
    "check_address" : "2311 york road",\r
@@ -594,7 +594,7 @@
    "account_type" : "1",\r
    "response_format" : "fixed_width",\r
    "application_id" : "684",\r
-   "remittance_id" : "testivrach321",\r
+   "remittance_id" : "testivrach323",\r
    "username" : "multibill",\r
    "password" : "Mu!t!b!ll",\r
    "check_type" : "P",\r

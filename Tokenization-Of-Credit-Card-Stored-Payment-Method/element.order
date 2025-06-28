@@ -1,1 +1,9 @@
 Create-Retrieve-Process-SavedPaymentMethod-CC.xml
+CFCCLookup.xml
+CFACHLookup.xml
+ModifyACH-PaymentMethodType-PCtoPS.xml
+ModifyACH-PaymentMethodType-PCtoCorp.xml
+ModifyACH-PaymentMethodType-PStoPC.xml
+ModifyACH-PaymentMethodType-PStoCorp.xml
+ModifyACH-PaymentMethodType-CorpToPC.xml
+ModifyACH-PaymentMethodType-CorpToPS.xml

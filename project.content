@@ -215,3 +215,11 @@ ValidateRTN-QA\Validate-RTN-Positive.xml
 ValidateRTN-QA\MissingRTN.xml
 ValidateRTN-QA\InvalidRTN.xml
 Tokenization-Of-Credit-Card-Stored-Payment-Method\Create-Retrieve-Process-SavedPaymentMethod-CC.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\CFCCLookup.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\CFACHLookup.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-PCtoPS.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-PCtoCorp.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-PStoPC.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-PStoCorp.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-CorpToPC.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-CorpToPS.xml

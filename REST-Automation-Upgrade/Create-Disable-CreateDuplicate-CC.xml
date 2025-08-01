@@ -38,8 +38,8 @@
    "paymentMethod" : {\r
       "paymentMethodType" : "1",\r
       "pan" : "4111111111111111",\r
-      "card_expiration" : "102025",\r
-      "card_exmo" : "01",\r
+      "card_expiration" : "122031",\r
+      "card_exmo" : "12",\r
       "card_exyr" : "2025"\r
    },\r
    "customerInformation" : {\r
@@ -268,8 +268,8 @@
    "paymentMethod" : {\r
       "paymentMethodType" : "1",\r
       "pan" : "4111111111111111",\r
-      "card_expiration" : "102025",\r
-      "card_exmo" : "01",\r
+      "card_expiration" : "122031",\r
+      "card_exmo" : "12",\r
       "card_exyr" : "2025"\r
    },\r
    "customerInformation" : {\r

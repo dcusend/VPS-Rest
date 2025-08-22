@@ -235,3 +235,9 @@ Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-Up
 Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-Upgrade-PStoCorp.xml
 Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-Upgrade-CorptoPC.xml
 Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-Upgrade-CorptoPS.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-WWW-PCtoPS.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-WWW-PCtoCorp.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-WWW-PStoPC.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-WWW-PStoCorp.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-WWW-CorptoPC.xml
+Tokenization-Of-Credit-Card-Stored-Payment-Method\ModifyACH-PaymentMethodType-WWW-CorptoPS.xml

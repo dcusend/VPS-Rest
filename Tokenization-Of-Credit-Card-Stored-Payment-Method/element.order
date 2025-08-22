@@ -19,3 +19,9 @@ ModifyACH-PaymentMethodType-Upgrade-PStoPC.xml
 ModifyACH-PaymentMethodType-Upgrade-PStoCorp.xml
 ModifyACH-PaymentMethodType-Upgrade-CorptoPC.xml
 ModifyACH-PaymentMethodType-Upgrade-CorptoPS.xml
+ModifyACH-PaymentMethodType-WWW-PCtoPS.xml
+ModifyACH-PaymentMethodType-WWW-PCtoCorp.xml
+ModifyACH-PaymentMethodType-WWW-PStoPC.xml
+ModifyACH-PaymentMethodType-WWW-PStoCorp.xml
+ModifyACH-PaymentMethodType-WWW-CorptoPC.xml
+ModifyACH-PaymentMethodType-WWW-CorptoPS.xml

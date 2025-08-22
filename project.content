@@ -168,6 +168,12 @@ Demo-and-Demo2-Test-Suite\Create-PaymentWithStoredPM-CC.xml
 Demo-and-Demo2-Test-Suite\Create-PaymentWithStoredPM-PC.xml
 Demo-and-Demo2-Test-Suite\Create-PaymentWithStoredPM-PS.xml
 Demo-and-Demo2-Test-Suite\Create-PaymentWithStoredPM-Corp.xml
+Demo-and-Demo2-Test-Suite\ModifyACH-PaymentMethodType-Demo-PCtoPS.xml
+Demo-and-Demo2-Test-Suite\ModifyACH-PaymentMethodType-Demo-PCtoCorp.xml
+Demo-and-Demo2-Test-Suite\ModifyACH-PaymentMethodType-Demo-PStoPC.xml
+Demo-and-Demo2-Test-Suite\ModifyACH-PaymentMethodType-Demo-PStoCorp.xml
+Demo-and-Demo2-Test-Suite\ModifyACH-PaymentMethodType-Demo-CorptoPC.xml
+Demo-and-Demo2-Test-Suite\ModifyACH-PaymentMethodType-Demo-CorptoPS.xml
 AdvIVR-Automation-QA\CreateAndRetrieveCCStoredPM.xml
 AdvIVR-Automation-QA\DuplicateCreateCCStoredPM.xml
 AdvIVR-Automation-QA\MultipleCreateAndRetrieveCCStoredPM.xml

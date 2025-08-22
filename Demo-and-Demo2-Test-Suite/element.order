@@ -11,3 +11,9 @@ Create-PaymentWithStoredPM-CC.xml
 Create-PaymentWithStoredPM-PC.xml
 Create-PaymentWithStoredPM-PS.xml
 Create-PaymentWithStoredPM-Corp.xml
+ModifyACH-PaymentMethodType-Demo-PCtoPS.xml
+ModifyACH-PaymentMethodType-Demo-PCtoCorp.xml
+ModifyACH-PaymentMethodType-Demo-PStoPC.xml
+ModifyACH-PaymentMethodType-Demo-PStoCorp.xml
+ModifyACH-PaymentMethodType-Demo-CorptoPC.xml
+ModifyACH-PaymentMethodType-Demo-CorptoPS.xml

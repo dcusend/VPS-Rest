@@ -13,5 +13,6 @@
   <con:endpoints>
     <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
     <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+    <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
   </con:endpoints>
 </con:interface>

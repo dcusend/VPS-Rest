@@ -17,7 +17,7 @@
           <pattern/>
           <random>true</random>
           <persist>true</persist>
-          <current>9339313034.0000000000000000000000000000000000000000000000000000</current>
+          <current>2882217897.00000000000000000000000000000000000000000000000000000</current>
         </con:configuration>
         <con:name>Random Number</con:name>
         <con:mode>READ</con:mode>
@@ -74,7 +74,7 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
       "applicationID" : "${DataSourceBillTransfer#AppID}",\r
@@ -231,7 +231,7 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "applicationID" : "${DataSourceBillTransfer#AppID}",\r
    "customerID" : "${DataSourceBillTransfer#CustID}",\r

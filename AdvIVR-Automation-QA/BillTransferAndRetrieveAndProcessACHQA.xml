@@ -18,7 +18,7 @@
           <pattern/>
           <random>true</random>
           <persist>true</persist>
-          <current>8886780775.0000000000000000000000000000000000000000000000000000</current>
+          <current>7867065075.00000000000000000000000000000000000000000000000000000</current>
         </con:configuration>
         <con:name>Random Number</con:name>
         <con:mode>READ</con:mode>
@@ -95,7 +95,7 @@ def fullname = fname + " " + lname</script>
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "header" : {\r
       "applicationID" : "${DataSourceTranRetProCC#AppID}",\r
@@ -255,7 +255,7 @@ def fullname = fname + " " + lname</script>
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "applicationID" : "${DataSourceTranRetProCC#AppID}",\r
    "customerID" : "${DataSourceTranRetProCC#CustID}",\r
@@ -544,7 +544,7 @@ def fullname = fname + " " + lname</script>
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "amount" : "${DataSourceTranRetProCC#Amount}",\r
    "check_address" : "${DataSourceTranRetProCC#AL1}",\r

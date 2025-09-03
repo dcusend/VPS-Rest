@@ -12,6 +12,7 @@
   </con:definitionCache>
   <con:endpoints>
     <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+    <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
     <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
     <con:endpoint>https://www.velocitypayment.com</con:endpoint>
   </con:endpoints>

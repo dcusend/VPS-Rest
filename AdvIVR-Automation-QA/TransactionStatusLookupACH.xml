@@ -85,7 +85,7 @@ return sdf.format(new Date())</script>
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "amount" : "${DataSourceTranStsatLookACH#Amount}",\r
    "check_address" : "${DataSourceTranStsatLookACH#Address}",\r
@@ -224,7 +224,7 @@ return sdf.format(new Date())</script>
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
    "applicationID" : "${DataSourceTranStsatLookACH#App ID}",\r
    "last4Digits" : "${DataSourceTranStsatLookACH#Last4}",\r

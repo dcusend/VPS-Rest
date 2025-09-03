@@ -17,3 +17,5 @@ DisableStoredPayment.xml
 ValidateRTN.xml
 Create-Disable-CreateDuplicate-CC.xml
 Create-Disable-CreateDuplicate-PC.xml
+ModifyACH-PaymentMethodType-WWW-PCtoPS.xml
+ModifyACH-PaymentMethodType-WWW-PCtoCorp.xml

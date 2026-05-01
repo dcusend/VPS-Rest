@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" id="75847add-311f-4022-ab39-9d68fd8b67b4" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="IVTAPI-Demo-App6262" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="75847add-311f-4022-ab39-9d68fd8b67b4fileName">IVTAPI-Demo-App6262</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request" id="f126428d-abbe-4e58-a450-19fa1955bdab">
+    <con:settings/>
+    <con:config service="IVTAPI" resourcePath="/VVTAPI/rest/vvtapi/api/payments" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request" id="9e7710e2-53e9-453f-8024-8f37edc9336c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment>&lt;con:entry key="Authorization" value="Basic RTNCNzQxODU0NkMzMTI3ODYxMzhBOUE3NkZFNjc1NjE6VmVsb2NpdHkhMTIzNA==" xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry key="PartnerToken" value="IVTAPI2" xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+  "amount":20.00,
+  "clientAccountNumber": "123456",
+  "applicationId": "6262",
+  "remittanceId": "7978fffu45",
+  "pinpadName": "Counter-001",
+  "parcel": [
+    ["1", "2", "3"]
+    
+  ],
+  "billingAddress": {
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "companyName": "ABC Company",
+    "address": "123 Main St",
+    "address2": "Apt 5",
+    "postalCode": "22201",
+    "city": "Arlington",
+    "state": "VA",
+    "country": "USA",
+    "phone": "111-222-3333",
+    "email": "jane@email.com"
+  },
+  "customData": {
+    "user_defined_1": "value 1",
+    "user_defined_2": "value 2",
+    "user_defined_3": "value 3",
+    "user_defined_4": "value 4",
+    "user_defined_5": "value 5",
+    "user_defined_6": "value 6",
+    "user_defined_7": "value 7",
+    "user_defined_8": "value 8",
+    "user_defined_9": "value 9",
+    "user_defined_10": "value 10"
+  }
+}</con:request>
+        <con:originalUri>https://demo.velocitypayment.com/VVTAPI/rest/vvtapi/api/payments</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="641af6a1-655b-4acb-a12b-90096c845e7a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>63D3B852D054F6F8AD4A08260721F6AC</con:username>
+          <con:password>test1</con:password>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:preemptive>false</con:preemptive>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

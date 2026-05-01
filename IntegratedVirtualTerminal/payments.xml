@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="payments" path="drives/payments" id="1bc10cf0-1936-4716-be35-a69239d504c3">
+  <con:settings>
+    <con:setting id="1bc10cf0-1936-4716-be35-a69239d504c3fileName">payments</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="07b23e40-b97d-48e1-a726-98b04f822b35" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="9d5a152e-4998-49e3-8007-d960418e6344" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+      <con:request>{
+    "amount": 19.99,
+    "clientAccountNumber": "",
+    "applicationId": "",
+    "remittanceId": "",
+    "pinpadName": "GA-CTY-0010-0001",
+    "parcel": [
+        [
+            "Parcel 1 Column 1 value",
+            "Parcel 1 Column 2 value",
+            "Parcel 1 Column 3 value"
+        ],
+        [
+            "Parcel 2 Column 1 value",
+            "Parcel 2 Column 2 value",
+            "Parcel 2 Column 3 value"
+        ],
+        [
+            "Parcel 3 Column 1 value",
+            "Parcel 3 Column 2 value",
+            "Parcel 3 Column 3 value"
+        ]
+    ],
+    "billingAddress": {
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "companyName": "Doe",
+        "address": "123 Main St",
+        "address2": "Apt 5",
+        "postalCode": "94111",
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "USA",
+        "phone": "650-555-1234",
+        "email": "jane@email.com"
+    },
+    "customData": {
+        "user_defined_1": "value 1",
+        "user_defined_2": "value 2",
+        "user_defined_3": "value 3",
+        "user_defined_4": "value 4",
+        "user_defined_5": "value 5",
+        "user_defined_6": "value 6",
+        "user_defined_7": "value 7",
+        "user_defined_8": "value 8",
+        "user_defined_9": "value 9",
+        "user_defined_10": "value 10"
+    }
+}
+</con:request>
+      <con:originalUri>https://demo.velocitypayment.com/drives/payments</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="7baa4401-e39b-44ed-8652-59c0da16bf7a" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="62dceeec-218b-4fb0-bcc5-03581a2f0b59" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

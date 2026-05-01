@@ -45,3 +45,14 @@ ACTBillLookup.xml
 Test-For-Haris.xml
 SpindleMedia.xml
 MVA-IVR-TestCase.xml
+TextToPay-IsBillLookupTRUE-Test-Case-QA.xml
+TextToPay-IsBillLookupFALSE-Test-Case-QA.xml
+TextToPay-VTPS-IsBillLookup-TRUE---QA.xml
+TextToPay-VTPS-IsBillLookup-FALSE---QA.xml
+Integrated-VT.xml
+TextToPay-IsBillLookupFALSE-Test-Case-Upgrade.xml
+TextToPay-IsBillLookupFALSE-Test-Case-Production.xml
+TextToPay-IsBillLookupTRUE-Test-Case-Upgrade.xml
+TextToPay-IsBillLookupTRUE-Test-Case-Production.xml
+IVTAPI-QA-App975.xml
+IVTAPI-Demo-App6262.xml

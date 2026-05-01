@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="texttopay" path="/integration/rest/texttopay" id="05a98787-3868-48d4-b720-cbdd5d4d11b4">
+  <con:settings>
+    <con:setting id="05a98787-3868-48d4-b720-cbdd5d4d11b4fileName">texttopay</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="1d2d1e7f-fab6-49c9-8ed7-8856a52bfea9" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

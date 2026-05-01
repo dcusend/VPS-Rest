@@ -1,0 +1,3335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="80604714-0244-4d3d-bb74-1c8bee2bf254" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="TextToPay-IsBillLookupTRUE-Test Case-QA" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="80604714-0244-4d3d-bb74-1c8bee2bf254fileName">TextToPay-IsBillLookupTRUE-Test-Case-QA</con:setting>
+  </con:settings>
+  <con:testStep type="datagen" name="DataGen-Date" id="bef81b8e-c957-420a-b528-037807353425">
+    <con:settings/>
+    <con:config xsi:type="con:DataGeneratorStep">
+      <con:property type="Script">
+        <con:configuration>
+          <script>
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+def todayPlus7 = LocalDate.now().plusDays(7)
+def formattedDate = todayPlus7.format(DateTimeFormatter.ofPattern("MMddyyyy"))
+</script>
+        </con:configuration>
+        <con:name>TodaysDatePlusSeven</con:name>
+        <con:mode>STEP</con:mode>
+        <con:shared>false</con:shared>
+      </con:property>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="App485-INVALID" id="f45ac9d3-2819-4e00-a991-7959d1dbdbb9">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="App485-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "1240202",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f7353cca-1263-48c1-8857-9732a86cd9de" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b99d6e5f-f4c5-4767-a9fe-ba7abfe69e2a" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>"485"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="31dab1c0-c7cb-4cad-8487-61200e7bb20e" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>"146"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="38dd6530-6ddd-45bf-9b84-2d5e55ab9b54" name="Check for existence of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="bb7fb022-5c4b-4152-bc45-fae8f96a48cb" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d920a51c-0930-434f-9b13-4bb6368cbf7f" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>"21240200"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d586fe62-b9bc-4e99-aa45-5ef60a05ac10" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>"20190709"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b7036b1a-2d88-4ed8-99b3-70a7a8882648" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>"100001"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b438b678-e7df-4e9f-a5fb-da09db871588" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>"100002"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="60b1d14c-5314-4761-9349-f89c70ebec50" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>20.00</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d10e3a42-2489-4d50-9811-87f36a24ecc1" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>"2408939844"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fb6668e3-2f77-4849-86e1-248e8ce2349f" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>"imtiazster@gmail.com"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="39ec44c6-62d3-4514-9003-2517d189d638" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>https://qa2.velocitypayment.com/vbills/lookup/paymentLink.do?linkId=97e878e6-933d-4154-8bdf-9ed699fb2c34</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ab35d7a3-cb97-4799-9b01-4be52c99ab88" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3fa66a4d-f14a-42b8-ac54-e65b165d5c7f" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[ ]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="bd482cdf-03d1-4a0e-afab-12a8091f8fa6" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>${DataGen-Date#TodaysDatePlusSeven}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="App59-INVALID" id="20f19bb1-4cd0-4328-a866-468c615be234">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="App59-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "459",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "10005500331",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "10015544",\r
+   "lookup2" : "10015545",\r
+   "lookup3" : "10015546",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f7353cca-1263-48c1-8857-9732a86cd9de" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="7e731756-a975-47e0-bb8d-c64c25042837" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>"459"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d0faf56d-4fe1-4f4f-8fff-0757ceaf7009" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>"146"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9e6319b5-3d42-49f2-aac0-9d7a433182fa" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>"12302025"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="699abae4-be0e-41b8-9fe1-5636757ee25f" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="dde9417b-842d-4b96-bdac-ab26307140c9" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>"10005500331"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="784b2c08-c256-4d0f-b3a5-98724470b503" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>11.00</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="761265c6-6a2c-47cd-8716-38679a12e888" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>"2408939844"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5ca8ab18-1921-4921-a74a-770fe7592540" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>"imtiazster@gmail.com"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9fda68bc-0cb4-49b8-87e2-c8356acb3135" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>"https://qa2.velocitypayment.com/vbills/lookup/paymentLink.do?linkId=fc5eba6e-0ad7-4ec3-a40d-d6dc58228d83"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fc350652-f62d-4638-b30e-c7bdb4e7f4cf" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9e0ba18e-2d12-4795-a25e-f33a417fc826" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[ ]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Customer-App-ID-MismatchError-INVALID" id="80de1e75-b957-4e2a-8bda-0f56f1bbaa1b">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Customer-App-ID-MismatchError-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "4850000",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "1240202",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="cc184ea4-4990-45e6-a9f6-1f266de31a29" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="7813d323-b2b1-45d1-96d7-55ebcefa03f9" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Error finding bill for app ID: 4850000"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingPhoneNumber-Error-INVALID" id="0bd878d8-c244-4c44-aac3-9f5063038e96">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingPhoneNumber-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{
+   "applicationID" : "485",
+   "customerID" : "146",
+   "phoneNumber" : "",
+   "amount" : "81.00",
+   "clientAccountNumber" : "21240200",
+   "isBillLookup" : true,
+   "lookup1" : "1240200",
+   "lookup2" : "1240201",
+   "lookup3" : "1240202",
+   "email" : "imtiazster@gmail.com",
+   "address" : {
+      "line1" : "123 Main St",
+      "line2" : "Apt 4B",
+      "city" : "Washington",
+      "state" : "DC",
+      "postalCode" : "20001"
+   },
+   "userDefinedData" : {
+      "udf1" : "123 Main St",
+      "udf2" : "Apt 4B",
+      "udf3" : "Washington",
+      "udf4" : "DC",
+      "udf5" : "20001",
+      "udf6" : "123 Main St",
+      "udf7" : "Apt 4B",
+      "udf8" : "Washington",
+      "udf9" : "DC",
+      "udf10" : "20001"
+   }
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="516845fa-f530-4e4c-b142-da827a8a1bc8" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="28667e01-25e3-47ba-aa87-4a7204583c55" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e8ff1f29-29b2-4ba3-a46f-ebb0080c788f" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"phone number is required"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="65eb5e31-a354-482e-a935-c6e67d417a62" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85337798-088e-4569-8919-272bc6a87cda" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9ea12832-d655-4f27-88fe-39952b4f888e" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="102de69c-31b1-4dfe-b0c4-d35870b4c973" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="886e673f-88e5-48f4-a348-faba384c4f93" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5f5ed5bc-8ce0-47b6-aea5-8b61d4971c6e" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f21c4935-ca52-4770-81ea-ac212af714ae" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6e09dc7f-ccf8-43f0-99b3-3f531dc95ba6" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5cd5ffb6-d77a-454d-a0dd-61ce827f6e21" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b890e296-3afd-4a90-a264-682ead74a92e" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="351e9859-aefe-4491-9088-59f67239427c" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingApplicationID-Error-INVALID" id="cdd3147f-d899-4abb-9b41-475e5c6010b4">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingApplicationID-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{
+   "applicationID" : "",
+   "customerID" : "146",
+   "phoneNumber" : "2408939844",
+   "amount" : "81.00",
+   "clientAccountNumber" : "21240200",
+   "isBillLookup" : true,
+   "lookup1" : "1240200",
+   "lookup2" : "1240201",
+   "lookup3" : "1240202",
+   "email" : "imtiazster@gmail.com",
+   "address" : {
+      "line1" : "123 Main St",
+      "line2" : "Apt 4B",
+      "city" : "Washington",
+      "state" : "DC",
+      "postalCode" : "20001"
+   },
+   "userDefinedData" : {
+      "udf1" : "123 Main St",
+      "udf2" : "Apt 4B",
+      "udf3" : "Washington",
+      "udf4" : "DC",
+      "udf5" : "20001",
+      "udf6" : "123 Main St",
+      "udf7" : "Apt 4B",
+      "udf8" : "Washington",
+      "udf9" : "DC",
+      "udf10" : "20001"
+   }
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="516845fa-f530-4e4c-b142-da827a8a1bc8" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="28667e01-25e3-47ba-aa87-4a7204583c55" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e8ff1f29-29b2-4ba3-a46f-ebb0080c788f" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"ApplicationID is required"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="65eb5e31-a354-482e-a935-c6e67d417a62" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85337798-088e-4569-8919-272bc6a87cda" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9ea12832-d655-4f27-88fe-39952b4f888e" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="102de69c-31b1-4dfe-b0c4-d35870b4c973" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="886e673f-88e5-48f4-a348-faba384c4f93" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5f5ed5bc-8ce0-47b6-aea5-8b61d4971c6e" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f21c4935-ca52-4770-81ea-ac212af714ae" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6e09dc7f-ccf8-43f0-99b3-3f531dc95ba6" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5cd5ffb6-d77a-454d-a0dd-61ce827f6e21" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b890e296-3afd-4a90-a264-682ead74a92e" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="351e9859-aefe-4491-9088-59f67239427c" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingCustomerID-Error-INVALID" id="ada1fae1-2d24-47de-b30b-915eacc80414">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingCustomerID-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{
+   "applicationID" : "485",
+   "customerID" : "",
+   "phoneNumber" : "2408939844",
+   "amount" : "81.00",
+   "clientAccountNumber" : "21240200",
+   "isBillLookup" : true,
+   "lookup1" : "1240200",
+   "lookup2" : "1240201",
+   "lookup3" : "1240202",
+   "email" : "imtiazster@gmail.com",
+   "address" : {
+      "line1" : "123 Main St",
+      "line2" : "Apt 4B",
+      "city" : "Washington",
+      "state" : "DC",
+      "postalCode" : "20001"
+   },
+   "userDefinedData" : {
+      "udf1" : "123 Main St",
+      "udf2" : "Apt 4B",
+      "udf3" : "Washington",
+      "udf4" : "DC",
+      "udf5" : "20001",
+      "udf6" : "123 Main St",
+      "udf7" : "Apt 4B",
+      "udf8" : "Washington",
+      "udf9" : "DC",
+      "udf10" : "20001"
+   }
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="516845fa-f530-4e4c-b142-da827a8a1bc8" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="28667e01-25e3-47ba-aa87-4a7204583c55" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e8ff1f29-29b2-4ba3-a46f-ebb0080c788f" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"customerID is required"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="65eb5e31-a354-482e-a935-c6e67d417a62" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85337798-088e-4569-8919-272bc6a87cda" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9ea12832-d655-4f27-88fe-39952b4f888e" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="102de69c-31b1-4dfe-b0c4-d35870b4c973" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="886e673f-88e5-48f4-a348-faba384c4f93" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5f5ed5bc-8ce0-47b6-aea5-8b61d4971c6e" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f21c4935-ca52-4770-81ea-ac212af714ae" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6e09dc7f-ccf8-43f0-99b3-3f531dc95ba6" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5cd5ffb6-d77a-454d-a0dd-61ce827f6e21" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b890e296-3afd-4a90-a264-682ead74a92e" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="351e9859-aefe-4491-9088-59f67239427c" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingClientAccountNumber-Error-INVALID" id="3691ebb0-a85f-4c25-83f0-fae78b5e45ed">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingClientAccountNumber-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "1240202",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="516845fa-f530-4e4c-b142-da827a8a1bc8" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="28667e01-25e3-47ba-aa87-4a7204583c55" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e8ff1f29-29b2-4ba3-a46f-ebb0080c788f" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"ClientAccountNumber is required"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="65eb5e31-a354-482e-a935-c6e67d417a62" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85337798-088e-4569-8919-272bc6a87cda" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9ea12832-d655-4f27-88fe-39952b4f888e" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="102de69c-31b1-4dfe-b0c4-d35870b4c973" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="886e673f-88e5-48f4-a348-faba384c4f93" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5f5ed5bc-8ce0-47b6-aea5-8b61d4971c6e" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f21c4935-ca52-4770-81ea-ac212af714ae" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6e09dc7f-ccf8-43f0-99b3-3f531dc95ba6" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5cd5ffb6-d77a-454d-a0dd-61ce827f6e21" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b890e296-3afd-4a90-a264-682ead74a92e" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="351e9859-aefe-4491-9088-59f67239427c" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingLookup1-Error-INVALID" id="032bcf3e-f889-43c2-a19a-1787cbde8da3">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingLookup1-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "1240202",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="516845fa-f530-4e4c-b142-da827a8a1bc8" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="28667e01-25e3-47ba-aa87-4a7204583c55" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e8ff1f29-29b2-4ba3-a46f-ebb0080c788f" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"Lookup1 is required"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="65eb5e31-a354-482e-a935-c6e67d417a62" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85337798-088e-4569-8919-272bc6a87cda" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9ea12832-d655-4f27-88fe-39952b4f888e" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="102de69c-31b1-4dfe-b0c4-d35870b4c973" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="886e673f-88e5-48f4-a348-faba384c4f93" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5f5ed5bc-8ce0-47b6-aea5-8b61d4971c6e" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f21c4935-ca52-4770-81ea-ac212af714ae" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6e09dc7f-ccf8-43f0-99b3-3f531dc95ba6" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5cd5ffb6-d77a-454d-a0dd-61ce827f6e21" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b890e296-3afd-4a90-a264-682ead74a92e" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="351e9859-aefe-4491-9088-59f67239427c" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingLookup2-Error-INVALID" id="c4d61363-9e92-4ac4-aac9-d376a0ebfd14">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingLookup2-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "",\r
+   "lookup3" : "1240202",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="516845fa-f530-4e4c-b142-da827a8a1bc8" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="28667e01-25e3-47ba-aa87-4a7204583c55" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e8ff1f29-29b2-4ba3-a46f-ebb0080c788f" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"Lookup2 is required"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="65eb5e31-a354-482e-a935-c6e67d417a62" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85337798-088e-4569-8919-272bc6a87cda" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9ea12832-d655-4f27-88fe-39952b4f888e" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="102de69c-31b1-4dfe-b0c4-d35870b4c973" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="886e673f-88e5-48f4-a348-faba384c4f93" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5f5ed5bc-8ce0-47b6-aea5-8b61d4971c6e" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f21c4935-ca52-4770-81ea-ac212af714ae" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="6e09dc7f-ccf8-43f0-99b3-3f531dc95ba6" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5cd5ffb6-d77a-454d-a0dd-61ce827f6e21" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b890e296-3afd-4a90-a264-682ead74a92e" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="351e9859-aefe-4491-9088-59f67239427c" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingLookup3-Error-INVALID" id="ce06b219-b430-4ea9-ae4f-f35a27935c64">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingLookup3-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="28667e01-25e3-47ba-aa87-4a7204583c55" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e8ff1f29-29b2-4ba3-a46f-ebb0080c788f" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>"Error finding bill for app ID: 485"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingEmailAddress-NO-Error-INVALID" id="5de6e4f4-ec0e-4725-81fb-ca7700f88e91">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingEmailAddress-NO-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "1240202",\r
+   "email" : "",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="1207fbf3-d3e6-4022-86b5-d3cebb93c319" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="bd780a7c-36d5-440a-b147-2dcdcf803870" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[ ]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingAmount-Error-INVALID" id="c55c372e-85a5-4031-a02a-1cc38199dac6">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingAmount-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "1240202",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="1207fbf3-d3e6-4022-86b5-d3cebb93c319" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="bd780a7c-36d5-440a-b147-2dcdcf803870" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Amount is required"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0de446f0-0f6d-4aee-9059-32e2bc25841d" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="IncorrectClientAccountNumber-Error-INVALID" id="1bbda101-75fa-486f-b1c9-5414b2dbec6a">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="IncorrectClientAccountNumber-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200888004",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "1240202",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="1207fbf3-d3e6-4022-86b5-d3cebb93c319" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="bd780a7c-36d5-440a-b147-2dcdcf803870" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content/>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0de446f0-0f6d-4aee-9059-32e2bc25841d" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="IncorrectLookup1-Error-INVALID" id="7423d645-8751-4677-9274-79f1afbfff2c">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="IncorrectLookup1-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200888",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "1240202",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="c9abc102-b8fd-4d72-a5cc-175ca95f3719" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0ca02fc2-e1eb-4454-89a7-9fb7a60b78e7" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Error finding bill for app ID: 485"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="IncorrectLookup2-Error-INVALID" id="2892451f-06a4-415f-a91e-21da4c266b82">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="IncorrectLookup2-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "1240201000",\r
+   "lookup3" : "1240202",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="c9abc102-b8fd-4d72-a5cc-175ca95f3719" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0ca02fc2-e1eb-4454-89a7-9fb7a60b78e7" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Error finding bill for app ID: 485"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="IncorrectLookup3-Error-INVALID" id="10ce7029-448e-4223-9932-f2e58e5fc006">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="IncorrectLookup3-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "1240202000",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="c9abc102-b8fd-4d72-a5cc-175ca95f3719" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0ca02fc2-e1eb-4454-89a7-9fb7a60b78e7" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Error finding bill for app ID: 485"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="IncorrectPhoneNumber-Error-INVALID" id="b12c751b-27e8-40cc-874d-cd6b20c4bfc2">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="IncorrectPhoneNumber-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "240",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "1240202",\r
+   "email" : "imtiazster@gmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="c9abc102-b8fd-4d72-a5cc-175ca95f3719" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0ca02fc2-e1eb-4454-89a7-9fb7a60b78e7" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Phone number is invalid"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="IncorrectEmailAddress-Error-INVALID" id="0e4beaf0-3676-48d8-b39a-d8fc75571b19">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="IncorrectEmailAddress-Error-INVALID" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "customerID" : "146",\r
+   "phoneNumber" : "2408939844",\r
+   "amount" : "81.00",\r
+   "clientAccountNumber" : "21240200",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "1240200",\r
+   "lookup2" : "1240201",\r
+   "lookup3" : "1240202",\r
+   "email" : "imtiazstergmail.com",\r
+   "address" : {\r
+      "line1" : "123 Main St",\r
+      "line2" : "Apt 4B",\r
+      "city" : "Washington",\r
+      "state" : "DC",\r
+      "postalCode" : "20001"\r
+   },\r
+   "userDefinedData" : {\r
+      "udf1" : "123 Main St",\r
+      "udf2" : "Apt 4B",\r
+      "udf3" : "Washington",\r
+      "udf4" : "DC",\r
+      "udf5" : "20001",\r
+      "udf6" : "123 Main St",\r
+      "udf7" : "Apt 4B",\r
+      "udf8" : "Washington",\r
+      "udf9" : "DC",\r
+      "udf10" : "20001"\r
+   }\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="JsonPath Match" id="c9abc102-b8fd-4d72-a5cc-175ca95f3719" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0ca02fc2-e1eb-4454-89a7-9fb7a60b78e7" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Email is invalid"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="App485-SuccessfulLookup" id="0de77701-6bf2-4bdc-a4e3-dc3658ff2f99">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="App485-SuccessfulLookup" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "phoneNumber" : "2408939102",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "40005521",\r
+   "lookup2" : "40005522",\r
+   "lookup3" : "40005523",\r
+   "email" : "iahmed3@govolution.com"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f7353cca-1263-48c1-8857-9732a86cd9de" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b99d6e5f-f4c5-4767-a9fe-ba7abfe69e2a" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>"485"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="38dd6530-6ddd-45bf-9b84-2d5e55ab9b54" name="Check for existence of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="bb7fb022-5c4b-4152-bc45-fae8f96a48cb" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d920a51c-0930-434f-9b13-4bb6368cbf7f" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d586fe62-b9bc-4e99-aa45-5ef60a05ac10" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>"40005521"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b7036b1a-2d88-4ed8-99b3-70a7a8882648" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>"40005522"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b438b678-e7df-4e9f-a5fb-da09db871588" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>"40005523"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="60b1d14c-5314-4761-9349-f89c70ebec50" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d10e3a42-2489-4d50-9811-87f36a24ecc1" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>"2408939102"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fb6668e3-2f77-4849-86e1-248e8ce2349f" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>"iahmed3@govolution.com"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="39ec44c6-62d3-4514-9003-2517d189d638" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>https://qa.velocitypayment.com/vbills/lookup/paymentLink.do?linkId=e082f9a8-1c2c-421e-a2c6-75fc56525692</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ab35d7a3-cb97-4799-9b01-4be52c99ab88" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3fa66a4d-f14a-42b8-ac54-e65b165d5c7f" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[ ]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="bd482cdf-03d1-4a0e-afab-12a8091f8fa6" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>"05072026"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5bf3ddc4-ec66-41a1-9595-e1b3019f9667" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="IncorrectApplicationID-Error" id="eff00a9e-2fef-475e-97b2-97a9418617c4">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="IncorrectApplicationID-Error" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485000",\r
+   "phoneNumber" : "2408939102",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "40005521",\r
+   "lookup2" : "40005522",\r
+   "lookup3" : "40005523",\r
+   "email" : "iahmed3@govolution.com"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f7353cca-1263-48c1-8857-9732a86cd9de" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ab35d7a3-cb97-4799-9b01-4be52c99ab88" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3fa66a4d-f14a-42b8-ac54-e65b165d5c7f" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Error finding bill for app ID: 485000"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingApplicationID-Error" id="505734d8-2b95-4f9c-8a6a-59d5a7eaf395">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingApplicationID-Error" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "",\r
+   "phoneNumber" : "2408939102",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "40005521",\r
+   "lookup2" : "40005522",\r
+   "lookup3" : "40005523",\r
+   "email" : "iahmed3@govolution.com"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f7353cca-1263-48c1-8857-9732a86cd9de" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ab35d7a3-cb97-4799-9b01-4be52c99ab88" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3fa66a4d-f14a-42b8-ac54-e65b165d5c7f" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "ApplicationID is required"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0048a992-f259-440f-aa1c-ecc92f289838" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4bef418b-5c30-4c2c-b512-fa5e05283835" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="33795fab-ac26-47bb-b4ee-a41e963d019f" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85688efb-3176-4537-809c-5c35b479e537" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e92af840-13b3-4a03-8d3a-b6672b6f299e" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4d08c7da-389b-4c83-80a9-4069c5c3a65b" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3c1c0ef3-ddaa-4ebf-a233-4bffbe987ae8" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f65b78b7-55bc-4c4b-b7e1-97f9947d56f5" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="211115c3-14f1-4757-b253-377cfa7517ed" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="947fc92b-5c16-422a-8bc6-bb374add8efe" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fae58ff3-d9df-415c-bf1d-ff62049753c8" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b60842af-d0ae-42a6-b378-a9bb67cbba35" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingPhoneNumber-Error" id="efc34966-89a2-4152-a249-af233ac3885b">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingPhoneNumber-Error" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "phoneNumber" : "",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "40005521",\r
+   "lookup2" : "40005522",\r
+   "lookup3" : "40005523",\r
+   "email" : "iahmed3@govolution.com"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f7353cca-1263-48c1-8857-9732a86cd9de" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ab35d7a3-cb97-4799-9b01-4be52c99ab88" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3fa66a4d-f14a-42b8-ac54-e65b165d5c7f" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "phone number is required"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0048a992-f259-440f-aa1c-ecc92f289838" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4bef418b-5c30-4c2c-b512-fa5e05283835" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="33795fab-ac26-47bb-b4ee-a41e963d019f" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85688efb-3176-4537-809c-5c35b479e537" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e92af840-13b3-4a03-8d3a-b6672b6f299e" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4d08c7da-389b-4c83-80a9-4069c5c3a65b" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3c1c0ef3-ddaa-4ebf-a233-4bffbe987ae8" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f65b78b7-55bc-4c4b-b7e1-97f9947d56f5" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="211115c3-14f1-4757-b253-377cfa7517ed" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="947fc92b-5c16-422a-8bc6-bb374add8efe" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fae58ff3-d9df-415c-bf1d-ff62049753c8" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b60842af-d0ae-42a6-b378-a9bb67cbba35" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingLookup1-Error" id="696445fd-e5a8-4bf3-b41e-e27b562367ef">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingLookup1-Error" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "phoneNumber" : "2408939103",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "",\r
+   "lookup2" : "40005522",\r
+   "lookup3" : "40005523",\r
+   "email" : "iahmed4@govolution.com"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f7353cca-1263-48c1-8857-9732a86cd9de" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ab35d7a3-cb97-4799-9b01-4be52c99ab88" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3fa66a4d-f14a-42b8-ac54-e65b165d5c7f" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Lookup1 is required"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0048a992-f259-440f-aa1c-ecc92f289838" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4bef418b-5c30-4c2c-b512-fa5e05283835" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="33795fab-ac26-47bb-b4ee-a41e963d019f" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85688efb-3176-4537-809c-5c35b479e537" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e92af840-13b3-4a03-8d3a-b6672b6f299e" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4d08c7da-389b-4c83-80a9-4069c5c3a65b" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3c1c0ef3-ddaa-4ebf-a233-4bffbe987ae8" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f65b78b7-55bc-4c4b-b7e1-97f9947d56f5" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="211115c3-14f1-4757-b253-377cfa7517ed" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="947fc92b-5c16-422a-8bc6-bb374add8efe" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fae58ff3-d9df-415c-bf1d-ff62049753c8" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b60842af-d0ae-42a6-b378-a9bb67cbba35" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingLookup2-Error" id="452d065f-26dc-4291-9bff-cab7d3659bf7">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingLookup2-Error" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "phoneNumber" : "2408939103",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "40005521",\r
+   "lookup2" : "",\r
+   "lookup3" : "40005523",\r
+   "email" : "iahmed4@govolution.com"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f7353cca-1263-48c1-8857-9732a86cd9de" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ab35d7a3-cb97-4799-9b01-4be52c99ab88" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3fa66a4d-f14a-42b8-ac54-e65b165d5c7f" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Lookup2 is required"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0048a992-f259-440f-aa1c-ecc92f289838" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4bef418b-5c30-4c2c-b512-fa5e05283835" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="33795fab-ac26-47bb-b4ee-a41e963d019f" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85688efb-3176-4537-809c-5c35b479e537" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e92af840-13b3-4a03-8d3a-b6672b6f299e" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4d08c7da-389b-4c83-80a9-4069c5c3a65b" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3c1c0ef3-ddaa-4ebf-a233-4bffbe987ae8" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f65b78b7-55bc-4c4b-b7e1-97f9947d56f5" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="211115c3-14f1-4757-b253-377cfa7517ed" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="947fc92b-5c16-422a-8bc6-bb374add8efe" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fae58ff3-d9df-415c-bf1d-ff62049753c8" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b60842af-d0ae-42a6-b378-a9bb67cbba35" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="MissingLookup3-Error" id="f745e50a-237c-446c-90e2-6932f9d5e217">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="MissingLookup3-Error" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "phoneNumber" : "2408939103",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "40005521",\r
+   "lookup2" : "40005522",\r
+   "lookup3" : "",\r
+   "email" : "iahmed4@govolution.com"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f7353cca-1263-48c1-8857-9732a86cd9de" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ab35d7a3-cb97-4799-9b01-4be52c99ab88" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"2"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3fa66a4d-f14a-42b8-ac54-e65b165d5c7f" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[
+   "Lookup2 is required"
+]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0048a992-f259-440f-aa1c-ecc92f289838" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4bef418b-5c30-4c2c-b512-fa5e05283835" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="33795fab-ac26-47bb-b4ee-a41e963d019f" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="85688efb-3176-4537-809c-5c35b479e537" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>false</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e92af840-13b3-4a03-8d3a-b6672b6f299e" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="4d08c7da-389b-4c83-80a9-4069c5c3a65b" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3c1c0ef3-ddaa-4ebf-a233-4bffbe987ae8" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="f65b78b7-55bc-4c4b-b7e1-97f9947d56f5" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="211115c3-14f1-4757-b253-377cfa7517ed" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="947fc92b-5c16-422a-8bc6-bb374add8efe" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fae58ff3-d9df-415c-bf1d-ff62049753c8" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b60842af-d0ae-42a6-b378-a9bb67cbba35" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="NoEmail-NoError" id="31e3943d-67cf-4a6e-939d-aab054d16473">
+    <con:settings/>
+    <con:config service="Text To Pay" resourcePath="/integration/rest/texttopay" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="NoEmail-NoError" id="a41b2f85-c65a-41f0-b1bb-312f739d137a" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "phoneNumber" : "2408939102",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "40005521",\r
+   "lookup2" : "40005522",\r
+   "lookup3" : "40005523",\r
+   "email" : ""\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f7353cca-1263-48c1-8857-9732a86cd9de" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b99d6e5f-f4c5-4767-a9fe-ba7abfe69e2a" name="Match content of [applicationID]">
+          <con:configuration>
+            <path>$['applicationID']</path>
+            <content>"485"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="38dd6530-6ddd-45bf-9b84-2d5e55ab9b54" name="Check for existence of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="bb7fb022-5c4b-4152-bc45-fae8f96a48cb" name="Match content of [isPaymentLinkGenerated]">
+          <con:configuration>
+            <path>$['isPaymentLinkGenerated']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d920a51c-0930-434f-9b13-4bb6368cbf7f" name="Match content of [clientAccountNumber]">
+          <con:configuration>
+            <path>$['clientAccountNumber']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d586fe62-b9bc-4e99-aa45-5ef60a05ac10" name="Match content of [lookup1]">
+          <con:configuration>
+            <path>$['lookup1']</path>
+            <content>"40005521"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b7036b1a-2d88-4ed8-99b3-70a7a8882648" name="Match content of [lookup2]">
+          <con:configuration>
+            <path>$['lookup2']</path>
+            <content>"40005522"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="b438b678-e7df-4e9f-a5fb-da09db871588" name="Match content of [lookup3]">
+          <con:configuration>
+            <path>$['lookup3']</path>
+            <content>"40005523"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="60b1d14c-5314-4761-9349-f89c70ebec50" name="Match content of [amount]">
+          <con:configuration>
+            <path>$['amount']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="d10e3a42-2489-4d50-9811-87f36a24ecc1" name="Match content of [phoneNumber]">
+          <con:configuration>
+            <path>$['phoneNumber']</path>
+            <content>"2408939102"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="fb6668e3-2f77-4849-86e1-248e8ce2349f" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>""</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="39ec44c6-62d3-4514-9003-2517d189d638" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>https://qa.velocitypayment.com/vbills/lookup/paymentLink.do?linkId=e082f9a8-1c2c-421e-a2c6-75fc56525692</content>
+            <allowWildcards>true</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ab35d7a3-cb97-4799-9b01-4be52c99ab88" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="3fa66a4d-f14a-42b8-ac54-e65b165d5c7f" name="Match content of [errorMessage]">
+          <con:configuration>
+            <path>$['errorMessage']</path>
+            <content>[ ]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="bd482cdf-03d1-4a0e-afab-12a8091f8fa6" name="Match content of [linkExpiresAt]">
+          <con:configuration>
+            <path>$['linkExpiresAt']</path>
+            <content>"05072026"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="5bf3ddc4-ec66-41a1-9595-e1b3019f9667" name="Match content of [customerID]">
+          <con:configuration>
+            <path>$['customerID']</path>
+            <content>null</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datagen" name="DataGenRandomRemID" id="cf96ff6f-d919-4c70-aa91-083f96043985">
+    <con:settings/>
+    <con:config xsi:type="con:DataGeneratorStep">
+      <con:property type="Number">
+        <con:configuration>
+          <start>10000000000</start>
+          <end>99999999999</end>
+          <step/>
+          <pattern/>
+          <random>true</random>
+          <persist>false</persist>
+        </con:configuration>
+        <con:name>RandomRemID</con:name>
+        <con:mode>READ</con:mode>
+        <con:shared>true</con:shared>
+      </con:property>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

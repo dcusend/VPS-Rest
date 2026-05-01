@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="af0b296e-d41f-4e6a-a3e0-aad706910eeb" name="Text To Pay" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="9e7c22dd-0961-4bf9-a24a-8803eb78245c">
+    <con:setting id="af0b296e-d41f-4e6a-a3e0-aad706910eebfileName">Text-To-Pay</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="Text To Pay.json">
+    <con:part>
+      <con:url>Text To Pay.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"Text To Pay","description":"","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/integration/rest/texttopay":{"description":"","post":{"description":"","requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}},"components":{"securitySchemes":{"Brazoria":{"type":"oauth2","flows":{"authorizationCode":{"authorizationUrl":"","tokenUrl":"https://login.taxsandbox.dev/oauth/token","scopes":{}}}},"User Iahmed":{"type":"http","scheme":"basic"},"oauth2":{"type":"oauth2","flows":{"authorizationCode":{"authorizationUrl":"https://login.taxsandbox.dev/authorize","tokenUrl":"https://login.taxsandbox.dev/oauth/token","scopes":{"accounts.search":"","accounts.detail":"","userProfiles.manage":"","invoice.create":"","invoice.details":"","taxEstimator":"","truthInTaxation":""}}}}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+    <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+    <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+  </con:endpoints>
+</con:interface>

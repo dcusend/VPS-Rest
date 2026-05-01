@@ -108,6 +108,9 @@
     <con:service type="REST" name="https://qa.velocitypayment.com">
       <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://qa.velocitypayment.com</con:endpoint>
     </con:service>
+    <con:service type="REST" name="Text To Pay">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="" areGlobalProxySettingsIgnored="false">https://qa.velocitypayment.com</con:endpoint>
+    </con:service>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>

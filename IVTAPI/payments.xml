@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="payments" path="VVTAPI/rest/vvtapi/api/payments" id="745c833b-a241-4433-b630-b0b6ef2ff90c">
+  <con:settings>
+    <con:setting id="745c833b-a241-4433-b630-b0b6ef2ff90cfileName">payments</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="d2ee4cfb-8292-471b-8b51-34cf015d06f8" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="9e7710e2-53e9-453f-8024-8f37edc9336c" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="b72a0066-1f2c-43b5-908a-1969b8ac4da1" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="1e7ae945-ff44-485f-b7d3-1fb802dd6f17" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://demo.velocitypayment.com/VVTAPI/rest/vvtapi/api/payments</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

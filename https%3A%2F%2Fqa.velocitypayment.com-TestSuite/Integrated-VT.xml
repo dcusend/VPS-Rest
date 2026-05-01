@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="f492edd2-4026-4d0c-b12e-5b7384b40376" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Integrated VT" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="f492edd2-4026-4d0c-b12e-5b7384b40376fileName">Integrated-VT</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request" id="f5867c7c-5f6a-421d-87e7-b22895f703d6">
+    <con:settings/>
+    <con:config service="IntegratedVirtualTerminal" resourcePath="/drives/payments" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request" id="9d5a152e-4998-49e3-8007-d960418e6344" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "amount": 19.99,
+    "clientAccountNumber": "12589",
+    "applicationId": "",
+    "remittanceId": "",
+    "pinpadName": "GA-CTY-0010-0001",
+    "parcel": [
+        [
+            "Parcel 1 Column 1 value",
+            "Parcel 1 Column 2 value",
+            "Parcel 1 Column 3 value"
+        ],
+        [
+            "Parcel 2 Column 1 value",
+            "Parcel 2 Column 2 value",
+            "Parcel 2 Column 3 value"
+        ],
+        [
+            "Parcel 3 Column 1 value",
+            "Parcel 3 Column 2 value",
+            "Parcel 3 Column 3 value"
+        ]
+    ],
+    "billingAddress": {
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "companyName": "Doe",
+        "address": "123 Main St",
+        "address2": "Apt 5",
+        "postalCode": "94111",
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "USA",
+        "phone": "650-555-1234",
+        "email": "jane@email.com"
+    },
+    "customData": {
+        "user_defined_1": "value 1",
+        "user_defined_2": "value 2",
+        "user_defined_3": "value 3",
+        "user_defined_4": "value 4",
+        "user_defined_5": "value 5",
+        "user_defined_6": "value 6",
+        "user_defined_7": "value 7",
+        "user_defined_8": "value 8",
+        "user_defined_9": "value 9",
+        "user_defined_10": "value 10"
+    }
+}
+</con:request>
+        <con:originalUri>https://demo.velocitypayment.com/drives/payments</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="dca64db2-54bb-476e-8462-7308caa4bd2b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="529135a1-52fc-40a7-afb4-13a7c70c76eb" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

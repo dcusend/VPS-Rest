@@ -129,7 +129,7 @@
         </con:settings>
         <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
         <con:request>{\r
-   "clientAccountNumber" : "${CreateACHStoredPM#RawRequest#$['paymentMethod']['accountNumber']}",\r
+   "clientAccountNumber" : "${CreateACHStoredPM#Response}",\r
    "customerID" : "195"\r
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/retrieveStoredPayment</con:originalUri>

@@ -31,7 +31,7 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
         <con:request>{  "header": {   
 	"clientAccountNumber": "${DataGenRadmonCANforDuplicate#DuplicateCAN}",   
 	"applicationID": "609",   
@@ -41,7 +41,7 @@
 	"pan": "4111111111111111",   
 	"card_expiration": "102025",   
 	"card_exmo": "10",   
-	"card_exyr": "2025"  },
+	"card_exyr": "2029"  },
 "customerInformation": {   
 	"firstName": "Fred",   
 	"lastName": "Smith",   
@@ -118,7 +118,7 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
         <con:request>{  "header": {   
 	"clientAccountNumber": "${FirstCreate#Request#$['header']['clientAccountNumber']}",   
 	 "applicationID": "609",   
@@ -128,7 +128,7 @@
 	"pan": "4111111111111111",   
 	"card_expiration": "102025",   
 	"card_exmo": "10",   
-	"card_exyr": "2025"  },
+	"card_exyr": "2029"  },
 "customerInformation": {   
 	"firstName": "Fred",   
 	"lastName": "Smith",   

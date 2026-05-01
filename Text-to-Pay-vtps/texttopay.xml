@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="texttopay" path="vtps/rest/texttopay" id="f383d2e4-8938-4fac-8e56-cb24ab987b30">
+  <con:settings>
+    <con:setting id="f383d2e4-8938-4fac-8e56-cb24ab987b30fileName">texttopay</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="840b1afc-48e7-48f8-99cb-1296b9480467" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="e28a8f99-1b90-44c0-8661-1ac31ec8229b" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="93b30d0a-c3f6-4db6-8b37-558475d28008" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="21362ccf-ad2a-4f79-8d24-f0120fca08e5" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

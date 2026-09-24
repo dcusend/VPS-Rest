@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="03ba5b9e-6b4d-4326-8e12-c4c1ebb263b1" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="CustomerConfig - Demo" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="03ba5b9e-6b4d-4326-8e12-c4c1ebb263b1fileName">CustomerConfig---Demo</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request" id="e9c957fb-3a77-4f7b-820a-27d6e944b320">
+    <con:settings/>
+    <con:config service="CustomerConfig" resourcePath="/vtps/rest/customerconfig" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request" id="93977a6a-fd79-42d5-a3c3-9fc2e9b4ac03" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+    "DNIS": "4087536090"
+
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/customerconfig</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="c90159fc-5e8c-4353-948e-86eb282127f4" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="df1be20b-fda6-4807-850c-ffccd32339fe" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

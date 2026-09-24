@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="58559992-0f01-427c-87dc-26fb13fdcfb0" name="Text to Pay vtps" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="58559992-0f01-427c-87dc-26fb13fdcfb0" name="Text to Pay vtps" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" lastUpdated="2026-09-21T12:24:21.545-04:00">
   <con:settings id="22ce0fde-2172-4625-a302-c16cd8e89ab8">
     <con:setting id="58559992-0f01-427c-87dc-26fb13fdcfb0fileName">Text-to-Pay-vtps</con:setting>
   </con:settings>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="qds" path="vtps/rest/qds" id="b8ee139c-edb8-4529-a037-fe8cf5af25b2">
+  <con:settings>
+    <con:setting id="b8ee139c-edb8-4529-a037-fe8cf5af25b2fileName">qds</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="36f0d1ba-786d-4d77-86b6-38ddf01445c6" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="4f009749-f8ea-4e8c-aa77-bb4d885df724" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="5ce0cf23-fc89-47d4-b660-788b44142d2c" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="f0512afd-c233-4cde-bc72-04f16fa4e5ab" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://www.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

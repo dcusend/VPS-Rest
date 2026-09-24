@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="ccfba5af-028e-46a1-8baf-ac2224edcaa5" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="SpindleMedia-Demo" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="ccfba5af-028e-46a1-8baf-ac2224edcaa5fileName">SpindleMedia-Demo</con:setting>
+  </con:settings>
+  <con:testStep xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="restrequest" name="ProcessCC-Demo-6453" id="bc6042ae-72c8-42d4-a8b8-9ea84c2ffb72">
+    <con:settings/>
+    <con:config service="REST Service 10" resourcePath="/vtps/rest/processCCTransaction" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="ProcessCC-Demo-6453" id="3d2ae421-4615-4a73-bb18-ecd8a3a8c847" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@disable-property-expansions">false</con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "card_address" : "2311 york road",\r
+   "amount" : "11.50",\r
+   "card_name" : "imtiaz ahmed",\r
+   "card_city" : "",\r
+   "card_zip" : "03106",\r
+   "email" : "iahmed@govolution.com",\r
+   "card_number" : "4111111111111111",\r
+   "card_state" : "",\r
+   "transaction_type" : "104",\r
+   "message_version" : "2.0IVR_C",\r
+   "category" : "MOTO",\r
+   "requestSource" : "",\r
+   "response_format" : "fixed_width",\r
+   "card_expiration" : "",\r
+   "application_id" : "6453",\r
+   "remittance_id" : "testIVR06022020165",\r
+   "card_exmo" : "01",\r
+   "card_exyr" : "2028",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "user_defined1" : "udf1 data",\r
+   "user_defined2" : "udf2 data",\r
+   "user_defined3" : "udf3 data",\r
+   "user_defined4" : "udf4 data",\r
+   "user_defined5" : "udf5 data",\r
+   "user_defined6" : "udf6 data",\r
+   "user_defined7" : "udf7 data",\r
+   "user_defined8" : "udf8 data",\r
+   "user_defined9" : "",\r
+   "user_defined10" : "",\r
+   "client_account_number" : "1564946"\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processCCTransaction</con:originalUri>
+        <con:assertion type="JsonPath Match" id="75447284-e90a-449b-b008-d4d2a9cddadd" name="Match content of [remittanceID]">
+          <con:configuration>
+            <path>$['remittanceID']</path>
+            <content>${ProcessCC-Demo-6453#RawRequest#$['remittance_id']}</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="30bb8db2-4fad-42ea-90dc-cdc8570bdaf5" name="Check for existence of [transactionID]">
+          <con:configuration>
+            <path>$['transactionID']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="92451ef6-3baf-4b72-a833-46c792ce896c" name="Check for existence of [partnerTransactionID]">
+          <con:configuration>
+            <path>$['partnerTransactionID']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="1fff7b9c-6686-4d35-a5c0-c8a478ce7b1b" name="Match content of [responseCode]">
+          <con:configuration>
+            <path>$['responseCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0e42b4a0-775e-4ff6-941d-b4efe570b1c7" name="Match content of [responseCodeMessage]">
+          <con:configuration>
+            <path>$['responseCodeMessage']</path>
+            <content>"Transaction approved, no errors"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="c126958a-731c-4ea9-99d8-0bd05d2cf57a" name="Match content of [errorCode]">
+          <con:configuration>
+            <path>$['errorCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="ae39066a-33ec-4f7d-9105-d1db5fc3e7be" name="Match content of [0]">
+          <con:configuration>
+            <path>$['errorMessage'][0]</path>
+            <content>""</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="0a0d99dc-00c9-4a9f-bbd9-f52879ebf75e" name="Match content of [approvalCode]">
+          <con:configuration>
+            <path>$['approvalCode']</path>
+            <content>"0"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username>iahmed</con:username>
+          <con:password>hello2222</con:password>
+          <con:domain>govolution</con:domain>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

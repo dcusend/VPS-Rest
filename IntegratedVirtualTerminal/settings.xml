@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="21b8dfd7-e702-4562-a262-7c869a8b34b1" name="IntegratedVirtualTerminal" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="21b8dfd7-e702-4562-a262-7c869a8b34b1" name="IntegratedVirtualTerminal" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" lastUpdated="2026-09-21T12:24:21.544-04:00">
   <con:settings id="5a47ddcb-946f-4410-be7d-643d12f83830">
     <con:setting id="21b8dfd7-e702-4562-a262-7c869a8b34b1fileName">IntegratedVirtualTerminal</con:setting>
   </con:settings>

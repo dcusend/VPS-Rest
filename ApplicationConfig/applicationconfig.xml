@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="applicationconfig" path="vtps/rest/applicationconfig" id="c013f3d7-fcb0-4ee0-b0a8-841e1c249fee">
+  <con:settings>
+    <con:setting id="c013f3d7-fcb0-4ee0-b0a8-841e1c249feefileName">applicationconfig</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="989b4380-9b7d-40b6-880c-f5d13b3cf067" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="2f1fbc56-ee72-4def-a3a7-fd150b26c1f8" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+      <con:request>{
+
+    "DNIS": "2408939855",
+
+    "applicationIdentifier": "183",
+
+    "IVRType": "Velocity"
+
+}</con:request>
+      <con:originalUri>https://qa.velocitypayment.com/vtps/rest/applicationconfig</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="3c41540a-5623-4497-9515-007edd10bedb" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="f86a38e7-bc7a-4cc7-be3d-e647683a8b6f" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

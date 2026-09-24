@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="57bb157e-589f-403f-8a32-5ca35e920ca4" lastUpdated="2026-09-23T20:30:21.921-04:00" name="ApplicationConfig" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+  <con:settings id="33cb4047-8d0e-463c-9896-a882ebd89054">
+    <con:setting id="57bb157e-589f-403f-8a32-5ca35e920ca4fileName">ApplicationConfig</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="ApplicationConfig.json">
+    <con:part>
+      <con:url>ApplicationConfig.json</con:url>
+      <con:content>{"openapi":"3.1.0","info":{"title":"ApplicationConfig","description":"","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/vtps/rest/applicationconfig":{"description":"","get":{"description":"","responses":{"default":{"description":"Default response"}}},"post":{"description":"","requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}},"components":{"securitySchemes":{"Authorization":{"type":"http","scheme":"basic"},"Brazoria":{"type":"oauth2","flows":{"authorizationCode":{"authorizationUrl":"","tokenUrl":"https://login.taxsandbox.dev/oauth/token","scopes":{}}}},"User Iahmed":{"type":"http","scheme":"basic"},"oauth2":{"type":"oauth2","flows":{"authorizationCode":{"authorizationUrl":"https://login.taxsandbox.dev/authorize","tokenUrl":"https://login.taxsandbox.dev/oauth/token","scopes":{"accounts.search":"","accounts.detail":"","userProfiles.manage":"","invoice.create":"","invoice.details":"","taxEstimator":"","truthInTaxation":""}}}}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+    <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+  </con:endpoints>
+</con:interface>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="4fc770ac-d2a3-4aa8-991b-4bbcdd452c3a" name="GetAdminFee" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="4fc770ac-d2a3-4aa8-991b-4bbcdd452c3a" name="GetAdminFee" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" lastUpdated="2026-09-21T12:24:21.544-04:00">
   <con:settings id="6b9b8fa2-8576-4313-8ee1-9056bd862560">
     <con:setting id="4fc770ac-d2a3-4aa8-991b-4bbcdd452c3afileName">GetAdminFee</con:setting>
   </con:settings>

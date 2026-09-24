@@ -14,7 +14,7 @@
           <pattern/>
           <random>true</random>
           <persist>true</persist>
-          <current>30104215385.00000000000000000000000000000000000000000000000000000</current>
+          <current>17818110338.0000000000000000000000000000000000000000000000000000</current>
         </con:configuration>
         <con:name>RandomRemID</con:name>
         <con:mode>READ</con:mode>

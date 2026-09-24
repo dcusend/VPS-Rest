@@ -44,6 +44,9 @@ Text-To-Pay
 IntegratedVirtualTerminal
 IVTAPI
 Text-to-Pay-vtps
+QDS
+CustomerConfig
+ApplicationConfig
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite
 Test-Suite-1
 Test-Suite-2

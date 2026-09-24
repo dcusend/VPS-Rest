@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="8e99c60d-3d40-4366-96b2-103d536fc025" name="https://dev2.velocitypayment.com/vtps/rest/spindleMediaBillLookup" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification">
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="8e99c60d-3d40-4366-96b2-103d536fc025" name="https://dev2.velocitypayment.com/vtps/rest/spindleMediaBillLookup" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" lastUpdated="2026-09-21T12:24:21.543-04:00">
   <con:settings id="3846df4a-9615-480f-bb2f-53726a64d9fd">
     <con:setting id="8e99c60d-3d40-4366-96b2-103d536fc025fileName">https%3A%2F%2Fdev2.velocitypayment.com%2Fvtps%2Frest%2FspindleMediaBillLookup</con:setting>
   </con:settings>

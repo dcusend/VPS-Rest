@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="86bd775c-ff8a-43e5-9528-6816c2bdf9cf" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="SpindleMedia" searchProperties="true" timeout="0">
+<con:testCase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" id="f90a350a-ec38-4467-bbee-98c7347069e0" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="SpindleMediaDemo-Haris" searchProperties="true" timeout="0">
   <con:settings>
-    <con:setting id="86bd775c-ff8a-43e5-9528-6816c2bdf9cffileName">SpindleMedia</con:setting>
+    <con:setting id="f90a350a-ec38-4467-bbee-98c7347069e0fileName">SpindleMediaDemo-Haris</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="AccountDetails-DoNotUse" id="66ab05c4-5b60-401d-8f19-524dec7e0353">
+  <con:testStep type="restrequest" name="AccountDetails-DoNotUse" id="76399a66-6c28-4b1e-a9cf-2ab92773cc03">
     <con:settings/>
     <con:config service="TaxPayer API" resourcePath="/api/Accounts/detail" methodName="GetAccountDetail" xsi:type="con:RestRequestStep">
       <con:restRequest name="AccountDetails-DoNotUse" id="dcebad6b-2d3d-4367-86fe-6ba58abff587" mediaType="application/json">
@@ -36,7 +36,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="AccountLookup-DoNotUse" id="a75fba97-2b5e-4b7f-bb2b-c9e99f89cb33">
+  <con:testStep type="restrequest" name="AccountLookup-DoNotUse" id="eb24e93a-dc6a-40ef-ae51-358328635202">
     <con:settings/>
     <con:config service="TaxPayer API" resourcePath="/api/Accounts" methodName="SearchAccounts" xsi:type="con:RestRequestStep">
       <con:restRequest name="AccountLookup-DoNotUse" id="dc8cd51a-57a9-442a-a31d-204800248a6a" mediaType="application/json">
@@ -69,7 +69,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="CreateInvoice-DoNotUse" id="5bc6b7b2-b9e4-4fc8-9822-2fa148c5426e">
+  <con:testStep type="restrequest" name="CreateInvoice-DoNotUse" id="de3b1eb6-cc8c-44ee-a394-75e3b43da0c3">
     <con:settings/>
     <con:config service="TaxPayer API" resourcePath="/api/Invoices" methodName="CreateInvoice" xsi:type="con:RestRequestStep">
       <con:restRequest name="CreateInvoice-DoNotUse" id="4c04adcb-a7be-4964-8ecd-acbdf5d9d682" mediaType="application/json" postQueryString="false">
@@ -108,21 +108,21 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="InvoicePostGovolution" id="2bc94bb7-a85a-45a8-b9c8-d48e676596a8">
+  <con:testStep type="restrequest" name="InvoicePostGovolution" id="5879b423-79de-466a-a88e-3e16b6ecf7c9">
     <con:settings/>
     <con:config service="https://dev2.velocitypayment.com/vtps/rest/" resourcePath="/vtps/rest/spindleMediaInvoice" methodName="Method 1" xsi:type="con:RestRequestStep">
       <con:restRequest name="InvoicePostGovolution" id="6fd08dca-0bec-4999-8748-8e3209c1187b" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
         <con:request>{
                 "accountId": 319158,
-                "originalAmount" : 883.68,
+                "originalAmount" : 567.05,
                 "amountToPay" : 667.05,
-                "applicationId" : '836'
-}
-</con:request>
+                "applicationId" : '836',
+                "paymentScenario" : 'Partial'
+}</con:request>
         <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/spindleMediaInvoice</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="6706b29b-4593-4041-9af5-d165c186dce8" name="Valid HTTP Status Codes">
           <con:settings/>
@@ -166,19 +166,18 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="BillLookupGovolution" id="33811dd3-28c7-45c2-9149-1708cea9ded0">
+  <con:testStep type="restrequest" name="BillLookupGovolution" id="6d049d2a-690e-4011-80a4-b25a9b749cd2">
     <con:settings/>
     <con:config service="https://dev2.velocitypayment.com/vtps/rest/" resourcePath="/vtps/rest/spindleMediaBillLookup" methodName="Method 2" xsi:type="con:RestRequestStep">
       <con:restRequest name="BillLookupGovolution" id="c41978eb-cac5-4def-98ac-a611a0660ce4" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment>&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment>&lt;con:entry key="Authorization" value="Basic aWFobWVkOkhlbGxvITIyMjIyMjI=" xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></con:setting>
         </con:settings>
-        <con:endpoint>https://qa2.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
         <con:request>{ 
-                searchText: '91000157000',
-                applicationId: '836'
-}
-</con:request>
+                searchText: '00000227072',
+                applicationId: '6453'
+}</con:request>
         <con:originalUri>https://qa2.velocitypayment.com/vtps/rest/spindleMediaBillLookup</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="cbbe9998-1dd9-4ceb-975c-56fe13ab7fe7" name="Valid HTTP Status Codes">
           <con:settings/>
@@ -235,7 +234,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="CallEnd" id="35eb28ca-d6d3-46a7-ac09-cba031699649">
+  <con:testStep type="restrequest" name="CallEnd" id="fb82e97a-f275-4e82-880f-d7d534a0565e">
     <con:settings/>
     <con:config service="REST Service 5" resourcePath="/vtps/rest/CallEnd" methodName="POST" xsi:type="con:RestRequestStep">
       <con:restRequest name="CallEnd" id="e3bb9182-7995-45be-aa86-11ca3a800f93" mediaType="application/json" postQueryString="false">

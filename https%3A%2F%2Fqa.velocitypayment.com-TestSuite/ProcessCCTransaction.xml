@@ -729,7 +729,7 @@
    "application_id" : "3849",\r
    "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
    "card_exmo" : "01",\r
-   "card_exyr" : "2025",\r
+   "card_exyr" : "2029",\r
    "username" : "username",\r
    "password" : "password",\r
    "user_defined1" : "udf1 data",\r
@@ -1389,6 +1389,84 @@
         <con:credentials>
           <con:username>iahmed</con:username>
           <con:password>hello2222</con:password>
+          <con:domain>govolution</con:domain>
+          <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>Global HTTP Settings</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters/>
+        <con:environmentSpec>
+          <con:entry environmentId="359f9592-92b8-4782-9e0a-30ec59b1ae5a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aa4d56c4-4e85-4b90-9700-66af5a100817">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="541337b0-c6f7-463f-bdba-824b4f050119">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="bb4dcb85-8c5e-4939-886c-adcfb6488361">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="5798e577-c4f8-42fa-8769-7363888198d0">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c9e92ed4-8add-4a14-968f-39f6854fb249">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ProcessCC-Demo-App4519-DONOTUSEFORTESTING" id="06672167-c5cc-4eaf-ab67-c45cc64c7d8c">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="REST Service 10" resourcePath="/vtps/rest/processCCTransaction" methodName="POST" xsi:type="con:RestRequestStep">
+      <con:restRequest name="ProcessCC-Demo-App4519-DONOTUSEFORTESTING" id="3d2ae421-4615-4a73-bb18-ecd8a3a8c847" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.support.AbstractHttpRequest@disable-property-expansions">false</con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{\r
+   "card_address" : "11 MAIN ST",\r
+   "amount" : "11.50",\r
+   "card_name" : "imtiaz ahmed",\r
+   "card_city" : "",\r
+   "card_zip" : "10859",\r
+   "email" : "",\r
+   "card_number" : "4111111111111111",\r
+   "card_state" : "",\r
+   "transaction_type" : "104",\r
+   "message_version" : "2.0IVR_C",\r
+   "category" : "MOTO",\r
+   "requestSource" : "",\r
+   "response_format" : "fixed_width",\r
+   "card_expiration" : "",\r
+   "application_id" : "4519",\r
+   "remittance_id" : "${DataGenRandomRemID#RandomRemID}",\r
+   "card_exmo" : "01",\r
+   "card_exyr" : "2028",\r
+   "username" : "username",\r
+   "password" : "password",\r
+   "user_defined1" : "",\r
+   "user_defined2" : "",\r
+   "user_defined3" : "",\r
+   "user_defined4" : "",\r
+   "user_defined5" : "",\r
+   "user_defined6" : "",\r
+   "user_defined7" : "",\r
+   "user_defined8" : "",\r
+   "user_defined9" : "",\r
+   "user_defined10" : "",\r
+   "client_account_number" : "1564947",\r
+   "parcel" : ""\r
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/processCCTransaction</con:originalUri>
+        <con:credentials>
+          <con:username>iahmed1</con:username>
+          <con:password>Hello!1111111</con:password>
           <con:domain>govolution</con:domain>
           <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
           <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>

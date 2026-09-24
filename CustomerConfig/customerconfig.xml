@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" name="customerconfig" path="vtps/rest/customerconfig" id="f94abb07-72af-46da-ae4e-a449c4b1284f">
+  <con:settings>
+    <con:setting id="f94abb07-72af-46da-ae4e-a449c4b1284ffileName">customerconfig</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="c8d4893b-0d42-474b-99ac-37ed97ce8911" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="93977a6a-fd79-42d5-a3c3-9fc2e9b4ac03" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+      <con:request>{
+
+    "DNIS": "2408939855"
+
+   
+
+}</con:request>
+      <con:originalUri>https://qa.velocitypayment.com/vtps/rest/customerconfig</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Method 2" id="ca3d049c-ed37-43bb-b736-6f01789beabf" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="b88cb4e3-ef6e-4c1b-82ae-8b431969df82" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

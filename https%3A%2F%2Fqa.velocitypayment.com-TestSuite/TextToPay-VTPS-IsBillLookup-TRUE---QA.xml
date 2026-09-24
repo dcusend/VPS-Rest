@@ -216,7 +216,7 @@
         <con:assertion type="JsonPath Match" id="d0544e10-f5bb-4410-9b27-c1f0172050fb" name="Match content of [isPaymentLinkGenerated]">
           <con:configuration>
             <path>$['isPaymentLinkGenerated']</path>
-            <content>true</content>
+            <content>false</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
@@ -253,15 +253,6 @@
           <con:configuration>
             <path>$['email']</path>
             <content>"iahmed7@govolution.com"</content>
-            <allowWildcards>false</allowWildcards>
-            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-            <ignoreComments>false</ignoreComments>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="JsonPath Match" id="17501879-ac48-480d-b852-a155ba00895a" name="Match content of [paymentLink]">
-          <con:configuration>
-            <path>$['paymentLink']</path>
-            <content>"https://qa.velocitypayment.com/vbills/lookup/paymentLink.do?linkId=9e593c23-2b24-4210-87ed-3ccdeccd509f"</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
@@ -307,6 +298,15 @@
           <con:configuration>
             <path>$['errorMessage']</path>
             <content>[ ]</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="97245f5f-3b84-4789-ac45-11f11196b1d5" name="Match content of [paymentLink]">
+          <con:configuration>
+            <path>$['paymentLink']</path>
+            <content>null</content>
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>

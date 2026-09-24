@@ -23,3 +23,5 @@ ModifyACH-PaymentMethodType-Upgrade-PStoPC.xml
 ModifyACH-PaymentMethodType-Upgrade-PStoCorp.xml
 ModifyACH-PaymentMethodType-Upgrade-CorptoPC.xml
 ModifyACH-PaymentMethodType-Upgrade-CorptoPS.xml
+TextToPay-IsBillLookupFALSE-Test-Case-Upgrade.xml
+TextToPay-IsBillLookupTRUE-Test-Case-Upgrade.xml

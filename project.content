@@ -68,6 +68,9 @@ Text-To-Pay\texttopay.xml
 IntegratedVirtualTerminal\payments.xml
 IVTAPI\payments.xml
 Text-to-Pay-vtps\texttopay.xml
+QDS\qds.xml
+CustomerConfig\customerconfig.xml
+ApplicationConfig\applicationconfig.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillLookup.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ParseMoney.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\BillDueDateValidation.xml
@@ -113,7 +116,6 @@ https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CreatePM-CC.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CreatePM-PC.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ACTBillLookup.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\Test-For-Haris.xml
-https%3A%2F%2Fqa.velocitypayment.com-TestSuite\SpindleMedia.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\MVA-IVR-TestCase.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\TextToPay-IsBillLookupTRUE-Test-Case-QA.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\TextToPay-IsBillLookupFALSE-Test-Case-QA.xml
@@ -126,6 +128,14 @@ https%3A%2F%2Fqa.velocitypayment.com-TestSuite\TextToPay-IsBillLookupTRUE-Test-C
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\TextToPay-IsBillLookupTRUE-Test-Case-Production.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\IVTAPI-QA-App975.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\IVTAPI-Demo-App6262.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\QDS.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\SpindleMedia-QA.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\SpindleMediaDemo-Haris.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\SpindleMedia-Demo.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CustomerConfig---QA.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ApplicationConfig---QA.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CustomerConfig---Demo.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ApplicationConfig---Demo.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml
 Test-Suite-2\Test-Case-1.xml
@@ -154,6 +164,8 @@ REST-Automation-Upgrade\ModifyACH-PaymentMethodType-Upgrade-PStoPC.xml
 REST-Automation-Upgrade\ModifyACH-PaymentMethodType-Upgrade-PStoCorp.xml
 REST-Automation-Upgrade\ModifyACH-PaymentMethodType-Upgrade-CorptoPC.xml
 REST-Automation-Upgrade\ModifyACH-PaymentMethodType-Upgrade-CorptoPS.xml
+REST-Automation-Upgrade\TextToPay-IsBillLookupFALSE-Test-Case-Upgrade.xml
+REST-Automation-Upgrade\TextToPay-IsBillLookupTRUE-Test-Case-Upgrade.xml
 REST-Automation-WWW\BillLookup.xml
 REST-Automation-WWW\ParseMoney.xml
 REST-Automation-WWW\BillDueDateValidation.xml
@@ -175,6 +187,8 @@ REST-Automation-WWW\Create-Disable-CreateDuplicate-CC.xml
 REST-Automation-WWW\Create-Disable-CreateDuplicate-PC.xml
 REST-Automation-WWW\ModifyACH-PaymentMethodType-WWW-PCtoPS.xml
 REST-Automation-WWW\ModifyACH-PaymentMethodType-WWW-PCtoCorp.xml
+REST-Automation-WWW\TextToPay-IsBillLookupFALSE-Test-Case-Production.xml
+REST-Automation-WWW\TextToPay-IsBillLookupTRUE-Test-Case-Production.xml
 WebSocketTesting\Test-Case-1.xml
 IVRAccountLookup\IVRACLookup-ValidRequest.xml
 IVRAccountLookup\IVRACLookup-InvalidRequest.xml

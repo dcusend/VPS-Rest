@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="4777e578-85f3-4051-89dc-d30aa7d1d190" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="QDS" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="4777e578-85f3-4051-89dc-d30aa7d1d190fileName">QDS</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request - Demo" id="29c44221-b559-4d7b-8768-df92313d088d">
+    <con:settings/>
+    <con:config service="QDS" resourcePath="/vtps/rest/qds" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request - Demo" id="4f009749-f8ea-4e8c-aa77-bb4d885df724" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic bm9yd2FsazpEM2x1eDMyMDI2IQ==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+
+    "applicationID": "6327",
+
+    "billYear": "2025",
+
+    "billType": "01",
+
+    "billNumber": "100001"
+
+}</con:request>
+        <con:originalUri>https://demo.velocitypayment.com/vtps/rest/qds</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="1f872742-673a-4796-935c-4fcbcc660072" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="06db1677-c031-4296-988f-1f2f6bb791c7" name="Match content of [message]">
+          <con:configuration>
+            <path>$['message']</path>
+            <content>"Success"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="REST Request - QA" id="bfac5e3d-c517-4b11-a9da-b5fc8c5cc9f1">
+    <con:settings/>
+    <con:config service="QDS" resourcePath="/vtps/rest/qds" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="REST Request - QA" id="4f009749-f8ea-4e8c-aa77-bb4d885df724" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
+        <con:request>{
+
+    "applicationID": "234",
+
+    "billYear": "2025",
+
+    "billType": "01",
+
+    "billNumber": "100001"
+
+}</con:request>
+        <con:originalUri>https://demo.velocitypayment.com/vtps/rest/qds</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="1f872742-673a-4796-935c-4fcbcc660072" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="a5f9d7fe-ebae-4441-9898-e9d80f84e779" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

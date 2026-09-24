@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" xsi:type="con:RestService" id="8d7ce572-e398-40e7-8920-5f69ed29bc14" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 12" type="rest">
+<con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" xsi:type="con:RestService" id="8d7ce572-e398-40e7-8920-5f69ed29bc14" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 12" type="rest" lastUpdated="2026-09-21T12:24:21.454-04:00">
   <con:settings id="0fe1c98d-a05c-47ea-aef7-14070e6528cc">
     <con:setting id="8d7ce572-e398-40e7-8920-5f69ed29bc14fileName">REST-Service-12</con:setting>
   </con:settings>

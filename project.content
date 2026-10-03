@@ -136,6 +136,7 @@ https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CustomerConfig---QA.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ApplicationConfig---QA.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CustomerConfig---Demo.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ApplicationConfig---Demo.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\SpindleMedia-Upgrade%2FProduction.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml
 Test-Suite-2\Test-Case-1.xml

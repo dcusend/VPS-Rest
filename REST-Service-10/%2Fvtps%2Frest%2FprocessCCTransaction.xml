@@ -167,6 +167,12 @@
       <con:params/>
       <con:element xmlns:xht="http://www.w3.org/1999/xhtml">xht:html</con:element>
     </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:proc="https://qa.velocitypayment.com/vtps/rest/processCCTransaction">proc:Fault</con:element>
+    </con:representation>
     <con:request name="POST Request" id="3d2ae421-4615-4a73-bb18-ecd8a3a8c847" mediaType="application/json" postQueryString="false">
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

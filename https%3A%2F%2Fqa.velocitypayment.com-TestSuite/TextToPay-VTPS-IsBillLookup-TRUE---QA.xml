@@ -13,12 +13,12 @@
         <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
         <con:request>{
    "applicationID" : "485",
-   "phoneNumber" : "2408939102",
+   "phoneNumber" : "2408939103",
    "isBillLookup" : true,
    "lookup1" : "40005521",
    "lookup2" : "40005522",
    "lookup3" : "40005523",
-   "email" : "iahmed3@govolution.com"
+   "email" : "iahmed4@govolution.com"
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="7bfc52b2-7b91-4989-bef1-53db15fb94a6" name="Valid HTTP Status Codes">

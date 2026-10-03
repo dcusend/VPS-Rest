@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:con="http://eviware.com/soapui/config" name="applicationconfig" path="vtps/rest/applicationconfig" id="c013f3d7-fcb0-4ee0-b0a8-841e1c249fee">
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="applicationconfig" path="vtps/rest/applicationconfig" id="c013f3d7-fcb0-4ee0-b0a8-841e1c249fee">
   <con:settings>
     <con:setting id="c013f3d7-fcb0-4ee0-b0a8-841e1c249feefileName">applicationconfig</con:setting>
   </con:settings>

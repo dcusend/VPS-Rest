@@ -14,7 +14,7 @@
           <pattern/>
           <random>true</random>
           <persist>true</persist>
-          <current>41259035953.00000000000000000000000000000000000000000000000000000</current>
+          <current>21542534211.00000000000000000000000000000000000000000000</current>
         </con:configuration>
         <con:name>RandomRemID</con:name>
         <con:mode>READ</con:mode>
@@ -29,15 +29,15 @@
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
-        <con:endpoint>https://upgrade.velocitypayment.com</con:endpoint>
+        <con:endpoint>https://www.velocitypayment.com</con:endpoint>
         <con:request>{
    "applicationID" : "2326",
-   "phoneNumber" : "2400000044",
+   "phoneNumber" : "2400000047",
    "isBillLookup" : true,
-   "lookup1" : "12162016271",
-   "lookup2" : "12162016272",
-   "lookup3" : "12162016273",
-   "email" : "iahmed@govolution.com"
+   "lookup1" : "622699699",
+   "lookup2" : "722699699",
+   "lookup3" : "822699699",
+   "email" : "iahmed5789@govolution.com"
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/integration/rest/texttopay</con:originalUri>
         <con:assertion type="JsonPath Existence Match" id="a7d60845-d20c-49b3-a7cb-5ec79aa66857" name="Check for existence of [linkExpiresAt]">

@@ -11,14 +11,14 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="Basic aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://qa.velocitypayment.com</con:endpoint>
-        <con:request>{
-   "applicationID" : "485",
-   "phoneNumber" : "2408939103",
-   "isBillLookup" : true,
-   "lookup1" : "40005521",
-   "lookup2" : "40005522",
-   "lookup3" : "40005523",
-   "email" : "iahmed4@govolution.com"
+        <con:request>{\r
+   "applicationID" : "485",\r
+   "phoneNumber" : "2408939103",\r
+   "isBillLookup" : true,\r
+   "lookup1" : "40005521",\r
+   "lookup2" : "40005522",\r
+   "lookup3" : "40005523",\r
+   "email" : "iahmed4@govolution.com"\r
 }</con:request>
         <con:originalUri>https://qa.velocitypayment.com/vtps/rest/texttopay</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="7bfc52b2-7b91-4989-bef1-53db15fb94a6" name="Valid HTTP Status Codes">

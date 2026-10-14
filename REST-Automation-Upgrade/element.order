@@ -25,3 +25,4 @@ ModifyACH-PaymentMethodType-Upgrade-CorptoPC.xml
 ModifyACH-PaymentMethodType-Upgrade-CorptoPS.xml
 TextToPay-IsBillLookupFALSE-Test-Case-Upgrade.xml
 TextToPay-IsBillLookupTRUE-Test-Case-Upgrade.xml
+ProcessFailedACH-PersonalChecking-TestProcessor.xml

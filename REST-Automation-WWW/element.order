@@ -21,3 +21,4 @@ ModifyACH-PaymentMethodType-WWW-PCtoPS.xml
 ModifyACH-PaymentMethodType-WWW-PCtoCorp.xml
 TextToPay-IsBillLookupFALSE-Test-Case-Production.xml
 TextToPay-IsBillLookupTRUE-Test-Case-Production.xml
+ProcessACHFailed-PersonalChecking-TestProcessor.xml

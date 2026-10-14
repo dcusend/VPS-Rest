@@ -167,6 +167,7 @@ REST-Automation-Upgrade\ModifyACH-PaymentMethodType-Upgrade-CorptoPC.xml
 REST-Automation-Upgrade\ModifyACH-PaymentMethodType-Upgrade-CorptoPS.xml
 REST-Automation-Upgrade\TextToPay-IsBillLookupFALSE-Test-Case-Upgrade.xml
 REST-Automation-Upgrade\TextToPay-IsBillLookupTRUE-Test-Case-Upgrade.xml
+REST-Automation-Upgrade\ProcessFailedACH-PersonalChecking-TestProcessor.xml
 REST-Automation-WWW\BillLookup.xml
 REST-Automation-WWW\ParseMoney.xml
 REST-Automation-WWW\BillDueDateValidation.xml
@@ -190,6 +191,7 @@ REST-Automation-WWW\ModifyACH-PaymentMethodType-WWW-PCtoPS.xml
 REST-Automation-WWW\ModifyACH-PaymentMethodType-WWW-PCtoCorp.xml
 REST-Automation-WWW\TextToPay-IsBillLookupFALSE-Test-Case-Production.xml
 REST-Automation-WWW\TextToPay-IsBillLookupTRUE-Test-Case-Production.xml
+REST-Automation-WWW\ProcessACHFailed-PersonalChecking-TestProcessor.xml
 WebSocketTesting\Test-Case-1.xml
 IVRAccountLookup\IVRACLookup-ValidRequest.xml
 IVRAccountLookup\IVRACLookup-InvalidRequest.xml

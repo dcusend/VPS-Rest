@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="13011ade-7392-46f2-b147-3260ebfd7322" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="ApplicationConfig-NewImtiazDemo" searchProperties="true" timeout="0">
+  <con:settings>
+    <con:setting id="13011ade-7392-46f2-b147-3260ebfd7322fileName">ApplicationConfig-NewImtiazDemo</con:setting>
+  </con:settings>
+  <con:testStep xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="restrequest" name="applicationConfig-6556" id="0cd840ba-7adb-4cfb-8b4e-8668375160de">
+    <con:settings/>
+    <con:config service="ApplicationConfig" resourcePath="/vtps/rest/applicationconfig" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="applicationConfig-6556" id="2f1fbc56-ee72-4def-a3a7-fd150b26c1f8" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+
+    "DNIS": "3013131005",
+
+    "applicationIdentifier": "6556",
+
+    "IVRType": "Velocity"
+
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/applicationconfig</con:originalUri>
+        <con:assertion type="DataAndMetadataAssertion" id="48eb4c9e-98cf-49d4-88bc-fb45013c1e45" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['DNIS']</con:path>
+              <con:element>DNIS</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>3013131005</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['customerID']</con:path>
+              <con:element>customerID</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>735</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['applicationID']</con:path>
+              <con:element>applicationID</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>6556</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['username']</con:path>
+              <con:element>username</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>user6556</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['password']</con:path>
+              <con:element>password</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>pwd6556</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['numberLookup']</con:path>
+              <con:element>numberLookup</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['serviceType']</con:path>
+              <con:element>serviceType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>VELOCITY</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['numberPaymentMethods']</con:path>
+              <con:element>numberPaymentMethods</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['paymentMethod1']</con:path>
+              <con:element>paymentMethod1</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>CREDIT_CARD</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['operatorEnable']</con:path>
+              <con:element>operatorEnable</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['operatorPhone']</con:path>
+              <con:element>operatorPhone</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>6589652361</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['optOutEnabled']</con:path>
+              <con:element>optOutEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['bureauCodeEnabled']</con:path>
+              <con:element>bureauCodeEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['overPayEnabled']</con:path>
+              <con:element>overPayEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['underPayEnabled']</con:path>
+              <con:element>underPayEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['visa_enabled']</con:path>
+              <con:element>visa_enabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['mastercard_enabled']</con:path>
+              <con:element>mastercard_enabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['discover_enabled']</con:path>
+              <con:element>discover_enabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['americanexpress_enabled']</con:path>
+              <con:element>americanexpress_enabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['transferType']</con:path>
+              <con:element>transferType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>AGENT</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['spmEnable']</con:path>
+              <con:element>spmEnable</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['textToPay']</con:path>
+              <con:element>textToPay</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['maxAmount']</con:path>
+              <con:element>maxAmount</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>100.00</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['IVRType']</con:path>
+              <con:element>IVRType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Velocity</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['allowCreditBalancePayment']</con:path>
+              <con:element>allowCreditBalancePayment</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['allowLatePayment']</con:path>
+              <con:element>allowLatePayment</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['tokenizeUDF']</con:path>
+              <con:element>tokenizeUDF</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validateCAN']</con:path>
+              <con:element>validateCAN</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validateCANLength']</con:path>
+              <con:element>validateCANLength</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['minCAN']</con:path>
+              <con:element>minCAN</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>5</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['maxCAN']</con:path>
+              <con:element>maxCAN</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>9</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['enabled']</con:path>
+              <con:element>enabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['transferOptions']</con:path>
+              <con:element>transferOptions</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>0</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errorMessage'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>No Error</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['paymentMethod2']</con:path>
+              <con:element>paymentMethod2</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['paymentMethod3']</con:path>
+              <con:element>paymentMethod3</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['optOutPhoneNumber']</con:path>
+              <con:element>optOutPhoneNumber</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['bureauCode']</con:path>
+              <con:element>bureauCode</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['applicationName']</con:path>
+              <con:element>applicationName</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['bureauName']</con:path>
+              <con:element>bureauName</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['serviceFeePrompt']</con:path>
+              <con:element>serviceFeePrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['operatorPrompt']</con:path>
+              <con:element>operatorPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['transferOptionsPrompt']</con:path>
+              <con:element>transferOptionsPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>If you would like to speak to a member of the Test Customer team, please press 1. If you need assistance from an agent to make a payment, press 2. Please note, you will be assessed a $3.95 fee, in addition to the existing service fee, if you need agent assistance to make your payment.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['payOptOutPrompt']</con:path>
+              <con:element>payOptOutPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>To make a payment using this system, press 1. If you have questions regarding your bill, or need to speak with customer support, press 2.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['professionalVoice']</con:path>
+              <con:element>professionalVoice</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['voiceRecognitionEnabled']</con:path>
+              <con:element>voiceRecognitionEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup1Prompt']</con:path>
+              <con:element>lookup1Prompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup2Prompt']</con:path>
+              <con:element>lookup2Prompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup3Prompt']</con:path>
+              <con:element>lookup3Prompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup1InvalidPrompt']</con:path>
+              <con:element>lookup1InvalidPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The lookup 1 you entered is invalid.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup2InvalidPrompt']</con:path>
+              <con:element>lookup2InvalidPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The lookup 2 you entered is invalid.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup3InvalidPrompt']</con:path>
+              <con:element>lookup3InvalidPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The lookup 3 you entered is invalid.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['successPrompt']</con:path>
+              <con:element>successPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Thank you. Your test payment has been successfully processed.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup1VoiceEnabled']</con:path>
+              <con:element>lookup1VoiceEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup2VoiceEnabled']</con:path>
+              <con:element>lookup2VoiceEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup3VoiceEnabled']</con:path>
+              <con:element>lookup3VoiceEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['achAuthorizationPrompt']</con:path>
+              <con:element>achAuthorizationPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['personalCheckPrompt']</con:path>
+              <con:element>personalCheckPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['corporateCheckPrompt']</con:path>
+              <con:element>corporateCheckPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['creditCardPrompt']</con:path>
+              <con:element>creditCardPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['verbalAuthorizationRequired']</con:path>
+              <con:element>verbalAuthorizationRequired</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['ccVoiceAuthorizationPrompt']</con:path>
+              <con:element>ccVoiceAuthorizationPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['cardSecurityCodeRequired']</con:path>
+              <con:element>cardSecurityCodeRequired</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['billingAddressRequired']</con:path>
+              <con:element>billingAddressRequired</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['billingZipRequired']</con:path>
+              <con:element>billingZipRequired</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "DNIS": "3013131005",
+  "customerID": 735,
+  "applicationID": 6556,
+  "username": "user6556",
+  "password": "pwd6556",
+  "numberLookup": 2,
+  "serviceType": "VELOCITY",
+  "numberPaymentMethods": 1,
+  "paymentMethod1": "CREDIT_CARD",
+  "paymentMethod2": "",
+  "paymentMethod3": "",
+  "operatorEnable": true,
+  "operatorPhone": "6589652361",
+  "optOutEnabled": false,
+  "optOutPhoneNumber": "",
+  "bureauCodeEnabled": false,
+  "overPayEnabled": true,
+  "underPayEnabled": false,
+  "visa_enabled": true,
+  "mastercard_enabled": true,
+  "discover_enabled": true,
+  "americanexpress_enabled": false,
+  "transferType": "AGENT",
+  "spmEnable": true,
+  "textToPay": true,
+  "maxAmount": 100.00,
+  "IVRType": "Velocity",
+  "allowCreditBalancePayment": true,
+  "allowLatePayment": true,
+  "tokenizeUDF": false,
+  "validateCAN": true,
+  "validateCANLength": true,
+  "minCAN": 5,
+  "maxCAN": 9,
+  "enabled": true,
+  "transferOptions": false,
+  "bureauCode": "",
+  "applicationName": "",
+  "bureauName": "",
+  "serviceFeePrompt": "",
+  "operatorPrompt": "",
+  "transferOptionsPrompt": "If you would like to speak to a member of the Test Customer team, please press 1. If you need assistance from an agent to make a payment, press 2. Please note, you will be assessed a $3.95 fee, in addition to the existing service fee, if you need agent assistance to make your payment.",
+  "payOptOutPrompt": "To make a payment using this system, press 1. If you have questions regarding your bill, or need to speak with customer support, press 2.",
+  "professionalVoice": false,
+  "voiceRecognitionEnabled": false,
+  "lookup1Prompt": "",
+  "lookup2Prompt": "",
+  "lookup3Prompt": "",
+  "lookup1InvalidPrompt": "The lookup 1 you entered is invalid.",
+  "lookup2InvalidPrompt": "The lookup 2 you entered is invalid.",
+  "lookup3InvalidPrompt": "The lookup 3 you entered is invalid.",
+  "successPrompt": "Thank you. Your test payment has been successfully processed.",
+  "lookup1VoiceEnabled": false,
+  "lookup2VoiceEnabled": false,
+  "lookup3VoiceEnabled": false,
+  "achAuthorizationPrompt": "",
+  "personalCheckPrompt": "",
+  "corporateCheckPrompt": "",
+  "creditCardPrompt": "",
+  "verbalAuthorizationRequired": false,
+  "ccVoiceAuthorizationPrompt": "",
+  "cardSecurityCodeRequired": false,
+  "billingAddressRequired": false,
+  "billingZipRequired": false,
+  "errorCode": "0",
+  "errorMessage": [
+    "No Error"
+  ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="restrequest" name="applicationConfig-1486" id="5c365fe1-44b3-42b2-b3a2-c93d7fd6f9cf">
+    <con:settings/>
+    <con:config service="ApplicationConfig" resourcePath="/vtps/rest/applicationconfig" methodName="Method 1" xsi:type="con:RestRequestStep">
+      <con:restRequest name="applicationConfig-1486" id="2f1fbc56-ee72-4def-a3a7-fd150b26c1f8" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Authorization" value="BASIC aWFobWVkOmhlbGxvMjIyMg==" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://demo.velocitypayment.com</con:endpoint>
+        <con:request>{
+
+    "DNIS": "3013131005",
+
+    "applicationIdentifier": "1486",
+
+    "IVRType": "Velocity"
+
+}</con:request>
+        <con:originalUri>https://qa.velocitypayment.com/vtps/rest/applicationconfig</con:originalUri>
+        <con:assertion type="DataAndMetadataAssertion" id="48eb4c9e-98cf-49d4-88bc-fb45013c1e45" name="Smart Assertion">
+          <con:configuration xsi:type="con:DataAndMetadataAssertion">
+            <con:mode>Received Data</con:mode>
+            <con:elements>
+              <con:path>$['DNIS']</con:path>
+              <con:element>DNIS</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>3013131005</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['customerID']</con:path>
+              <con:element>customerID</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>735</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['applicationID']</con:path>
+              <con:element>applicationID</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1486</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['username']</con:path>
+              <con:element>username</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>user1486</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['password']</con:path>
+              <con:element>password</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>pwd1486</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['numberLookup']</con:path>
+              <con:element>numberLookup</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>1</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['serviceType']</con:path>
+              <con:element>serviceType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>CERTPAY</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['numberPaymentMethods']</con:path>
+              <con:element>numberPaymentMethods</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>2</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['paymentMethod1']</con:path>
+              <con:element>paymentMethod1</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>CREDIT_CARD</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['paymentMethod2']</con:path>
+              <con:element>paymentMethod2</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>PERSONAL</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['operatorEnable']</con:path>
+              <con:element>operatorEnable</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['optOutEnabled']</con:path>
+              <con:element>optOutEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['bureauCodeEnabled']</con:path>
+              <con:element>bureauCodeEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['overPayEnabled']</con:path>
+              <con:element>overPayEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['underPayEnabled']</con:path>
+              <con:element>underPayEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['visa_enabled']</con:path>
+              <con:element>visa_enabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['mastercard_enabled']</con:path>
+              <con:element>mastercard_enabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['discover_enabled']</con:path>
+              <con:element>discover_enabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['americanexpress_enabled']</con:path>
+              <con:element>americanexpress_enabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['transferType']</con:path>
+              <con:element>transferType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>END</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['spmEnable']</con:path>
+              <con:element>spmEnable</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['textToPay']</con:path>
+              <con:element>textToPay</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['maxAmount']</con:path>
+              <con:element>maxAmount</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>0.00</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['IVRType']</con:path>
+              <con:element>IVRType</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Velocity</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['allowCreditBalancePayment']</con:path>
+              <con:element>allowCreditBalancePayment</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['allowLatePayment']</con:path>
+              <con:element>allowLatePayment</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['tokenizeUDF']</con:path>
+              <con:element>tokenizeUDF</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validateCAN']</con:path>
+              <con:element>validateCAN</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['validateCANLength']</con:path>
+              <con:element>validateCANLength</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['minCAN']</con:path>
+              <con:element>minCAN</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>0</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['maxCAN']</con:path>
+              <con:element>maxCAN</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>0</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>true</con:numberType>
+              <con:expectedDataType>2</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['enabled']</con:path>
+              <con:element>enabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['transferOptions']</con:path>
+              <con:element>transferOptions</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errorCode']</con:path>
+              <con:element>errorCode</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>0</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['errorMessage'][0]</con:path>
+              <con:element>0</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>No Error</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['paymentMethod3']</con:path>
+              <con:element>paymentMethod3</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['operatorPhone']</con:path>
+              <con:element>operatorPhone</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['optOutPhoneNumber']</con:path>
+              <con:element>optOutPhoneNumber</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['bureauCode']</con:path>
+              <con:element>bureauCode</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['applicationName']</con:path>
+              <con:element>applicationName</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['bureauName']</con:path>
+              <con:element>bureauName</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['serviceFeePrompt']</con:path>
+              <con:element>serviceFeePrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['operatorPrompt']</con:path>
+              <con:element>operatorPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['transferOptionsPrompt']</con:path>
+              <con:element>transferOptionsPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>If you would like to speak to a member of the Test Customer team, please press 1. If you need assistance from an agent to make a payment, press 2. Please note, you will be assessed a $3.95 fee, in addition to the existing service fee, if you need agent assistance to make your payment.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['payOptOutPrompt']</con:path>
+              <con:element>payOptOutPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>To make a payment using this system, press 1. If you have questions regarding your bill, or need to speak with customer support, press 2.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['professionalVoice']</con:path>
+              <con:element>professionalVoice</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['voiceRecognitionEnabled']</con:path>
+              <con:element>voiceRecognitionEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup1Prompt']</con:path>
+              <con:element>lookup1Prompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup2Prompt']</con:path>
+              <con:element>lookup2Prompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup3Prompt']</con:path>
+              <con:element>lookup3Prompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup1InvalidPrompt']</con:path>
+              <con:element>lookup1InvalidPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The lookup 1 you entered is invalid.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup2InvalidPrompt']</con:path>
+              <con:element>lookup2InvalidPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The lookup 2 you entered is invalid.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup3InvalidPrompt']</con:path>
+              <con:element>lookup3InvalidPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>The lookup 3 you entered is invalid.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['successPrompt']</con:path>
+              <con:element>successPrompt</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>Thank you. Your test payment has been successfully processed.</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup1VoiceEnabled']</con:path>
+              <con:element>lookup1VoiceEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup2VoiceEnabled']</con:path>
+              <con:element>lookup2VoiceEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['lookup3VoiceEnabled']</con:path>
+              <con:element>lookup3VoiceEnabled</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['achAuthorizationPrompt']</con:path>
+              <con:element>achAuthorizationPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['personalCheckPrompt']</con:path>
+              <con:element>personalCheckPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['corporateCheckPrompt']</con:path>
+              <con:element>corporateCheckPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['creditCardPrompt']</con:path>
+              <con:element>creditCardPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['verbalAuthorizationRequired']</con:path>
+              <con:element>verbalAuthorizationRequired</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['ccVoiceAuthorizationPrompt']</con:path>
+              <con:element>ccVoiceAuthorizationPrompt</con:element>
+              <con:operatorId>9</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>1</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['cardSecurityCodeRequired']</con:path>
+              <con:element>cardSecurityCodeRequired</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['billingAddressRequired']</con:path>
+              <con:element>billingAddressRequired</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:elements>
+              <con:path>$['billingZipRequired']</con:path>
+              <con:element>billingZipRequired</con:element>
+              <con:operatorId>1</con:operatorId>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:caseSensitive>true</con:caseSensitive>
+              <con:numberType>false</con:numberType>
+              <con:expectedDataType>3</con:expectedDataType>
+            </con:elements>
+            <con:originalMessage>{
+  "DNIS": "3013131005",
+  "customerID": 735,
+  "applicationID": 1486,
+  "username": "user1486",
+  "password": "pwd1486",
+  "numberLookup": 1,
+  "serviceType": "CERTPAY",
+  "numberPaymentMethods": 2,
+  "paymentMethod1": "CREDIT_CARD",
+  "paymentMethod2": "PERSONAL",
+  "paymentMethod3": "",
+  "operatorEnable": false,
+  "operatorPhone": "",
+  "optOutEnabled": false,
+  "optOutPhoneNumber": "",
+  "bureauCodeEnabled": false,
+  "overPayEnabled": false,
+  "underPayEnabled": false,
+  "visa_enabled": true,
+  "mastercard_enabled": false,
+  "discover_enabled": false,
+  "americanexpress_enabled": true,
+  "transferType": "END",
+  "spmEnable": false,
+  "textToPay": false,
+  "maxAmount": 0.00,
+  "IVRType": "Velocity",
+  "allowCreditBalancePayment": false,
+  "allowLatePayment": false,
+  "tokenizeUDF": false,
+  "validateCAN": false,
+  "validateCANLength": false,
+  "minCAN": 0,
+  "maxCAN": 0,
+  "enabled": false,
+  "transferOptions": false,
+  "bureauCode": "",
+  "applicationName": "",
+  "bureauName": "",
+  "serviceFeePrompt": "",
+  "operatorPrompt": "",
+  "transferOptionsPrompt": "If you would like to speak to a member of the Test Customer team, please press 1. If you need assistance from an agent to make a payment, press 2. Please note, you will be assessed a $3.95 fee, in addition to the existing service fee, if you need agent assistance to make your payment.",
+  "payOptOutPrompt": "To make a payment using this system, press 1. If you have questions regarding your bill, or need to speak with customer support, press 2.",
+  "professionalVoice": false,
+  "voiceRecognitionEnabled": false,
+  "lookup1Prompt": "",
+  "lookup2Prompt": "",
+  "lookup3Prompt": "",
+  "lookup1InvalidPrompt": "The lookup 1 you entered is invalid.",
+  "lookup2InvalidPrompt": "The lookup 2 you entered is invalid.",
+  "lookup3InvalidPrompt": "The lookup 3 you entered is invalid.",
+  "successPrompt": "Thank you. Your test payment has been successfully processed.",
+  "lookup1VoiceEnabled": false,
+  "lookup2VoiceEnabled": false,
+  "lookup3VoiceEnabled": false,
+  "achAuthorizationPrompt": "",
+  "personalCheckPrompt": "",
+  "corporateCheckPrompt": "",
+  "creditCardPrompt": "",
+  "verbalAuthorizationRequired": false,
+  "ccVoiceAuthorizationPrompt": "",
+  "cardSecurityCodeRequired": false,
+  "billingAddressRequired": false,
+  "billingZipRequired": false,
+  "errorCode": "0",
+  "errorMessage": [
+    "No Error"
+  ]
+}</con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

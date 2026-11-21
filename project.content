@@ -132,11 +132,14 @@ https%3A%2F%2Fqa.velocitypayment.com-TestSuite\QDS.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\SpindleMedia-QA.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\SpindleMediaDemo-Haris.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\SpindleMedia-Demo.xml
-https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CustomerConfig---QA.xml
-https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ApplicationConfig---QA.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CustomerConfig---QA---103.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ApplicationConfig---QA---103.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CustomerConfig---Demo.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ApplicationConfig---Demo.xml
 https%3A%2F%2Fqa.velocitypayment.com-TestSuite\SpindleMedia-Upgrade%2FProduction.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\CustomerConfig-NewImtiazDemo.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ApplicationConfig-NewImtiazDemo.xml
+https%3A%2F%2Fqa.velocitypayment.com-TestSuite\ACC-Transactions-WWW---App-4983.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic.xml
 Test-Suite-1\AdvancedIVRMultipleBillsDevNetTaxLogic1.xml
 Test-Suite-2\Test-Case-1.xml
